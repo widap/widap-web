@@ -1,0 +1,5288 @@
+var powerPlants = {
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Copper Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 9,
+                "operator": "El Paso Electric Company",
+                "county": "El Paso",
+                "imgloc": "copper_station_(TX)",
+                "capacity": 70.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -106.375,
+                    31.7569
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Escalante ",
+                "fuel_source": "Coal",
+                "orispl_code": 87,
+                "operator": "Tri-State Generation & Transmission",
+                "county": "McKinley",
+                "imgloc": "escalante__(NM)",
+                "capacity": 273.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -108.082,
+                    35.4159
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cholla",
+                "fuel_source": "Coal",
+                "orispl_code": 113,
+                "operator": "Arizona Public Service Company",
+                "county": "Navajo",
+                "imgloc": "cholla_(AZ)",
+                "capacity": 1181.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.3033,
+                    34.9394
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Ocotillo Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 116,
+                "operator": "Arizona Public Service Company",
+                "county": "Maricopa",
+                "imgloc": "ocotillo_power_plant_(AZ)",
+                "capacity": 230.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.9122,
+                    33.4225
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "APS West Phoenix Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 117,
+                "operator": "Arizona Public Service Company",
+                "county": "Maricopa",
+                "imgloc": "aps_west_phoenix_power_plant_(AZ)",
+                "capacity": 724.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.1583,
+                    33.4417
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "APS Saguaro Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 118,
+                "operator": "Arizona Public Service Company",
+                "county": "Pinal",
+                "imgloc": "aps_saguaro_power_plant_(AZ)",
+                "capacity": 301.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.3,
+                    32.5517
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Yucca Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 120,
+                "operator": "Arizona Public Service Company",
+                "county": "Yuma",
+                "imgloc": "yucca_power_plant_(AZ)",
+                "capacity": 179.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.7097,
+                    32.7214
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "De Moss Petrie Generating Station",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 124,
+                "operator": "Tucson Electric Power Company",
+                "county": "Pima",
+                "imgloc": "de_moss_petrie_generating_station_(AZ)",
+                "capacity": 85.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.9889,
+                    32.2511
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Irvington Generating Station",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 126,
+                "operator": "Tucson Electric Power Company",
+                "county": "Pima",
+                "imgloc": "irvington_generating_station_(AZ)",
+                "capacity": 449.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.9047,
+                    32.16
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Agua Fria Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 141,
+                "operator": "Salt River Project",
+                "county": "Maricopa",
+                "imgloc": "agua_fria_generating_station_(AZ)",
+                "capacity": 844.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.2161,
+                    33.5542
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Kyrene Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 147,
+                "operator": "Salt River Project",
+                "county": "Maricopa",
+                "imgloc": "kyrene_generating_station_(AZ)",
+                "capacity": 389.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.9364,
+                    33.3544
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Apache Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 160,
+                "operator": "Arizona Electric Power Cooperative",
+                "county": "Cochise",
+                "imgloc": "apache_station_(AZ)",
+                "capacity": 1047.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -109.8931,
+                    32.0619
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Contra Costa Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 228,
+                "operator": "Contra Costa Power Plant, NRG Delta LLC",
+                "county": "Contra Costa",
+                "imgloc": "contra_costa_generating_station_(CA)",
+                "capacity": 759.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.761,
+                    38.0184
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Humboldt Bay",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 246,
+                "operator": "Pacific Gas and Electric Company",
+                "county": "Humboldt",
+                "imgloc": "humboldt_bay_(CA)",
+                "capacity": 109.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -124.2103,
+                    40.7415
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Hunters Point",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 247,
+                "operator": "Pacific Gas and Electric Company",
+                "county": "San Francisco",
+                "imgloc": "hunters_point_(CA)",
+                "capacity": 175.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.378,
+                    37.7372
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Morro Bay Power Plant, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 259,
+                "operator": "Dynegy Power Corporation",
+                "county": "San Luis Obispo",
+                "imgloc": "morro_bay_power_plant,_llc_(CA)",
+                "capacity": 1039.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.8578,
+                    35.3747
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Moss Landing",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 260,
+                "operator": "Dynegy Moss Landing,, LLC",
+                "county": "Monterey",
+                "imgloc": "moss_landing_(CA)",
+                "capacity": 2838.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.7775,
+                    36.8042
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Pittsburg Generating Station (CA)",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 271,
+                "operator": "GenOn Delta, LLC",
+                "county": "Contra Costa",
+                "imgloc": "pittsburg_generating_station_(ca)_(CA)",
+                "capacity": 2043.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.894,
+                    38.0392
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Potrero Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 273,
+                "operator": "GenOn Potrero, LLC",
+                "county": "San Francisco",
+                "imgloc": "potrero_generating_station_(CA)",
+                "capacity": 213.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.3869,
+                    37.7558
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cabrillo Power I Encina Power Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 302,
+                "operator": "Cabrillo Power Operations Inc.",
+                "county": "San Diego",
+                "imgloc": "cabrillo_power_i_encina_power_station_(CA)",
+                "capacity": 1023.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.3342,
+                    33.1408
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Dynegy South Bay, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 310,
+                "operator": "Dynegy Power Corporation",
+                "county": "San Diego",
+                "imgloc": "dynegy_south_bay,_llc_(CA)",
+                "capacity": 753.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.0964,
+                    32.6131
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "AES Alamitos",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 315,
+                "operator": "AES Corporation",
+                "county": "Los Angeles",
+                "imgloc": "aes_alamitos_(CA)",
+                "capacity": 2086.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.1009,
+                    33.7688
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Coolwater Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 329,
+                "operator": "NRG California South LP.",
+                "county": "San Bernardino",
+                "imgloc": "coolwater_generating_station_(CA)",
+                "capacity": 706.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.854,
+                    34.8622
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "El Segundo",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 330,
+                "operator": "NRG El Segundo Operations Inc.",
+                "county": "Los Angeles",
+                "imgloc": "el_segundo_(CA)",
+                "capacity": 1695.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.425,
+                    33.9106
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Etiwanda Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 331,
+                "operator": "NRG California South LP.",
+                "county": "San Bernardino",
+                "imgloc": "etiwanda_generating_station_(CA)",
+                "capacity": 965.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.5256,
+                    34.0911
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Riverside Canal Power Company",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 334,
+                "operator": "",
+                "county": "San Bernardino",
+                "imgloc": "riverside_canal_power_company_(CA)",
+                "capacity": NaN
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.3325,
+                    34.0225
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "AES Huntington Beach",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 335,
+                "operator": "AES Corporation",
+                "county": "Orange",
+                "imgloc": "aes_huntington_beach_(CA)",
+                "capacity": 930.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.9788,
+                    33.6436
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Long Beach Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 341,
+                "operator": "Long Beach Generation, LLC",
+                "county": "Los Angeles",
+                "imgloc": "long_beach_generating_station_(CA)",
+                "capacity": 266.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.2248,
+                    33.7641
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Mandalay Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 345,
+                "operator": "NRG California South LP.",
+                "county": "Ventura",
+                "imgloc": "mandalay_generating_station_(CA)",
+                "capacity": 462.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.2511,
+                    34.2072
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Ormond Beach Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 350,
+                "operator": "NRG California South LP.",
+                "county": "Ventura",
+                "imgloc": "ormond_beach_generating_station_(CA)",
+                "capacity": 1575.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.1689,
+                    34.1292
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "AES Redondo Beach",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 356,
+                "operator": "AES Corporation",
+                "county": "Los Angeles",
+                "imgloc": "aes_redondo_beach_(CA)",
+                "capacity": 1600.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.395,
+                    33.8504
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Mountainview Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 358,
+                "operator": "Southern California Edison Company",
+                "county": "San Bernardino",
+                "imgloc": "mountainview_generating_station_(CA)",
+                "capacity": 1403.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.2408,
+                    34.0836
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Magnolia (OLD)",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 375,
+                "operator": "",
+                "county": "Los Angeles",
+                "imgloc": "magnolia_(old)_(CA)",
+                "capacity": 7.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.3139,
+                    34.1781
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Grayson Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 377,
+                "operator": "City of Glendale",
+                "county": "Los Angeles",
+                "imgloc": "grayson_power_plant_(CA)",
+                "capacity": 139.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.2782,
+                    34.1556
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "El Centro",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 389,
+                "operator": "Imperial Irrigation District",
+                "county": "Imperial",
+                "imgloc": "el_centro_(CA)",
+                "capacity": 373.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.54,
+                    32.8022
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Harbor Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 399,
+                "operator": "Los Angeles Dept of Water and Power",
+                "county": "Los Angeles",
+                "imgloc": "harbor_generating_station_(CA)",
+                "capacity": 2910.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.2662,
+                    33.7691
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Haynes Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 400,
+                "operator": "Los Angeles Dept of Water and Power",
+                "county": "Los Angeles",
+                "imgloc": "haynes_generating_station_(CA)",
+                "capacity": 3031.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.0942,
+                    33.7639
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Scattergood Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 404,
+                "operator": "Los Angeles Dept of Water and Power",
+                "county": "Los Angeles",
+                "imgloc": "scattergood_generating_station_(CA)",
+                "capacity": 1281.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.4258,
+                    33.9175
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Valley Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 408,
+                "operator": "Los Angeles Dept of Water and Power",
+                "county": "Los Angeles",
+                "imgloc": "valley_generating_station_(CA)",
+                "capacity": 1097.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.3903,
+                    34.2481
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Broadway",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 420,
+                "operator": "City of Pasadena Water and Power Department",
+                "county": "Los Angeles",
+                "imgloc": "broadway_(CA)",
+                "capacity": 148.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.1494,
+                    34.1263
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Glenarm",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 422,
+                "operator": "City of Pasadena Water and Power Department",
+                "county": "Los Angeles",
+                "imgloc": "glenarm_(CA)",
+                "capacity": 168.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.1474,
+                    34.1256
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Arapahoe",
+                "fuel_source": "Coal",
+                "orispl_code": 465,
+                "operator": "Public Service Company of Colorado",
+                "county": "Denver",
+                "imgloc": "arapahoe_(CO)",
+                "capacity": 267.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.0028,
+                    39.67
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cameo",
+                "fuel_source": "Coal",
+                "orispl_code": 468,
+                "operator": "Public Service Company of Colorado",
+                "county": "Mesa",
+                "imgloc": "cameo_(CO)",
+                "capacity": 56.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -108.3189,
+                    39.1486
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cherokee",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 469,
+                "operator": "Public Service Company of Colorado",
+                "county": "Adams",
+                "imgloc": "cherokee_(CO)",
+                "capacity": 1494.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.9648,
+                    39.8078
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Comanche (470)",
+                "fuel_source": "Coal",
+                "orispl_code": 470,
+                "operator": "Public Service Company of Colorado",
+                "county": "Pueblo",
+                "imgloc": "comanche_(470)_(CO)",
+                "capacity": 1625.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.5747,
+                    38.2081
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Valmont",
+                "fuel_source": "Coal",
+                "orispl_code": 477,
+                "operator": "Public Service Company of Colorado",
+                "county": "Boulder",
+                "imgloc": "valmont_(CO)",
+                "capacity": 200.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.202,
+                    40.0195
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Zuni",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 478,
+                "operator": "Public Service Company of Colorado",
+                "county": "Denver",
+                "imgloc": "zuni_(CO)",
+                "capacity": 161.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.0169,
+                    39.7369
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Martin Drake",
+                "fuel_source": "Coal",
+                "orispl_code": 492,
+                "operator": "Colorado Springs Utilities",
+                "county": "El Paso",
+                "imgloc": "martin_drake_(CO)",
+                "capacity": 283.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.8331,
+                    38.8244
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Lamar",
+                "fuel_source": "Coal",
+                "orispl_code": 508,
+                "operator": "Lamar Utilities Board",
+                "county": "Prowers",
+                "imgloc": "lamar_(CO)",
+                "capacity": 39.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -102.6148,
+                    38.0921
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Hayden",
+                "fuel_source": "Coal",
+                "orispl_code": 525,
+                "operator": "Public Service Company of Colorado",
+                "county": "Routt",
+                "imgloc": "hayden_(CO)",
+                "capacity": 507.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -107.185,
+                    40.4856
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Nucla",
+                "fuel_source": "Coal",
+                "orispl_code": 527,
+                "operator": "Tri-State Generation & Transmission",
+                "county": "Montrose",
+                "imgloc": "nucla_(CO)",
+                "capacity": 115.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -108.5083,
+                    38.2387
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Fredonia Generating Station",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 607,
+                "operator": "Puget Sound Energy, Inc.",
+                "county": "Skagit",
+                "imgloc": "fredonia_generating_station_(WA)",
+                "capacity": 124.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.435,
+                    48.4553
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Glendive Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 2176,
+                "operator": "Montana Dakota Utilities Company",
+                "county": "Dawson",
+                "imgloc": "glendive_generating_station_(MT)",
+                "capacity": 48.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.74,
+                    47.0539
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "J E Corette",
+                "fuel_source": "Coal",
+                "orispl_code": 2187,
+                "operator": "P P & L Montana, LLC, Talen Montana, LLC",
+                "county": "Yellowstone",
+                "imgloc": "j_e_corette_(MT)",
+                "capacity": 172.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -108.4803,
+                    45.7747
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Clark",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 2322,
+                "operator": "NV Energy",
+                "county": "Clark",
+                "imgloc": "clark_(NV)",
+                "capacity": 887.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.0507,
+                    36.0875
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Reid Gardner",
+                "fuel_source": "Coal",
+                "orispl_code": 2324,
+                "operator": "NV Energy",
+                "county": "Clark",
+                "imgloc": "reid_gardner_(NV)",
+                "capacity": 681.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.6364,
+                    36.6531
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sunrise",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 2326,
+                "operator": "NV Energy",
+                "county": "Clark",
+                "imgloc": "sunrise_(NV)",
+                "capacity": 89.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.036,
+                    36.1384
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Fort Churchill",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 2330,
+                "operator": "Sierra Pacific Power Company",
+                "county": "Lyon",
+                "imgloc": "fort_churchill_(NV)",
+                "capacity": 234.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.1319,
+                    39.1281
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Tracy",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 2336,
+                "operator": "Sierra Pacific Power Company",
+                "county": "Storey",
+                "imgloc": "tracy_(NV)",
+                "capacity": 1126.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.525,
+                    39.5625
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Mohave",
+                "fuel_source": "Coal",
+                "orispl_code": 2341,
+                "operator": "Southern California Edison Company",
+                "county": "Clark",
+                "imgloc": "mohave_(NV)",
+                "capacity": 1653.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.5917,
+                    35.1458
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Four Corners Steam Elec Station",
+                "fuel_source": "Coal",
+                "orispl_code": 2442,
+                "operator": "Arizona Public Service Company",
+                "county": "San Juan",
+                "imgloc": "four_corners_steam_elec_station_(NM)",
+                "capacity": 2318.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -108.4814,
+                    36.69
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Rio Grande",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 2444,
+                "operator": "El Paso Electric Company",
+                "county": "Dona Ana",
+                "imgloc": "rio_grande_(NM)",
+                "capacity": 358.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -106.5472,
+                    31.8047
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Maddox",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 2446,
+                "operator": "Southwestern Public Service Company",
+                "county": "Lea",
+                "imgloc": "maddox_(NM)",
+                "capacity": 129.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -103.31,
+                    32.7131
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Reeves Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 2450,
+                "operator": "Public Service Company of New Mexico",
+                "county": "Bernalillo",
+                "imgloc": "reeves_generating_station_(NM)",
+                "capacity": 227.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -106.6019,
+                    35.1716
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "San Juan",
+                "fuel_source": "Coal",
+                "orispl_code": 2451,
+                "operator": "Public Service Company of New Mexico",
+                "county": "San Juan",
+                "imgloc": "san_juan_(NM)",
+                "capacity": 1910.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -108.4386,
+                    36.8006
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cunningham",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 2454,
+                "operator": "Southwestern Public Service Company",
+                "county": "Lea",
+                "imgloc": "cunningham_(NM)",
+                "capacity": 570.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -103.3533,
+                    32.7131
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Newman",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 3456,
+                "operator": "El Paso Electric Company",
+                "county": "El Paso",
+                "imgloc": "newman_(TX)",
+                "capacity": 878.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -106.4322,
+                    31.9858
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Carbon",
+                "fuel_source": "Coal",
+                "orispl_code": 3644,
+                "operator": "Pacificorp Energy Generation",
+                "county": "Carbon",
+                "imgloc": "carbon_(UT)",
+                "capacity": 199.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.8644,
+                    39.7272
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Gadsby",
+                "fuel_source": "",
+                "orispl_code": 3648,
+                "operator": "",
+                "county": "Salt Lake",
+                "imgloc": "gadsby_(UT)",
+                "capacity": 398.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.9289,
+                    40.7686
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Centralia",
+                "fuel_source": "Coal",
+                "orispl_code": 3845,
+                "operator": "TransAlta",
+                "county": "Lewis",
+                "imgloc": "centralia_(WA)",
+                "capacity": 1767.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.8578,
+                    46.7559
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Dave Johnston",
+                "fuel_source": "Coal",
+                "orispl_code": 4158,
+                "operator": "Pacificorp Energy Generation",
+                "county": "Converse",
+                "imgloc": "dave_johnston_(WY)",
+                "capacity": 876.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.7769,
+                    42.8378
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Naughton",
+                "fuel_source": "Coal",
+                "orispl_code": 4162,
+                "operator": "Pacificorp Energy Generation",
+                "county": "Lincoln",
+                "imgloc": "naughton_(WY)",
+                "capacity": 788.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.5986,
+                    41.7572
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Navajo Generating Station",
+                "fuel_source": "Coal",
+                "orispl_code": 4941,
+                "operator": "Salt River Project",
+                "county": "Coconino",
+                "imgloc": "navajo_generating_station_(AZ)",
+                "capacity": 2506.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.3886,
+                    36.9047
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Olive",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 6013,
+                "operator": "City of Burbank",
+                "county": "Los Angeles",
+                "imgloc": "olive_(CA)",
+                "capacity": 101.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.3147,
+                    34.1775
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Craig",
+                "fuel_source": "Coal",
+                "orispl_code": 6021,
+                "operator": "Tri-State Generation & Transmission",
+                "county": "Moffat",
+                "imgloc": "craig_(CO)",
+                "capacity": 1437.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -107.5912,
+                    40.4627
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Colstrip",
+                "fuel_source": "Coal",
+                "orispl_code": 6076,
+                "operator": "Talen Montana, LLC",
+                "county": "Rosebud",
+                "imgloc": "colstrip_(MT)",
+                "capacity": 2348.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -106.614,
+                    45.8831
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Lewis & Clark",
+                "fuel_source": "Coal",
+                "orispl_code": 6089,
+                "operator": "Montana Dakota Utilities Company",
+                "county": "Richland",
+                "imgloc": "lewis_&_clark_(MT)",
+                "capacity": 58.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.1569,
+                    47.6788
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Wyodak",
+                "fuel_source": "Coal",
+                "orispl_code": 6101,
+                "operator": "Pacificorp Energy Generation",
+                "county": "Campbell",
+                "imgloc": "wyodak_(WY)",
+                "capacity": 405.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.3847,
+                    44.2886
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Boardman",
+                "fuel_source": "Coal",
+                "orispl_code": 6106,
+                "operator": "Portland General Electric Company",
+                "county": "Morrow",
+                "imgloc": "boardman_(OR)",
+                "capacity": 644.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.8056,
+                    45.6933
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Fort St. Vrain",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 6112,
+                "operator": "Public Service Company of Colorado",
+                "county": "Weld",
+                "imgloc": "fort_st._vrain_(CO)",
+                "capacity": 1539.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.8742,
+                    40.2461
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Hunter",
+                "fuel_source": "Coal",
+                "orispl_code": 6165,
+                "operator": "Pacificorp Energy Generation",
+                "county": "Emery",
+                "imgloc": "hunter_(UT)",
+                "capacity": 1502.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.0289,
+                    39.1747
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Coronado Generating Station",
+                "fuel_source": "Coal",
+                "orispl_code": 6177,
+                "operator": "Salt River Project",
+                "county": "Apache",
+                "imgloc": "coronado_generating_station_(AZ)",
+                "capacity": 912.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -109.2717,
+                    34.5778
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Laramie River",
+                "fuel_source": "Coal",
+                "orispl_code": 6204,
+                "operator": "Basin Electric Power Cooperative",
+                "county": "Platte",
+                "imgloc": "laramie_river_(WY)",
+                "capacity": 1889.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.8828,
+                    42.1103
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Pawnee",
+                "fuel_source": "Coal",
+                "orispl_code": 6248,
+                "operator": "Public Service Company of Colorado",
+                "county": "Morgan",
+                "imgloc": "pawnee_(CO)",
+                "capacity": 561.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -103.6803,
+                    40.2217
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Intermountain",
+                "fuel_source": "Coal",
+                "orispl_code": 6481,
+                "operator": "Intermountain Power Service Corporation",
+                "county": "Millard",
+                "imgloc": "intermountain_(UT)",
+                "capacity": 1965.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.5811,
+                    39.5035
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Rawhide Energy Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 6761,
+                "operator": "Platte River Power Authority",
+                "county": "Larimer",
+                "imgloc": "rawhide_energy_station_(CO)",
+                "capacity": 779.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.0206,
+                    40.8611
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Harry Allen",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7082,
+                "operator": "NV Energy",
+                "county": "Clark",
+                "imgloc": "harry_allen_(NV)",
+                "capacity": 715.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.9,
+                    36.425
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Woodland Generation Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7266,
+                "operator": "Modesto Irrigation District",
+                "county": "Stanislaus",
+                "imgloc": "woodland_generation_station_(CA)",
+                "capacity": 136.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.0172,
+                    37.6528
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Redding Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7307,
+                "operator": "Redding Electric Utility",
+                "county": "Shasta",
+                "imgloc": "redding_power_plant_(CA)",
+                "capacity": 182.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.4253,
+                    40.5083
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Almond Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7315,
+                "operator": "Turlock Irrigation District",
+                "county": "Stanislaus",
+                "imgloc": "almond_power_plant_(CA)",
+                "capacity": 216.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.9854,
+                    37.5739
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Coyote Springs",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7350,
+                "operator": "Portland General Electric Company",
+                "county": "Morrow",
+                "imgloc": "coyote_springs_(OR)",
+                "capacity": 584.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.6744,
+                    45.8486
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "NCPA Combustion Turbine Project #2",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7449,
+                "operator": "Northern California Power Agency",
+                "county": "San Joaquin",
+                "imgloc": "ncpa_combustion_turbine_project_#2_(CA)",
+                "capacity": 53.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3871,
+                    38.088
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Rathdrum Combustion Turbine Project",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7456,
+                "operator": "Avista Corporation",
+                "county": "Kootenai",
+                "imgloc": "rathdrum_combustion_turbine_project_(ID)",
+                "capacity": 187.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.869,
+                    47.8034
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Neil Simpson II",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7504,
+                "operator": "Black Hills Power, Inc",
+                "county": "Campbell",
+                "imgloc": "neil_simpson_ii_(WY)",
+                "capacity": 141.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.3841,
+                    44.2853
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Carson Cogeneration",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 7527,
+                "operator": "Carson Energy Group",
+                "county": "Sacramento",
+                "imgloc": "carson_cogeneration_(CA)",
+                "capacity": 403.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4614,
+                    38.4461
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "SCA Cogen II",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7551,
+                "operator": "Carson Energy Group",
+                "county": "Sacramento",
+                "imgloc": "sca_cogen_ii_(CA)",
+                "capacity": 184.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.399,
+                    38.5306
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sacramento Power Authority Cogen",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7552,
+                "operator": "EthosEnergy Power Plant Services, LLC",
+                "county": "Sacramento",
+                "imgloc": "sacramento_power_authority_cogen_(CA)",
+                "capacity": 204.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4735,
+                    38.511
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "River Road",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 7605,
+                "operator": "General Electric Contractual Services",
+                "county": "Clark",
+                "imgloc": "river_road_(WA)",
+                "capacity": 273.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.7231,
+                    45.65
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Anaheim Combustion Turbine",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7693,
+                "operator": "City of Anaheim",
+                "county": "Orange",
+                "imgloc": "anaheim_combustion_turbine_(CA)",
+                "capacity": 52.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.8561,
+                    33.8539
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bonanza",
+                "fuel_source": "Coal",
+                "orispl_code": 7790,
+                "operator": "Deseret Generation & Transmission",
+                "county": "Uintah",
+                "imgloc": "bonanza_(UT)",
+                "capacity": 507.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -109.2844,
+                    40.0864
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Encogen Generating Station",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 7870,
+                "operator": "Puget Sound Energy, Inc.",
+                "county": "Whatcom",
+                "imgloc": "encogen_generating_station_(WA)",
+                "capacity": 137.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.486,
+                    48.746
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Finley Combustion Turbine",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 7945,
+                "operator": "Benton Public Utilities District",
+                "county": "Benton",
+                "imgloc": "finley_combustion_turbine_(WA)",
+                "capacity": 31.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.0094,
+                    46.1572
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Evander Andrews Power Complex",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7953,
+                "operator": "Idaho Power Company",
+                "county": "Elmore",
+                "imgloc": "evander_andrews_power_complex_(ID)",
+                "capacity": 311.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.7328,
+                    43.1794
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Lordsburg Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7967,
+                "operator": "Public Service Company of New Mexico",
+                "county": "Hidalgo",
+                "imgloc": "lordsburg_generating_station_(NM)",
+                "capacity": 87.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -108.6975,
+                    32.3494
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Pyramid Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7975,
+                "operator": "Tri-State Generation & Transmission",
+                "county": "Hidalgo",
+                "imgloc": "pyramid_generating_station_(NM)",
+                "capacity": 172.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -108.5494,
+                    32.2363
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Lake",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 7987,
+                "operator": "City of Burbank",
+                "county": "Los Angeles",
+                "imgloc": "lake_(CA)",
+                "capacity": 49.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.3147,
+                    34.1775
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Grays Harbor Energy Center",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 7999,
+                "operator": "Grays Harbor Energy, LLC",
+                "county": "Grays Harbor",
+                "imgloc": "grays_harbor_energy_center_(WA)",
+                "capacity": 715.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -123.48,
+                    46.9688
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Jim Bridger",
+                "fuel_source": "Coal",
+                "orispl_code": 8066,
+                "operator": "Pacificorp Energy Generation",
+                "county": "Sweetwater",
+                "imgloc": "jim_bridger_(WY)",
+                "capacity": 2316.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -108.7875,
+                    41.7378
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Santan",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 8068,
+                "operator": "Salt River Project",
+                "county": "Maricopa",
+                "imgloc": "santan_(AZ)",
+                "capacity": 1011.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.751,
+                    33.3333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Huntington",
+                "fuel_source": "Coal",
+                "orispl_code": 8069,
+                "operator": "Pacificorp Energy Generation",
+                "county": "Emery",
+                "imgloc": "huntington_(UT)",
+                "capacity": 1019.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.0781,
+                    39.3792
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Ray D Nixon",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 8219,
+                "operator": "Colorado Springs Utilities",
+                "county": "El Paso",
+                "imgloc": "ray_d_nixon_(CO)",
+                "capacity": 300.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.7056,
+                    38.6306
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Springerville Generating Station",
+                "fuel_source": "Coal",
+                "orispl_code": 8223,
+                "operator": "Tucson Electric Power Company",
+                "county": "Apache",
+                "imgloc": "springerville_generating_station_(AZ)",
+                "capacity": 1821.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -109.1636,
+                    34.3186
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "North Valmy",
+                "fuel_source": "Coal",
+                "orispl_code": 8224,
+                "operator": "Sierra Pacific Power Company",
+                "county": "Humboldt",
+                "imgloc": "north_valmy_(NV)",
+                "capacity": 1604.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.1542,
+                    40.8831
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Calpine Gilroy Cogen, LP",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 10034,
+                "operator": "Calpine Corporation",
+                "county": "Santa Clara",
+                "imgloc": "calpine_gilroy_cogen,_lp_(CA)",
+                "capacity": 303.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.5367,
+                    37.0001
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Fresno Cogeneration Partners, LP",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 10156,
+                "operator": "Wellhead Electric Company, Inc",
+                "county": "Fresno",
+                "imgloc": "fresno_cogeneration_partners,_lp_(CA)",
+                "capacity": 49.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.1,
+                    36.6183
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Carson Cogeneration Company",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 10169,
+                "operator": "General Electric Contractual Services",
+                "county": "Los Angeles",
+                "imgloc": "carson_cogeneration_company_(CA)",
+                "capacity": 56.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.2491,
+                    33.8759
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Gilroy Energy Center, LLC for King City",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 10294,
+                "operator": "Gilroy Energy Center, LLC",
+                "county": "Monterey",
+                "imgloc": "gilroy_energy_center,_llc_for_king_city_(CA)",
+                "capacity": 49.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.1278,
+                    36.225
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Yuba City Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 10349,
+                "operator": "Calpine Corporation",
+                "county": "Sutter",
+                "imgloc": "yuba_city_energy_center_(CA)",
+                "capacity": 63.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.6397,
+                    39.1365
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Greenleaf One",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 10350,
+                "operator": "ProEnergy Services LLC",
+                "county": "Sutter",
+                "imgloc": "greenleaf_one_(CA)",
+                "capacity": 58.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.6942,
+                    39.0536
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Kingsburg Cogen Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 10405,
+                "operator": "PurEnergy Operating Services, LLC",
+                "county": "Fresno",
+                "imgloc": "kingsburg_cogen_facility_(CA)",
+                "capacity": 25.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.578,
+                    36.547
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bear Mountain Limited",
+                "fuel_source": "",
+                "orispl_code": 10649,
+                "operator": "WCAC Operating Company",
+                "county": "Kern",
+                "imgloc": "bear_mountain_limited_(CA)",
+                "capacity": NaN
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.9266,
+                    35.4192
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Badger Creek Limited",
+                "fuel_source": "",
+                "orispl_code": 10650,
+                "operator": "WCAC Operating Company",
+                "county": "Kern",
+                "imgloc": "badger_creek_limited_(CA)",
+                "capacity": NaN
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.0299,
+                    35.4837
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Brush Power Projects",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 10682,
+                "operator": "Colorado Energy Management, LLC",
+                "county": "Morgan",
+                "imgloc": "brush_power_projects_(CO)",
+                "capacity": 210.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -103.631,
+                    40.2415
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Las Vegas Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 10761,
+                "operator": "Nevada Power Company dba NV Energy",
+                "county": "Clark",
+                "imgloc": "las_vegas_generating_station_(NV)",
+                "capacity": 236.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.1235,
+                    36.2317
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Colstrip Energy Limited Partnership",
+                "fuel_source": "",
+                "orispl_code": 10784,
+                "operator": "Rosebud Operating Services, Inc.",
+                "county": "Rosebud",
+                "imgloc": "colstrip_energy_limited_partnership_(MT)",
+                "capacity": NaN
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -106.6554,
+                    45.9753
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "North Island",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 10812,
+                "operator": "Applied Energy LLC",
+                "county": "San Diego",
+                "imgloc": "north_island_(CA)",
+                "capacity": NaN
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.189,
+                    32.705
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Coalinga Cogeneration Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 50131,
+                "operator": "Coalinga Cogeneration Company",
+                "county": "Fresno",
+                "imgloc": "coalinga_cogeneration_facility_(CA)",
+                "capacity": 43.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.3885,
+                    36.1807
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "J M Shafer",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 50707,
+                "operator": "Tri-State Generation & Transmission",
+                "county": "Weld",
+                "imgloc": "j_m_shafer_(CO)",
+                "capacity": 185.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.7745,
+                    40.0979
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sargent Canyon Cogen Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 50864,
+                "operator": "Sargent Canyon Cogeneration Company",
+                "county": "Monterey",
+                "imgloc": "sargent_canyon_cogen_facility_(CA)",
+                "capacity": 42.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.8405,
+                    35.9359
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Salinas River Cogeneration Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 50865,
+                "operator": "Salinas River Cogeneration Company",
+                "county": "Monterey",
+                "imgloc": "salinas_river_cogeneration_facility_(CA)",
+                "capacity": 53.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.8679,
+                    35.9515
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Yellowstone Energy Limited Partnership",
+                "fuel_source": "",
+                "orispl_code": 50931,
+                "operator": "Rosebud Operating Services, Inc.",
+                "county": "Yellowstone",
+                "imgloc": "yellowstone_energy_limited_partnership_(MT)",
+                "capacity": NaN
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -108.4278,
+                    45.8117
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sunnyside Cogeneration Associates",
+                "fuel_source": "Coal",
+                "orispl_code": 50951,
+                "operator": "Sunnyside Cogeneration Associates",
+                "county": "Carbon",
+                "imgloc": "sunnyside_cogeneration_associates_(UT)",
+                "capacity": 61.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.3917,
+                    39.5472
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "DTE Stockton",
+                "fuel_source": "Wood",
+                "orispl_code": 54238,
+                "operator": "DTE Energy Services",
+                "county": "San Joaquin",
+                "imgloc": "dte_stockton_(CA)",
+                "capacity": 54.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3273,
+                    37.9416
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sumas Generating Station",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 54476,
+                "operator": "Puget Sound Energy, Inc.",
+                "county": "Whatcom",
+                "imgloc": "sumas_generating_station_(WA)",
+                "capacity": 100.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.2733,
+                    48.9905
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Ferndale Generating Station",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 54537,
+                "operator": "NAES Corporation",
+                "county": "Whatcom",
+                "imgloc": "ferndale_generating_station_(WA)",
+                "capacity": 195.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.6853,
+                    48.8283
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Yuma Cogeneration Associates",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 54694,
+                "operator": "Falcon Power Operating Company",
+                "county": "Yuma",
+                "imgloc": "yuma_cogeneration_associates_(AZ)",
+                "capacity": 59.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.6542,
+                    32.7286
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Goal Line",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 54749,
+                "operator": "PurEnergy Operating Services, LLC",
+                "county": "San Diego",
+                "imgloc": "goal_line_(CA)",
+                "capacity": 52.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.0995,
+                    33.1185
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Hermiston",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 54761,
+                "operator": "Perennial Power",
+                "county": "Umatilla",
+                "imgloc": "hermiston_(OR)",
+                "capacity": 499.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.37,
+                    45.8042
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Live Oak Limited",
+                "fuel_source": "",
+                "orispl_code": 54768,
+                "operator": "WCAC Operating Company",
+                "county": "Kern",
+                "imgloc": "live_oak_limited_(CA)",
+                "capacity": NaN
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.0298,
+                    35.4837
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Milagro Cogeneration and Gas Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 54814,
+                "operator": "Williams Four Corners LLC",
+                "county": "San Juan",
+                "imgloc": "milagro_cogeneration_and_gas_plant_(NM)",
+                "capacity": 182.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -107.9417,
+                    36.7367
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sun Peak Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 54854,
+                "operator": "Nevada Power Company dba NV Energy",
+                "county": "Clark",
+                "imgloc": "sun_peak_generating_station_(NV)",
+                "capacity": 222.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.034,
+                    36.1392
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Rio Bravo Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55039,
+                "operator": "Public Service Company of New Mexico",
+                "county": "Bernalillo",
+                "imgloc": "rio_bravo_generating_station_(NM)",
+                "capacity": 159.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -106.644,
+                    35.026
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Desert Star Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55077,
+                "operator": "San Diego Gas and Electric Company",
+                "county": "Clark",
+                "imgloc": "desert_star_energy_center_(NV)",
+                "capacity": 520.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.9928,
+                    35.7867
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Klamath Cogeneration Project",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55103,
+                "operator": "Pacific Klamath Energy",
+                "county": "Klamath",
+                "imgloc": "klamath_cogeneration_project_(OR)",
+                "capacity": 730.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.8112,
+                    42.174
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Calpine Sutter Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55112,
+                "operator": "Calpine Corporation",
+                "county": "Sutter",
+                "imgloc": "calpine_sutter_energy_center_(CA)",
+                "capacity": 1097.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.6939,
+                    39.0531
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Griffith Energy Project",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55124,
+                "operator": "Griffith Energy, LLC",
+                "county": "Mohave",
+                "imgloc": "griffith_energy_project_(AZ)",
+                "capacity": 761.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.1334,
+                    35.0517
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Manchief Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55127,
+                "operator": "Colorado Energy Management, LLC",
+                "county": "Morgan",
+                "imgloc": "manchief_generating_station_(CO)",
+                "capacity": 330.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -103.679,
+                    40.2201
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Desert Basin Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55129,
+                "operator": "Salt River Project",
+                "county": "Pinal",
+                "imgloc": "desert_basin_generating_station_(AZ)",
+                "capacity": 660.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.7889,
+                    32.9042
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "La Paloma Generating Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55151,
+                "operator": "La Paloma Generating Company, LLC",
+                "county": "Kern",
+                "imgloc": "la_paloma_generating_plant_(CA)",
+                "capacity": 1173.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.5919,
+                    35.2956
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "South Point Energy Center, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55177,
+                "operator": "Calpine Corporation",
+                "county": "Mohave",
+                "imgloc": "south_point_energy_center,_llc_(AZ)",
+                "capacity": 590.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.5317,
+                    34.8678
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Rathdrum Power, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55179,
+                "operator": "Rathdrum Operating Services, Inc.",
+                "county": "Kootenai",
+                "imgloc": "rathdrum_power,_llc_(ID)",
+                "capacity": 293.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.9214,
+                    47.7861
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sunrise Power Company",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55182,
+                "operator": "Sunrise Power Company, LLC",
+                "county": "Kern",
+                "imgloc": "sunrise_power_company_(CA)",
+                "capacity": 620.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.585,
+                    35.2097
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Arapahoe Combustion Turbine Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55200,
+                "operator": "Southwest Generation Colorado, LLC",
+                "county": "Denver",
+                "imgloc": "arapahoe_combustion_turbine_facility_(CO)",
+                "capacity": 145.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.0018,
+                    39.6692
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Valmont Combustion Turbine Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55207,
+                "operator": "SWG Colorado, LLC, Southwest Generation Colorado, LLC",
+                "county": "Boulder",
+                "imgloc": "valmont_combustion_turbine_facility_(CO)",
+                "capacity": 93.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.202,
+                    40.0197
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Afton Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55210,
+                "operator": "Public Service Company of New Mexico",
+                "county": "Dona Ana",
+                "imgloc": "afton_generating_station_(NM)",
+                "capacity": 249.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -106.848,
+                    32.1134
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Los Medanos Energy Center, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55217,
+                "operator": "Los Medanos Energy Center, LLC",
+                "county": "Contra Costa",
+                "imgloc": "los_medanos_energy_center,_llc_(CA)",
+                "capacity": 628.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.8708,
+                    38.03
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Arlington Valley Energy Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55282,
+                "operator": "Arlington Valley, LLC",
+                "county": "Maricopa",
+                "imgloc": "arlington_valley_energy_facility_(AZ)",
+                "capacity": 603.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.8897,
+                    33.3417
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Front Range Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55283,
+                "operator": "Colorado Springs Utilities",
+                "county": "El Paso",
+                "imgloc": "front_range_power_plant_(CO)",
+                "capacity": 544.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.7069,
+                    38.6281
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Blythe Energy",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55295,
+                "operator": "Blythe Energy Inc.",
+                "county": "Riverside",
+                "imgloc": "blythe_energy_(CA)",
+                "capacity": 390.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.6865,
+                    33.6157
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Gila River Power Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55306,
+                "operator": "EthosEnergy Power Plant Services, LLC",
+                "county": "Maricopa",
+                "imgloc": "gila_river_power_station_(AZ)",
+                "capacity": 2526.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.694,
+                    32.9761
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Chuck Lenzie Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55322,
+                "operator": "NV Energy",
+                "county": "Clark",
+                "imgloc": "chuck_lenzie_generating_station_(NV)",
+                "capacity": 1241.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.9228,
+                    36.3853
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Hermiston Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55328,
+                "operator": "Hermiston Power Partnership",
+                "county": "Umatilla",
+                "imgloc": "hermiston_power_plant_(OR)",
+                "capacity": 726.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.3117,
+                    45.7931
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Delta Energy Center, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55333,
+                "operator": "Delta Energy Center, LLC",
+                "county": "Contra Costa",
+                "imgloc": "delta_energy_center,_llc_(CA)",
+                "capacity": 959.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.8439,
+                    38.0167
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Luna Energy Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55343,
+                "operator": "Public Service Company of New Mexico",
+                "county": "Luna",
+                "imgloc": "luna_energy_facility_(NM)",
+                "capacity": 594.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -107.78,
+                    32.2983
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Otay Mesa Energy Center, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55345,
+                "operator": "Otay Mesa Energy Center, LLC",
+                "county": "San Diego",
+                "imgloc": "otay_mesa_energy_center,_llc_(CA)",
+                "capacity": 626.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.9153,
+                    32.5733
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "New Harquahala Generating Company, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55372,
+                "operator": "North American Energy Services",
+                "county": "Maricopa",
+                "imgloc": "new_harquahala_generating_company,_llc_(AZ)",
+                "capacity": 772.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -113.1133,
+                    33.4759
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Metcalf Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55393,
+                "operator": "Metcalf Energy Center, LLC",
+                "county": "Santa Clara",
+                "imgloc": "metcalf_energy_center_(CA)",
+                "capacity": 618.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.7439,
+                    37.2169
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Elk Hills Power",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55400,
+                "operator": "Elk Hills Power, LLC",
+                "county": "Kern",
+                "imgloc": "elk_hills_power_(CA)",
+                "capacity": 576.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.4699,
+                    35.2802
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Fountain Valley Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55453,
+                "operator": "Southwest Generation Operating Co.",
+                "county": "El Paso",
+                "imgloc": "fountain_valley_power_plant_(CO)",
+                "capacity": 271.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.6875,
+                    38.5569
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Redhawk Generating Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55455,
+                "operator": "Arizona Public Service Company",
+                "county": "Maricopa",
+                "imgloc": "redhawk_generating_facility_(AZ)",
+                "capacity": 1136.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.84,
+                    33.33
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Neil Simpson II (CT2)",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55477,
+                "operator": "Black Hills Power, Inc",
+                "county": "Campbell",
+                "imgloc": "neil_simpson_ii_(ct2)_(WY)",
+                "capacity": 40.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.3841,
+                    44.2853
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Wygen I",
+                "fuel_source": "Coal",
+                "orispl_code": 55479,
+                "operator": "Black Hills Power, Inc",
+                "county": "Campbell",
+                "imgloc": "wygen_i_(WY)",
+                "capacity": 99.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.3843,
+                    44.2862
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Mesquite Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55481,
+                "operator": "Mesquite Power Operations, LLC",
+                "county": "Maricopa",
+                "imgloc": "mesquite_generating_station_(AZ)",
+                "capacity": 1353.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.8638,
+                    33.3451
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Goldendale Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55482,
+                "operator": "Puget Sound Energy, Inc.",
+                "county": "Klickitat",
+                "imgloc": "goldendale_generating_station_(WA)",
+                "capacity": 320.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.833,
+                    45.8114
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Tri-Center Naniwa Energy",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55494,
+                "operator": "Tri-Center Naniwa Energy",
+                "county": "Storey",
+                "imgloc": "tri-center_naniwa_energy_(NV)",
+                "capacity": 323.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.5175,
+                    39.5617
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "CalPeak Power - Vaca Dixon",
+                "fuel_source": "",
+                "orispl_code": 55499,
+                "operator": "CalPeak Power - Vaca Dixon, LLC, CalPeak Power, LLC",
+                "county": "Solano",
+                "imgloc": "calpeak_power_-_vaca_dixon_(CA)",
+                "capacity": 55.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.9239,
+                    38.3989
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Limon Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55504,
+                "operator": "Tri-State G & T Association, Inc.",
+                "county": "Lincoln",
+                "imgloc": "limon_generating_station_(CO)",
+                "capacity": 165.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -103.7005,
+                    39.2038
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Frank Knutson Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55505,
+                "operator": "Tri-State G & T Association, Inc.",
+                "county": "Adams",
+                "imgloc": "frank_knutson_station_(CO)",
+                "capacity": 161.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.6817,
+                    39.9414
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "CalPeak Power - Panoche",
+                "fuel_source": "",
+                "orispl_code": 55508,
+                "operator": "CalPeak Power - Panoche, LLC, CalPeak Power, LLC",
+                "county": "Fresno",
+                "imgloc": "calpeak_power_-_panoche_(CA)",
+                "capacity": 60.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.5797,
+                    36.6531
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "CalPeak Power - Border",
+                "fuel_source": "",
+                "orispl_code": 55510,
+                "operator": "CalPeak Power - Border, LLC, CalPeak Power, LLC",
+                "county": "San Diego",
+                "imgloc": "calpeak_power_-_border_(CA)",
+                "capacity": 53.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.9433,
+                    32.5622
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cuyamaca Peak Energy",
+                "fuel_source": "",
+                "orispl_code": 55512,
+                "operator": "San Diego Gas and Electric Company",
+                "county": "San Diego",
+                "imgloc": "cuyamaca_peak_energy_(CA)",
+                "capacity": 53.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.972,
+                    32.7971
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "CalPeak Power - Enterprise",
+                "fuel_source": "",
+                "orispl_code": 55513,
+                "operator": "CalPeak Power - Enterprise, LLC, CalPeak Power, LLC",
+                "county": "San Diego",
+                "imgloc": "calpeak_power_-_enterprise_(CA)",
+                "capacity": 51.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.117,
+                    33.1221
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Apex Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55514,
+                "operator": "Las Vegas Power Company, LLC, Los Angeles Dept of Water and Power",
+                "county": "Clark",
+                "imgloc": "apex_generating_station_(NV)",
+                "capacity": 575.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.9622,
+                    36.4178
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "High Desert Power Project",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55518,
+                "operator": "High Desert Power Project, LLC",
+                "county": "San Bernardino",
+                "imgloc": "high_desert_power_project_(CA)",
+                "capacity": 531.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.3647,
+                    34.5953
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sundance Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55522,
+                "operator": "Arizona Public Service Company",
+                "county": "Pinal",
+                "imgloc": "sundance_power_plant_(AZ)",
+                "capacity": 500.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.5899,
+                    32.9285
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Escondido Energy Center, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55538,
+                "operator": "Escondido Energy Center, LLC",
+                "county": "San Diego",
+                "imgloc": "escondido_energy_center,_llc_(CA)",
+                "capacity": 90.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.1172,
+                    33.1261
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Chula Vista Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55540,
+                "operator": "Wellhead Electric Company, Inc",
+                "county": "San Diego",
+                "imgloc": "chula_vista_energy_center_(CA)",
+                "capacity": 58.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.0586,
+                    32.5914
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Indigo Generation Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55541,
+                "operator": "Wildflower Energy, LP",
+                "county": "Riverside",
+                "imgloc": "indigo_generation_facility_(CA)",
+                "capacity": 150.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.5533,
+                    33.9114
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Larkspur Energy Faciity",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55542,
+                "operator": "Wildflower Energy, LP",
+                "county": "San Diego",
+                "imgloc": "larkspur_energy_faciity_(CA)",
+                "capacity": 100.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.9444,
+                    32.5672
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Klamath Generation Peakers",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55544,
+                "operator": "Pacific Klamath Energy",
+                "county": "Klamath",
+                "imgloc": "klamath_generation_peakers_(OR)",
+                "capacity": 156.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.8144,
+                    42.1727
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "West Valley Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55622,
+                "operator": "Utah Municipal Power Agency",
+                "county": "Salt Lake",
+                "imgloc": "west_valley_power_plant_(UT)",
+                "capacity": 276.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.031,
+                    40.6663
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Creed Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55625,
+                "operator": "Creed Energy Center, LLC",
+                "county": "Solano",
+                "imgloc": "creed_energy_center_(CA)",
+                "capacity": 50.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.8551,
+                    38.2419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Lambie Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55626,
+                "operator": "Gilroy Energy Center, LLC",
+                "county": "Solano",
+                "imgloc": "lambie_energy_center_(CA)",
+                "capacity": 50.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.8683,
+                    38.2216
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Goose Haven Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55627,
+                "operator": "Goose Haven Energy Center, LLC",
+                "county": "Solano",
+                "imgloc": "goose_haven_energy_center_(CA)",
+                "capacity": 50.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.844,
+                    38.2271
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Blue Spruce Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55645,
+                "operator": "Public Service Company of Colorado",
+                "county": "Adams",
+                "imgloc": "blue_spruce_energy_center_(CO)",
+                "capacity": 323.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.68,
+                    39.7436
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Pastoria Energy Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55656,
+                "operator": "Pastoria Energy Facility, LLC",
+                "county": "Kern",
+                "imgloc": "pastoria_energy_facility_(CA)",
+                "capacity": 823.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.844,
+                    34.9556
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Chehalis Generation Facility",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 55662,
+                "operator": "Pacificorp Energy Generation",
+                "county": "Lewis",
+                "imgloc": "chehalis_generation_facility_(WA)",
+                "capacity": 591.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.9145,
+                    46.6226
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Boardman Power Holdings LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55683,
+                "operator": "Boardman Power Holdings LLC, Morrow Power, LLC",
+                "county": "Morrow",
+                "imgloc": "boardman_power_holdings_llc_(OR)",
+                "capacity": 25.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.6536,
+                    45.8464
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Walter M. Higgins III Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55687,
+                "operator": "NV Energy",
+                "county": "Clark",
+                "imgloc": "walter_m._higgins_iii_generating_station_(NV)",
+                "capacity": 619.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.3561,
+                    35.6139
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Hanford Energy Park Peaker",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55698,
+                "operator": "AltaGas San Joaquin Energy Inc.",
+                "county": "Kings",
+                "imgloc": "hanford_energy_park_peaker_(CA)",
+                "capacity": 102.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.6469,
+                    36.2689
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Mint Farm Generating Station",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 55700,
+                "operator": "Puget Sound Energy, Inc.",
+                "county": "Cowlitz",
+                "imgloc": "mint_farm_generating_station_(WA)",
+                "capacity": 328.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.9842,
+                    46.1403
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Pierce Power Station",
+                "fuel_source": "",
+                "orispl_code": 55704,
+                "operator": "",
+                "county": NaN,
+                "imgloc": "pierce_power_station_(WA)",
+                "capacity": NaN
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bennett Mountain Power Project",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55733,
+                "operator": "Idaho Power Company",
+                "county": "Elmore",
+                "imgloc": "bennett_mountain_power_project_(ID)",
+                "capacity": 201.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.6671,
+                    43.147
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Los Esteros Critical Energy Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55748,
+                "operator": "Los Esteros Critical Energy Fac, LLC",
+                "county": "Santa Clara",
+                "imgloc": "los_esteros_critical_energy_facility_(CA)",
+                "capacity": 324.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.9319,
+                    37.425
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Hardin Generating Station",
+                "fuel_source": "Coal",
+                "orispl_code": 55749,
+                "operator": "Colorado Energy Management, LLC",
+                "county": "Big Horn",
+                "imgloc": "hardin_generating_station_(MT)",
+                "capacity": 120.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -107.6,
+                    45.7578
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Valencia Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55802,
+                "operator": "Valencia Power, LLC",
+                "county": "Valencia",
+                "imgloc": "valencia_power_plant_(NM)",
+                "capacity": 168.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -106.732,
+                    34.6063
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Henrietta Peaker Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55807,
+                "operator": "AltaGas San Joaquin Energy Inc.",
+                "county": "Kings",
+                "imgloc": "henrietta_peaker_plant_(CA)",
+                "capacity": 104.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.9044,
+                    36.2397
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Gilroy Energy Center, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55810,
+                "operator": "Gilroy Energy Center, LLC",
+                "county": "Santa Clara",
+                "imgloc": "gilroy_energy_center,_llc_(CA)",
+                "capacity": 150.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.5363,
+                    36.999
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Frederickson Power LP",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55818,
+                "operator": "Atlantic Power Services, LLC",
+                "county": "Pierce",
+                "imgloc": "frederickson_power_lp_(WA)",
+                "capacity": 283.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.3644,
+                    47.0864
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Rocky Mountain Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55835,
+                "operator": "Public Service Company of Colorado",
+                "county": "Weld",
+                "imgloc": "rocky_mountain_energy_center_(CO)",
+                "capacity": 803.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.5947,
+                    40.0911
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Silverhawk",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55841,
+                "operator": "NV Energy",
+                "county": "Clark",
+                "imgloc": "silverhawk_(NV)",
+                "capacity": 582.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.9603,
+                    36.4078
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Feather River Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55847,
+                "operator": "Calpine Corporation",
+                "county": "Sutter",
+                "imgloc": "feather_river_energy_center_(CA)",
+                "capacity": 60.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.6133,
+                    39.1088
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Inland Empire Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55853,
+                "operator": "Inland Empire Energy Center, LLC",
+                "county": "Riverside",
+                "imgloc": "inland_empire_energy_center_(CA)",
+                "capacity": 786.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.1701,
+                    33.7393
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Wolfskill Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55855,
+                "operator": "Gilroy Energy Center, LLC",
+                "county": "Solano",
+                "imgloc": "wolfskill_energy_center_(CA)",
+                "capacity": 50.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.076,
+                    38.2282
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Desert Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55858,
+                "operator": "Desert Power, LP",
+                "county": "Tooele",
+                "imgloc": "desert_power_plant_(UT)",
+                "capacity": 73.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.7342,
+                    40.9131
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Wellhead Power Gates, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55875,
+                "operator": "Wellhead Electric Company, Inc",
+                "county": "Fresno",
+                "imgloc": "wellhead_power_gates,_llc_(CA)",
+                "capacity": 51.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.1481,
+                    36.1522
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Tracy Combined Cycle Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55933,
+                "operator": "AltaGas San Joaquin Energy Inc.",
+                "county": "San Joaquin",
+                "imgloc": "tracy_combined_cycle_power_plant_(CA)",
+                "capacity": 417.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4906,
+                    37.7107
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Agua Mansa Power",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55951,
+                "operator": "E I Colton, LLC",
+                "county": "San Bernardino",
+                "imgloc": "agua_mansa_power_(CA)",
+                "capacity": 49.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.3603,
+                    34.0414
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Riverview Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55963,
+                "operator": "Calpine Operating Services Company, Inc.",
+                "county": "Contra Costa",
+                "imgloc": "riverview_energy_center_(CA)",
+                "capacity": 50.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.7901,
+                    38.0145
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cosumnes Power Plant",
+                "fuel_source": "Other Gas",
+                "orispl_code": 55970,
+                "operator": "EthosEnergy Power Plant Services, LLC",
+                "county": "Sacramento",
+                "imgloc": "cosumnes_power_plant_(CA)",
+                "capacity": 548.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.1239,
+                    38.3383
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bluffview Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55977,
+                "operator": "City of Farmington Electric Utility System",
+                "county": "San Juan",
+                "imgloc": "bluffview_power_plant_(NM)",
+                "capacity": 60.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -108.2153,
+                    36.7164
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Palomar Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 55985,
+                "operator": "San Diego Gas and Electric Company",
+                "county": "San Diego",
+                "imgloc": "palomar_energy_center_(CA)",
+                "capacity": 589.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.118,
+                    33.1192
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Donald Von Raesfeld",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56026,
+                "operator": "City of Santa Clara",
+                "county": "Santa Clara",
+                "imgloc": "donald_von_raesfeld_(CA)",
+                "capacity": 153.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.9508,
+                    37.3767
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Malburg Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56041,
+                "operator": "Colorado Energy Management, LLC",
+                "county": "Los Angeles",
+                "imgloc": "malburg_generating_station_(CA)",
+                "capacity": 170.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.2219,
+                    33.9983
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Magnolia",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56046,
+                "operator": "City of Burbank",
+                "county": "Los Angeles",
+                "imgloc": "magnolia_(CA)",
+                "capacity": 316.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.3153,
+                    34.1788
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Walnut Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56078,
+                "operator": "Turlock Irrigation District",
+                "county": "Stanislaus",
+                "imgloc": "walnut_energy_center_(CA)",
+                "capacity": 287.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.8956,
+                    37.4878
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Currant Creek Power Project",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56102,
+                "operator": "Pacificorp Energy Generation",
+                "county": "Juab",
+                "imgloc": "currant_creek_power_project_(UT)",
+                "capacity": 715.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.894,
+                    39.8223
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Ripon Generation Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56135,
+                "operator": "Modesto Irrigation District",
+                "county": "Stanislaus",
+                "imgloc": "ripon_generation_station_(CA)",
+                "capacity": 107.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.116,
+                    37.7315
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Riverside Energy Resource Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56143,
+                "operator": "City of Riverside, CA",
+                "county": "Riverside",
+                "imgloc": "riverside_energy_resource_center_(CA)",
+                "capacity": 207.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.4528,
+                    33.9636
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Nebo Power Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56177,
+                "operator": "Utah Associated Municipal Power Systems",
+                "county": "Utah",
+                "imgloc": "nebo_power_station_(UT)",
+                "capacity": 153.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.7294,
+                    40.0614
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "TS Power Plant",
+                "fuel_source": "Coal",
+                "orispl_code": 56224,
+                "operator": "Newmont Nevada Energy Investment LLC",
+                "county": "Eureka",
+                "imgloc": "ts_power_plant_(NV)",
+                "capacity": 242.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.5297,
+                    40.7458
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Port Westward",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 56227,
+                "operator": "Portland General Electric Company",
+                "county": "Columbia",
+                "imgloc": "port_westward_(OR)",
+                "capacity": 445.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -123.1717,
+                    46.1792
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Miramar Energy Facility",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56232,
+                "operator": "San Diego Gas and Electric Company",
+                "county": "San Diego",
+                "imgloc": "miramar_energy_facility_(CA)",
+                "capacity": 100.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.1664,
+                    32.8769
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Lake Side Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56237,
+                "operator": "Pacificorp Energy Generation",
+                "county": "Utah",
+                "imgloc": "lake_side_power_plant_(UT)",
+                "capacity": 1337.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.7547,
+                    40.3311
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Malaga Power",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56239,
+                "operator": "Malaga Power, LLC",
+                "county": "Fresno",
+                "imgloc": "malaga_power_(CA)",
+                "capacity": 181.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.7399,
+                    36.6894
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Millcreek Power",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56253,
+                "operator": "City of St. George",
+                "county": "Washington",
+                "imgloc": "millcreek_power_(UT)",
+                "capacity": 438.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -113.5155,
+                    37.1124
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Roseville Energy Park",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56298,
+                "operator": "City of Roseville, CA",
+                "county": "Placer",
+                "imgloc": "roseville_energy_park_(CA)",
+                "capacity": 175.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3823,
+                    38.7926
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Wygen II",
+                "fuel_source": "Coal",
+                "orispl_code": 56319,
+                "operator": "Black Hills Power, Inc",
+                "county": "Campbell",
+                "imgloc": "wygen_ii_(WY)",
+                "capacity": 106.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.3815,
+                    44.2911
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Spindle Hill Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56445,
+                "operator": "Invenergy",
+                "county": "Weld",
+                "imgloc": "spindle_hill_energy_center_(CO)",
+                "capacity": 334.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.8819,
+                    40.0914
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Hobbs Generating Station",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 56458,
+                "operator": "CAMS, LLC",
+                "county": "Lea",
+                "imgloc": "hobbs_generating_station_(NM)",
+                "capacity": 705.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -103.3095,
+                    32.7282
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Russell City Energy Company LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56467,
+                "operator": "Russell City Energy Center, LLC",
+                "county": "Alameda",
+                "imgloc": "russell_city_energy_company_llc_(CA)",
+                "capacity": 643.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.1326,
+                    37.6341
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "McGrath Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56471,
+                "operator": "Southern California Edison Company",
+                "county": "Ventura",
+                "imgloc": "mcgrath_generating_station_(CA)",
+                "capacity": 51.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.2478,
+                    34.2054
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Grapeland Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56472,
+                "operator": "Southern California Edison Company",
+                "county": "San Bernardino",
+                "imgloc": "grapeland_generating_station_(CA)",
+                "capacity": 51.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.534,
+                    34.09
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Mira Loma Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56473,
+                "operator": "Southern California Edison Company",
+                "county": "San Bernardino",
+                "imgloc": "mira_loma_generating_station_(CA)",
+                "capacity": 51.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.5604,
+                    34.0054
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Barre Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56474,
+                "operator": "Southern California Edison Company",
+                "county": "Orange",
+                "imgloc": "barre_generating_station_(CA)",
+                "capacity": 51.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.9833,
+                    33.8073
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Center Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56475,
+                "operator": "Southern California Edison Company",
+                "county": "Los Angeles",
+                "imgloc": "center_generating_station_(CA)",
+                "capacity": 51.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.1047,
+                    33.9297
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Gateway Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56476,
+                "operator": "Pacific Gas and Electric Company",
+                "county": "Contra Costa",
+                "imgloc": "gateway_generating_station_(CA)",
+                "capacity": 616.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.7592,
+                    38.0167
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Black Mountain Generating Station",
+                "fuel_source": "Natural Gas",
+                "orispl_code": 56482,
+                "operator": "UniSource Energy Development Company",
+                "county": "Mohave",
+                "imgloc": "black_mountain_generating_station_(AZ)",
+                "capacity": 98.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.1594,
+                    35.0361
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Colusa Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56532,
+                "operator": "Pacific Gas and Electric Company",
+                "county": "Colusa",
+                "imgloc": "colusa_generating_station_(CA)",
+                "capacity": 697.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.268,
+                    39.3648
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Niland Gas Turbine Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56569,
+                "operator": "Imperial Irrigation District",
+                "county": "Imperial",
+                "imgloc": "niland_gas_turbine_plant_(CA)",
+                "capacity": 100.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.498,
+                    33.2432
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Wygen III",
+                "fuel_source": "Coal",
+                "orispl_code": 56596,
+                "operator": "Black Hills Power, Inc",
+                "county": "Campbell",
+                "imgloc": "wygen_iii_(WY)",
+                "capacity": 118.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.3795,
+                    44.2892
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Culbertson Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56606,
+                "operator": "Basin Electric Power Cooperative",
+                "county": "Roosevelt",
+                "imgloc": "culbertson_station_(MT)",
+                "capacity": 102.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.3919,
+                    48.2104
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Dry Fork Station",
+                "fuel_source": "Coal",
+                "orispl_code": 56609,
+                "operator": "Basin Electric Power Cooperative",
+                "county": "Campbell",
+                "imgloc": "dry_fork_station_(WY)",
+                "capacity": 453.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.4591,
+                    44.3901
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Midway Peaking",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56639,
+                "operator": "Midway Peaking, LLC",
+                "county": "Fresno",
+                "imgloc": "midway_peaking_(CA)",
+                "capacity": 123.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.5797,
+                    36.654
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Panoche Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56803,
+                "operator": "Panoche Energy Center, LLC",
+                "county": "Fresno",
+                "imgloc": "panoche_energy_center_(CA)",
+                "capacity": 487.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.5833,
+                    36.6513
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Mill Creek Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56908,
+                "operator": "NAES Corporation",
+                "county": "Deer Lodge",
+                "imgloc": "mill_creek_generating_station_(MT)",
+                "capacity": 156.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.8755,
+                    46.1066
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Orange Grove Project",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56914,
+                "operator": "Orange Grove Energy, LP",
+                "county": "San Diego",
+                "imgloc": "orange_grove_project_(CA)",
+                "capacity": 102.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.111,
+                    33.359
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Coolidge Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56948,
+                "operator": "Coolidge Power, LLC",
+                "county": "Pinal",
+                "imgloc": "coolidge_generating_station_(AZ)",
+                "capacity": 591.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.5041,
+                    32.9175
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Pueblo Airport Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 56998,
+                "operator": "Black Hills Electric Generation, LLC",
+                "county": "Pueblo",
+                "imgloc": "pueblo_airport_generating_station_(CO)",
+                "capacity": 402.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.533,
+                    38.322
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "El Cajon Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57001,
+                "operator": "El Cajon Energy, LLC",
+                "county": "San Diego",
+                "imgloc": "el_cajon_energy_center_(CA)",
+                "capacity": 50.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.972,
+                    32.7971
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Canyon Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57027,
+                "operator": "City of Anaheim",
+                "county": "Orange",
+                "imgloc": "canyon_power_plant_(CA)",
+                "capacity": 204.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.8616,
+                    33.8581
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Langley Gulch Power Plant",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57028,
+                "operator": "Idaho Power Company",
+                "county": "Payette",
+                "imgloc": "langley_gulch_power_plant_(ID)",
+                "capacity": 331.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.8181,
+                    43.9046
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Ivanpah 2",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57073,
+                "operator": "NRG Energy, Inc",
+                "county": "San Bernardino",
+                "imgloc": "ivanpah_2_(CA)",
+                "capacity": NaN
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.4686,
+                    35.5561
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Ivanpah 1",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57074,
+                "operator": "NRG Energy, Inc",
+                "county": "San Bernardino",
+                "imgloc": "ivanpah_1_(CA)",
+                "capacity": NaN
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.4515,
+                    35.5356
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Ivanpah 3",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57075,
+                "operator": "NRG Energy, Inc",
+                "county": "San Bernardino",
+                "imgloc": "ivanpah_3_(CA)",
+                "capacity": NaN
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.4825,
+                    35.5808
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Marsh Landing Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57267,
+                "operator": "NRG Marsh Landing LLC",
+                "county": "Contra Costa",
+                "imgloc": "marsh_landing_generating_station_(CA)",
+                "capacity": 834.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.7651,
+                    38.0171
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Highwood Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57480,
+                "operator": "Southern Montana Electric G & T Cooperative, Inc.",
+                "county": "Cascade",
+                "imgloc": "highwood_generating_station_(MT)",
+                "capacity": 46.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.03,
+                    47.55
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sentinel Energy Center, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57482,
+                "operator": "CPV Sentinel, LLC",
+                "county": "Riverside",
+                "imgloc": "sentinel_energy_center,_llc_(CA)",
+                "capacity": 860.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.5722,
+                    33.9366
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Mariposa Energy Project",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57483,
+                "operator": "Mariposa Energy, Limited Liability Corporation",
+                "county": "Alameda",
+                "imgloc": "mariposa_energy_project_(CA)",
+                "capacity": 206.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.6049,
+                    37.7965
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Walnut Creek Energy Park",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57515,
+                "operator": "Walnut Creek Energy, LLC",
+                "county": "Los Angeles",
+                "imgloc": "walnut_creek_energy_park_(CA)",
+                "capacity": 535.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.9425,
+                    34.0078
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Pio Pico Energy Center LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57555,
+                "operator": "Pio Pico Energy Center LLC",
+                "county": "San Diego",
+                "imgloc": "pio_pico_energy_center_llc_(CA)",
+                "capacity": 344.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.9178,
+                    32.5739
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Algonquin Power Sanger",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57564,
+                "operator": "Algonquin Power Sanger, LLC",
+                "county": "Fresno",
+                "imgloc": "algonquin_power_sanger_(CA)",
+                "capacity": 40.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.55,
+                    36.72
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cheyenne Prairie Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57703,
+                "operator": "Black Hills Service Company LLC",
+                "county": "Laramie",
+                "imgloc": "cheyenne_prairie_generating_station_(WY)",
+                "capacity": 120.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.7214,
+                    41.1229
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Lodi Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 57978,
+                "operator": "Northern California Power Agency",
+                "county": "San Joaquin",
+                "imgloc": "lodi_energy_center_(CA)",
+                "capacity": 210.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3867,
+                    38.088
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Delano Energy Center, LLC",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 58122,
+                "operator": "Wellhead Services, Inc.",
+                "county": "Tulare",
+                "imgloc": "delano_energy_center,_llc_(CA)",
+                "capacity": 51.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.2945,
+                    35.7909
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "La Luz Energy Center",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 58284,
+                "operator": "Public Service Company of New Mexico",
+                "county": "Valencia",
+                "imgloc": "la_luz_energy_center_(NM)",
+                "capacity": 42.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -106.817,
+                    34.6178
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Carty Generating Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 58503,
+                "operator": "Portland General Electric Company",
+                "county": "Morrow",
+                "imgloc": "carty_generating_station_(OR)",
+                "capacity": 492.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.8131,
+                    45.699
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Montana Power Station",
+                "fuel_source": "Pipeline Natural Gas",
+                "orispl_code": 58562,
+                "operator": "El Paso Electric Company",
+                "county": "El Paso",
+                "imgloc": "montana_power_station_(TX)",
+                "capacity": 390.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -106.2119,
+                    31.8239
+                ]
+            }
+        }
+    ],
+    "name": "WidapPowerPlants"
+}

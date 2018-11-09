@@ -1,0 +1,95 @@
+body {
+    margin: 0px;
+}
+.visible {
+    display: inline;
+}
+.hidden {
+    display: none;
+}
+#map-container {
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+#power-plants-map {
+    height: 650px;
+    margin: 0px;
+}
+.sidebar-closed {
+    left: -436px;
+    margin-right: -450px;
+}
+.sidebar-open {
+    left: 0px;
+    margin-right: -450px;
+}
+#info-sidebar {
+    position: fixed;
+    overflow: hidden;
+    height: 650px;
+    width: 450px;
+    z-index: 900;
+    background-color: rgba(255, 255, 255, 0.83);
+    transition: all 0.5s;
+    transition-timing-function: ease;
+}
+#info-display-container {
+    float: left;
+    z-index: 950;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 16px;
+}
+#sidebar-toggle-container {
+    position: absolute;
+    right: 0;
+    height: 648px;
+    background-color: rgba(128, 128, 128, 0.5);
+    padding: 1px 1px;
+    z-index: 999;
+}
+.sidebar-toggle {
+    color: #333;
+    font-size: 18pt;
+    line-height: 648px;
+    margin: 0px;
+    padding: 0px;
+    border: 1px;
+    cursor: pointer;
+}
+.map-legend {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    line-height: 18px;
+    color: #555;
+    padding: 4px;
+    background-color: rgba(223, 223, 223, 0.85);
+}
+.map-legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+}
+.power-plant-marker {
+    opacity: 0.75;
+    fill-opacity: 0.75;
+    stroke: #CCC;
+    stroke-width: 0.5;
+}
+.power-plant-marker:hover {
+    fill-opacity: 0.85;
+    opacity: 0.85;
+    stroke: #FED;
+    stroke-width: 0.9;
+}
+.power-plant-marker.selected {
+    fill-opacity: 0.95;
+    opacity: 0.9;
+    fill: #FC0;
+    stroke: #FFF;
+    stroke-opacity: 1.0;
+    stroke-width: 1.2;
+}
