@@ -4,9 +4,26 @@ Contains various scripts for preprocessing data to be displayed for user interac
 
 ## How do I...
 
+In all the invocations below, filenames inside brackets are understood to be user-chosen. In other words, when you run
+```
+python myscript.py > <myoutput.csv>
+```
+you substitute whatever you want for `<myoutput.csv>`.
+
 ### regenerate the geoJSON containing all the plant markers?
 
+First, fetch the details on each plant from the `plants` table with:
 ```
-python generate_plants_csv_dump.py <plants_dump.csv>
-python plants_csv_to_geojson.py <plants_dump.csv> <cleaned_plants.json>
+python fetch_plants_overview.py > <plants_data.csv>
 ```
+These details don't include capacity, which we use to decide how large to render the marker. Grab the capacities from the `data` table with
+```
+python fetch_plant_capacities.py > <plant_capacities.csv>
+```
+which might take a long time. You'll probably want to sanity check the two CSVs at this point, e.g. ensuring that the two have the same number of rows (which should map 1-to-1 to distinct `ORISPL_CODE`s.)
+
+Then, in order to generate the geoJSON itself, joining the results from the two scripts above, run:
+```
+python generate_plants_geojson.py <plants_data.csv> <plant_capacities.csv> > <final_output.json>
+```
+Make sure the output is moved to the location expected by the map page.

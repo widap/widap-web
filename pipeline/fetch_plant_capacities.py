@@ -1,31 +1,37 @@
-import config
-import mysql.connector
+import sql_session
 import pandas as pd
 
 WIEB_STATES = ("WA", "CA", "OR", "NV", "AZ", "NM", "CO", "UT", "WY", "MT", "ID")
 TX_PLANTS = (9, 58562, 3456)
 
-def run_query(query, row_condition):
-  query_text = ("" + \
-      "SELECT ORISPL_CODE, STATE, UNITID, MAX(GLOAD) as MAX_GLOAD " + \
-      "FROM data " + \
-      "WHERE %s AND GLOAD > 0 " + \
-      "GROUP BY ORISPL_CODE, UNITID") % row_condition
-  query.execute(query_text)
-  return pd.DataFrame(
-      data=query.fetchall(), index = None, columns = query.column_names)
+def fetch_plant_capacities():
+    """Returns the maximum gload served by each plant.
 
-def run_all_queries():
-  cfg = config.getcfg()
-  server = mysql.connector.connect(
-      host=cfg["host"],
-      database=cfg["database"],
-      user=cfg["user"],
-      password=cfg["password"])
-  # Seems to only want 1 connection at a time, for one user.
-  query = server.cursor(buffered=True)
-  dfs = []
-  dfs.append(run_query(query, "ORISPL_CODE in %s" % (TX_PLANTS,)))
-  for state in WIEB_STATES:
-    dfs.append(run_query(query, "STATE='%s'" % state))
-  return dfs
+    Maximum gload is defined here as the maximum over all hourly intervals of
+    the sum of gloads for all units in a plant. In other words, it is possible
+    that each unit in a plant served a higher load at some point during the data
+    collection period, but at no point during the data collection period did the
+    plant as a whole register a higher gload.
+    """
+    conditions = ["ORISPL_CODE IN " + str(TX_PLANTS)]
+    for state in WIEB_STATES:
+        conditions.append("STATE='%s'" % state)
+    session = sql_session.SqlSession()
+    df = pd.DataFrame()
+    for condition in conditions:
+        print("On query with condition", condition)
+        query = """
+            SELECT ORISPL_CODE, MAX(GLOAD) AS MAX_GLOAD
+            FROM
+                (SELECT ORISPL_CODE, OP_DATE, OP_HOUR, SUM(GLOAD) AS GLOAD
+                FROM data
+                WHERE GLOAD > 0 AND {}
+                GROUP BY ORISPL_CODE, OP_DATE, OP_HOUR) AS byplant
+            GROUP BY ORISPL_CODE
+        """.format(condition)
+        df = df.append(session.execute_query(query))
+    df.index = df.orispl_code
+    return df.drop(["orispl_code"], axis=1)
+
+if __name__ == '__main__':
+  print(fetch_plant_capacities().to_csv())
