@@ -4,35 +4,26 @@ emissions histogram for the plant to be used as input to the info sidebar in the
 globe view of the plants.
 
 """
-import config
 import json
-import mysql.connector
 import pandas as pd
+import sql_session
 import sys
 
-USAGE = "python prep_plant_overview_plots.py <ORISPL_CODE> <OUTPUT_JSON>"
+USAGE = "Usage: python prep_plant_overview_plots.py <ORISPL_CODE>"
 
 def fetch_plant_data(orispl_code):
-    cfg = config.getcfg()
-    server = mysql.connector.connect(
-        host=cfg["host"],
-        database=cfg["database"],
-        user=cfg["user"],
-        password=cfg["password"])
-    query = server.cursor(buffered=True)
     query_text = """
         SELECT adddate(`op_date`, interval `op_hour` hour) as `datetime`,
             SUM(`gload`) as `gload`,
             SUM(`so2_mass`) as `so2_mass`,
             SUM(`nox_mass`) as `nox_mass`,
             SUM(`co2_mass`) as `co2_mass`,
-            SUM(`heat_input`) as `heat_input` 
-        FROM `wecc` 
+            SUM(`heat_input`) as `heat_input`
+        FROM `data`
         WHERE `orispl_code` = {}
         GROUP BY `datetime`
         """.format(orispl_code)
-    query.execute(query_text)
-    df = pd.DataFrame(data=query.fetchall(), index=None, columns=query.column_names)
+    df = sql_session.SqlSession().execute_query(query_text)
     df.index = pd.DatetimeIndex(df.datetime)
     return df.drop(columns=["datetime"], axis=1)
 
@@ -71,9 +62,8 @@ def produce_overview_data(orispl_code):
     }
 
 if __name__ == '__main__':
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 2:
         print(USAGE)
         sys.exit()
     overview_data = produce_overview_data(sys.argv[1])
-    with open(sys.argv[2], "w") as f:
-        f.write(json.dumps(overview_data))
+    print(json.dumps(overview_data))

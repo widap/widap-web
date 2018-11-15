@@ -24,9 +24,9 @@ var grayscaleTiles = L.tileLayer.provider('Esri.WorldGrayCanvas');
 var satelliteTiles = L.tileLayer.provider('Esri.WorldImagery');
 var earthAtNightTiles = L.tileLayer.provider('NASAGIBS.ViirsEarthAtNight2012');
 var baseMaps = {
+    "night": earthAtNightTiles,
     "grayscale": grayscaleTiles,
     "satellite": satelliteTiles,
-    "night": earthAtNightTiles,
 };
 var layerControl = L.control.layers(baseMaps, [], {position: 'topright'});
 var zoomControl = L.control.zoom({position: 'topright'});
@@ -42,23 +42,9 @@ legend.onAdd = function(map) {
     return div;
 };
 
-var openSidebar = function() {
-    $("#open-sidebar-link").removeClass("visible").addClass("hidden");
-    $("#close-sidebar-link").removeClass("hidden").addClass("visible");
-    $("#info-sidebar").removeClass("sidebar-closed").addClass("sidebar-open");
-}
-var closeSidebar = function() {
-    $("#close-sidebar-link").removeClass("visible").addClass("hidden");
-    $("#open-sidebar-link").removeClass("hidden").addClass("visible");
-    $("#info-sidebar").removeClass("sidebar-open").addClass("sidebar-closed");
-}
-$("#open-sidebar-link").click(openSidebar);
-$("#close-sidebar-link").click(closeSidebar);
-
 function getRadius(cap) {
     return (cap > 0 ? 4.0 + (Math.pow(cap, 0.54) / 3.7) : 4.0);
 }
-
 
 function powerPlantMarkerOptions(props) {
     return {
@@ -68,22 +54,32 @@ function powerPlantMarkerOptions(props) {
     };
 }
 
-// TODO: Get rid of all the <br /> tags! Find a better layout option.
-function displayPlantInfo(props) {
-    plantOverviewPlotData = d3.json(`http://localhost:8000/web/data/overview/${props.orispl_code}.json`);
-    $("#info-display-container").html(`<h4>${props.name}</h4>
-Capacity: ${props.capacity}MW<br />
-Primary fuel: ${props.fuel_source}<br />
-Operator: ${props.operator}<br />
-County: ${props.county}<br />
-ORISPL code: ${props.orispl_code}<br />
-<svg id=\"overview-boxplot\" width=400 height=200 />
-<a href=\"#\">Download this data</a>`);
-    plantOverviewPlotData.then(
-        data => renderMonthlyGloadBoxPlot(
-            data.monthly_gload_quartiles,
-            "overview-boxplot",
-            {top: 20, right: 30, bottom: 30, left: 40}));
+function powerPlantPopup(props) {
+    htmlContent = `<h3>${props.name}</h3>
+<table class=\"plant-props-table\">
+  <tr>
+    <tr><td class=\"info-header\">Capacity:</td><td>${props.capacity}MW</td></tr>
+    <tr><td class=\"info-header\">Primary fuel:</td><td>${props.fuel_source}</td></tr>
+    <tr><td class=\"info-header\">Operator:</td><td>${props.operator}</td></tr>
+    <tr><td class=\"info-header\">County:</td><td>${props.county}</td></tr>
+    <tr><td class=\"info-header\">ORISPL code:</td><td>${props.orispl_code}</td></tr>
+  </tr>
+</table>
+<h4>Average monthly load (MW)</h4>
+<svg id=\"overview-boxplot-${props.orispl_code}\" width=480 height=250 />
+<h4>Normalized emissions (SO2, NOx, CO2)</h4>
+<svg id=\"overview-normalized-emissions\" width=480 height=250 />
+<a href=\"#\">Download this data</a>`;
+    return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
+}
+
+function renderOverviewPlots(props) {
+    d3.json(`http://localhost:8000/web/data/overview/${props.orispl_code}.json`)
+        .then(
+            data => renderMonthlyGloadTrendLine(
+                data.monthly_gload_quartiles,
+                `overview-boxplot-${props.orispl_code}`,
+                {top: 20, right: 30, bottom: 30, left: 40}));
 }
 
 map = L.map('power-plants-map', {
@@ -93,43 +89,41 @@ map = L.map('power-plants-map', {
     zoomDelta: 0.5,
     zoomSnap: 0.5,
     zoomControl: false,
-    layers: [grayscaleTiles],
+    layers: [earthAtNightTiles],
 });
 
 
 powerPlantsGeoJson = L.geoJSON(powerPlants, {
     pointToLayer: function(feature, latlng) {
-        // Hijacks popup click functionality to display plant info in sidebar.
         return L.circleMarker(latlng, powerPlantMarkerOptions(feature.properties))
             .bindTooltip(feature.properties.name)
-            .bindPopup(L.popup({className: "hidden"}).setContent(""))
-                .on('popupopen', function(e) {
-                    openSidebar();
-                    displayPlantInfo(feature.properties);
-                    L.DomUtil.addClass(e.target._path, 'selected');
-                    // map.flyTo(latlng);
-                })
-                .on('popupclose', function(e) {
-                    L.DomUtil.removeClass(e.target._path, 'selected');
-                    closeSidebar();
-                });
+            .bindPopup(powerPlantPopup(feature.properties))
+            .on('popupopen', function(e) {
+                // TODO: Pre-render SVGs. They're a bit slow.
+                renderOverviewPlots(feature.properties);
+                L.DomUtil.addClass(e.target._path, 'selected');
+            })
+            .on('popupclose', function(e) {
+                L.DomUtil.removeClass(e.target._path, 'selected');
+            });
     }
 })
+
+
+var statePolygons = L.geoJSON(wiebStatePolys, {
+    style: function(feature) {
+        return {
+            "weight": 2,
+            "color": "#999",
+            "opacity": 0.1,
+            "fillColor": "#888",
+            "fillOpacity": 0.2
+        }
+    }
+});
 
 layerControl.addTo(map);
 zoomControl.addTo(map);
 legend.addTo(map);
+statePolygons.addTo(map);
 powerPlantsGeoJson.addTo(map);
-
-// var statePolygons = L.geoJSON(wiebStatePolys, {
-//     style: function(feature) {
-//         return {
-//             "weight": 2,
-//             "color": "#999",
-//             "opacity": 0.1,
-//             "fillColor": "#888",
-//             "fillOpacity": 0.2
-//         }
-//     }
-// });
-// statePolygons.addTo(map);
