@@ -67,19 +67,26 @@ function powerPlantPopup(props) {
 </table>
 <h4>Average monthly load (MW)</h4>
 <svg id=\"overview-boxplot-${props.orispl_code}\" width=480 height=250 />
-<h4>Normalized emissions (SO2, NOx, CO2)</h4>
-<svg id=\"overview-normalized-emissions\" width=480 height=250 />
-<a href=\"#\">Download this data</a>`;
+<h4>Average normalized monthly emissions (SO2, NOx, CO2)</h4>
+<svg id=\"overview-normalized-emissions-${props.orispl_code}\" width=480 height=250 />
+<div><a href=\"#\">Explore this plant</a></div>
+<div><a href=\"#\">Download this data</a></div>`;
     return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
 }
 
 function renderOverviewPlots(props) {
     d3.json(`http://localhost:8000/web/data/overview/${props.orispl_code}.json`)
         .then(
-            data => renderMonthlyGloadTrendLine(
-                data.monthly_gload_quartiles,
-                `overview-boxplot-${props.orispl_code}`,
-                {top: 20, right: 30, bottom: 30, left: 40}));
+            data => {
+                renderMonthlyGloadTrendLine(
+                    data.monthly_gload_quartiles,
+                    `overview-boxplot-${props.orispl_code}`,
+                    {top: 20, right: 30, bottom: 30, left: 40});
+                renderNormalizedEmissions(
+                    data.normalized_emissions,
+                    `overview-normalized-emissions-${props.orispl_code}`,
+                    {top: 20, right: 30, bottom: 30, left: 40});
+            });
 }
 
 map = L.map('power-plants-map', {

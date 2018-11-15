@@ -39,9 +39,9 @@ function drawIqrArea(g, data) {
     .attr("d", area)
 }
 
-function renderMonthlyGloadTrendLine(data, boxplot_svg_id, margin) {
+function renderMonthlyGloadTrendLine(data, trendline_svg_id, margin) {
   data = prepTrendLineData(data)
-  svg = d3.select(`#${boxplot_svg_id}`)
+  svg = d3.select(`#${trendline_svg_id}`)
   height = +svg.attr("height")
   width = +svg.attr("width")
 
