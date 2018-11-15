@@ -122,7 +122,7 @@ var statePolygons = L.geoJSON(wiebStatePolys, {
         return {
             "weight": 2,
             "color": "#999",
-            "opacity": 0.1,
+            "opacity": 0.25,
             "fillColor": "#888",
             "fillOpacity": 0.2
         }

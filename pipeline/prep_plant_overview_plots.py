@@ -1,8 +1,6 @@
 """
-Given the ORISPL_CODE of a plant, prepares the gload quartiles and and CO2
-emissions histogram for the plant to be used as input to the info sidebar in the
-globe view of the plants.
-
+Given the ORISPL_CODE of a plant, prepares the monthly gload quartiles and 
+normalized emissions time series to display on the globe view page.
 """
 import json
 import pandas as pd

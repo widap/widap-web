@@ -27,3 +27,14 @@ Then, in order to generate the geoJSON itself, joining the results from the two 
 python generate_plants_geojson.py <plants_data.csv> <plant_capacities.csv> > <final_output.json>
 ```
 Make sure the output is moved to the location expected by the map page.
+
+### regenerate the data used for the plots on the map page?
+
+Something like this should do it:
+```
+while read orispl_code;
+do
+  echo "Processing ${orispl_code}"
+  python prep_plant_overview_plots.py ${orispl_code} > ../data/overview/${orispl_code}.json
+done < orispl_codes.txt
+```
