@@ -47,7 +47,7 @@ def produce_normalized_emissions_data(df):
     """Returns a dict containing mean normalized daily emissions."""
     series = {}
     for gas in ("co2_mass", "so2_mass", "nox_mass"):
-        normalized_hourly = df[gas].dropna() / df[gas].mean()
+        normalized_hourly = df[gas].fillna(0) / df[gas].mean()
         series[gas] = normalized_hourly.groupby(pd.Grouper(freq='1M')).mean()
     emissions = pd.DataFrame(series).to_dict(orient='list')
     emissions["month_range"] = month_range(df.index)
