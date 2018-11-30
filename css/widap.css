@@ -2,6 +2,10 @@
 body {
   font-family: Lato, Helvetica, sans-serif;
 }
+select {
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 12pt;
+}
 h2 {
   color: #333;
 }

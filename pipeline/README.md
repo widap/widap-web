@@ -16,15 +16,15 @@ First, fetch the details on each plant from the `plants` table with:
 ```
 python fetch_plants_overview.py > <plants_data.csv>
 ```
-These details don't include capacity, which we use to decide how large to render the marker. Grab the capacities from the `data` table with
+These details don't include capacity or total co2 emissions, which we use to decide how large to render the marker. Grab the supplemental details from the `data` table with
 ```
-python fetch_plant_capacities.py > <plant_capacities.csv>
+python fetch_supplemental_plant_details.py > <extra_plant_details.csv>
 ```
-which might take a long time. You'll probably want to sanity check the two CSVs at this point, e.g. ensuring that the two have the same number of rows (which should map 1-to-1 to distinct `ORISPL_CODE`s.)
+which might take a long time, on the order of half an hour. You'll probably want to sanity check the two CSVs at this point, e.g. ensuring that the two have the same number of rows (which should map 1-to-1 to distinct `ORISPL_CODE`s.)
 
 Then, in order to generate the geoJSON itself, joining the results from the two scripts above, run:
 ```
-python generate_plants_geojson.py <plants_data.csv> <plant_capacities.csv> > <final_output.json>
+python generate_plants_geojson.py <plants_data.csv> <extra_plant_details.csv> > <final_output.json>
 ```
 Make sure the output is moved to the location expected by the map page.
 

@@ -42,15 +42,19 @@ legend.onAdd = function(map) {
     return div;
 };
 
-function getRadius(cap) {
+function getRadiusBasedOnCapacity(cap) {
     return (cap > 0 ? 4.0 + (Math.pow(cap, 0.54) / 3.7) : 4.0);
+}
+
+function getRadiusBasedOnEmissions(emissions) {
+    return (emissions > 0 ? 4.0 + (Math.pow(emissions, 0.54) / 1200) : 4.0)
 }
 
 function powerPlantMarkerOptions(props) {
     return {
         className: "power-plant-marker",
         fillColor: colors[fuel_source_abbrevs[props.fuel_source.toLowerCase()]],
-        radius: getRadius(props.capacity),
+        radius: getRadiusBasedOnCapacity(props.capacity),
     };
 }
 
@@ -113,3 +117,25 @@ zoomControl.addTo(map);
 legend.addTo(map);
 // statePolygons.addTo(map);
 powerPlantsGeoJson.addTo(map);
+
+$('#facility-vizmetric-selector').change(function(){
+    plants = powerPlantsGeoJson.getLayers()
+    for (i = 0; i < plants.length; i++) {
+        props = plants[i].feature.properties
+        plants[i]._path.style['transition'] = 'd 0.6s'
+        plants[i]._path.style['-webkit-transition'] = 'd 0.6s'
+        radiusBasis = $(this).val()
+        if (radiusBasis == "capacity") {
+            plants[i].setRadius(getRadiusBasedOnCapacity(props.capacity))
+        } else if (radiusBasis == "emissions") {
+            plants[i].setRadius(getRadiusBasedOnEmissions(props.total_co2_emissions))
+        }
+
+    }
+    setTimeout(() => {
+        for (i = 0; i < plants.length; i++) {
+            plants[i]._path.style['transition'] = '';
+            plants[i]._path.style['-webkit-transition'] = '';
+        }
+    }, 600)
+});

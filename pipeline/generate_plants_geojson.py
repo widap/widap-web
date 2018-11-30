@@ -5,7 +5,7 @@ import math
 import pandas as pd
 import sys
 
-USAGE = "Usage: python " + sys.argv[0] + " <plant_overview_csv> <plant_capacities_csv>"
+USAGE = "Usage: python " + sys.argv[0] + " <plant_overview_csv> <extra_plant_details_csv>"
 
 def checknan(value, default=""):
     if not isinstance(value, str) and math.isnan(value):
@@ -22,6 +22,7 @@ def row_to_feature(row):
         "operator": checknan(row.operator),
         "county": row.county,
         "capacity": row.max_gload,
+        "total_co2_emissions": row.total_co2,
       },
       "geometry": {
         "type": "Point",
@@ -29,14 +30,14 @@ def row_to_feature(row):
       },
     }
 
-def join_csvs_and_dump_to_geojson(overview_csv, capacities_csv):
+def join_csvs_and_dump_to_geojson(overview_csv, extra_details_csv):
     overview = pd.read_csv(overview_csv)
-    capacities = pd.read_csv(capacities_csv) 
+    supplemental = pd.read_csv(extra_details_csv)
     overview.index = overview.orispl_code
-    capacities.index = capacities.orispl_code
+    supplemental.index = supplemental.orispl_code
     overview.drop(["orispl_code"], axis=1, inplace=True)
-    capacities.drop(["orispl_code"], axis=1, inplace=True)
-    df = overview.join(capacities)
+    supplemental.drop(["orispl_code"], axis=1, inplace=True)
+    df = overview.join(supplemental)
     features = [row_to_feature(row) for row in df.itertuples()]
     feature_collection = {
         "type": "FeatureCollection",
@@ -49,6 +50,6 @@ if __name__ == '__main__':
     if len(sys.argv) != 3:
         print(USAGE)
         sys.exit()
-    overview_csv, capacities_csv = sys.argv[1:3]
-    print(join_csvs_and_dump_to_geojson(overview_csv, capacities_csv))
+    overview_csv, extra_details_csv = sys.argv[1:3]
+    print(join_csvs_and_dump_to_geojson(overview_csv, extra_details_csv))
 

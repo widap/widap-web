@@ -13,6 +13,13 @@ body {
     padding: 0px;
     width: 100%;
 }
+#facility-vizmetric-selector-container {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    z-index: 500;
+    color: #ddd;
+}
 #power-plants-map {
     height: 700px;
     margin: 0px;
