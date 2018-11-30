@@ -35,6 +35,14 @@ Something like this should do it:
 while read orispl_code;
 do
   echo "Processing ${orispl_code}"
-  python prep_plant_overview_plots.py ${orispl_code} > ../data/overview/${orispl_code}.json
+  python prep_plant_overview_data.py ${orispl_code} > ../data/overview/${orispl_code}.json
 done < orispl_codes.txt
 ```
+
+### ...regenerate the plots themselves?
+
+Make sure you've already generated the json files containing the overview data (see above) and sanity checked them. Then run:
+```
+python make_overview_plots.py orispl_codes.txt
+```
+This will save plots in the appropriate folders under `../data/overview/svg/`, alerting you to cases where it failed to produce a plot.

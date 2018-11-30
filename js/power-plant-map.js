@@ -65,28 +65,9 @@ function powerPlantPopup(props) {
     <tr><td class=\"info-header\">ORISPL code:</td><td>${props.orispl_code}</td></tr>
   </tr>
 </table>
-<h4>Average monthly load (MW)</h4>
-<svg id=\"overview-boxplot-${props.orispl_code}\" width=480 height=250 />
-<h4>Average normalized monthly emissions (SO2, NOx, CO2)</h4>
-<svg id=\"overview-normalized-emissions-${props.orispl_code}\" width=480 height=250 />
-<div><a href=\"#\">Explore this plant</a></div>
-<div><a href=\"#\">Download this data</a></div>`;
+<object type=\"image/svg+xml\" data=\"data/overview/svg/gloadtrend/${props.orispl_code}.svg\" height="360"></object>
+<object type=\"image/svg+xml\" data=\"data/overview/svg/normalizedemissions/${props.orispl_code}.svg\" height="360"></object>`;
     return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
-}
-
-function renderOverviewPlots(props) {
-    d3.json(`http://localhost:8000/web/data/overview/${props.orispl_code}.json`)
-        .then(
-            data => {
-                renderMonthlyGloadTrendLine(
-                    data.monthly_gload_quartiles,
-                    `overview-boxplot-${props.orispl_code}`,
-                    {top: 20, right: 30, bottom: 30, left: 40});
-                renderNormalizedEmissions(
-                    data.normalized_emissions,
-                    `overview-normalized-emissions-${props.orispl_code}`,
-                    {top: 20, right: 30, bottom: 30, left: 40});
-            });
 }
 
 map = L.map('power-plants-map', {
@@ -106,8 +87,6 @@ powerPlantsGeoJson = L.geoJSON(powerPlants, {
             .bindTooltip(feature.properties.name)
             .bindPopup(powerPlantPopup(feature.properties))
             .on('popupopen', function(e) {
-                // TODO: Pre-render SVGs. They're a bit slow.
-                renderOverviewPlots(feature.properties);
                 L.DomUtil.addClass(e.target._path, 'selected');
             })
             .on('popupclose', function(e) {
@@ -132,5 +111,5 @@ var statePolygons = L.geoJSON(wiebStatePolys, {
 layerControl.addTo(map);
 zoomControl.addTo(map);
 legend.addTo(map);
-statePolygons.addTo(map);
+// statePolygons.addTo(map);
 powerPlantsGeoJson.addTo(map);

@@ -7,7 +7,7 @@ import pandas as pd
 import sql_session
 import sys
 
-USAGE = "Usage: python prep_plant_overview_plots.py <ORISPL_CODE>"
+USAGE = "Usage: python prep_plant_overview_data.py <ORISPL_CODE>"
 
 def month_range(index):
     return [x.date().isoformat() for x in [index[0], index[-1]]]
@@ -38,7 +38,7 @@ def monthly_gload_quartiles_data(df):
         "75%": "q3_gload",
         "max": "max_gload",
     }
-    by_month = df.gload.fillna(0.0).groupby(pd.Grouper(freq='1M')).describe()
+    by_month = df.gload.fillna(0.0).groupby(pd.Grouper(freq='1M')).describe().fillna(0.0)
     # TODO: Get rid of the index here.
     by_month.index = by_month.index.to_native_types()
     return by_month.filter(boxplot_cols).rename(columns=column_renaming)
@@ -47,7 +47,7 @@ def produce_normalized_emissions_data(df):
     """Returns a dict containing mean normalized daily emissions."""
     series = {}
     for gas in ("co2_mass", "so2_mass", "nox_mass"):
-        normalized_hourly = df[gas].fillna(0) / df[gas].mean()
+        normalized_hourly = df[gas].fillna(0) / df[gas].dropna().mean()
         series[gas] = normalized_hourly.groupby(pd.Grouper(freq='1M')).mean()
     emissions = pd.DataFrame(series).to_dict(orient='list')
     emissions["month_range"] = month_range(df.index)
