@@ -99,23 +99,9 @@ powerPlantsGeoJson = L.geoJSON(powerPlants, {
     }
 })
 
-
-var statePolygons = L.geoJSON(wiebStatePolys, {
-    style: function(feature) {
-        return {
-            "weight": 2,
-            "color": "#999",
-            "opacity": 0.25,
-            "fillColor": "#888",
-            "fillOpacity": 0.2
-        }
-    }
-});
-
 layerControl.addTo(map);
 zoomControl.addTo(map);
 legend.addTo(map);
-// statePolygons.addTo(map);
 powerPlantsGeoJson.addTo(map);
 
 $('#facility-vizmetric-selector').change(function(){
