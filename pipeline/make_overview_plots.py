@@ -13,20 +13,18 @@ USAGE = "Usage: python make_overview_plots.py <orispl_codes_file>"
 def save_gload_trend_svg(orispl_code, overview_data):
     gload = overview_data["monthly_gload_quartiles"]
     dt = [np.datetime64(x) for x in gload['index']]
-    lower_q = []
-    upper_q = []
-    for x in gload['data']:
-        iqr = x[3] - x[1]
-        upper_q.append(min(x[4], x[2] + 1.5 * iqr))
-        lower_q.append(max(x[0], x[2] - 1.5 * iqr))
+    mins, lower_q, medians, upper_q, maxs = zip(*gload['data'])
+
     plt.clf()
+    plt.fill_between(dt, mins, maxs, facecolor='gray', alpha=0.3)
     plt.fill_between(dt, lower_q, upper_q, facecolor='gray', alpha=0.6)
-    plt.plot(dt, [x[2] for x in gload['data']])
+    plt.plot(dt, medians)
     plt.title("Monthly gload trend")
     plt.xlabel("Date")
     plt.ylabel("Gross load (MW)")
     plt.grid()
     plt.xlim(dt[0], dt[-1])
+    plt.ylim(bottom=0) # let matplotlib figure out the top
     plt.tight_layout()
     plt.savefig("../data/overview/svg/gloadtrend/%s.svg" % orispl_code, transparent=True, bbox='tight')
 
@@ -35,16 +33,28 @@ def save_normalized_emissions_svg(orispl_code, overview_data):
     emis = overview_data["normalized_emissions"]
     dt = [np.datetime64(x) for x in gload['index']]
     plt.clf()
-    plt.plot(dt, emis['so2_mass'], label='SOx')
-    plt.plot(dt, emis['nox_mass'], label='NOx')
-    plt.plot(dt, emis['co2_mass'], label='CO2')
+
+    ax1 = plt.subplot(311)
+    plt.plot(dt, emis['so2_mass'], label='SO2', color='green')
+    plt.setp(ax1.get_xticklabels(), visible=False)
     plt.legend()
-    plt.title("Average monthly normalized emissions")
-    plt.xlabel("Date")
-    plt.ylabel("Emissions / mean emissions")
     plt.grid()
-    plt.tight_layout()
+    plt.title("Average monthly normalized emissions")
+
+    ax2 = plt.subplot(312, sharex=ax1)
+    plt.plot(dt, emis['nox_mass'], label='NOx', color='xkcd:orange')
+    plt.setp(ax2.get_xticklabels(), visible=False)
+    plt.legend()
+    plt.grid()
+
+    ax3 = plt.subplot(313, sharex=ax1)
+    plt.plot(dt, emis['co2_mass'], label='CO2', color='steelblue')
     plt.xlim(dt[0], dt[-1])
+    plt.legend()
+    plt.grid()
+    plt.xlabel("Date")
+
+    plt.tight_layout()
     plt.savefig("../data/overview/svg/normalizedemissions/%s.svg" % orispl_code, transparent=True)
 
 def generate_plots(orispl_codes):
