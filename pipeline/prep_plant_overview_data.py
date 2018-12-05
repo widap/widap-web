@@ -43,12 +43,11 @@ def monthly_gload_quartiles_data(df):
     by_month.index = by_month.index.to_native_types()
     return by_month.filter(boxplot_cols).rename(columns=column_renaming)
 
-def produce_normalized_emissions_data(df):
+def produce_emissions_data(df):
     """Returns a dict containing mean normalized daily emissions."""
     series = {}
     for gas in ("co2_mass", "so2_mass", "nox_mass"):
-        normalized_hourly = df[gas].fillna(0) / df[gas].dropna().mean()
-        series[gas] = normalized_hourly.groupby(pd.Grouper(freq='1M')).mean()
+        series[gas] = df[gas].fillna(0).groupby(pd.Grouper(freq='1M')).mean()
     emissions = pd.DataFrame(series).to_dict(orient='list')
     emissions["month_range"] = month_range(df.index)
     return emissions
@@ -56,10 +55,10 @@ def produce_normalized_emissions_data(df):
 def produce_overview_data(orispl_code):
     df = fetch_plant_data(orispl_code)
     gload_quartiles = monthly_gload_quartiles_data(df)
-    normalized_emissions = produce_normalized_emissions_data(df)
+    emissions = produce_emissions_data(df)
     return {
         "monthly_gload_quartiles": gload_quartiles.to_dict(orient='split'),
-        "normalized_emissions": normalized_emissions,
+        "emissions": emissions,
     }
 
 if __name__ == '__main__':

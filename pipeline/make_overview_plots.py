@@ -19,43 +19,42 @@ def save_gload_trend_svg(orispl_code, overview_data):
     plt.fill_between(dt, mins, maxs, facecolor='gray', alpha=0.3)
     plt.fill_between(dt, lower_q, upper_q, facecolor='gray', alpha=0.6)
     plt.plot(dt, medians)
-    plt.title("Monthly gload trend")
+    plt.title("Monthly gross load trend (MW)")
     plt.xlabel("Date")
-    plt.ylabel("Gross load (MW)")
     plt.grid()
     plt.xlim(dt[0], dt[-1])
     plt.ylim(bottom=0) # let matplotlib figure out the top
     plt.tight_layout()
     plt.savefig("../data/overview/svg/gloadtrend/%s.svg" % orispl_code, transparent=True, bbox='tight')
 
-def save_normalized_emissions_svg(orispl_code, overview_data):
+def save_emissions_svg(orispl_code, overview_data):
     gload = overview_data["monthly_gload_quartiles"]
-    emis = overview_data["normalized_emissions"]
+    emis = overview_data["emissions"]
     dt = [np.datetime64(x) for x in gload['index']]
     plt.clf()
 
     ax1 = plt.subplot(311)
-    plt.plot(dt, emis['so2_mass'], label='SO2', color='green')
+    plt.plot(dt, emis['so2_mass'], label='SO2 (lbs)', color='green')
     plt.setp(ax1.get_xticklabels(), visible=False)
     plt.legend()
     plt.grid()
-    plt.title("Average monthly normalized emissions")
+    plt.title("Average monthly emissions")
 
     ax2 = plt.subplot(312, sharex=ax1)
-    plt.plot(dt, emis['nox_mass'], label='NOx', color='xkcd:orange')
+    plt.plot(dt, emis['nox_mass'], label='NOx (lbs)', color='xkcd:orange')
     plt.setp(ax2.get_xticklabels(), visible=False)
     plt.legend()
     plt.grid()
 
     ax3 = plt.subplot(313, sharex=ax1)
-    plt.plot(dt, emis['co2_mass'], label='CO2', color='steelblue')
+    plt.plot(dt, emis['co2_mass'], label='CO2 (tons)', color='steelblue')
     plt.xlim(dt[0], dt[-1])
     plt.legend()
     plt.grid()
     plt.xlabel("Date")
 
     plt.tight_layout()
-    plt.savefig("../data/overview/svg/normalizedemissions/%s.svg" % orispl_code, transparent=True)
+    plt.savefig("../data/overview/svg/emissions/%s.svg" % orispl_code, transparent=True)
 
 def generate_plots(orispl_codes):
     for orispl_code in orispl_codes:
@@ -63,7 +62,7 @@ def generate_plots(orispl_codes):
             with open("../data/overview/%s.json" % orispl_code) as f:
                 overview_data = json.loads(f.read())
             save_gload_trend_svg(orispl_code, overview_data)
-            save_normalized_emissions_svg(orispl_code, overview_data)
+            save_emissions_svg(orispl_code, overview_data)
         except Exception as e:
             print("I had a problem with", orispl_code)
 

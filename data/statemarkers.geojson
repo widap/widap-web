@@ -1,0 +1,158 @@
+var stateMarkers = [
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Washington"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -120.674852,
+        46.910554
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Oregon"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -120.549412,
+        44.00861
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "California"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -120.10231,
+        36.881923
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Montana"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -110.622454,
+        46.990221
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Idaho"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -114.86675,
+        44.271768
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Wyoming"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -107.608881,
+        42.776897
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Nevada"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -116.853155,
+        39.355809
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Utah"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -112.024935,
+        38.597265
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Colorado"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -105.905992,
+        38.931309
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Arizona"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -111.845409,
+        34.694768
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "New Mexico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -105.951868,
+        34.466087
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Texas"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -105.938739,
+        31.748783
+      ]
+    }
+  }
+]

@@ -28,8 +28,6 @@ var baseMaps = {
     "grayscale": grayscaleTiles,
     "satellite": satelliteTiles,
 };
-var layerControl = L.control.layers(baseMaps, [], {position: 'topright'});
-var zoomControl = L.control.zoom({position: 'topright'});
 var legend = L.control({position: 'bottomright'});
 
 
@@ -70,7 +68,12 @@ function powerPlantPopup(props) {
   </tr>
 </table>
 <object type=\"image/svg+xml\" data=\"data/overview/svg/gloadtrend/${props.orispl_code}.svg\" height="360"></object>
-<object type=\"image/svg+xml\" data=\"data/overview/svg/normalizedemissions/${props.orispl_code}.svg\" height="360"></object>`;
+<object type=\"image/svg+xml\" data=\"data/overview/svg/emissions/${props.orispl_code}.svg\" height="360"></object>`;
+    return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
+}
+
+function stateAggregatePopup(props) {
+    htmlContent = `<h3>${props.name}</h3>`;
     return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
 }
 
@@ -99,10 +102,18 @@ powerPlantsGeoJson = L.geoJSON(powerPlants, {
     }
 })
 
-layerControl.addTo(map);
-zoomControl.addTo(map);
+stateMarkersGeojson = L.geoJson(stateMarkers, {
+    onEachFeature: function(feature, layer) {
+        layer.bindTooltip(feature.properties.name);
+        layer.bindPopup(stateAggregatePopup(feature.properties));
+    }
+})
+
+L.control.layers(baseMaps, [], {position: 'topright'}).addTo(map);
+L.control.zoom({position: 'topright'}).addTo(map);
 legend.addTo(map);
 powerPlantsGeoJson.addTo(map);
+stateMarkersGeojson.addTo(map);
 
 $('#facility-vizmetric-selector').change(function(){
     plants = powerPlantsGeoJson.getLayers()
