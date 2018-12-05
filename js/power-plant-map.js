@@ -12,7 +12,7 @@ const fuel_source_abbrevs = {
 }
 
 const colors = {
-    "coal": "#631",
+    "coal": "#830",
     "natural gas": "#369",
     "wood": "#363",
     "other": "#AAA",
