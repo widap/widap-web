@@ -25,7 +25,7 @@ def save_gload_trend_svg(orispl_code, overview_data):
     plt.xlim(dt[0], dt[-1])
     plt.ylim(bottom=0) # let matplotlib figure out the top
     plt.tight_layout()
-    plt.savefig("../data/overview/svg/gloadtrend/%s.svg" % orispl_code, transparent=True, bbox='tight')
+    plt.savefig("../img/svg/gloadtrend/%s.svg" % orispl_code, transparent=True, bbox='tight')
 
 def save_emissions_svg(orispl_code, overview_data):
     gload = overview_data["monthly_gload_quartiles"]
@@ -54,7 +54,7 @@ def save_emissions_svg(orispl_code, overview_data):
     plt.xlabel("Date")
 
     plt.tight_layout()
-    plt.savefig("../data/overview/svg/emissions/%s.svg" % orispl_code, transparent=True)
+    plt.savefig("../img/svg/emissions/%s.svg" % orispl_code, transparent=True)
 
 def generate_plots(orispl_codes):
     for orispl_code in orispl_codes:

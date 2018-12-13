@@ -41,7 +41,7 @@ def produce_state_emissions_plot(state):
     plt.xlabel("Date")
 
     plt.tight_layout()
-    plt.savefig("../data/overview/svg/emissions/%s.svg" % state.lower(), transparent=True)
+    plt.savefig("../img/svg/emissions/%s.svg" % state.lower(), transparent=True)
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:

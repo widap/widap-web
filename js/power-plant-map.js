@@ -67,16 +67,16 @@ function powerPlantPopup(props) {
     <tr><td class=\"info-header\">ORISPL code:</td><td>${props.orispl_code}</td></tr>
   </tr>
 </table>
-<object type=\"image/svg+xml\" data=\"data/overview/svg/gloadtrend/${props.orispl_code}.svg\" height="360"></object>
-<object type=\"image/svg+xml\" data=\"data/overview/svg/emissions/${props.orispl_code}.svg\" height="360"></object>`;
+<object type=\"image/svg+xml\" data=\"img/svg/gloadtrend/${props.orispl_code}.svg\" height="360"></object>
+<object type=\"image/svg+xml\" data=\"img/svg/emissions/${props.orispl_code}.svg\" height="360"></object>`;
     return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
 }
 
 function stateAggregatePopup(props) {
     statePostalCode = props.code.toLowerCase();
     htmlContent = `<h3>${props.name}</h3>
-<object type=\"image/svg+xml\" data=\"data/overview/svg/gloadtrend/${statePostalCode}.svg\" width="500" height="360"></object>
-<object type=\"image/svg+xml\" data=\"data/overview/svg/emissions/${statePostalCode}.svg\" width="500" height="360"></object>`;
+<object type=\"image/svg+xml\" data=\"img/svg/gloadtrend/${statePostalCode}.svg\" width="500" height="360"></object>
+<object type=\"image/svg+xml\" data=\"img/svg/emissions/${statePostalCode}.svg\" width="500" height="360"></object>`;
     return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
 }
 

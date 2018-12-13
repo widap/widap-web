@@ -45,4 +45,4 @@ Make sure you've already generated the json files containing the overview data (
 ```
 python make_overview_plots.py orispl_codes.txt
 ```
-This will save plots in the appropriate folders under `../data/overview/svg/`, alerting you to cases where it failed to produce a plot.
+This will save plots in the appropriate folders under `../img/svg/`, alerting you to cases where it failed to produce a plot.
