@@ -2,7 +2,8 @@ var stateMarkers = [
   {
     "type": "Feature",
     "properties": {
-      "name": "Washington"
+      "name": "Washington",
+      "code": "WA"
     },
     "geometry": {
       "type": "Point",
@@ -15,7 +16,8 @@ var stateMarkers = [
   {
     "type": "Feature",
     "properties": {
-      "name": "Oregon"
+      "name": "Oregon",
+      "code": "OR"
     },
     "geometry": {
       "type": "Point",
@@ -28,7 +30,8 @@ var stateMarkers = [
   {
     "type": "Feature",
     "properties": {
-      "name": "California"
+      "name": "California",
+      "code": "CA"
     },
     "geometry": {
       "type": "Point",
@@ -41,7 +44,8 @@ var stateMarkers = [
   {
     "type": "Feature",
     "properties": {
-      "name": "Montana"
+      "name": "Montana",
+      "code": "MT"
     },
     "geometry": {
       "type": "Point",
@@ -54,7 +58,8 @@ var stateMarkers = [
   {
     "type": "Feature",
     "properties": {
-      "name": "Idaho"
+      "name": "Idaho",
+      "code": "ID"
     },
     "geometry": {
       "type": "Point",
@@ -67,7 +72,8 @@ var stateMarkers = [
   {
     "type": "Feature",
     "properties": {
-      "name": "Wyoming"
+      "name": "Wyoming",
+      "code": "WY"
     },
     "geometry": {
       "type": "Point",
@@ -80,7 +86,8 @@ var stateMarkers = [
   {
     "type": "Feature",
     "properties": {
-      "name": "Nevada"
+      "name": "Nevada",
+      "code": "NV"
     },
     "geometry": {
       "type": "Point",
@@ -93,7 +100,8 @@ var stateMarkers = [
   {
     "type": "Feature",
     "properties": {
-      "name": "Utah"
+      "name": "Utah",
+      "code": "UT"
     },
     "geometry": {
       "type": "Point",
@@ -106,7 +114,8 @@ var stateMarkers = [
   {
     "type": "Feature",
     "properties": {
-      "name": "Colorado"
+      "name": "Colorado",
+      "code": "CO"
     },
     "geometry": {
       "type": "Point",
@@ -119,7 +128,8 @@ var stateMarkers = [
   {
     "type": "Feature",
     "properties": {
-      "name": "Arizona"
+      "name": "Arizona",
+      "code": "AZ"
     },
     "geometry": {
       "type": "Point",
@@ -132,7 +142,8 @@ var stateMarkers = [
   {
     "type": "Feature",
     "properties": {
-      "name": "New Mexico"
+      "name": "New Mexico",
+      "code": "NM"
     },
     "geometry": {
       "type": "Point",
@@ -145,7 +156,8 @@ var stateMarkers = [
   {
     "type": "Feature",
     "properties": {
-      "name": "Texas"
+      "name": "Texas",
+      "code": "TX"
     },
     "geometry": {
       "type": "Point",

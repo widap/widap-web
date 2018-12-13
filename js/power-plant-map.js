@@ -73,7 +73,10 @@ function powerPlantPopup(props) {
 }
 
 function stateAggregatePopup(props) {
-    htmlContent = `<h3>${props.name}</h3>`;
+    statePostalCode = props.code.toLowerCase();
+    htmlContent = `<h3>${props.name}</h3>
+<object type=\"image/svg+xml\" data=\"data/overview/svg/gloadtrend/${statePostalCode}.svg\" width="500" height="360"></object>
+<object type=\"image/svg+xml\" data=\"data/overview/svg/emissions/${statePostalCode}.svg\" width="500" height="360"></object>`;
     return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
 }
 
