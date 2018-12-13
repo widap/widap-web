@@ -20,12 +20,12 @@ const colors = {
 
 // Declare all vars up front in case they get used in functions.
 var map, powerPlantsGeoJson;
-var grayscaleTiles = L.tileLayer.provider('Esri.WorldGrayCanvas');
+var wikiMapTiles = L.tileLayer.provider('Wikimedia');
 var satelliteTiles = L.tileLayer.provider('Esri.WorldImagery');
 var earthAtNightTiles = L.tileLayer.provider('NASAGIBS.ViirsEarthAtNight2012');
 var baseMaps = {
     "night": earthAtNightTiles,
-    "grayscale": grayscaleTiles,
+    "map": wikiMapTiles,
     "satellite": satelliteTiles,
 };
 var legend = L.control({position: 'bottomright'});
