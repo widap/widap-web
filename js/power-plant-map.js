@@ -68,7 +68,8 @@ function powerPlantPopup(props) {
   </tr>
 </table>
 <object type=\"image/svg+xml\" data=\"img/svg/gloadtrend/${props.orispl_code}.svg\" height="360"></object>
-<object type=\"image/svg+xml\" data=\"img/svg/emissions/${props.orispl_code}.svg\" height="360"></object>`;
+<object type=\"image/svg+xml\" data=\"img/svg/emissions/${props.orispl_code}.svg\" height="360"></object>
+<a class="monthly-data-download" href="csv/monthly/${props.orispl_code}.csv">Download this data (csv)</a>`;
     return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
 }
 
