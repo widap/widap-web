@@ -91,39 +91,6 @@
             maxZoom: 18
           }
         },
-        DE: {
-          url: 'https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
-          options: {
-            maxZoom: 18
-          }
-        },
-        CH: {
-          url: 'https://tile.osm.ch/switzerland/{z}/{x}/{y}.png',
-          options: {
-            maxZoom: 18,
-            bounds: [[45, 5], [48, 11]]
-          }
-        },
-        France: {
-          url: 'https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
-          options: {
-            maxZoom: 20,
-            attribution: '&copy; Openstreetmap France | {attribution.OpenStreetMap}'
-          }
-        },
-        HOT: {
-          url: 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
-          options: {
-            attribution: '{attribution.OpenStreetMap}, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
-          }
-        },
-        BZH: {
-          url: 'https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',
-          options: {
-            attribution: '{attribution.OpenStreetMap}, Tiles courtesy of <a href="http://www.openstreetmap.bzh/" target="_blank">Breton OpenStreetMap Team</a>',
-            bounds: [[46.2, -5.5], [50, 0.7]]
-          }
-        }
       }
     },
     Esri: {

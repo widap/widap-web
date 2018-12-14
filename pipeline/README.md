@@ -35,7 +35,7 @@ Something like this should do it:
 while read orispl_code;
 do
   echo "Processing ${orispl_code}"
-  python prep_plant_overview_data.py ${orispl_code} > ../data/overview/${orispl_code}.json
+  python prep_plant_overview_csv.py ${orispl_code} > ../csv/monthly/${orispl_code}.csv
 done < orispl_codes.txt
 ```
 
