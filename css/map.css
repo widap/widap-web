@@ -1,6 +1,12 @@
 body {
     margin: 0px;
 }
+h1 {
+    padding-left: 14px;
+    font-family: 'Source Sans Pro', serif;
+    font-weight: 300;
+    font-size: 28pt;
+}
 .visible {
     display: inline;
 }
@@ -14,10 +20,6 @@ body {
     width: 100%;
 }
 #facility-vizmetric-selector-container {
-    position: absolute;
-    top: 4px;
-    left: 6px;
-    z-index: 500;
     color: #ddd;
 }
 #power-plants-map {
@@ -28,6 +30,7 @@ body {
     background: rgba(255, 255, 255, 0.9);
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 11pt;
+    color: #222;
 }
 .map-legend {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);

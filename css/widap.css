@@ -6,9 +6,9 @@ select {
   font-family: Source Sans Pro, Helvetica, sans-serif;
   font-size: 12pt;
 }
-h2 {
-  color: #333;
+a {
+  color: #006CB8;
 }
-p {
-  color: #333;
+a:hover {
+  color: #00548f;
 }
