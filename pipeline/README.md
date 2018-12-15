@@ -39,6 +39,8 @@ do
 done < orispl_codes.txt
 ```
 
+The Python script `prep_plant_overview_csv.py` reads gload and emissions data from the SQL table, aggregates it by month, then prints the results as a csv.
+
 ### ...regenerate the plots themselves?
 
 Make sure you've already generated the json files containing the overview data (see above) and sanity checked them. Then run:

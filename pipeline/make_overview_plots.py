@@ -1,24 +1,16 @@
-import json
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
 
-# Super hacky
-# https://stackoverflow.com/questions/47404653/pandas-0-21-0-timestamp-compatibility-issue-with-matplotlib
-import pandas.plotting._converter as pandacnv
-pandacnv.register()
+USAGE = "Usage: python make_overview_plots.py < orispl_codes.txt"
 
-USAGE = "Usage: python make_overview_plots.py <orispl_codes_file>"
-
-def save_gload_trend_svg(orispl_code, overview_data):
-    gload = overview_data["monthly_gload_quartiles"]
-    dt = [np.datetime64(x) for x in gload['index']]
-    mins, lower_q, medians, upper_q, maxs = zip(*gload['data'])
-
+def save_gload_trend_svg(orispl_code, df):
+    dt = [np.datetime64(x) for x in df.year_month]
     plt.clf()
-    plt.fill_between(dt, mins, maxs, facecolor='gray', alpha=0.3)
-    plt.fill_between(dt, lower_q, upper_q, facecolor='gray', alpha=0.6)
-    plt.plot(dt, medians)
+    plt.fill_between(dt, df.min_gload_mw, df.max_gload_mw, facecolor='gray', alpha=0.3)
+    plt.fill_between(dt, df.q1_gload_mw, df.q3_gload_mw, facecolor='gray', alpha=0.6)
+    plt.plot(dt, df.q2_gload_mw)
     plt.title("Monthly gross load trend (MW)")
     plt.xlabel("Date")
     plt.grid()
@@ -27,27 +19,25 @@ def save_gload_trend_svg(orispl_code, overview_data):
     plt.tight_layout()
     plt.savefig("../img/svg/gloadtrend/%s.svg" % orispl_code, transparent=True, bbox='tight')
 
-def save_emissions_svg(orispl_code, overview_data):
-    gload = overview_data["monthly_gload_quartiles"]
-    emis = overview_data["emissions"]
-    dt = [np.datetime64(x) for x in gload['index']]
+def save_emissions_svg(orispl_code, df):
+    dt = [np.datetime64(x) for x in df.year_month]
     plt.clf()
 
     ax1 = plt.subplot(311)
-    plt.plot(dt, emis['so2_mass'], label='SO2 (lbs)', color='green')
+    plt.plot(dt, df.avg_so2_mass_lbs_hr, label='SO2 (lbs)', color='green')
     plt.setp(ax1.get_xticklabels(), visible=False)
     plt.legend()
     plt.grid()
-    plt.title("Average monthly emissions")
+    plt.title("Mean hourly emissions")
 
     ax2 = plt.subplot(312, sharex=ax1)
-    plt.plot(dt, emis['nox_mass'], label='NOx (lbs)', color='xkcd:orange')
+    plt.plot(dt, df.avg_nox_mass_lbs_hr, label='NOx (lbs)', color='xkcd:orange')
     plt.setp(ax2.get_xticklabels(), visible=False)
     plt.legend()
     plt.grid()
 
     ax3 = plt.subplot(313, sharex=ax1)
-    plt.plot(dt, emis['co2_mass'], label='CO2 (tons)', color='steelblue')
+    plt.plot(dt, df.avg_co2_mass_tons_hr, label='CO2 (tons)', color='steelblue')
     plt.xlim(dt[0], dt[-1])
     plt.legend()
     plt.grid()
@@ -56,20 +46,18 @@ def save_emissions_svg(orispl_code, overview_data):
     plt.tight_layout()
     plt.savefig("../img/svg/emissions/%s.svg" % orispl_code, transparent=True)
 
-def generate_plots(orispl_codes):
-    for orispl_code in orispl_codes:
-        try:
-            with open("../data/overview/%s.json" % orispl_code) as f:
-                overview_data = json.loads(f.read())
-            save_gload_trend_svg(orispl_code, overview_data)
-            save_emissions_svg(orispl_code, overview_data)
-        except Exception as e:
-            print("I had a problem with", orispl_code)
+def generate_plots(orispl_code):
+    df = pd.DataFrame()
+    try:
+        df = pd.read_csv("../csv/monthly/%s.csv" % orispl_code)
+    except Exception as e:
+        print("I had a problem with", orispl_code)
+        return
+    save_gload_trend_svg(orispl_code, df)
+    save_emissions_svg(orispl_code, df)
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print(USAGE)
-        sys.exit()
-    with open(sys.argv[1]) as f:
-        orispl_codes = [x.strip() for x in f]
-    generate_plots(orispl_codes)
+    for line in sys.stdin:
+        orispl_code = line.strip()
+        print("Processing", orispl_code)
+        generate_plots(orispl_code)

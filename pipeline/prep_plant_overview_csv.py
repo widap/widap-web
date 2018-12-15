@@ -2,7 +2,6 @@
 Given the ORISPL_CODE of a plant, prepares the monthly gload quartiles and 
 normalized emissions time series to display on the globe view page.
 """
-import json
 import pandas as pd
 import sql_session
 import sys

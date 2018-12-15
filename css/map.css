@@ -26,6 +26,8 @@ body {
 }
 .leaflet-popup-content-wrapper {
     background: rgba(255, 255, 255, 0.9);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 11pt;
 }
 .map-legend {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);

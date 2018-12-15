@@ -32,6 +32,7 @@ def fetch_plants_table():
         .groupby("orispl_code") \
         .agg(aggregators) \
         .rename(columns={"year": "years"})
+        .drop(["orispl_code"], axis=1)
 
 if __name__ == '__main__':
     print(fetch_plants_table().to_csv())

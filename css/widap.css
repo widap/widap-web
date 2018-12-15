@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 body {
-  font-family: Lato, Helvetica, sans-serif;
+  font-family: Source Sans Pro, Helvetica, sans-serif;
 }
 select {
-  font-family: Lato, Helvetica, sans-serif;
+  font-family: Source Sans Pro, Helvetica, sans-serif;
   font-size: 12pt;
 }
 h2 {
