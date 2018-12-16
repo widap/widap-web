@@ -1,0 +1,8 @@
+css/*
+csv/*
+csv/monthly/*
+data/*
+img/svg/**/*
+js/leaflet-providers.js
+js/power-plant-map.js
+powerplant_map.html
