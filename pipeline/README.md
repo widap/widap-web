@@ -2,15 +2,15 @@
 
 Contains various scripts for preprocessing data to be displayed for user interactivity, geoJSON markers on the globe, etc.
 
-## How do I...
-
 In all the invocations below, filenames inside brackets are understood to be user-chosen. In other words, when you run
 ```
 python myscript.py > <myoutput.csv>
 ```
 you substitute whatever you want for `<myoutput.csv>`.
 
-### regenerate the geoJSON containing all the plant markers?
+## How do I...
+
+### ...regenerate the geoJSON containing all the plant markers?
 
 First, fetch the details on each plant from the `plants` table with:
 ```
@@ -28,7 +28,7 @@ python generate_plants_geojson.py <plants_data.csv> <extra_plant_details.csv> > 
 ```
 Make sure the output is moved to the location expected by the map page.
 
-### regenerate the data used for the plots on the map page?
+### ...regenerate the data used for the plots on the map page?
 
 Something like this should do it:
 ```
