@@ -12,6 +12,6 @@ while read line; do
     fi;
     cpcmd="cp ${file} ${fulldir}/`basename ${file}`"
     echo $cpcmd
-    $cpcpmd
+    $cpcmd
   done;
 done < manifest.txt
