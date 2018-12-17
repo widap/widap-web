@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
   crossorigin=""/>
-<link href="https://www-media.stanford.edu/su-identity/css/su-identity.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:300,400,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/widap.css" />
@@ -13,51 +12,8 @@
   crossorigin=""></script>
 <script src="js/leaflet-providers.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<!--[if IE 8]>
-<link rel="stylesheet" type="text/css" href="https://www-media.stanford.edu/su-identity/css/ie/ie8.css" />
-<![endif]-->
-<!--[if IE 7]>
-<link rel="stylesheet" type="text/css" href="https://www-media.stanford.edu/su-identity/css/ie/ie7.css" />
-<![endif]-->
-<link rel="apple-touch-icon" sizes="57x57" href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="60x60" href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-60x60.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-152x152.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-180x180.png" />
-
-<link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-196x196.png" sizes="196x196" />
-<link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-192x192.png" sizes="192x192" />
-<link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-128.png" sizes="128x128" />
-<link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-16x16.png" sizes="16x16" />
-
-<link rel="mask-icon" href="//www-media.stanford.edu/assets/favicon/safari-pinned-tab.svg" color="#ffffff">
-<meta name="application-name" content="Stanford University"/>
-<meta name="msapplication-TileColor" content="#FFFFFF" />
-<meta name="msapplication-TileImage" content="//www-media.stanford.edu/assets/favicon/mstile-144x144.png" />
-<meta name="msapplication-square70x70logo" content="//www-media.stanford.edu/assets/favicon/mstile-70x70.png" />
-<meta name="msapplication-square150x150logo" content="//www-media.stanford.edu/assets/favicon/mstile-150x150.png" />
-<meta name="msapplication-square310x310logo" content="//www-media.stanford.edu/assets/favicon/mstile-310x310.png" />
 </head>
 <body>
-<div id="su-wrap"> <!-- #su-wrap start -->
-<div id="su-content"> <!-- #su-content start -->
-  <div id="brandbar">
-    <div class="container">
-      <a href="http://www.stanford.edu">
-        <img src="https://www-media.stanford.edu/su-identity/images/brandbar-stanford-logo@2x.png" alt="Stanford University" width="152" height="23">
-      </a>
-    </div>
-  </div>
-  <h1>Western Interconnection Data Analytics Project (WIDAP) Overview Map</h1>
   <div id="map-container">
     <div id="facility-vizmetric-selector-container">
       <select id="facility-vizmetric-selector">
@@ -71,42 +27,5 @@
   <script type='text/javascript' src='data/plants.geojson'></script>
   <script type='text/javascript' src='data/statemarkers.geojson'></script>
   <script type='text/javascript' src='js/power-plant-map.js'></script>
-
-</div> <!-- #su-content end -->
-</div> <!-- #su-wrap end -->
-
-<!-- Global footer snippet start -->
-<div id="global-footer">
-<div class="container">
-<div class="row">
-  <div id="bottom-logo" class="span2">
-    <a href="https://www.stanford.edu">
-      <img src="https://www-media.stanford.edu/su-identity/images/footer-stanford-logo@2x.png" alt="Stanford University" width="105" height="49"/>
-    </a>
-  </div>
-  <!-- #bottom-logo end -->
-  <div id="bottom-text" class="span10">
-    <ul>
-      <li class="home"><a href="https://www.stanford.edu">Stanford Home</a></li>
-      <li class="maps alt"><a href="https://visit.stanford.edu/plan/">Maps & Directions</a></li>
-      <li class="search-stanford"><a href="https://www.stanford.edu/search/">Search Stanford</a></li>
-      <li class="emergency alt"><a href="https://emergency.stanford.edu">Emergency Info</a></li>
-    </ul>
-    <ul id="policy-links">
-      <li><a href="https://www.stanford.edu/site/terms/" title="Terms of use for sites">Terms of Use</a></li>
-      <li><a href="https://www.stanford.edu/site/privacy/" title="Privacy and cookie policy">Privacy</a></li>
-      <li><a href="https://uit.stanford.edu/security/copyright-infringement" title="Report alleged copyright infringement">Copyright</a></li>
-      <li><a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4" title="Ownership and use of Stanford trademarks and images">Trademarks</a></li>
-      <li><a href="http://exploredegrees.stanford.edu/nonacademicregulations/nondiscrimination/" title="Non-discrimination policy">Non-Discrimination</a></li>
-      <li><a href="https://www.stanford.edu/site/accessibility" title="Report web accessibility issues">Accessibility</a></li>
-    </ul>
-  </div> <!-- .bottom-text end -->
-  <div class="clear"></div>
-  <p class="copyright vcard">&copy; <span class="fn org">Stanford University</span>, <span class="adr"> <span class="locality">Stanford</span>, <span class="region">California</span> <span class="postal-code">94305</span></span>.
-  </p>
-</div> <!-- .row end -->
-</div> <!-- .container end -->
-</div> <!-- global-footer end -->
-<!-- Global footer snippet end -->
 </body>
 </html>
