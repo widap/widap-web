@@ -10,11 +10,10 @@ USAGE = "Usage: python make_state_emissions_plots.py <state_emissions_csv_file>"
 def produce_state_emissions_plot(state):
     state_emis = df[df.state == state]
     state_emis.index = pd.DatetimeIndex(state_emis.yearMonth)
+    # Remove 2018 data; not sure it's validated
     filtered = state_emis.loc[state_emis.index < '2018-01']
 
     dt = [np.datetime64(x) for x in filtered.index]
-    # Remove 2018 data; not sure it's validated
-    # dt = [t for t in dt if t < np.datetime64('2018-01')]
     co2_emis = filtered.CO2[dt]
 
     plt.clf()
@@ -24,7 +23,7 @@ def produce_state_emissions_plot(state):
     plt.setp(ax1.get_xticklabels(), visible=False)
     plt.legend()
     plt.grid()
-    plt.title("Monthly emissions")
+    plt.title("Emissions")
 
     ax2 = plt.subplot(312, sharex=ax1)
     plt.plot(dt, filtered.NOx, label="NOx (lbs)", color='xkcd:orange')
