@@ -57,10 +57,14 @@ function powerPlantMarkerOptions(props) {
 }
 
 function powerPlantPopup(props) {
+    capacity = props.capacity;
+    if (capacity != "unknown") {
+        capacity = capacity + " MW";
+    }
     htmlContent = `<h3>${props.name}</h3>
 <table class=\"plant-props-table\">
   <tr>
-    <tr><td class=\"info-header\">Capacity:</td><td>${props.capacity}MW</td></tr>
+    <tr><td class=\"info-header\">Capacity:</td><td>${capacity}</td></tr>
     <tr><td class=\"info-header\">Primary fuel:</td><td>${props.fuel_source}</td></tr>
     <tr><td class=\"info-header\">Operator:</td><td>${props.operator}</td></tr>
     <tr><td class=\"info-header\">County:</td><td>${props.county}</td></tr>
@@ -77,7 +81,8 @@ function stateAggregatePopup(props) {
     statePostalCode = props.code.toLowerCase();
     htmlContent = `<h3>${props.name}</h3>
 <object type=\"image/svg+xml\" data=\"img/svg/gloadtrend/${statePostalCode}.svg\" width="500" height="360"></object>
-<object type=\"image/svg+xml\" data=\"img/svg/emissions/${statePostalCode}.svg\" width="500" height="360"></object>`;
+<object type=\"image/svg+xml\" data=\"img/svg/emissions/${statePostalCode}.svg\" width="500" height="360"></object>
+<a class="monthly-data-download" href="csv/monthly/${statePostalCode}.csv">Download this data (csv)</a>`;
     return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
 }
 
