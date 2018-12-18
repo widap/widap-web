@@ -152,19 +152,5 @@ var stateMarkers = [
         34.466087
       ]
     }
-  },
-  {
-    "type": "Feature",
-    "properties": {
-      "name": "Texas",
-      "code": "TX"
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -105.938739,
-        31.748783
-      ]
-    }
   }
 ]
