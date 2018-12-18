@@ -10,7 +10,7 @@ while read line; do
       echo $mkdircmd
       $mkdircmd
     fi;
-    cpcmd="cp ${file} ${fulldir}/`basename ${file}`"
+    cpcmd="cp ${file} ${fulldir}"
     echo $cpcmd
     $cpcmd
   done;
