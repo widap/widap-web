@@ -20,11 +20,17 @@ h1 {
     width: 100%;
 }
 #facility-vizmetric-selector-container {
+    position: relative;
+    top: 4px;
+    left: 4px;
+    z-index: 900;
     color: #ddd;
 }
 #power-plants-map {
     height: 700px;
     margin: 0px;
+    position: relative;
+    top: -25px;
 }
 .leaflet-popup-content-wrapper {
     background: rgba(255, 255, 255, 0.9);

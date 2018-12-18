@@ -14,9 +14,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
-  <p>The map below presents a high-level overview of emissions and load (from 2001 onward) of plants in the Western Interconnection. The data is taken from the EPA's public datasets from continuous emissions monitoring systems (CEMS), which report hourly data.</p>
+  <p>The map below presents a high-level overview of emissions and load (from 2001 onward) of plants in the Western Interconnection. The data is taken from the <a href="https://ampd.epa.gov/ampd/">EPA's public datasets</a> from continuous emissions monitoring systems (CEMS), which report hourly data.</p>
   <p>The <b>monthly gross load trend</b> plot displays quartiles of gross load data for a plant or state: the blue line represents the median value, the dark gray area the 25% to 75% quartiles, and the light gray the entire range of values occurring over the month.</p>
-  <p>The <b>mean hourly emissions</b> plot displays the mean value, over the period of a month, of hourly emissions of three major pollutants covered under the CEMS requirements: SO2, NOx, and CO2.</p>
+  <p>The <b>mean hourly emissions</b> plot displays the mean value, over the period of a month, of hourly emissions of three major pollutants covered under the CEMS requirements: SO<sub>2</sub>, NO<sub>x</sub>, and CO<sub>2</sub>.</p>
+  <p>Note that the state-level plots represent aggregates of load and emissions data from only the plants in the dataset. Other electrical generation sources, such as solar and wind or small (&lt;25MW) fossil-fired plants not required to participate in CEMS, are not included.</p>
+  <p>Each popup contains a link to download the monthly aggregated data as a CSV.</p>
   <div id="map-container">
     <div id="facility-vizmetric-selector-container">
       <select id="facility-vizmetric-selector">
