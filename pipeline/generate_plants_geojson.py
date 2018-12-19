@@ -21,8 +21,8 @@ def row_to_feature(row):
         "orispl_code": row.Index,
         "operator": checknan(row.operator),
         "county": row.county,
-        "capacity": row.max_gload,
-        "total_co2_emissions": row.total_co2,
+        "capacity": checknan(row.max_gload, default="unknown"),
+        "total_co2_emissions": checknan(row.total_co2, default="unknown"),
       },
       "geometry": {
         "type": "Point",
@@ -44,7 +44,7 @@ def join_csvs_and_dump_to_geojson(overview_csv, extra_details_csv):
         "features": features,
         "name": "WidapPowerPlants"
     }
-    return "var powerPlants = %s" % json.dumps(feature_collection)
+    return "var powerPlants = %s" % json.dumps(feature_collection, indent=2)
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:

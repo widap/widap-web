@@ -200,7 +200,6 @@ orispl_code,state,county,name,latitude,longitude,operator,primary_fuel,years
 55687,NV,Clark,Walter M. Higgins III Generating Station,35.6139,-115.3561,NV Energy,Pipeline Natural Gas,2003-2017
 55698,CA,Kings,Hanford Energy Park Peaker,36.2689,-119.6469,AltaGas San Joaquin Energy Inc.,Pipeline Natural Gas,2001-2017
 55700,WA,Cowlitz,Mint Farm Generating Station,46.1403,-122.9842,"Puget Sound Energy, Inc.",Natural Gas,2008-2017
-55704,WA,,Pierce Power Station,0.0,0.0,,,2001-2002
 55733,ID,Elmore,Bennett Mountain Power Project,43.147,-115.6671,Idaho Power Company,Pipeline Natural Gas,2005-2017
 55748,CA,Santa Clara,Los Esteros Critical Energy Facility,37.425,-121.9319,"Los Esteros Critical Energy Fac, LLC",Pipeline Natural Gas,2003-2017
 55749,MT,Big Horn,Hardin Generating Station,45.7578,-107.6,"Colorado Energy Management, LLC",Coal,2006-2017
