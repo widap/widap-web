@@ -119,17 +119,13 @@ orispl_code,state,county,name,latitude,longitude,operator,primary_fuel,years
 10349,CA,Sutter,Yuba City Energy Center,39.1365,-121.6397,Calpine Corporation,Pipeline Natural Gas,2002-2017
 10350,CA,Sutter,Greenleaf One,39.0536,-121.6942,ProEnergy Services LLC,Pipeline Natural Gas,2012-2017
 10405,CA,Fresno,Kingsburg Cogen Facility,36.547,-119.578,"PurEnergy Operating Services, LLC",Pipeline Natural Gas,2012-2017
-10649,CA,Kern,Bear Mountain Limited,35.4192,-118.9266,WCAC Operating Company,,2016-2017
-10650,CA,Kern,Badger Creek Limited,35.4837,-119.0299,WCAC Operating Company,,2016-2017
 10682,CO,Morgan,Brush Power Projects,40.2415,-103.631,"Colorado Energy Management, LLC",Pipeline Natural Gas,2001-2017
 10761,NV,Clark,Las Vegas Generating Station,36.2317,-115.1235,Nevada Power Company dba NV Energy,Pipeline Natural Gas,2002-2017
-10784,MT,Rosebud,Colstrip Energy Limited Partnership,45.9753,-106.6554,"Rosebud Operating Services, Inc.",,2015-2017
 10812,CA,San Diego,North Island,32.705,-117.189,Applied Energy LLC,Pipeline Natural Gas,2009-2013
 50131,CA,Fresno,Coalinga Cogeneration Facility,36.1807,-120.3885,Coalinga Cogeneration Company,Pipeline Natural Gas,2007-2017
 50707,CO,Weld,J M Shafer,40.0979,-104.7745,Tri-State Generation & Transmission,Pipeline Natural Gas,2009-2017
 50864,CA,Monterey,Sargent Canyon Cogen Facility,35.9359,-120.8405,Sargent Canyon Cogeneration Company,Pipeline Natural Gas,2007-2017
 50865,CA,Monterey,Salinas River Cogeneration Facility,35.9515,-120.8679,Salinas River Cogeneration Company,Pipeline Natural Gas,2007-2017
-50931,MT,Yellowstone,Yellowstone Energy Limited Partnership,45.8117,-108.4278,"Rosebud Operating Services, Inc.",,2015-2017
 50951,UT,Carbon,Sunnyside Cogeneration Associates,39.5472,-110.3917,Sunnyside Cogeneration Associates,Coal,2015-2017
 54238,CA,San Joaquin,DTE Stockton,37.9416,-121.3273,DTE Energy Services,Wood,2014-2017
 54476,WA,Whatcom,Sumas Generating Station,48.9905,-122.2733,"Puget Sound Energy, Inc.",Natural Gas,2009-2017
@@ -137,7 +133,6 @@ orispl_code,state,county,name,latitude,longitude,operator,primary_fuel,years
 54694,AZ,Yuma,Yuma Cogeneration Associates,32.7286,-114.6542,Falcon Power Operating Company,Pipeline Natural Gas,2016-2017
 54749,CA,San Diego,Goal Line,33.1185,-117.0995,"PurEnergy Operating Services, LLC",Pipeline Natural Gas,2016-2017
 54761,OR,Umatilla,Hermiston,45.8042,-119.37,Perennial Power,Pipeline Natural Gas,2001-2017
-54768,CA,Kern,Live Oak Limited,35.4837,-119.0298,WCAC Operating Company,,2016-2017
 54814,NM,San Juan,Milagro Cogeneration and Gas Plant,36.7367,-107.9417,Williams Four Corners LLC,Pipeline Natural Gas,2001-2016
 54854,NV,Clark,Sun Peak Generating Station,36.1392,-115.034,Nevada Power Company dba NV Energy,Pipeline Natural Gas,2015-2017
 55039,NM,Bernalillo,Rio Bravo Generating Station,35.026,-106.644,Public Service Company of New Mexico,Pipeline Natural Gas,2001-2017
