@@ -2284,44 +2284,6 @@ var powerPlants = {
     {
       "type": "Feature",
       "properties": {
-        "name": "Bear Mountain Limited",
-        "fuel_source": "",
-        "orispl_code": 10649,
-        "operator": "WCAC Operating Company",
-        "county": "Kern",
-        "capacity": "unknown",
-        "total_co2_emissions": "unknown"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.9266,
-          35.4192
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Badger Creek Limited",
-        "fuel_source": "",
-        "orispl_code": 10650,
-        "operator": "WCAC Operating Company",
-        "county": "Kern",
-        "capacity": "unknown",
-        "total_co2_emissions": "unknown"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -119.0299,
-          35.4837
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Brush Power Projects",
         "fuel_source": "Pipeline Natural Gas",
         "orispl_code": 10682,
@@ -2354,25 +2316,6 @@ var powerPlants = {
         "coordinates": [
           -115.1235,
           36.2317
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Colstrip Energy Limited Partnership",
-        "fuel_source": "",
-        "orispl_code": 10784,
-        "operator": "Rosebud Operating Services, Inc.",
-        "county": "Rosebud",
-        "capacity": "unknown",
-        "total_co2_emissions": "unknown"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -106.6554,
-          45.9753
         ]
       }
     },
@@ -2468,25 +2411,6 @@ var powerPlants = {
         "coordinates": [
           -120.8679,
           35.9515
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Yellowstone Energy Limited Partnership",
-        "fuel_source": "",
-        "orispl_code": 50931,
-        "operator": "Rosebud Operating Services, Inc.",
-        "county": "Yellowstone",
-        "capacity": "unknown",
-        "total_co2_emissions": "unknown"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -108.4278,
-          45.8117
         ]
       }
     },
@@ -2620,25 +2544,6 @@ var powerPlants = {
         "coordinates": [
           -119.37,
           45.8042
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Live Oak Limited",
-        "fuel_source": "",
-        "orispl_code": 54768,
-        "operator": "WCAC Operating Company",
-        "county": "Kern",
-        "capacity": "unknown",
-        "total_co2_emissions": "unknown"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -119.0298,
-          35.4837
         ]
       }
     },
