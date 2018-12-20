@@ -1297,9 +1297,9 @@ var powerPlants = {
       "type": "Feature",
       "properties": {
         "name": "Gadsby",
-        "fuel_source": "",
+        "fuel_source": "Pipeline Natural Gas",
         "orispl_code": 3648,
-        "operator": "",
+        "operator": "Pacificorp Energy Generation",
         "county": "Salt Lake",
         "capacity": 351.0,
         "total_co2_emissions": 4788940.0

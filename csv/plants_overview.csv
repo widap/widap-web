@@ -67,7 +67,7 @@ orispl_code,state,county,name,latitude,longitude,operator,primary_fuel,years
 2454,NM,Lea,Cunningham,32.7131,-103.3533,Southwestern Public Service Company,Pipeline Natural Gas,2001-2017
 3456,TX,El Paso,Newman,31.9858,-106.4322,El Paso Electric Company,Pipeline Natural Gas,2001-2017
 3644,UT,Carbon,Carbon,39.7272,-110.8644,Pacificorp Energy Generation,Coal,2001-2016
-3648,UT,Salt Lake,Gadsby,40.7686,-111.9289,,,2001-2017
+3648,UT,Salt Lake,Gadsby,40.7686,-111.9289,Pacificorp Energy Generation,Pipeline Natural Gas,2001-2017
 3845,WA,Lewis,Centralia,46.7559,-122.8578,TransAlta,Coal,2001-2017
 4158,WY,Converse,Dave Johnston,42.8378,-105.7769,Pacificorp Energy Generation,Coal,2001-2017
 4162,WY,Lincoln,Naughton,41.7572,-110.5986,Pacificorp Energy Generation,Coal,2001-2017
