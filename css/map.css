@@ -1,5 +1,5 @@
 body {
-    margin: 0px;
+    margin: 4px;
 }
 h1 {
     padding-left: 14px;
@@ -15,22 +15,36 @@ h1 {
 }
 #map-container {
     overflow: hidden;
-    margin: 0px;
-    padding: 0px;
+    position: relative;
     width: 100%;
 }
 #facility-vizmetric-selector-container {
-    position: relative;
-    top: 4px;
-    left: 4px;
+    position: absolute;
+    padding: 2px;
     z-index: 900;
-    color: #ddd;
 }
-#power-plants-map {
-    height: 700px;
-    margin: 0px;
-    position: relative;
-    top: -25px;
+#facility-vizmetric-selector {
+    z-index: 9000;
+}
+@media (min-height: 350px) {
+    #power-plants-map {
+        height: 300px;
+    }
+}
+@media (min-height: 400px) {
+    #power-plants-map {
+        height: 350px;
+    }
+}
+@media (min-height: 600px) {
+    #power-plants-map {
+        height: 550px;
+    }
+}
+@media (min-height: 800px) {
+    #power-plants-map {
+        height: 750px;
+    }
 }
 .leaflet-popup-content-wrapper {
     background: rgba(255, 255, 255, 0.9);
