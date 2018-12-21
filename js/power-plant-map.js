@@ -21,11 +21,11 @@ const colors = {
 // Declare all vars up front in case they get used in functions.
 var map, powerPlantsGeoJson;
 var wikiMapTiles = L.tileLayer.provider('Wikimedia');
-var satelliteTiles = L.tileLayer.provider('Esri.WorldImagery');
 var earthAtNightTiles = L.tileLayer.provider('NASAGIBS.ViirsEarthAtNight2012');
+var satelliteTiles = L.tileLayer.provider('Esri.WorldImagery');
 var baseMaps = {
-    "night": earthAtNightTiles,
     "map": wikiMapTiles,
+    "night": earthAtNightTiles,
     "satellite": satelliteTiles,
 };
 var legend = L.control({position: 'bottomright'});
@@ -93,7 +93,7 @@ map = L.map('power-plants-map', {
     zoomDelta: 0.5,
     zoomSnap: 0.5,
     zoomControl: false,
-    layers: [earthAtNightTiles],
+    layers: [wikiMapTiles],
 });
 
 
