@@ -169,7 +169,7 @@ orispl_code,state,county,name,latitude,longitude,operator,primary_fuel,years
 55481,AZ,Maricopa,Mesquite Generating Station,33.3451,-112.8638,"Mesquite Power Operations, LLC",Pipeline Natural Gas,2003-2017
 55482,WA,Klickitat,Goldendale Generating Station,45.8114,-120.833,"Puget Sound Energy, Inc.",Pipeline Natural Gas,2004-2017
 55494,NV,Storey,Tri-Center Naniwa Energy,39.5617,-119.5175,Tri-Center Naniwa Energy,Pipeline Natural Gas,2001-2016
-55499,CA,Solano,CalPeak Power - Vaca Dixon,38.3989,-121.9239,"CalPeak Power - Vaca Dixon, LLC, CalPeak Power, LLC",,2001-2017
+55499,CA,Solano,CalPeak Power - Vaca Dixon,38.3989,-121.9239,"CalPeak Power - Vaca Dixon, LLC, CalPeak Power, LLC",Pipeline Natural Gas,2001-2017
 55504,CO,Lincoln,Limon Generating Station,39.2038,-103.7005,"Tri-State G & T Association, Inc.",Pipeline Natural Gas,2002-2017
 55505,CO,Adams,Frank Knutson Station,39.9414,-104.6817,"Tri-State G & T Association, Inc.",Pipeline Natural Gas,2002-2017
 55508,CA,Fresno,CalPeak Power - Panoche,36.6531,-120.5797,"CalPeak Power - Panoche, LLC, CalPeak Power, LLC",,2001-2017
