@@ -48,7 +48,9 @@ function renderMonthlyGloadBoxPlot(data, boxplot_div_id) {
   }
 
   layout = {
-    font: "'Source Sans Pro', 'Open Sans', sans-serif",
+    font: {
+      family: "'Source Sans Pro', 'Open Sans', sans-serif",
+    },
     showlegend: false,
     yaxis: {
       title: {
