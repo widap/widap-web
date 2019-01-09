@@ -1,4 +1,5 @@
 function prepGloadData(data) {
+  // TODO: Move this data processing to plant-data-deep-dive
   ymdParser = d3.timeParse("%Y-%m-%d");
   records = []
   for (var i = 0; i < data.length; i++) {
@@ -12,7 +13,6 @@ function prepGloadData(data) {
 
 function renderMonthlyGloadBoxPlot(data, boxplot_div_id) {
   data = prepGloadData(data)
-
 
   monExtent = d3.extent(data, d => d.op_date)
   startDate = d3.timeMonth.floor(monExtent[0])
