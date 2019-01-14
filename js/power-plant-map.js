@@ -33,10 +33,12 @@ var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function(map) {
     var div = L.DomUtil.create('div', 'map-legend');
+    var tableRows = ""
     for (var fuel_source in colors) {
-        div.innerHTML += "<i style=\"background: "
-            + colors[fuel_source] + "\"></i>" + fuel_source + "<br />";
+        tableRows += "<tr><td><i style=\"background: "
+            + colors[fuel_source] + "\"></i></td><td>" + fuel_source + "</td></tr>";
     }
+    div.innerHTML += "<table>" + tableRows + "</table>"
     return div;
 };
 
