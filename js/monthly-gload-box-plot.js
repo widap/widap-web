@@ -1,26 +1,18 @@
+function groupByMonth(xs) {
+  return xs.reduce(function(rv, x) {
+    (rv[x.op_date.slice(0, 7)] = rv[x.op_date.slice(0, 7)] || []).push(x);
+    return rv;
+  }, {});
+};
+
 function renderMonthlyGloadBoxPlot(data, boxplot_div_id) {
-  monExtent = d3.extent(data, d => d.op_date)
-  startDate = d3.timeMonth.floor(monExtent[0])
-  endDate = d3.timeMonth.ceil(monExtent[1])
-  monRange = d3.timeMonths(d3.timeMonth.ceil(monExtent[0]), endDate)
+  byMonth = groupByMonth(data)
 
-  bins = d3.histogram()
-    .domain([startDate, endDate])
-    .value(d => d.op_date)
-    .thresholds(monRange)
-    (data)
-
-  byMonth = []
-  for (i = 0; i < bins.length; i++) {
-    y = []
-    for (j = 0; j < bins[i].length; j++) {
-      y.push(bins[i][j].gload)
-    }
-    thisMonth = d3.timeMonth.floor(bins[i].x0)
-    dateFmtOptions = {year: 'numeric', month: 'short'}
-    byMonth.push({
-      y: y,
-      name: thisMonth.toLocaleDateString('en-US', dateFmtOptions),
+  traces = []
+  for (var key in byMonth) {
+    traces.push({
+      y: byMonth[key].map(v => v.gload),
+      name: key,
       type: 'box',
       line: {
         color: 'rgba(128,128,128,0.8)',
@@ -28,7 +20,6 @@ function renderMonthlyGloadBoxPlot(data, boxplot_div_id) {
       },
       fillcolor: 'rgba(128,128,140,0.3)',
       boxpoints: false,
-      // hoverinfo: 'none',
     })
   }
 
@@ -43,8 +34,12 @@ function renderMonthlyGloadBoxPlot(data, boxplot_div_id) {
       },
     },
     xaxis: {
+      title: {
+        text: 'Date',
+      },
       autorange: true,
-      rangeslider: {range: ['Jan 2001', 'Apr 2018']},
+      rangeslider: {},
+      type: 'date',
     },
     margin: {
       l: 40,
@@ -54,5 +49,5 @@ function renderMonthlyGloadBoxPlot(data, boxplot_div_id) {
     }
   }
 
-  Plotly.newPlot(boxplot_div_id, byMonth, layout, {displaylogo: false})
+  Plotly.newPlot(boxplot_div_id, traces, layout, {displaylogo: false})
 }
