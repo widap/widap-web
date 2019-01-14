@@ -14,21 +14,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
-  <h3>Introduction</h3>
-  <p>The map below presents data on emissions and electricity generation from 2001 to 2017. Data is available only for fossil-fired power plants greater than 25MW in the Western Interconnection. The data is publicly available on the <a href="https://ampd.epa.gov/ampd/">EPA's Air Markets Program Data website</a>, at hourly and power plant unit granularity.</p>
-  <h3>How to use this map</h3>
-  <p><ul>
-    <li>Bubbles: Hover over bubbles to see power plant names. Click on a bubble to see a power plant's average generation and emissions over time. More detail on graphs is below. Blue bubbles are natural gas-fired plants, and orange bubbles are coal power plants.</li>
-    <li>Pins: Hover over pins to see state names. Click on the pin to see the entire state's average generation and emissions over time. Note that this does not include renewable generation.</li>
-    <li>Layers: Click on the layers symbol in the upper right corner of the map to change which underlying map layer you are using. The three choices are map, night, and satellite. Map gives simple political information, including state and city names and roads. Night gives nighttime satellite images; the lights serve as approximate indicators of where energy is used. Satellite gives daytime satellite imagery, which can be used to determine detailed visual features, such as the number of cooling towers at a power plant, by fully zooming in.</li>
-    <li>Bubble size: By default, the bubble size is scaled to the power plant's capacity, which is taken as the maximum power output observed in the entire dataset for a given plant. Clicking on the bubble size dropdown in the upper left corner reveals another option: "Marker size = CO2 emissions 2001-17". Select this option to see the map with bubble size scaled to the sum of CO2 emissions from 2001&ndash;17.</li>
-    <li>Data download: Each popup contains a link to download a CSV of the graphed data.</li>
-  </ul></p>
-  <h3>What the graphs show</h3>
-  <p>The <span class="emph">monthly gross generation</span> plot displays the distribution of electricity generation from 2001 to 2017. Quartiles of gross generation are given for a plant or state: the blue line represents the median value, the dark gray area shows the 25% to 75% quartiles, and the light gray gives the entire range of values occurring over the month.</p>
-  <p>The <span class="emph">mean hourly emissions</span> plot displays the mean mass of emissions from 2001 to 2017. Monthly averages of hourly-level emissions are shown for three major pollutants covered under the CEMS requirements: SO<sub>2</sub>, NO<sub>x</sub>, and CO<sub>2</sub>.</p>
-  <p>The state pins show the same graphs, but the data for every power plant in that state is added together. Each popup contains a link to download the monthly aggregated data as a CSV.</p>
-  <p>Again, please note that the state-level plots represent aggregates of generation and emissions data from only the plants in the dataset. Other electrical generation sources, such as solar, wind, hydro, and small (&lt;25MW) fossil-fired plants not required to participate in CEMS, are not included. More information on what is and is not included can be found <a href="https://www.epa.gov/sites/production/files/2015-05/documents/part_75_emissions_monitoring_policy_manual.pdf">here</a>.</p>
   <div id="map-container">
     <div id="facility-vizmetric-selector-container">
       <select id="facility-vizmetric-selector">
