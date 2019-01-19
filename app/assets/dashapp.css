@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+body {
+  font-family: Source Sans Pro, Helvetica, sans-serif;
+}
+div.axis-col-selector {
+  display: inline-block;
+  min-width: 200px;
+}
+div.plot-selector {
+  display: inline-block;
+  min-width: 200px;
+}
