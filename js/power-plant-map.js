@@ -131,7 +131,7 @@ const stateMarkersGeojson = L.geoJSON(stateMarkers, {
     layer.bindTooltip(feature.properties.name);
     layer.bindPopup(stateAggregatePopup(feature.properties))
     .on('popupopen', function(e) {
-      renderPlots(feature.properties.code.toLowerCase(), () => {});
+      renderPlots(feature.properties.code.toLowerCase());
     });
   }
 })
