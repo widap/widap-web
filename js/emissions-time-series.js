@@ -1,5 +1,4 @@
 function renderEmissionsTimeSeries(divId, data) {
-  // smoothed = smoothOutEmissions(data, smoothness);
   const dt = data.map(d => d.year_month)
 
   const so2Trace = {
