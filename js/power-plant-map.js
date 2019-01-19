@@ -58,6 +58,93 @@ function powerPlantMarkerOptions(props) {
     };
 }
 
+function renderPlots(data, entityId) {
+    const dt = data.map(d => d.year_month)
+    const minTrace = {
+        type: 'scatter',
+        name: 'min',
+        x: dt,
+        y: data.map(d => d.min_gload_mw),
+        line: {
+          color: '#CCC',
+          width: 0.5,
+        },
+    }
+    const maxTrace = {
+        type: 'scatter',
+        name: 'max',
+        x: dt,
+        y: data.map(d => d.max_gload_mw),
+        line: {
+          color: '#CCC',
+          width: 0.5,
+        },
+        fill: 'tonexty',
+    }
+    const q1Trace = {
+        type: 'scatter',
+        name: '25%',
+        x: dt,
+        y: data.map(d => d.q1_gload_mw),
+        line: {
+          color: '#999',
+          width: 0.5,
+        },
+    }
+    const q3Trace = {
+        type: 'scatter',
+        name: '75%',
+        x: dt,
+        y: data.map(d => d.q3_gload_mw),
+        line: {
+          color: '#999',
+          width: 0.5,
+        },
+        fill: 'tonexty',
+    }
+    const q2Trace = {
+        type: 'scatter',
+        name: 'median',
+        x: dt,
+        y: data.map(d => d.q2_gload_mw),
+        line: {
+          color: 'steelblue',
+          width: 1.8,
+        },
+    }
+    const layout = {
+        showlegend: false,
+        font: {
+            family: "'Source Sans Pro', 'Open Sans', sans-serif",
+        },
+        xaxis: {
+            rangeslider: {},
+            type: 'date',
+        },
+        margin: {
+            l: 40,
+            r: 10,
+            t: 40,
+            b: 10,
+        },
+    }
+    Plotly.plot(
+        `gload-trend-${entityId}`,
+        [minTrace, maxTrace, q1Trace, q3Trace, q2Trace],
+        layout,
+        {displaylogo: false, responsive: true});
+}
+
+function fetchAndRenderPlots(entityId) {
+    // if (plotsRendered.has(entityId)) {
+        // return;
+    // }
+    Plotly.d3.csv(`http://localhost:8000/web/csv/monthly/${entityId}.csv`, (err, rows) => {
+        renderPlots(rows, entityId)
+        // plotsRendered.add(entityId)
+    });
+}
+
 function powerPlantPopup(props) {
     capacity = props.capacity;
     if (capacity != "unknown") {
@@ -65,15 +152,14 @@ function powerPlantPopup(props) {
     }
     htmlContent = `<h3>${props.name}</h3>
 <table class=\"plant-props-table\">
-  <tr>
-    <tr><td class=\"info-header\">Capacity:</td><td>${capacity}</td></tr>
-    <tr><td class=\"info-header\">Primary fuel:</td><td>${props.fuel_source}</td></tr>
-    <tr><td class=\"info-header\">Operator:</td><td>${props.operator}</td></tr>
-    <tr><td class=\"info-header\">County:</td><td>${props.county}</td></tr>
-    <tr><td class=\"info-header\">ORISPL code:</td><td>${props.orispl_code}</td></tr>
-  </tr>
+  <tr><td class=\"info-header\">Capacity:</td><td>${capacity}</td></tr>
+  <tr><td class=\"info-header\">Primary fuel:</td><td>${props.fuel_source}</td></tr>
+  <tr><td class=\"info-header\">Operator:</td><td>${props.operator}</td></tr>
+  <tr><td class=\"info-header\">County:</td><td>${props.county}</td></tr>
+  <tr><td class=\"info-header\">ORISPL code:</td><td>${props.orispl_code}</td></tr>
 </table>
-<object type=\"image/svg+xml\" data=\"img/svg/gloadtrend/${props.orispl_code}.svg\" height="360"></object>
+<h4>Monthly gross load trend (MW)</h4>
+<div id=\"gload-trend-${props.orispl_code}\" height="360"></div>
 <object type=\"image/svg+xml\" data=\"img/svg/emissions/${props.orispl_code}.svg\" height="360"></object>
 <a class="monthly-data-download" href="csv/monthly/${props.orispl_code}.csv">Download this data (csv)</a>`;
     return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
@@ -81,8 +167,10 @@ function powerPlantPopup(props) {
 
 function stateAggregatePopup(props) {
     statePostalCode = props.code.toLowerCase();
-    htmlContent = `<h3>${props.name}</h3>
-<object type=\"image/svg+xml\" data=\"img/svg/gloadtrend/${statePostalCode}.svg\" width="500" height="360"></object>
+    // I don't understand why the &nbsp; is necessary, but it is!
+    htmlContent = `<h3>${props.name}</h3>&nbsp;
+<h4>Monthly gross load trend (MW)</h4>
+<div id=\"gload-trend-${statePostalCode}" height="360"></div>
 <object type=\"image/svg+xml\" data=\"img/svg/emissions/${statePostalCode}.svg\" width="500" height="360"></object>
 <a class="monthly-data-download" href="csv/monthly/${statePostalCode}.csv">Download this data (csv)</a>`;
     return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
@@ -106,6 +194,7 @@ powerPlantsGeoJson = L.geoJSON(powerPlants, {
             .bindPopup(powerPlantPopup(feature.properties))
             .on('popupopen', function(e) {
                 L.DomUtil.addClass(e.target._path, 'selected');
+                fetchAndRenderPlots(feature.properties.orispl_code);
             })
             .on('popupclose', function(e) {
                 L.DomUtil.removeClass(e.target._path, 'selected');
@@ -113,10 +202,13 @@ powerPlantsGeoJson = L.geoJSON(powerPlants, {
     }
 })
 
-stateMarkersGeojson = L.geoJson(stateMarkers, {
+stateMarkersGeojson = L.geoJSON(stateMarkers, {
     onEachFeature: function(feature, layer) {
         layer.bindTooltip(feature.properties.name);
-        layer.bindPopup(stateAggregatePopup(feature.properties));
+        layer.bindPopup(stateAggregatePopup(feature.properties))
+            .on('popupopen', function(e) {
+                fetchAndRenderPlots(feature.properties.code.toLowerCase());
+            });
     }
 })
 
