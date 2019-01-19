@@ -1,0 +1,79 @@
+function renderMonthlyGloadTrendPlot(divId, data) {
+  const dt = data.map(d => d.year_month)
+  const minTrace = {
+    type: 'scatter',
+    name: 'min',
+    x: dt,
+    y: data.map(d => d.min_gload_mw),
+    line: {
+      color: '#CCC',
+      width: 0.5,
+    },
+  }
+  const maxTrace = {
+    type: 'scatter',
+    name: 'max',
+    x: dt,
+    y: data.map(d => d.max_gload_mw),
+    line: {
+      color: '#CCC',
+      width: 0.5,
+    },
+    fill: 'tonexty',
+  }
+  const q1Trace = {
+    type: 'scatter',
+    name: '25%',
+    x: dt,
+    y: data.map(d => d.q1_gload_mw),
+    line: {
+      color: '#999',
+      width: 0.5,
+    },
+  }
+  const q3Trace = {
+    type: 'scatter',
+    name: '75%',
+    x: dt,
+    y: data.map(d => d.q3_gload_mw),
+    line: {
+      color: '#999',
+      width: 0.5,
+    },
+    fill: 'tonexty',
+  }
+  const q2Trace = {
+    type: 'scatter',
+    name: 'median',
+    x: dt,
+    y: data.map(d => d.q2_gload_mw),
+    line: {
+      color: 'steelblue',
+      width: 1.8,
+    },
+  }
+  const layout = {
+    showlegend: false,
+    paper_bgcolor: 'rgba(0,0,0,0)',
+    plot_bgcolor: 'rgba(0,0,0,0)',
+    font: {
+      family: "'Source Sans Pro', 'Open Sans', sans-serif",
+    },
+    xaxis: {
+      rangeslider: {},
+      type: 'date',
+    },
+    margin: {
+      l: 40,
+      r: 20,
+      t: 40,
+      b: 10,
+    },
+    double_click: false,
+  }
+  Plotly.plot(
+    divId,
+    [minTrace, maxTrace, q1Trace, q3Trace, q2Trace],
+    layout,
+    {displaylogo: false, responsive: true});
+}
