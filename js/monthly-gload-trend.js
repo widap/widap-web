@@ -66,14 +66,13 @@ function renderMonthlyGloadTrendPlot(divId, data) {
     margin: {
       l: 40,
       r: 20,
-      t: 40,
+      t: 10,
       b: 10,
     },
-    double_click: false,
   }
   Plotly.plot(
     divId,
     [minTrace, maxTrace, q1Trace, q3Trace, q2Trace],
     layout,
-    {displaylogo: false, responsive: true});
+    {displaylogo: false});
 }

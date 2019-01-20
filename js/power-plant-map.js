@@ -77,24 +77,21 @@ function powerPlantPopup(props) {
   <tr><td class=\"info-header\">ORISPL code:</td><td>${props.orispl_code}</td></tr>
   </table>
   <h4>Monthly gross load trend (MW)</h4>
-  <div id=\"gload-trend-${props.orispl_code}\" height="360"></div>
+  <div id=\"gload-trend-${props.orispl_code}\" class=\"plot-container\"></div>
   <h4>Mean hourly emissions</h4>
-  <div id=\"mean-hourly-emis-${props.orispl_code}\" height="360"></div>
+  <div id=\"mean-hourly-emis-${props.orispl_code}\" class=\"plot-container\"></div>
   <a class="monthly-data-download" href="csv/monthly/${props.orispl_code}.csv">Download this data (csv)</a>`;
   return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
 }
 
 function stateAggregatePopup(props) {
   const statePostalCode = props.code.toLowerCase();
-  // I don't understand why the &nbsp; is necessary, but it is!
-  const htmlContent = `<h3>${props.name}</h3>&nbsp;
+  const htmlContent = `<h3>${props.name}</h3>
   <h4>Monthly gross load trend (MW)</h4>
-  <div id=\"gload-trend-${statePostalCode}" height="360"></div>
+  <div id=\"gload-trend-${statePostalCode}" class=\"plot-container\"></div>
   <h4>Mean hourly emissions</h4>
-  <div id=\"mean-hourly-emis-${statePostalCode}\" height="360"></div>
+  <div id=\"mean-hourly-emis-${statePostalCode}\" class=\"plot-container\"></div>
   <a class="monthly-data-download" href="csv/monthly/${statePostalCode}.csv">Download this data (csv)</a>`;
-  // TODO: Use .setPopupContent on the Marker object AFTER Plotly has rendered, so that Leaflet knows the
-  // actual size of the object and it doesn't fly off the screen.
   return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
 }
 
@@ -115,9 +112,6 @@ const powerPlantsGeoJson = L.geoJSON(powerPlants, {
     .bindPopup(powerPlantPopup(feature.properties))
     .on('popupopen', function(e) {
       L.DomUtil.addClass(e.target._path, 'selected');
-      // TODO: Figure out how to get popup window sized correctly after plotting!
-      // First, try .setPopupContent on the Marker object AFTER Plotly has rendered, so that
-      // Leaflet knows the actual size of the object and it doesn't fly off the screen.
       renderPlots(feature.properties.orispl_code)
     })
     .on('popupclose', function(e) {
