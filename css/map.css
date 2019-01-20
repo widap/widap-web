@@ -1,69 +1,67 @@
 body {
-    margin: 4px;
+  margin: 4px;
 }
 h1 {
-    padding-left: 14px;
-    font-family: 'Source Sans Pro', serif;
-    font-weight: 300;
-    font-size: 28pt;
-}
-.visible {
-    display: inline;
-}
-.hidden {
-    display: none;
+  padding-left: 14px;
+  font-family: 'Source Sans Pro', serif;
+  font-weight: 300;
+  font-size: 28pt;
 }
 #map-container {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 #facility-vizmetric-selector-container {
-    position: absolute;
-    padding: 2px;
-    z-index: 900;
+  position: absolute;
+  padding: 2px;
+  z-index: 900;
 }
 #facility-vizmetric-selector {
-    z-index: 9000;
+  z-index: 9000;
 }
 #power-plants-map {
-    height: 700px;
+  height: 700px;
+}
+.plot-container {
+  display: block;
+  height: 360px;
 }
 .leaflet-popup-content-wrapper {
-    background: rgba(255, 255, 255, 0.9);
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 11pt;
-    color: #222;
+  background: rgba(255, 255, 255, 0.9);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 11pt;
+  color: #222;
 }
 .map-legend {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    color: #555;
-    padding: 4px;
-    background-color: rgba(223, 223, 223, 0.85);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  color: #555;
+  padding: 4px;
+  background-color: rgba(223, 223, 223, 0.85);
 }
 .map-legend i {
-    width: 18px;
-    height: 18px;
-    float: left;
+  width: 18px;
+  height: 18px;
+  float: left;
 }
 .power-plant-marker {
-    opacity: 0.8;
-    fill-opacity: 0.8;
-    stroke: #CCC;
-    stroke-width: 0.5;
+  opacity: 0.8;
+  fill-opacity: 0.8;
+  stroke: #CCC;
+  stroke-width: 0.5;
 }
 .power-plant-marker:hover {
-    fill-opacity: 0.85;
-    opacity: 0.85;
-    stroke: #FED;
-    stroke-width: 0.9;
+  fill-opacity: 0.85;
+  opacity: 0.85;
+  stroke: #FED;
+  stroke-width: 0.9;
 }
 .power-plant-marker.selected {
-    fill-opacity: 0.9;
-    opacity: 0.9;
-    fill: #FC0;
-    stroke: #FFF;
-    stroke-opacity: 1.0;
-    stroke-width: 1.2;
+  fill-opacity: 0.9;
+  opacity: 0.9;
+  fill: #FC0;
+  stroke: #FFF;
+  stroke-opacity: 1.0;
+  stroke-width: 1.2;
 }
