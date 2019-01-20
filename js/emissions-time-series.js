@@ -17,7 +17,6 @@ function renderEmissionsTimeSeries(divId, data) {
     name: 'NOx (lbs/hr)',
     x: dt,
     y: data.map(d => d.avg_nox_mass_lbs_hr),
-    xaxis: 'x2',
     yaxis: 'y2',
     line: {
       color: 'orange',
@@ -30,7 +29,6 @@ function renderEmissionsTimeSeries(divId, data) {
     name: 'CO2 (tons/hr)',
     x: dt,
     y: data.map(d => d.avg_co2_mass_tons_hr),
-    xaxis: 'x3',
     yaxis: 'y3',
     line: {
       color: 'steelblue',
@@ -41,24 +39,43 @@ function renderEmissionsTimeSeries(divId, data) {
   const traces = [so2Trace, noxTrace, co2Trace]
 
   const layout = {
-    grid: {
-      rows: 3,
-      columns: 1,
-      pattern: 'independent',
-      roworder: 'bottom to top',
-    },
-    legend: {traceorder: 'reversed'},
+    showlegend: false,
+    height: 360,
     paper_bgcolor: 'rgba(0,0,0,0)',
     plot_bgcolor: 'rgba(0,0,0,0)',
     font: {
       family: "'Source Sans Pro', 'Open Sans', sans-serif",
     },
+    grid: {
+      yaxes: ['y', 'y2', 'y3'],
+      rows: 3,
+      columns: 1,
+    },
+    xaxis: {
+      rangeslider: {},
+      type: 'date',
+    },
+    yaxis: {
+      title: {
+        text: 'SO<sub>2</sub> (lbs/hr)',
+      },
+    },
+    yaxis2: {
+      title: {
+        text: 'NO<sub>x</sub> (lbs/hr)',
+      },
+    },
+    yaxis3: {
+      title: {
+        text: 'CO<sub>2</sub> (tons/hr)',
+      },
+    },
     margin: {
-      l: 40,
+      l: 50,
       r: 10,
       t: 10,
       b: 10,
     }
   }
-  Plotly.plot(divId, traces, layout, {displaylogo: false});
+  Plotly.plot(divId, traces, layout, {displayModeBar: false});
 }

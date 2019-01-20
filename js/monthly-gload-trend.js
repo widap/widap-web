@@ -54,6 +54,7 @@ function renderMonthlyGloadTrendPlot(divId, data) {
   }
   const layout = {
     showlegend: false,
+    height: 360,
     paper_bgcolor: 'rgba(0,0,0,0)',
     plot_bgcolor: 'rgba(0,0,0,0)',
     font: {
@@ -74,5 +75,5 @@ function renderMonthlyGloadTrendPlot(divId, data) {
     divId,
     [minTrace, maxTrace, q1Trace, q3Trace, q2Trace],
     layout,
-    {displaylogo: false});
+    {displayModeBar: false});
 }
