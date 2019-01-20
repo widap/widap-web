@@ -8,7 +8,7 @@ function renderEmissionsTimeSeries(divId, data) {
     y: data.map(d => d.avg_so2_mass_lbs_hr),
     line: {
       color: 'green',
-      width: 1.0,
+      width: 1.5,
     },
   }
 
@@ -19,8 +19,8 @@ function renderEmissionsTimeSeries(divId, data) {
     y: data.map(d => d.avg_nox_mass_lbs_hr),
     yaxis: 'y2',
     line: {
-      color: 'orange',
-      width: 1.0,
+      color: 'xkcd:orange',
+      width: 1.5,
     },
   }
 
@@ -32,7 +32,7 @@ function renderEmissionsTimeSeries(divId, data) {
     yaxis: 'y3',
     line: {
       color: 'steelblue',
-      width: 1.0,
+      width: 1.5,
     },
   }
 
