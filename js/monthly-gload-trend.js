@@ -64,8 +64,13 @@ function renderMonthlyGloadTrendPlot(divId, data) {
       rangeslider: {},
       type: 'date',
     },
+    yaxis: {
+      title: {
+        text: 'Gross load (MW)',
+      },
+    },
     margin: {
-      l: 40,
+      l: 50,
       r: 20,
       t: 10,
       b: 10,
