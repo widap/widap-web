@@ -57,7 +57,7 @@ function powerPlantMarkerOptions(props) {
 }
 
 function renderPlots(entityId) {
-  Plotly.d3.csv(`http://localhost:8000/web/csv/monthly/${entityId}.csv`, (err, data) => {
+  Plotly.d3.csv(`csv/monthly/${entityId}.csv`, (err, data) => {
     renderMonthlyGloadTrendPlot(`gload-trend-${entityId}`, data)
     renderEmissionsTimeSeries(`mean-hourly-emis-${entityId}`, data)
   });
