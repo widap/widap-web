@@ -41,8 +41,8 @@ function renderEmissionsTimeSeries(divId, data) {
   const layout = {
     showlegend: false,
     height: 360,
-    paper_bgcolor: 'rgba(0,0,0,0)',
-    plot_bgcolor: 'rgba(0,0,0,0)',
+    paper_bgcolor: 'rgba(255,255,255,0.1)',
+    plot_bgcolor: 'rgba(255,255,255,0.1)',
     font: {
       family: "'Source Sans Pro', 'Open Sans', sans-serif",
     },
