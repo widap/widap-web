@@ -94,7 +94,7 @@ def load_plant_unit_data(n_clicks, orispl_code, unitid):
             heat_input
         FROM data
         WHERE orispl_code = {} AND unitid = "{}"
-        LIMIT 200000 # we should never need more than this
+        LIMIT 200000
     '''.format(orispl_code, unitid)
     return pd.read_sql(query_text, conn).to_json(orient='split', date_unit='s')
   return ''
