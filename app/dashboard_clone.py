@@ -103,7 +103,7 @@ def load_plant_unit_data(n_clicks, orispl_code, unitid):
   Output('gload-time-series', 'figure'),
   [Input('datastore', 'data')])
 def update_gload_time_series(df_json):
-  df = pd.read_json(df_json, orient='split', date_unit='s')
+  df = pd.read_json(df_json, orient='split', date_unit='s').fillna(0.0)
   return {
     'data': [go.Scattergl(
       x=df['datetime'],
