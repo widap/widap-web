@@ -63,6 +63,7 @@ function renderMonthlyGloadTrendPlot(divId, data) {
     xaxis: {
       rangeslider: {},
       type: 'date',
+      tickformat: '%b %Y',
     },
     yaxis: {
       title: {

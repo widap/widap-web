@@ -31,12 +31,12 @@ const legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function(map) {
   var div = L.DomUtil.create('div', 'map-legend');
-  var tableRows = ""
+  var rows = ""
   for (const fuel_source in colors) {
-    tableRows += "<tr><td><i style=\"background: "
-    + colors[fuel_source] + "\"></i></td><td>" + fuel_source + "</td></tr>";
+    rows += `<tr><td><i style=\"background: ${colors[fuel_source]}\"></i></td>`;
+    rows += `<td>${fuel_source}</td></tr>`;
   }
-  div.innerHTML += "<table>" + tableRows + "</table>"
+  div.innerHTML += "<table>" + rows + "</table>"
   return div;
 };
 
@@ -57,7 +57,7 @@ function powerPlantMarkerOptions(props) {
 }
 
 function renderPlots(entityId) {
-  Plotly.d3.csv(`http://localhost:8000/web/csv/monthly/${entityId}.csv`, (err, data) => {
+  Plotly.d3.csv(`csv/monthly/${entityId}.csv`, (err, data) => {
     renderMonthlyGloadTrendPlot(`gload-trend-${entityId}`, data)
     renderEmissionsTimeSeries(`mean-hourly-emis-${entityId}`, data)
   });
