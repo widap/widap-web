@@ -10,6 +10,7 @@ import dash_html_components as html
 import mysql.connector
 import pandas as pd
 import plotly.graph_objs as go
+import random
 from dash.dependencies import Input, Output, State
 from dash.exceptions import PreventUpdate
 from flask_caching import Cache
@@ -19,6 +20,10 @@ ONE_HOUR_IN_SEC = 3600
 KG_PER_LB = 0.45359237
 KG_PER_TON = 2000 * KG_PER_LB
 WH_PER_BTU = 0.29307107
+
+MONTHLY_GEN_BOXPLOT_TITLE = 'Monthly box plot of gross generation'
+EMISSIONS_TIME_SERIES_TITLE = 'Emissions time series'
+EI_SCATTER_TITLE = 'Emissions intensity vs. capacity factor'
 
 app = dash.Dash(__name__)
 cache = Cache(app.server, config={
@@ -80,13 +85,13 @@ app.layout = html.Div([
   id='plant-unit-selector',
   className='plot-selector'),
 
-  html.H2('Monthly generation boxplot', id='boxplot-header'),
+  html.H2(MONTHLY_GEN_BOXPLOT_TITLE, id='boxplot-header'),
   dcc.Graph(id='monthly-generation-boxplot', config={'displaylogo': False}),
 
-  html.H2('Emissions time series', id='emissions-time-series-header'),
+  html.H2(EMISSIONS_TIME_SERIES_TITLE, id='emissions-time-series-header'),
   dcc.Graph(id='emissions-time-series', config={'displaylogo': False}),
 
-  html.H2('Emissions intensity scatter plots', id='ei-scatter-header'),
+  html.H2(EI_SCATTER_TITLE, id='ei-scatter-header'),
   dcc.Graph(id='co2-intensity-vs-cf', config={'displaylogo': False}),
   # Add emissions intensity for SO2 as well
 
@@ -136,6 +141,9 @@ def header_updater(text):
     return '{} - {}, Unit {}'.format(text, plant_name, unit_id)
   return make_header
 
+def jitter(series, max_jitter):
+  return series.map(lambda x: x + (max_jitter * (random.random() - 0.5)))
+
 @app.callback(
     Output('unit-id-dropdown', 'options'),
     [Input('plant-dropdown', 'value')])
@@ -175,15 +183,19 @@ def update_monthly_generation_boxplot(df_json):
       name='{}-{:02d}'.format(ts.year, ts.month),
       showlegend=False,
       boxpoints=False,
-      marker = dict(color='rgb(9,56,125)'),
-      line = dict(color='rgb(9,56,125)'),
+      marker = {'color': 'rgb(9,56,125)'},
+      line = {'color': 'rgb(9,56,125)'},
     ))
   return {
     'data': boxes,
     'layout': go.Layout(
-      xaxis={},
+      xaxis={
+        'title': 'Date',
+        'type': 'date',
+      },
       yaxis={
         'fixedrange': True,
+        'title': 'Gross Generation (MWh)',
       },
       margin={'l': 50, 'b': 40, 't': 10, 'r': 10},
     ),
@@ -194,7 +206,7 @@ app.callback(
     [Input('monthly-generation-boxplot', 'figure')],
     [State('plant-dropdown', 'value'),
      State('unit-id-dropdown', 'value')]
-)(header_updater('Monthly generation box plot'))
+)(header_updater(MONTHLY_GEN_BOXPLOT_TITLE))
 
 @app.callback(
     Output('emissions-time-series', 'figure'),
@@ -216,7 +228,7 @@ def update_emissions_time_series(df_json):
         },
       },
       yaxis={
-        'title': 'CO2 mass (tons)',
+        'title': 'CO<sub>2</sub> mass (tons)',
       },
       margin={'l': 50, 'b': 40, 't': 10, 'r': 10},
     ),
@@ -227,30 +239,31 @@ app.callback(
     [Input('emissions-time-series', 'figure')],
     [State('plant-dropdown', 'value'),
      State('unit-id-dropdown', 'value')],
-)(header_updater('Emissions time series'))
+)(header_updater(EMISSIONS_TIME_SERIES_TITLE))
 
 @app.callback(
     Output('co2-intensity-vs-cf', 'figure'),
     [Input('datastore', 'data')])
-def update_co2_intensity_vs_cf_histogram(df_json):
-  df = load_data_from_json(df_json)
-  # df = dff[dff.gen > 5]
-  max_gen = df['gen'].max()
+def update_co2_intensity_vs_cf_scatterplot(df_json):
+  raw = load_data_from_json(df_json)
+  raw['cf'] = raw.gen / raw.gen.max()
+  df = raw[raw.cf > 0.02] # TODO: Determine if this is a sane threshold
+  co2_ei = KG_PER_TON * df.co2_mass / df.gen
   return {
+    # TODO: Consider adding a Histogram2d overlay
     'data': [go.Scattergl(
-      x=df['gen'] / max_gen,
-      y=KG_PER_TON * df['co2_mass'] / df['gen'],
+      x=jitter(df.cf, 0.005),
+      y=co2_ei,
       text=df.index,
       mode='markers',
-    )],
+      marker={'size': 1.5})],
     'layout': go.Layout(
-      xaxis={
-        'title': 'Capacity Factor',
-      },
+      xaxis={'title': 'Capacity Factor'},
       yaxis={
-        'title': 'CO2 Intensity (kg/MWh)',
+        'title': 'CO<sub>2</sub> Intensity (kg/MWh)',
+        'range': [0, 2.0 * co2_ei.median()],
       },
-      margin={'l': 50, 'b': 40, 't': 10, 'r': 10},
+      margin={'l': 60, 'b': 40, 't': 10, 'r': 10},
     ),
   }
 
@@ -259,7 +272,7 @@ app.callback(
     [Input('co2-intensity-vs-cf', 'figure')],
     [State('plant-dropdown', 'value'),
      State('unit-id-dropdown', 'value')],
-)(header_updater('Emissions intensity scatter plots'))
+)(header_updater(EI_SCATTER_TITLE))
 
 @app.callback(
     Output('efficiency-histogram', 'figure'),
@@ -269,22 +282,14 @@ def update_efficiency_histogram(df_json):
   return {
     'data': [go.Histogram(
       # Don't divide by 0!
-      x=(df['gen']) / (df['heat_input'] * WH_PER_BTU),
-      xbins={
-        'start': 0.0,
-        'end': 1.0,
-      },
+      x=df.gen / (df.heat_input * WH_PER_BTU),
+      xbins={'start': 0.0, 'end': 1.0},
       text='Efficiency',
     )],
     'layout': go.Layout(
-      xaxis={
-        'title': 'Efficiency (generation / heat input)',
-      },
-      yaxis={
-        'title': 'Counts',
-        'fixedrange': True,
-      },
-      margin={'l': 50, 'b': 40, 't': 10, 'r': 10},
+      xaxis={'title': 'Efficiency (generation / heat input)'},
+      yaxis={'title': 'Counts', 'fixedrange': True},
+      margin={'l': 60, 'b': 40, 't': 10, 'r': 10},
     ),
   }
 
