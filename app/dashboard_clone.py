@@ -214,22 +214,36 @@ app.callback(
 def update_emissions_time_series(df_json):
   df = load_data_from_json(df_json)
   return {
-    'data': [go.Scattergl(
-      x=df.index,
-      y=df['co2_mass'],
-      text='CO<sub>2</sub> mass (tons)',
-    )],
+    'data': [
+      go.Scattergl(
+        x=df.index,
+        y=df.so2_mass,
+        text='SO<sub>2</sub> mass (lbs/hr)',
+        line=dict(color='green')),
+      go.Scattergl(
+        x=df.index,
+        y=df.nox_mass,
+        yaxis='y2',
+        text='NO<sub>x</sub> mass (lbs/hr)',
+        line=dict(color='orangered')),
+      go.Scattergl(
+        x=df.index,
+        y=df.co2_mass,
+        yaxis='y3',
+        text='CO<sub>2</sub> mass (tons/hr)',
+        line=dict(color='steelblue')),
+    ],
     'layout': go.Layout(
+      showlegend=False,
+      grid=dict(yaxes=['y', 'y2', 'y3'], rows=3, columns=1),
       xaxis={
         'title': 'Date',
         'type': 'date',
-        'rangeslider': {
-          'visible': True,
-        },
+        'tickformat': '%b %Y',
       },
-      yaxis={
-        'title': 'CO<sub>2</sub> mass (tons)',
-      },
+      yaxis={'title': {'text': 'SO<sub>2</sub> (lbs/hr)'}},
+      yaxis2={'title': {'text': 'NO<sub>x</sub> (lbs/hr)'}},
+      yaxis3={'title': {'text': 'CO<sub>2</sub> (tons/hr)'}},
       margin={'l': 50, 'b': 40, 't': 10, 'r': 10},
     ),
   }
