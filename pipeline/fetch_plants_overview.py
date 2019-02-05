@@ -25,13 +25,14 @@ aggregators["year"] = lambda x: "%s-%s" % (min(x), max(x))
 
 def fetch_plants_table():
     query_fmt = "SELECT * FROM plants WHERE STATE IN {} OR ORISPL_CODE IN {}"
+    query_text = query_fmt.format(WIEB_STATES, TX_PLANTS)
     session = sql_session.SqlSession()
-    df = session.execute_query(query_fmt.format(WIEB_STATES, TX_PLANTS))
 
-    return df.filter(USEFUL_COLS, axis=1) \
+    return session.execute_query(query_text) \
+        .filter(USEFUL_COLS, axis=1) \
         .groupby("orispl_code") \
         .agg(aggregators) \
-        .rename(columns={"year": "years"})
+        .rename(columns={"year": "years"}) \
         .drop(["orispl_code"], axis=1)
 
 if __name__ == '__main__':

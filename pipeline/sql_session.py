@@ -3,20 +3,13 @@ import pandas as pd
 import mysql.connector
 
 class SqlSession(object):
-    """A session wrapper around a MySQL cursor to ensure no weak references."""
+    """A wrapper around a MySQL connection to enforce common patterns."""
 
     def __init__(self):
-        cfg = config.getcfg()
-        self.conn = mysql.connector.connect(
-            host=cfg["host"],
-            database=cfg["database"],
-            user=cfg["user"],
-            password=cfg["password"])
-        self.cursor = self.conn.cursor(buffered=True)
+        self.conn = mysql.connector.connect(**config.getcfg())
 
-    def execute_query(self, query_string):
-        self.cursor.execute(query_string)
-        return pd.DataFrame(
-            data=self.cursor.fetchall(),
-            index=None,
-            columns=[s.lower() for s in self.cursor.column_names])
+    def execute_query(self, query_string, **kwargs):
+        """Returns a DataFrame for the query, with lowercase colnames."""
+        df = pd.read_sql(query_string, self.conn, **kwargs)
+        df.columns = df.columns.str.lower()
+        return df

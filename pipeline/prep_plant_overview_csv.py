@@ -12,7 +12,7 @@ def month_range(index):
     return [x.date().isoformat() for x in [index[0], index[-1]]]
 
 def fetch_plant_data(orispl_code):
-    query_text = """
+    query = """
         SELECT adddate(`op_date`, interval `op_hour` hour) as `datetime`,
             SUM(`gload`) as `gload`,
             SUM(`so2_mass`) as `so2_mass`,
@@ -23,9 +23,7 @@ def fetch_plant_data(orispl_code):
         WHERE `orispl_code` = {}
         GROUP BY `datetime`
         """.format(orispl_code)
-    df = sql_session.SqlSession().execute_query(query_text)
-    df.index = pd.DatetimeIndex(df.datetime)
-    return df.drop(columns=["datetime"], axis=1)
+    return sql_session.SqlSession().execute_query(query, index_col='datetime')
 
 def monthly_mean(series):
     return series.fillna(0).groupby(pd.Grouper(freq='1M')).mean()
