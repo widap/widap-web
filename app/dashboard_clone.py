@@ -77,31 +77,10 @@ def header_updater(text):
 def jitter(series, max_jitter):
   return series.map(lambda x: x + (max_jitter * (random.random() - 0.5)))
 
-app.index_string = '''
-<!DOCTYPE html>
-<html>
-    <head>
-        {%metas%}
-        <title>WIDAP Dashboard</title>
-        {%favicon%}
-        {%css%}
-    </head>
-    <body>
-        {%app_entry%}
-        <footer>
-            {%config%}
-            {%scripts%}
-        </footer>
-    </body>
-</html>
-'''
+app.index_string = app.index_string.replace("{%title%}", "WIDAP Dashboard")
 
 cfg = config.getcfg()
-conn = mysql.connector.connect(
-  host=cfg["host"],
-  database=cfg["database"],
-  user=cfg["user"],
-  password=cfg["password"])
+conn = mysql.connector.connect(**cfg)
 
 plants_units = load_plants_units("plants_units.csv")
 
@@ -183,8 +162,13 @@ def update_monthly_generation_boxplot(df_json):
       name='{}-{:02d}'.format(ts.year, ts.month),
       showlegend=False,
       boxpoints=False,
-      marker = {'color': 'rgb(9,56,125)'},
-      line = {'color': 'rgb(9,56,125)'},
+      marker = {
+        'color': 'rgba(9, 56, 125, 0.8)',
+      },
+      line = {
+        'color': 'rgb(9,56,125)',
+        'width': 1.5,
+      },
     ))
   return {
     'data': boxes,
