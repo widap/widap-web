@@ -34,7 +34,7 @@ cache = Cache(app.server, config={
 })
 
 def load_plants_units(plants_units_file):
-  df = pd.read_csv(plants_units_file, index_col="orispl_code")
+  df = pd.read_csv(plants_units_file, index_col='orispl_code')
   df.unit_ids = df.unit_ids.str.split("/")
   return df.to_dict(orient='index')
 
@@ -53,11 +53,8 @@ def read_sql_data(orispl_code, unit_id):
   query_text = query_fmt.format(orispl_code, unit_id)
   # TODO: Reading data from AWS copy of MySQL DB is taking ~5s on every call.
   # This really ought to be improved; we're only reading <150k rows.
-  df = pd.read_sql(query_text, conn)
   # Oddly, the data is not guaranteed to be sorted by datetime beforehand :/
-  df.index = df['datetime']
-  df.drop(['datetime'], axis=1, inplace=True)
-  df.sort_index(inplace=True)
+  df = pd.read_sql(query_text, conn, index_col='datetime').sort_index()
   # TODO: Come up with a good compression scheme. I think we know enough about
   # the structure/constraints on the data to strongly limit the amount of
   # space we need to store it.
