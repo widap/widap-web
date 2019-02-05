@@ -34,7 +34,7 @@ cache = Cache(app.server, config={
 })
 
 def load_plants_units(plants_units_file):
-  df = pd.read_csv("plants_units.csv", index_col="orispl_code")
+  df = pd.read_csv(plants_units_file, index_col="orispl_code")
   df.unit_ids = df.unit_ids.str.split("/")
   return df.to_dict(orient='index')
 
