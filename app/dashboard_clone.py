@@ -33,74 +33,10 @@ cache = Cache(app.server, config={
   'CACHE_DIR': '.flask-cache',
 })
 
-app.index_string = '''
-<!DOCTYPE html>
-<html>
-    <head>
-        {%metas%}
-        <title>WIDAP Dashboard</title>
-        {%favicon%}
-        {%css%}
-    </head>
-    <body>
-        {%app_entry%}
-        <footer>
-            {%config%}
-            {%scripts%}
-        </footer>
-    </body>
-</html>
-'''
-
-cfg = config.getcfg()
-conn = mysql.connector.connect(
-  host=cfg["host"],
-  database=cfg["database"],
-  user=cfg["user"],
-  password=cfg["password"])
-
-plants_units = pd.read_csv("plants_units.csv") \
-  .groupby("orispl_code") \
-  .agg({"name": "last", "unitid": lambda x: tuple(x)}) \
-  .to_dict(orient='index')
-
-app.layout = html.Div([
-  dcc.Store(id='datastore'),
-
-  html.H1('WIDAP Dashboard'),
-
-  html.Div([
-    'Plant:',
-    dcc.Dropdown(
-      id='plant-dropdown',
-      options=[{'label': plant["name"], 'value': orispl_code}
-               for orispl_code, plant in plants_units.items()],
-      value='',
-      placeholder='Select a plant...',
-      clearable=False),
-    'Unit:',
-    dcc.Dropdown(id='unit-id-dropdown', placeholder='Select a unit...'),
-    html.Button(id='load-data-button', children='Load'),
-  ],
-  id='plant-unit-selector',
-  className='plot-selector'),
-
-  html.H2(MONTHLY_GEN_BOXPLOT_TITLE, id='boxplot-header'),
-  dcc.Graph(id='monthly-generation-boxplot', config={'displaylogo': False}),
-
-  html.H2(EMISSIONS_TIME_SERIES_TITLE, id='emissions-time-series-header'),
-  dcc.Graph(id='emissions-time-series', config={'displaylogo': False}),
-
-  html.H2(EI_SCATTER_TITLE, id='ei-scatter-header'),
-  dcc.Graph(id='co2-intensity-vs-cf', config={'displaylogo': False}),
-  # Add emissions intensity for SO2 as well
-
-  # 4. Histograms
-  # (a) Efficiency := generation / heat_input
-  dcc.Graph(id='efficiency-histogram', config={'displaylogo': False}),
-  # (b) Capacity factor (i) vs heat_input (ii) vs generation
-  # (c) Emissions intensity histogram for (i-iv) CO2e, CO2, SO2, NOx
-])
+def load_plants_units(plants_units_file):
+  df = pd.read_csv("plants_units.csv", index_col="orispl_code")
+  df.unit_ids = df.unit_ids.str.split("/")
+  return df.to_dict(orient='index')
 
 @cache.memoize()
 def read_sql_data(orispl_code, unit_id):
@@ -144,19 +80,86 @@ def header_updater(text):
 def jitter(series, max_jitter):
   return series.map(lambda x: x + (max_jitter * (random.random() - 0.5)))
 
+app.index_string = '''
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>WIDAP Dashboard</title>
+        {%favicon%}
+        {%css%}
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+        </footer>
+    </body>
+</html>
+'''
+
+cfg = config.getcfg()
+conn = mysql.connector.connect(
+  host=cfg["host"],
+  database=cfg["database"],
+  user=cfg["user"],
+  password=cfg["password"])
+
+plants_units = load_plants_units("plants_units.csv")
+
+app.layout = html.Div([
+  dcc.Store(id='datastore'),
+
+  html.H1('WIDAP Dashboard'),
+
+  html.Div([
+    'Plant:',
+    dcc.Dropdown(
+      id='plant-dropdown',
+      options=[{'label': plant["name"], 'value': orispl_code}
+               for orispl_code, plant in plants_units.items()],
+      value='',
+      placeholder='Select a plant...',
+      clearable=False),
+    'Unit:',
+    dcc.Dropdown(id='unit-id-dropdown', placeholder='Select a unit...'),
+    html.Button(id='load-data-button', children='Load'),
+  ],
+  id='plant-unit-selector',
+  className='plot-selector'),
+
+  html.H2(MONTHLY_GEN_BOXPLOT_TITLE, id='boxplot-header'),
+  dcc.Graph(id='monthly-generation-boxplot', config={'displaylogo': False}),
+
+  html.H2(EMISSIONS_TIME_SERIES_TITLE, id='emissions-time-series-header'),
+  dcc.Graph(id='emissions-time-series', config={'displaylogo': False}),
+
+  html.H2(EI_SCATTER_TITLE, id='ei-scatter-header'),
+  dcc.Graph(id='co2-intensity-vs-cf', config={'displaylogo': False}),
+  # Add emissions intensity for SO2 as well
+
+  # 4. Histograms
+  # (a) Efficiency := generation / heat_input
+  html.H2('Histograms'),
+  dcc.Graph(id='efficiency-histogram', config={'displaylogo': False}),
+  # (b) Capacity factor (i) vs heat_input (ii) vs generation
+  # (c) Emissions intensity histogram for (i-iv) CO2e, CO2, SO2, NOx
+])
+
 @app.callback(
     Output('unit-id-dropdown', 'options'),
     [Input('plant-dropdown', 'value')])
 def set_unit_id_options(selected_plant):
   if selected_plant in plants_units:
-    unitids = plants_units[selected_plant]["unitid"]
-    return [{'label': x, 'value': x} for x in unitids]
+    unit_ids = plants_units[selected_plant]['unit_ids']
+    return [{'label': x, 'value': x} for x in unit_ids]
   return ''
 
 @app.callback(
     Output('unit-id-dropdown', 'value'),
     [Input('plant-dropdown', 'value')])
-def clear_unit_id_value(unused_plant):
+def clear_unit_id_field(unused_plant):
   return ''
 
 @app.callback(
@@ -197,7 +200,7 @@ def update_monthly_generation_boxplot(df_json):
         'fixedrange': True,
         'title': 'Gross Generation (MWh)',
       },
-      margin={'l': 50, 'b': 40, 't': 10, 'r': 10},
+      margin={'l': 60, 'b': 40, 't': 10, 'r': 20},
     ),
   }
 
@@ -244,7 +247,7 @@ def update_emissions_time_series(df_json):
       yaxis={'title': {'text': 'SO<sub>2</sub> (lbs/hr)'}},
       yaxis2={'title': {'text': 'NO<sub>x</sub> (lbs/hr)'}},
       yaxis3={'title': {'text': 'CO<sub>2</sub> (tons/hr)'}},
-      margin={'l': 50, 'b': 40, 't': 10, 'r': 10},
+      margin={'l': 60, 'b': 40, 't': 10, 'r': 20},
     ),
   }
 
@@ -270,14 +273,14 @@ def update_co2_intensity_vs_cf_scatterplot(df_json):
       y=co2_ei,
       text=df.index,
       mode='markers',
-      marker={'size': 1.5})],
+      marker={'size': 2.0})],
     'layout': go.Layout(
       xaxis={'title': 'Capacity Factor'},
       yaxis={
         'title': 'CO<sub>2</sub> Intensity (kg/MWh)',
         'range': [0, 2.0 * co2_ei.median()],
       },
-      margin={'l': 60, 'b': 40, 't': 10, 'r': 10},
+      margin={'l': 60, 'b': 40, 't': 10, 'r': 20},
     ),
   }
 
@@ -293,17 +296,17 @@ app.callback(
     [Input('datastore', 'data')])
 def update_efficiency_histogram(df_json):
   df = load_data_from_json(df_json)
+  filtered = df[df.heat_input > 0] 
   return {
     'data': [go.Histogram(
-      # Don't divide by 0!
-      x=df.gen / (df.heat_input * WH_PER_BTU),
+      x=filtered.gen / (filtered.heat_input * WH_PER_BTU),
       xbins={'start': 0.0, 'end': 1.0},
       text='Efficiency',
     )],
     'layout': go.Layout(
       xaxis={'title': 'Efficiency (generation / heat input)'},
       yaxis={'title': 'Counts', 'fixedrange': True},
-      margin={'l': 60, 'b': 40, 't': 10, 'r': 10},
+      margin={'l': 60, 'b': 40, 't': 10, 'r': 20},
     ),
   }
 
