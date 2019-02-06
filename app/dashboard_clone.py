@@ -22,32 +22,22 @@ KG_PER_LB = 0.45359237
 KG_PER_TON = 2000 * KG_PER_LB
 WH_PER_BTU = 0.29307107
 
-GEN_BOXPLOT_TITLE = 'Monthly box plot of gross generation'
-EMISSIONS_TIME_SERIES_TITLE = 'Emissions time series'
-EI_SCATTER_TITLE = 'Emissions intensity vs. capacity factor'
-
-STD_MARGIN = {'l': 60, 'b': 40, 't': 10, 'r': 20}
+STD_MARGIN = {'l': 60, 'b': 40, 't': 40, 'r': 20}
 STD_FONT_FAMILY = "'Source Sans Pro', 'Open Sans', sans-serif"
 STD_FONT = {'family': STD_FONT_FAMILY}
 
 GEN_BOXPLOT_LAYOUT = go.Layout(
+  title={'text': 'Monthly gross generation box plot'},
   xaxis={'title': 'Date', 'type': 'date', 'tickformat': '%b %Y'},
   yaxis={'fixedrange': True, 'title': 'Gross Generation (MWh)'},
   font=STD_FONT,
   margin=STD_MARGIN,
 )
 
-GEN_TREND_LINE_LAYOUT = go.Layout(
-  showlegend=False,
-  xaxis={'type': 'date', 'tickformat': '%b %Y'},
-  yaxis={'title': {'text': 'Gross load (MW)'}, 'fixedrange': True},
-  font=STD_FONT,
-  margin=STD_MARGIN,
-)
-
 EMISSIONS_TIME_SERIES_LAYOUT = go.Layout(
+  title={'text': 'Emissions time series'},
   showlegend=False,
-  grid=dict(yaxes=['y', 'y2', 'y3'], rows=3, columns=1),
+  grid={'yaxes': ['y', 'y2', 'y3'], 'rows': 3, 'columns': 1},
   xaxis={'title': 'Date', 'type': 'date'},
   yaxis={'title': {'text': 'SO<sub>2</sub> (lbs/hr)'}, 'fixedrange': True},
   yaxis2={'title': {'text': 'NO<sub>x</sub> (lbs/hr)'}, 'fixedrange': True},
@@ -56,16 +46,33 @@ EMISSIONS_TIME_SERIES_LAYOUT = go.Layout(
   margin=STD_MARGIN,
 )
 
-CO2_INTENSITY_LAYOUT = go.Layout(
+EMISSIONS_INTENSITY_LAYOUT = go.Layout(
+  title={'text': 'Emissions intensity vs capacity factor (CO<sub>2</sub> and SO<sub>2</sub>)'},
+  showlegend=False,
+  grid={'rows': 1, 'columns': 2, 'pattern': 'independent'},
   xaxis={'title': 'Capacity Factor'},
+  xaxis2={'title': 'Capacity Factor'},
   yaxis={'title': 'CO<sub>2</sub> Intensity (kg/MWh)'},
+  yaxis2={'title': 'SO<sub>2</sub> Intensity (lbs/MWh)'},
   font=STD_FONT,
   margin=STD_MARGIN,
 )
 
 EFFICIENCY_HISTOGRAM_LAYOUT = go.Layout(
+  title={'text': 'Histogram of observed efficiency values'},
   xaxis={'title': 'Efficiency (generation / heat input)'},
   yaxis={'title': 'Counts', 'fixedrange': True},
+  font=STD_FONT,
+  margin=STD_MARGIN,
+)
+
+CAPACITY_FACTOR_HISTOGRAM_LAYOUT = go.Layout(
+  title={'text': 'Capacity factor histogram'},
+  grid={'rows': 1, 'columns': 2, 'pattern': 'independent'},
+  xaxis={'title': 'Capacity factor from heat input'},
+  xaxis2={'title': 'Capacity factor from generation'},
+  yaxis={'title': 'Counts', 'fixedrange': True},
+  yaxis2={'title': 'Counts', 'fixedrange': True},
   font=STD_FONT,
   margin=STD_MARGIN,
 )
@@ -112,13 +119,6 @@ def compute_co2e(co2_mass, nox_mass):
   """Computes CO2e given CO2 and NOx."""
   return KG_PER_TON * co2_mass + 298 * KG_PER_LB * nox_mass
 
-def header_updater(text):
-  """Returns a callback used to update a header."""
-  def make_header(unused_figure, orispl_code, unit_id):
-    plant_name = plants_units[orispl_code]['name']
-    return '{} - {}, Unit {}'.format(text, plant_name, unit_id)
-  return make_header
-
 def jitter(series, max_jitter):
   return series.map(lambda x: x + (max_jitter * (random.random() - 0.5)))
 
@@ -127,6 +127,12 @@ def graph_component(html_id, layout):
     id=html_id,
     figure={'data': [], 'layout': layout},
     config={'displaylogo': False})
+
+def titled_layout(layout, orispl_code, unit_id):
+  layout_copy = copy.copy(layout)
+  plant = plants_units[orispl_code]['name']
+  layout_copy.title.text = '{} - {}, Unit {}'.format(layout.title.text, plant, unit_id)
+  return layout_copy
 
 app.index_string = app.index_string.replace("{%title%}", "WIDAP Dashboard")
 
@@ -155,21 +161,19 @@ app.layout = html.Div([
   id='plant-unit-selector',
   className='plot-selector'),
 
-  html.H2(GEN_BOXPLOT_TITLE, id='boxplot-header'),
+  html.H2('Monthly box plot of gross generation'),
   graph_component('monthly-generation-boxplot', GEN_BOXPLOT_LAYOUT),
 
-  html.H2(EMISSIONS_TIME_SERIES_TITLE, id='emissions-time-series-header'),
+  html.H2('Emissions time series'),
   graph_component('emissions-time-series', EMISSIONS_TIME_SERIES_LAYOUT),
 
-  html.H2(EI_SCATTER_TITLE, id='ei-scatter-header'),
-  graph_component('co2-intensity-vs-cf', CO2_INTENSITY_LAYOUT),
-  # Add emissions intensity for SO2 as well
+  html.H2('Emissions intensity vs. capacity factor'),
+  graph_component('emissions-intensity-vs-cf', EMISSIONS_INTENSITY_LAYOUT),
 
-  # 4. Histograms
-  # (a) Efficiency := generation / heat_input
   html.H2('Histograms'),
   graph_component('efficiency-histogram', EFFICIENCY_HISTOGRAM_LAYOUT),
   # (b) Capacity factor (i) vs heat_input (ii) vs generation
+  graph_component('capacity-factor-histogram', CAPACITY_FACTOR_HISTOGRAM_LAYOUT),
   # (c) Emissions intensity histogram for (i-iv) CO2e, CO2, SO2, NOx
 ])
 
@@ -201,9 +205,11 @@ def load_plant_unit_data(n_clicks, orispl_code, unit_id):
   return ''
 
 @app.callback(
-  Output('monthly-generation-boxplot', 'figure'),
-  [Input('datastore', 'data')])
-def update_monthly_generation_boxplot(df_json):
+    Output('monthly-generation-boxplot', 'figure'),
+    [Input('datastore', 'data')],
+    [State('plant-dropdown', 'value'),
+     State('unit-id-dropdown', 'value')])
+def update_monthly_generation_boxplot(df_json, orispl_code, unit_id):
   df = load_data_from_json(df_json)
   boxes = []
   for ts, monthly_gen in df.gen.groupby(pd.Grouper(freq='M')):
@@ -225,21 +231,19 @@ def update_monthly_generation_boxplot(df_json):
         'font': {'color': 'rgb(90, 110, 152)', 'family': STD_FONT_FAMILY},
       },
     ))
-  return {'data': boxes, 'layout': GEN_BOXPLOT_LAYOUT}
-
-app.callback(
-    Output('boxplot-header', 'children'),
-    [Input('monthly-generation-boxplot', 'figure')],
-    [State('plant-dropdown', 'value'),
-     State('unit-id-dropdown', 'value')]
-)(header_updater(GEN_BOXPLOT_TITLE))
+  return {
+    'data': boxes,
+    'layout': titled_layout(GEN_BOXPLOT_LAYOUT, orispl_code, unit_id),
+  }
 
 @app.callback(
     Output('emissions-time-series', 'figure'),
-    [Input('datastore', 'data')])
-def update_emissions_time_series(df_json):
+    [Input('datastore', 'data')],
+    [State('plant-dropdown', 'value'),
+     State('unit-id-dropdown', 'value')])
+def update_emissions_time_series(df_json, orispl_code, unit_id):
   df = load_data_from_json(df_json)
-  def emissions_line(col, text, line_color, yaxis=None):
+  def emissions_line(col, text, line_color, yaxis='y'):
     return go.Scattergl(
       x=df.index,
       y=df[col],
@@ -247,71 +251,82 @@ def update_emissions_time_series(df_json):
       text=text,
       hoverinfo='x+y+text',
       hoverlabel={'font': STD_FONT},
-      line=dict(color=line_color))
+      line={'color': line_color})
   return {
     'data': [
-      emissions_line('so2_mass', 'SO<sub>2</sub> mass (lbs/hr)', 'green', yaxis='y'),
+      emissions_line('so2_mass', 'SO<sub>2</sub> mass (lbs/hr)', 'green'),
       emissions_line('nox_mass', 'NO<sub>x</sub> mass (lbs/hr)', 'orangered', yaxis='y2'),
       emissions_line('co2_mass', 'CO<sub>2</sub> mass (tons/hr)', 'steelblue', yaxis='y3'),
     ],
-    'layout': EMISSIONS_TIME_SERIES_LAYOUT,
+    'layout': titled_layout(EMISSIONS_TIME_SERIES_LAYOUT, orispl_code, unit_id),
   }
 
-app.callback(
-    Output('emissions-time-series-header', 'children'),
-    [Input('emissions-time-series', 'figure')],
-    [State('plant-dropdown', 'value'),
-     State('unit-id-dropdown', 'value')],
-)(header_updater(EMISSIONS_TIME_SERIES_TITLE))
-
 @app.callback(
-    Output('co2-intensity-vs-cf', 'figure'),
-    [Input('datastore', 'data')])
-def update_co2_intensity_vs_cf_scatterplot(df_json):
+    Output('emissions-intensity-vs-cf', 'figure'),
+    [Input('datastore', 'data')],
+    [State('plant-dropdown', 'value'),
+     State('unit-id-dropdown', 'value')])
+def emissions_intensity_vs_cf_scatterplot(df_json, orispl_code, unit_id):
   raw = load_data_from_json(df_json).sample(frac=1) # shuffle rows
   raw['cf'] = raw.gen / raw.gen.max()
   df = raw[raw.cf > 0.02] # TODO: Determine if this is a sane threshold
-  co2_ei = KG_PER_TON * df.co2_mass / df.gen
-  layout = copy.copy(CO2_INTENSITY_LAYOUT)
-  layout.yaxis.range = [0, 2.0 * co2_ei.median()]
-  return {
-    # TODO: Consider adding a Histogram2d overlay
-    'data': [go.Scattergl(
+  co2_intensity = KG_PER_TON * df.co2_mass / df.gen
+  so2_intensity = KG_PER_LB * df.so2_mass / df.gen
+  layout = copy.copy(EMISSIONS_INTENSITY_LAYOUT)
+  # TODO: Consider using 1.5 * q3 or something like that
+  layout.yaxis.range = [0, 2.0 * co2_intensity.median()]
+  layout.yaxis2.range = [0, 2.0 * so2_intensity.median()]
+  data = []
+  for ei, xax, yax in ((co2_intensity, 'x', 'y'), (so2_intensity, 'x2', 'y2')):
+    data.append(go.Scattergl(
       x=jitter(df.cf, 0.005),
-      y=co2_ei,
+      y=ei,
+      xaxis=xax,
+      yaxis=yax,
       text=df.index,
       mode='markers',
+      hoverinfo='x+y+text',
       hoverlabel={'font': STD_FONT},
       marker={
         'size': 3.5,
         'color': df.index.year,
         'colorscale': 'Viridis',
         'showscale': True,
-      })],
-    'layout': layout,
-  }
-
-app.callback(
-    Output('ei-scatter-header', 'children'),
-    [Input('co2-intensity-vs-cf', 'figure')],
-    [State('plant-dropdown', 'value'),
-     State('unit-id-dropdown', 'value')],
-)(header_updater(EI_SCATTER_TITLE))
+      }),
+    )
+  return {'data': data, 'layout': titled_layout(layout, orispl_code, unit_id)}
 
 @app.callback(
     Output('efficiency-histogram', 'figure'),
-    [Input('datastore', 'data')])
-def update_efficiency_histogram(df_json):
+    [Input('datastore', 'data')],
+    [State('plant-dropdown', 'value'),
+     State('unit-id-dropdown', 'value')])
+def update_efficiency_histogram(df_json, orispl_code, unit_id):
   df = load_data_from_json(df_json)
   filtered = df[df.heat_input > 0] 
   return {
     'data': [go.Histogram(
       x=filtered.gen / (filtered.heat_input * WH_PER_BTU),
       xbins={'start': 0.0, 'end': 1.0},
-      text='Efficiency',
       hoverlabel={'font': STD_FONT},
     )],
-    'layout': EFFICIENCY_HISTOGRAM_LAYOUT,
+    'layout': titled_layout(EFFICIENCY_HISTOGRAM_LAYOUT, orispl_code, unit_id),
+  }
+
+@app.callback(
+    Output('capacity-factor-histogram', 'figure'),
+    [Input('datastore', 'data')],
+    [State('plant-dropdown', 'value'),
+     State('unit-id-dropdown', 'value')])
+def update_capacity_factor_histogram(df_json, orispl_code, unit_id):
+  df = load_data_from_json(df_json)
+  # TODO: Add "capacity factor from heat input" histogram
+  return {
+    'data': [go.Histogram(
+      x=df.gen / df.gen.max(),
+      xaxis='x2',
+      hoverlabel={'font': STD_FONT})],
+    'layout': titled_layout(CAPACITY_FACTOR_HISTOGRAM_LAYOUT, orispl_code, unit_id),
   }
 
 
