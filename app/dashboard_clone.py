@@ -68,6 +68,7 @@ EFFICIENCY_HISTOGRAM_LAYOUT = go.Layout(
 
 CAPACITY_FACTOR_HISTOGRAM_LAYOUT = go.Layout(
   title={'text': 'Capacity factor histogram'},
+  showlegend=False,
   grid={'rows': 1, 'columns': 2, 'pattern': 'independent'},
   xaxis={'title': 'Capacity factor from heat input'},
   xaxis2={'title': 'Capacity factor from generation'},
@@ -320,12 +321,14 @@ def update_efficiency_histogram(df_json, orispl_code, unit_id):
      State('unit-id-dropdown', 'value')])
 def update_capacity_factor_histogram(df_json, orispl_code, unit_id):
   df = load_data_from_json(df_json)
-  # TODO: Add "capacity factor from heat input" histogram
+  def make_hist(xdata, **kwargs):
+    return go.Histogram(
+      x=xdata, hoverinfo='x+y+text', hoverlabel={'font': STD_FONT}, **kwargs)
   return {
-    'data': [go.Histogram(
-      x=df.gen / df.gen.max(),
-      xaxis='x2',
-      hoverlabel={'font': STD_FONT})],
+    'data': [
+      make_hist(df.heat_input / df.heat_input.max()),
+      make_hist(df.gen / df.gen.max(), xaxis='x2', yaxis='y2'),
+    ],
     'layout': titled_layout(CAPACITY_FACTOR_HISTOGRAM_LAYOUT, orispl_code, unit_id),
   }
 
