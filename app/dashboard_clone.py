@@ -110,7 +110,7 @@ def read_sql_data(orispl_code, unit_id):
   # TODO: Come up with a good compression scheme. I think we know enough about
   # the structure/constraints on the data to strongly limit the amount of
   # space we need to store it.
-  return df.fillna(0.0).to_json(orient='split', date_unit='s')
+  return df.to_json(orient='split', date_unit='s')
 
 def load_data_from_json(df_json):
   return pd.read_json(df_json, orient='split', date_unit='s')
