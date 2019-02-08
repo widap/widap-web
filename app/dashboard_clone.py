@@ -12,6 +12,7 @@ import mysql.connector
 import pandas as pd
 import plotly.graph_objs as go
 import random
+import time
 from dash.dependencies import Input, Output, State
 from dash.exceptions import PreventUpdate
 from flask_caching import Cache
@@ -78,6 +79,22 @@ CAPACITY_FACTOR_HISTOGRAM_LAYOUT = go.Layout(
   margin=STD_MARGIN,
 )
 
+EMISSIONS_INTENSITY_HISTOGRAM_LAYOUT = go.Layout(
+  title={'text': 'Emissions intensity histogram'},
+  showlegend=False,
+  grid={'rows': 2, 'columns': 2, 'pattern': 'independent'},
+  xaxis={'title': 'CO<sub>2</sub>e'},
+  xaxis2={'title': 'CO<sub>2</sub>'},
+  xaxis3={'title': 'SO<sub>2</sub>'},
+  xaxis4={'title': 'NO<sub>x</sub>'},
+  yaxis={'title': 'Counts', 'fixedrange': True},
+  yaxis2={'title': 'Counts', 'fixedrange': True},
+  yaxis3={'title': 'Counts', 'fixedrange': True},
+  yaxis4={'title': 'Counts', 'fixedrange': True},
+  font=STD_FONT,
+  margin=STD_MARGIN,
+)
+
 app = dash.Dash(__name__)
 cache = Cache(app.server, config={
   # TODO: Consider a non-filesystem cache
@@ -113,7 +130,8 @@ def read_sql_data(orispl_code, unit_id):
   # space we need to store it.
   return df.to_json(orient='split', date_unit='s')
 
-def load_data_from_json(df_json):
+def load_sql_data(signal):
+  df_json = read_sql_data(signal['orispl_code'], signal['unit_id'])
   return pd.read_json(df_json, orient='split', date_unit='s')
 
 def compute_co2e(co2_mass, nox_mass):
@@ -129,11 +147,21 @@ def graph_component(html_id, layout):
     figure={'data': [], 'layout': layout},
     config={'displaylogo': False})
 
-def titled_layout(layout, orispl_code, unit_id):
+def titled_layout(layout, plant_spec):
   layout_copy = copy.copy(layout)
-  plant = plants_units[orispl_code]['name']
-  layout_copy.title.text = '{} - {}, Unit {}'.format(layout.title.text, plant, unit_id)
+  plant = plants_units[plant_spec['orispl_code']]['name']
+  layout_copy.title.text = (
+    '{} - {}, Unit {}'.format(layout.title.text, plant, plant_spec['unit_id']))
   return layout_copy
+
+def timed(cb):
+  def timed_cb(*args, **kwargs):
+    start = time.time()
+    result = cb(*args, **kwargs)
+    end = time.time()
+    print("Callback", cb.__name__, "took", end - start, "seconds")
+    return result
+  return timed_cb
 
 app.index_string = app.index_string.replace("{%title%}", "WIDAP Dashboard")
 
@@ -143,7 +171,7 @@ conn = mysql.connector.connect(**cfg)
 plants_units = load_plants_units("plants_units.csv")
 
 app.layout = html.Div([
-  dcc.Store(id='datastore'),
+  dcc.Store(id='ready-signal'),
 
   html.H1('WIDAP Dashboard'),
 
@@ -173,9 +201,8 @@ app.layout = html.Div([
 
   html.H2('Histograms'),
   graph_component('efficiency-histogram', EFFICIENCY_HISTOGRAM_LAYOUT),
-  # (b) Capacity factor (i) vs heat_input (ii) vs generation
   graph_component('capacity-factor-histogram', CAPACITY_FACTOR_HISTOGRAM_LAYOUT),
-  # (c) Emissions intensity histogram for (i-iv) CO2e, CO2, SO2, NOx
+  graph_component('emissions-intensity-histogram', EMISSIONS_INTENSITY_HISTOGRAM_LAYOUT),
 ])
 
 @app.callback(
@@ -194,24 +221,26 @@ def clear_unit_id_field(unused_plant):
   return ''
 
 @app.callback(
-    Output('datastore', 'data'),
+    Output('ready-signal', 'data'),
     [Input('load-data-button', 'n_clicks')],
     [State('plant-dropdown', 'value'),
      State('unit-id-dropdown', 'value')])
+@timed
 def load_plant_unit_data(n_clicks, orispl_code, unit_id):
   if n_clicks is None:
     raise PreventUpdate
   if orispl_code and unit_id:
-    return read_sql_data(orispl_code, unit_id)
+    # Effectively just ensures that the SQL read is cached
+    read_sql_data(orispl_code, unit_id)
+    return {'orispl_code': orispl_code, 'unit_id': unit_id}
   return ''
 
 @app.callback(
     Output('monthly-generation-boxplot', 'figure'),
-    [Input('datastore', 'data')],
-    [State('plant-dropdown', 'value'),
-     State('unit-id-dropdown', 'value')])
-def update_monthly_generation_boxplot(df_json, orispl_code, unit_id):
-  df = load_data_from_json(df_json)
+    [Input('ready-signal', 'data')])
+@timed
+def update_monthly_generation_boxplot(signal):
+  df = load_sql_data(signal)
   boxes = []
   for ts, monthly_gen in df.gen.groupby(pd.Grouper(freq='M')):
     boxes.append(go.Box(
@@ -234,16 +263,15 @@ def update_monthly_generation_boxplot(df_json, orispl_code, unit_id):
     ))
   return {
     'data': boxes,
-    'layout': titled_layout(GEN_BOXPLOT_LAYOUT, orispl_code, unit_id),
+    'layout': titled_layout(GEN_BOXPLOT_LAYOUT, signal),
   }
 
 @app.callback(
     Output('emissions-time-series', 'figure'),
-    [Input('datastore', 'data')],
-    [State('plant-dropdown', 'value'),
-     State('unit-id-dropdown', 'value')])
-def update_emissions_time_series(df_json, orispl_code, unit_id):
-  df = load_data_from_json(df_json)
+    [Input('ready-signal', 'data')])
+@timed
+def update_emissions_time_series(signal):
+  df = load_sql_data(signal)
   def emissions_line(col, text, line_color, yaxis='y'):
     return go.Scattergl(
       x=df.index,
@@ -259,16 +287,15 @@ def update_emissions_time_series(df_json, orispl_code, unit_id):
       emissions_line('nox_mass', 'NO<sub>x</sub> mass (lbs/hr)', 'orangered', yaxis='y2'),
       emissions_line('co2_mass', 'CO<sub>2</sub> mass (tons/hr)', 'steelblue', yaxis='y3'),
     ],
-    'layout': titled_layout(EMISSIONS_TIME_SERIES_LAYOUT, orispl_code, unit_id),
+    'layout': titled_layout(EMISSIONS_TIME_SERIES_LAYOUT, signal),
   }
 
 @app.callback(
     Output('emissions-intensity-vs-cf', 'figure'),
-    [Input('datastore', 'data')],
-    [State('plant-dropdown', 'value'),
-     State('unit-id-dropdown', 'value')])
-def emissions_intensity_vs_cf_scatterplot(df_json, orispl_code, unit_id):
-  raw = load_data_from_json(df_json).sample(frac=1) # shuffle rows
+    [Input('ready-signal', 'data')])
+@timed
+def emissions_intensity_vs_cf_scatterplot(signal):
+  raw = load_sql_data(signal).sample(frac=1) # shuffle rows
   raw['cf'] = raw.gen / raw.gen.max()
   df = raw[raw.cf > 0.02] # TODO: Determine if this is a sane threshold
   co2_intensity = KG_PER_TON * df.co2_mass / df.gen
@@ -295,15 +322,14 @@ def emissions_intensity_vs_cf_scatterplot(df_json, orispl_code, unit_id):
         'showscale': True,
       }),
     )
-  return {'data': data, 'layout': titled_layout(layout, orispl_code, unit_id)}
+  return {'data': data, 'layout': titled_layout(layout, signal)}
 
 @app.callback(
     Output('efficiency-histogram', 'figure'),
-    [Input('datastore', 'data')],
-    [State('plant-dropdown', 'value'),
-     State('unit-id-dropdown', 'value')])
-def update_efficiency_histogram(df_json, orispl_code, unit_id):
-  df = load_data_from_json(df_json)
+    [Input('ready-signal', 'data')])
+@timed
+def update_efficiency_histogram(signal):
+  df = load_sql_data(signal)
   filtered = df[df.heat_input > 0] 
   return {
     'data': [go.Histogram(
@@ -311,16 +337,15 @@ def update_efficiency_histogram(df_json, orispl_code, unit_id):
       xbins={'start': 0.0, 'end': 1.0},
       hoverlabel={'font': STD_FONT},
     )],
-    'layout': titled_layout(EFFICIENCY_HISTOGRAM_LAYOUT, orispl_code, unit_id),
+    'layout': titled_layout(EFFICIENCY_HISTOGRAM_LAYOUT, signal),
   }
 
 @app.callback(
     Output('capacity-factor-histogram', 'figure'),
-    [Input('datastore', 'data')],
-    [State('plant-dropdown', 'value'),
-     State('unit-id-dropdown', 'value')])
-def update_capacity_factor_histogram(df_json, orispl_code, unit_id):
-  df = load_data_from_json(df_json)
+    [Input('ready-signal', 'data')])
+@timed
+def update_capacity_factor_histogram(signal):
+  df = load_sql_data(signal)
   def make_hist(xdata, **kwargs):
     return go.Histogram(
       x=xdata, hoverinfo='x+y+text', hoverlabel={'font': STD_FONT}, **kwargs)
@@ -329,7 +354,7 @@ def update_capacity_factor_histogram(df_json, orispl_code, unit_id):
       make_hist(df.heat_input / df.heat_input.max()),
       make_hist(df.gen / df.gen.max(), xaxis='x2', yaxis='y2'),
     ],
-    'layout': titled_layout(CAPACITY_FACTOR_HISTOGRAM_LAYOUT, orispl_code, unit_id),
+    'layout': titled_layout(CAPACITY_FACTOR_HISTOGRAM_LAYOUT, signal),
   }
 
 
