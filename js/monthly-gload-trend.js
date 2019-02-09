@@ -1,4 +1,4 @@
-function renderMonthlyGenBoxPlot(divId, data) {
+function renderMonthlyGloadTrendPlot(divId, data) {
   const dt = data.map(d => d.year_month)
   const minTrace = {
     type: 'scatter',
