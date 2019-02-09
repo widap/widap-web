@@ -36,6 +36,7 @@ function renderMonthlyGenBoxPlot(divId, data) {
       }
     })
   const layout = {
+    autosize: true,
     showlegend: false,
     xaxis: {
       title: 'Date',
@@ -50,5 +51,5 @@ function renderMonthlyGenBoxPlot(divId, data) {
     font: {family: STD_FONT_FAMILY},
     margin: STD_MARGIN,
   }
-  Plotly.plot(divId, boxes, layout, {displaylogo: false});
+  Plotly.react(divId, boxes, layout, {displaylogo: false});
 }

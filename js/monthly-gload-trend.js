@@ -77,7 +77,7 @@ function renderMonthlyGloadTrendPlot(divId, data) {
       b: 10,
     },
   }
-  Plotly.plot(
+  Plotly.react(
     divId,
     [minTrace, maxTrace, q1Trace, q3Trace, q2Trace],
     layout,

@@ -25,11 +25,12 @@ function updateUnitOptions() {
 }
 
 function clearPlots() {
-  console.log('Clearing plots')
+  updatePlots([])
 }
 
-function plot(data) {
+function updatePlots(data) {
   renderMonthlyGenBoxPlot('monthly-generation-box-plot', data);
+  renderDeepDiveEmissionsTimeSeries('emissions-time-series', data);
 }
 
 function parseTimeSeriesRow(row) {
@@ -49,12 +50,12 @@ function loadData() {
   if (orisplCode && unitId) {
     clearPlots();
     const dataUri = `${HOST}/dumps/${orisplCode}_${unitId}.csv`
-    d3.csv(dataUri, parseTimeSeriesRow).then(plot)
+    d3.csv(dataUri, parseTimeSeriesRow).then(updatePlots)
   }
 }
 
 $(document).ready(function() {
-  renderMonthlyGenBoxPlot('monthly-generation-box-plot', [])
+  clearPlots()
   d3.csv(`${HOST}/web/csv/plants_overview.csv`)
     .then(d => d.forEach(addPlant))
   $('#plant-selector').change(updateUnitOptions)
