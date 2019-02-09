@@ -2,7 +2,7 @@ const STD_FONT_FAMILY = "'Source Sans Pro', 'Open Sans', sans-serif"
 const STD_MARGIN = {l: 60, r: 30, t: 40, b: 30}
 const YEAR_MONTH_FMT = d3.timeFormat('%Y-%m')
 
-function renderMonthlyGloadTrendPlot(data) {
+function renderMonthlyGenBoxPlot(divId, data) {
   var byYearMonth = {}
   data.forEach(d => {
     const yearMonth = YEAR_MONTH_FMT(d.datetime)
@@ -50,5 +50,5 @@ function renderMonthlyGloadTrendPlot(data) {
     font: {family: STD_FONT_FAMILY},
     margin: STD_MARGIN,
   }
-  Plotly.plot('monthly-generation-box-plot', boxes, layout, {displaylogo: false});
+  Plotly.plot(divId, boxes, layout, {displaylogo: false});
 }

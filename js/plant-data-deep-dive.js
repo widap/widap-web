@@ -29,7 +29,7 @@ function clearPlots() {
 }
 
 function plot(data) {
-  renderMonthlyGloadTrendPlot(data);
+  renderMonthlyGenBoxPlot('monthly-generation-box-plot', data);
 }
 
 function parseTimeSeriesRow(row) {
@@ -54,7 +54,7 @@ function loadData() {
 }
 
 $(document).ready(function() {
-  renderMonthlyGloadTrendPlot([])
+  renderMonthlyGenBoxPlot('monthly-generation-box-plot', [])
   d3.csv(`${HOST}/web/csv/plants_overview.csv`)
     .then(d => d.forEach(addPlant))
   $('#plant-selector').change(updateUnitOptions)
