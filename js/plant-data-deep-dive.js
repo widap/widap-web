@@ -31,6 +31,7 @@ function clearPlots() {
 function updatePlots(data) {
   renderMonthlyGenBoxPlot('monthly-generation-box-plot', data);
   renderDeepDiveEmissionsTimeSeries('emissions-time-series', data);
+  renderEmissionsIntensityVsCapFactor('emissions-intensity-vs-cf', data);
 }
 
 function parseTimeSeriesRow(row) {

@@ -1,4 +1,5 @@
 const STD_FONT_FAMILY = "'Source Sans Pro', 'Open Sans', sans-serif"
+const STD_FONT = {family: STD_FONT_FAMILY}
 const STD_MARGIN = {l: 60, r: 30, t: 40, b: 30}
 const YEAR_MONTH_FMT = d3.timeFormat('%Y-%m')
 
@@ -48,7 +49,7 @@ function renderMonthlyGenBoxPlot(divId, data) {
       fixedrange: true,
       title: {text: 'Gross load (MW)'},
     },
-    font: {family: STD_FONT_FAMILY},
+    font: STD_FONT,
     margin: STD_MARGIN,
   }
   Plotly.react(divId, boxes, layout, {displaylogo: false});

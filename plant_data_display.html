@@ -26,13 +26,15 @@
 
     <p>Use the sliders below to change the zoom in on smaller windows of time. Change the smoothing value to make window for the rolling average bigger or smaller (a large value can help with readability, but affect detail). You may also choose to show or hide the different gases.</p>
 
-    <div id="emissions-time-series-container">
-        <svg id="emissions-time-series" width="1000" height="400"></svg>
-    </div>
+    <div id="emissions-time-series"></div>
+
+    <h2>Visualization 3: Emissions Intensity vs. Capacity Factor</h2>
+
+    <div id="emissions-intensity-vs-cf"></div>
 
     <script type='text/javascript' src="js/plant-data-deep-dive.js"></script>
     <script type='text/javascript' src="js/monthly-gen-box-plot.js"></script>
-    <!-- <script type='text/javascript' src="js/emissions-time-series.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.min.js" integrity="sha256-+0IwgnFxUKpHZPXBhTQkuv+Dqy0eDno7myZB6OOjORA=" crossorigin="anonymous"></script> -->
+    <script type='text/javascript' src="js/emissions-time-series.js"></script>
+    <script type='text/javascript' src="js/emis-intensity-vs-cf.js"></script>
 </body>
 </html>

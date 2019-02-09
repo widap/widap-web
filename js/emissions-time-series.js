@@ -33,11 +33,6 @@ function renderEmissionsTimeSeries(divId, dt, data, type, layoutOpts, config) {
       rows: 3,
       columns: 1,
     },
-    xaxis: {
-      rangeslider: {},
-      type: 'date',
-      tickformat: '%b %Y',
-    },
     yaxis: {title: {text: 'SO<sub>2</sub> (lbs/hr)'}},
     yaxis2: {title: {text: 'NO<sub>x</sub> (lbs/hr)'}},
     yaxis3: {title: {text: 'CO<sub>2</sub> (tons/hr)'}},
@@ -53,10 +48,7 @@ function renderDeepDiveEmissionsTimeSeries(divId, data) {
     'nox': data.map(d => d.nox_mass),
     'co2': data.map(d => d.co2_mass),
   }
-  const layoutOpts = {
-    autosize: true,
-    xaxis: {rangeslider: {}, type: 'date'},
-  }
+  const layoutOpts = {autosize: true, xaxis: {type: 'date'}}
   renderEmissionsTimeSeries(divId, dt, mapped, 'scattergl', layoutOpts, {displaylogo: false})
 }
 
