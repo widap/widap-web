@@ -34,7 +34,7 @@ orispl_code,state,county,name,latitude,longitude,operator,primary_fuel,years,uni
 375,CA,Los Angeles,Magnolia (OLD),34.1781,-118.3139,,Pipeline Natural Gas,2001-2002,M4
 377,CA,Los Angeles,Grayson Power Plant,34.1556,-118.2782,City of Glendale,Pipeline Natural Gas,2001-2017,4/5/9
 389,CA,Imperial,El Centro,32.8022,-115.54,Imperial Irrigation District,Pipeline Natural Gas,2001-2017,2-2/3/3-1/3-2/4
-399,CA,Los Angeles,Harbor Generating Station,33.7691,-118.2662,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017,10A/10B/10/11/12/13/14
+399,CA,Los Angeles,Harbor Generating Station,33.7691,-118.2662,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017,**10A/**10B/10/11/12/13/14
 400,CA,Los Angeles,Haynes Generating Station,33.7639,-118.0942,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017,1/10/11/12/13/14/15/16/2/3/4/5/6/9
 404,CA,Los Angeles,Scattergood Generating Station,33.9175,-118.4258,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017,1/2/3/4/6/7
 408,CA,Los Angeles,Valley Generating Station,34.2481,-118.3903,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017,3/4/5/6/7
@@ -65,7 +65,7 @@ orispl_code,state,county,name,latitude,longitude,operator,primary_fuel,years,uni
 2450,NM,Bernalillo,Reeves Generating Station,35.1716,-106.6019,Public Service Company of New Mexico,Pipeline Natural Gas,2001-2017,1/2/3
 2451,NM,San Juan,San Juan,36.8006,-108.4386,Public Service Company of New Mexico,Coal,2001-2017,1/2/3/4
 2454,NM,Lea,Cunningham,32.7131,-103.3533,Southwestern Public Service Company,Pipeline Natural Gas,2001-2017,121B/122B/123T/124T
-3456,TX,El Paso,Newman,31.9858,-106.4322,El Paso Electric Company,Pipeline Natural Gas,2001-2017,4/5/1/2/3/GT-6A/GT-6B
+3456,TX,El Paso,Newman,31.9858,-106.4322,El Paso Electric Company,Pipeline Natural Gas,2001-2017,**4/**5/1/2/3/GT-6A/GT-6B
 3644,UT,Carbon,Carbon,39.7272,-110.8644,Pacificorp Energy Generation,Coal,2001-2016,1/2
 3648,UT,Salt Lake,Gadsby,40.7686,-111.9289,Pacificorp Energy Generation,Pipeline Natural Gas,2001-2017,1/2/3/4/5/6
 3845,WA,Lewis,Centralia,46.7559,-122.8578,TransAlta,Coal,2001-2017,30/40/50/60/BW21/BW22
@@ -85,7 +85,7 @@ orispl_code,state,county,name,latitude,longitude,operator,primary_fuel,years,uni
 6248,CO,Morgan,Pawnee,40.2217,-103.6803,Public Service Company of Colorado,Coal,2001-2017,1
 6481,UT,Millard,Intermountain,39.5035,-112.5811,Intermountain Power Service Corporation,Coal,2001-2017,1SGA/2SGA
 6761,CO,Larimer,Rawhide Energy Station,40.8611,-105.0206,Platte River Power Authority,Pipeline Natural Gas,2001-2017,101/A/B/C/D/F
-7082,NV,Clark,Harry Allen,36.425,-114.9,NV Energy,Pipeline Natural Gas,2001-2017,3/4/5/6
+7082,NV,Clark,Harry Allen,36.425,-114.9,NV Energy,Pipeline Natural Gas,2001-2017,**3/**4/**5/**6
 7266,CA,Stanislaus,Woodland Generation Station,37.6528,-121.0172,Modesto Irrigation District,Pipeline Natural Gas,2001-2017,1/2
 7307,CA,Shasta,Redding Power Plant,40.5083,-122.4253,Redding Electric Utility,Pipeline Natural Gas,2002-2017,5/6
 7315,CA,Stanislaus,Almond Power Plant,37.5739,-120.9854,Turlock Irrigation District,Pipeline Natural Gas,2001-2017,1/2/3/4
