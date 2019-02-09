@@ -1,6 +1,6 @@
 orispl_code,state,county,name,latitude,longitude,operator,primary_fuel,years,unit_ids
 9,TX,El Paso,Copper Station,31.7569,-106.375,El Paso Electric Company,Pipeline Natural Gas,2008-2017,CTG-1
-87,NM,McKinley,Escalante ,35.4159,-108.082,Tri-State Generation & Transmission,Coal,2001-2017,1
+87,NM,McKinley,Escalante Generating Station,35.4159,-108.082,Tri-State Generation & Transmission,Coal,2001-2017,1
 113,AZ,Navajo,Cholla,34.9394,-110.3033,Arizona Public Service Company,Coal,2001-2017,1/2/3/4
 116,AZ,Maricopa,Ocotillo Power Plant,33.4225,-111.9122,Arizona Public Service Company,Pipeline Natural Gas,2001-2017,1/2
 117,AZ,Maricopa,APS West Phoenix Power Plant,33.4417,-112.1583,Arizona Public Service Company,Pipeline Natural Gas,2001-2017,CC4/CC5A/CC5B
