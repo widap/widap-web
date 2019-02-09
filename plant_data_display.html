@@ -2,21 +2,24 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="css/widap.css" />
 </head>
 <body>
-    <select id="plant-unit-selector">
-        <option value="">Select a power plant & unit</option>
+    <select id="plant-selector" placeholder="Select a plant">
+        <option label="" value="" disabled selected>Select a plant</option>
     </select>
+    <select id="unit-selector" placeholder="Select a unit">
+        <option label="" value="" disabled selected>Select a unit</option>
+    </select>
+    <input id="load-plant-unit-data-button" type="submit" value="Load data" />
 
     <h2>Visualization 1: Monthly Generation Boxplots</h2>
     <p>The first visualization displays boxplots of generation for each month of the year. We feel that this plot can provide insight regarding the typical output of the plant (through the value of the median) as well as how regular or irregular the output is (through the span of the whiskers). Baseload patterns would tend to have a high median value and a narrow interquartile range. More variable or seasonal generation can be seen with fluctuating medians and large interquartile ranges.</p>
 
     <p>Use the sliders below to change the zoom in on smaller windows of time.</p>
 
-    <div id="monthly-boxplot-container">
-        <svg id="monthly-boxplot" width="1000" height="400"></svg>
-    </div>
+    <div id="monthly-generation-box-plot"></div>
 
     <h2>Visualization 2: Normalized Emissions Time Series</h2>
     <p>This second plot displays a rolling average of CO2, SO2, and NOx emissions. It can be used to view how the emissions of a unit changes over time. This can provide insights about upgrades, maintenance, extreme events, etc based on when the values spike or go to zero. The values in this plot are normalized by the average for hourly emissions of each gas, thus they are unitless and are centered on 1.0.</p>
@@ -28,7 +31,8 @@
     </div>
 
     <script type='text/javascript' src="js/plant-data-deep-dive.js"></script>
-    <script type='text/javascript' src="js/monthly-gload-box-plot.js"></script>
-    <script type='text/javascript' src="js/emissions-time-series.js"></script>
+    <script type='text/javascript' src="js/monthly-gen-box-plot.js"></script>
+    <!-- <script type='text/javascript' src="js/emissions-time-series.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.min.js" integrity="sha256-+0IwgnFxUKpHZPXBhTQkuv+Dqy0eDno7myZB6OOjORA=" crossorigin="anonymous"></script> -->
 </body>
 </html>
