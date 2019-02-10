@@ -15,16 +15,16 @@
     <input id="load-plant-unit-data-button" type="submit" value="Load data" />
 
     <h2>Visualization 1: Monthly Generation Boxplots</h2>
-    <p>The first visualization displays boxplots of generation for each month of the year. We feel that this plot can provide insight regarding the typical output of the plant (through the value of the median) as well as how regular or irregular the output is (through the span of the whiskers). Baseload patterns would tend to have a high median value and a narrow interquartile range. More variable or seasonal generation can be seen with fluctuating medians and large interquartile ranges.</p>
+    <p>The first visualization displays a box plot of generation for each month of the year. We feel that this plot can provide insight regarding the typical output of the plant (through the value of the median) as well as how regular or irregular the output is (through the span of the boxes and whiskers). Base load patterns would tend to have a high median value and a narrow interquartile range, whereas more variable or seasonal generation can be seen with fluctuating medians and large interquartile ranges.</p>
 
-    <p>Use the sliders below to change the zoom in on smaller windows of time.</p>
+    <p>Click and drag to zoom in on the plot to view more narrow regions of time.</p>
 
     <div id="monthly-generation-box-plot"></div>
 
     <h2>Visualization 2: Normalized Emissions Time Series</h2>
-    <p>This second plot displays a rolling average of CO2, SO2, and NOx emissions. It can be used to view how the emissions of a unit changes over time. This can provide insights about upgrades, maintenance, extreme events, etc based on when the values spike or go to zero. The values in this plot are normalized by the average for hourly emissions of each gas, thus they are unitless and are centered on 1.0.</p>
+    <p>This second plot displays a rolling average of CO<sub>2</sub>, SO<sub>2</sub>, and NO<sub>x</sub> emissions. It can be used to view how the emissions of a unit changes over time. This can provide insights about upgrades, maintenance, extreme events, etc based on when the values spike or go to zero.</p>
 
-    <p>Use the sliders below to change the zoom in on smaller windows of time. Change the smoothing value to make window for the rolling average bigger or smaller (a large value can help with readability, but affect detail). You may also choose to show or hide the different gases.</p>
+    <p>Click and drag to zoom in on smaller windows of time.</p>
 
     <div id="emissions-time-series"></div>
 
