@@ -34,9 +34,18 @@ function renderMonthlyEmissionsTimeSeries(divId, data) {
       type: 'date',
       tickformat: '%b %Y',
     },
-    yaxis: {title: {text: 'SO<sub>2</sub> (lbs/hr)'}},
-    yaxis2: {title: {text: 'NO<sub>x</sub> (lbs/hr)'}},
-    yaxis3: {title: {text: 'CO<sub>2</sub> (tons/hr)'}},
+    yaxis: {
+      fixedrange: true,
+      title: {text: 'SO<sub>2</sub> (lbs/hr)'},
+    },
+    yaxis2: {
+      fixedrange: true,
+      title: {text: 'NO<sub>x</sub> (lbs/hr)'},
+    },
+    yaxis3: {
+      fixedrange: true,
+      title: {text: 'CO<sub>2</sub> (tons/hr)'},
+    },
     margin: {l: 50, r: 10, t: 10, b: 10},
     showlegend: false,
     font: {family: "'Source Sans Pro', 'Open Sans', sans-serif"},
