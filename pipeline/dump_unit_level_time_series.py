@@ -32,8 +32,11 @@ def read_sql_data(conn, orispl_code, unit_id):
   query_text = QUERY_FMT.format(orispl_code, unit_id)
   return pd.read_sql(query_text, conn, index_col='datetime').sort_index()
 
-def write_dataframe(df):
-  return df.to_csv(orient='split', date_unit='s')
+def write_dataframe(df, orispl_code, unit_id, output_dir):
+  filename = '{}_{}.csv.gz'.format(orispl_code, unit_id.replace('*', ''))
+  output_path = os.path.join(output_dir, filename)
+  df.round(6).to_csv(output_path, compression='gzip')
+  return output_path
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(
@@ -48,10 +51,8 @@ if __name__ == '__main__':
   plant_units = load_plants_units(args.plants_units_csv)
   cfg = config.getcfg()
   conn = mysql.connector.connect(**cfg)
-  for orispl_code, unit_ids in plant_units.items():
+  for orispl_code, unit_ids in list(plant_units.items())[:10]:
     for unit_id in unit_ids:
       df = read_sql_data(conn, orispl_code, unit_id)
-      filename = '{}_{}.csv'.format(orispl_code, unit_id.replace('*', ''))
-      output_path = os.path.join(args.output_dir, filename)
-      df.round(6).to_csv(output_path)
+      output_path = write_dataframe(df, orispl_code, unit_id, args.output_dir)
       print('Wrote', output_path)
