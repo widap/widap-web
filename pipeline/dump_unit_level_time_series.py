@@ -51,7 +51,7 @@ if __name__ == '__main__':
   plant_units = load_plants_units(args.plants_units_csv)
   cfg = config.getcfg()
   conn = mysql.connector.connect(**cfg)
-  for orispl_code, unit_ids in list(plant_units.items())[:10]:
+  for orispl_code, unit_ids in plant_units.items():
     for unit_id in unit_ids:
       df = read_sql_data(conn, orispl_code, unit_id)
       output_path = write_dataframe(df, orispl_code, unit_id, args.output_dir)
