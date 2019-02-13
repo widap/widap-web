@@ -1,3 +1,5 @@
+var DEFAULTS = require('./defaults.js')
+
 const ZOOM_THRESHOLD_DAY_MS = 1.4e10
 const ZOOM_THRESHOLD_WEEK_MS = 7 * ZOOM_THRESHOLD_DAY_MS
 const WEEK_FLOOR = d => d3.timeWeek.floor(d.datetime).getTime()
@@ -12,7 +14,7 @@ const GAS_OPTIONS = {
 const LAYOUT = {
   showlegend: false,
   autosize: true,
-  font: {family: STD_FONT_FAMILY},
+  font: DEFAULTS.STD_FONT,
   grid: {yaxes: ['y', 'y2', 'y3'], rows: 3, columns: 1},
   xaxis: {type: 'date'},
   yaxis: {fixedrange: true, title: {text: 'SO<sub>2</sub> (lbs/hr)'}},
@@ -92,7 +94,7 @@ function trendTraceGenerator(bins) {
         x: dt,
         y: sortedBins.map(accessor),
         yaxis: GAS_OPTIONS[gas].yaxis,
-        hoverlabel: {font: {family: STD_FONT_FAMILY}},
+        hoverlabel: {font: DEFAULTS.STD_FONT},
       }
       return Object.assign(trace, opts)
     }
@@ -122,12 +124,12 @@ function hourlyTraces(data) {
     x: data.map(d => d.datetime),
     y: data.map(d => d[gas]),
     yaxis: GAS_OPTIONS[gas].yaxis,
-    hoverlabel: {font: {family: STD_FONT_FAMILY}},
+    hoverlabel: {font: DEFAULTS.STD_FONT},
     line: {color: GAS_OPTIONS[gas].color, width: 1.5},
   }))
 }
 
-function rezoomEmissionsTimeSeries(divId, allTraces, update) {
+function rezoom(divId, allTraces, update) {
   const plot = update.currentTarget,
         xRange = plot.layout.xaxis.range,
         timeStart = new Date(xRange[0]),
@@ -136,7 +138,7 @@ function rezoomEmissionsTimeSeries(divId, allTraces, update) {
   Plotly.react(divId, traces, plot.layout)
 }
 
-function renderEmissionsTimeSeries(divId, data) {
+module.exports = (divId, data) => {
   $(`#${divId}`).off('plotly_relayout')
   var traces = hourlyTraces(data)
   if (data.length > 0) {
@@ -148,8 +150,7 @@ function renderEmissionsTimeSeries(divId, data) {
     traces = selectAndFilterTraces(
         allTraces, data[0].datetime, data[data.length - 1].datetime)
     $(`#${divId}`).on(
-        'plotly_relayout',
-        update => rezoomEmissionsTimeSeries(divId, allTraces, update))
+        'plotly_relayout', update => rezoom(divId, allTraces, update))
   }
   Plotly.react(divId, traces, LAYOUT, {displaylogo: false})
 }

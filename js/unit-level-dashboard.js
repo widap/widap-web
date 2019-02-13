@@ -1,10 +1,12 @@
+var renderMonthlyGenBoxPlot = require('./monthly-gen-box-plot.js')
+var renderEmissionsTimeSeries = require('./emissions-time-series-rezoom.js')
+
 // TODO: Find a way to coordinate div id's between JS and HTML
 const HOST = "http://localhost:8080"
 const YMD_PARSER = d3.timeParse('%Y-%m-%d %H:%M:%S')
 const MONTHLY_GEN_BOX_PLOT = 'monthly-generation-box-plot'
 const EMISSIONS_TIME_SERIES = 'emissions-time-series'
 const EMISSIONS_INTENSITY_VS_CF = 'emissions-intensity-vs-cf'
-
 
 function htmlOption(label, value) {
   return `<option label="${label}" value="${value}"></option>`

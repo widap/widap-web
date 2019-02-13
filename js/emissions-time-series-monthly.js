@@ -1,3 +1,5 @@
+const DEFAULTS = require('./defaults.js')
+
 function newTraceGenerator(data) {
   const dt = data.map(d => d.year_month)
   return (name, accessor, line, opts) => Object.assign(
@@ -5,7 +7,7 @@ function newTraceGenerator(data) {
       opts)
 }
 
-function render(divId, data) {
+module.exports = (divId, data) => {
   const traceGen = newTraceGenerator(data)
   const traces = [
     traceGen('SO2 (lbs/hr)', d => d.avg_so2_mass_lbs_hr, {color: 'green', width: 1.5}, {}),
@@ -35,7 +37,7 @@ function render(divId, data) {
     },
     margin: {l: 50, r: 10, t: 10, b: 10},
     showlegend: false,
-    font: {family: "'Source Sans Pro', 'Open Sans', sans-serif"},
+    font: DEFAULTS.STD_FONT,
     grid: {
       yaxes: ['y', 'y2', 'y3'],
       rows: 3,
@@ -44,5 +46,3 @@ function render(divId, data) {
   }
   Plotly.react(divId, traces, layout, {displayModeBar: false});
 }
-
-module.exports = render

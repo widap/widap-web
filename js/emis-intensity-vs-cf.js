@@ -1,3 +1,5 @@
+const DEFAULTS = require('./defaults.js')
+
 const KG_PER_LB = 0.45359237
 const KG_PER_TON = 2000 * KG_PER_LB
 const DATE_HOUR_FMT = d3.timeFormat('%Y-%m-%d %H:%M')
@@ -38,7 +40,7 @@ function renderEmissionsIntensityVsCapFactor(divId, data) {
         text: filtered.map(d => DATE_HOUR_FMT(d.datetime)),
         mode: 'markers',
         hoverinfo: 'x+y+text',
-        hoverlabel: {font: STD_FONT},
+        hoverlabel: {font: DEFAULTS.STD_FONT},
         marker: {
           'size': 3.5,
           'color': filtered.map(d => d.datetime.getFullYear()),
@@ -62,8 +64,8 @@ function renderEmissionsIntensityVsCapFactor(divId, data) {
     xaxis2: {title: 'Capacity Factor'},
     yaxis: {title: 'CO<sub>2</sub> Intensity (kg/MWh)'},
     yaxis2: {title: 'SO<sub>2</sub> Intensity (lbs/MWh)'},
-    font: {family: STD_FONT_FAMILY},
-    margin: STD_MARGIN,
+    font: DEFAULTS.STD_FONT,
+    margin: DEFAULTS.STD_MARGIN,
   }
   Plotly.react(divId, traces, layout, {displaylogo: false})
 }

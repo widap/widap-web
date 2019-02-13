@@ -1,3 +1,5 @@
+const DEFAULTS = require('./defaults.js')
+
 function newTraceGenerator(data) {
   const dt = data.map(d => d.year_month)
   return (name, accessor, opts) => Object.assign(
@@ -5,7 +7,7 @@ function newTraceGenerator(data) {
       opts)
 }
 
-function render(divId, data) {
+module.exports = (divId, data) => {
   const traceGen = newTraceGenerator(data)
   const traces = [
     traceGen('min', d => d.min_gload_mw, {line: {color: '#CCC', width: 0.5}}),
@@ -19,9 +21,7 @@ function render(divId, data) {
     height: 360,
     paper_bgcolor: 'rgba(255,255,255,0.1)',
     plot_bgcolor: 'rgba(255,255,255,0.1)',
-    font: {
-      family: "'Source Sans Pro', 'Open Sans', sans-serif",
-    },
+    font: DEFAULTS.STD_FONT,
     xaxis: {
       rangeslider: {},
       type: 'date',
@@ -36,5 +36,3 @@ function render(divId, data) {
   }
   Plotly.react(divId, traces, layout, {displayModeBar: false});
 }
-
-module.exports = render
