@@ -1,57 +1,19 @@
-function renderMonthlyGloadTrendPlot(divId, data) {
+function newTraceGen(data) {
   const dt = data.map(d => d.year_month)
-  const minTrace = {
-    type: 'scatter',
-    name: 'min',
-    x: dt,
-    y: data.map(d => d.min_gload_mw),
-    line: {
-      color: '#CCC',
-      width: 0.5,
-    },
-  }
-  const maxTrace = {
-    type: 'scatter',
-    name: 'max',
-    x: dt,
-    y: data.map(d => d.max_gload_mw),
-    line: {
-      color: '#CCC',
-      width: 0.5,
-    },
-    fill: 'tonexty',
-  }
-  const q1Trace = {
-    type: 'scatter',
-    name: '25%',
-    x: dt,
-    y: data.map(d => d.q1_gload_mw),
-    line: {
-      color: '#999',
-      width: 0.5,
-    },
-  }
-  const q3Trace = {
-    type: 'scatter',
-    name: '75%',
-    x: dt,
-    y: data.map(d => d.q3_gload_mw),
-    line: {
-      color: '#999',
-      width: 0.5,
-    },
-    fill: 'tonexty',
-  }
-  const q2Trace = {
-    type: 'scatter',
-    name: 'median',
-    x: dt,
-    y: data.map(d => d.q2_gload_mw),
-    line: {
-      color: 'steelblue',
-      width: 1.8,
-    },
-  }
+  return (name, accessor, opts) => Object.assign(
+      {type: 'scatter', name: name, x: dt, y: data.map(accessor)},
+      opts)
+}
+
+function renderMonthlyGloadTrendPlot(divId, data) {
+  const traceGen = newTraceGen(data)
+  const traces = [
+    traceGen('min', d => d.min_gload_mw, {line: {color: '#CCC', width: 0.5}}),
+    traceGen('max', d => d.max_gload_mw, {line: {color: '#CCC', width: 0.5}, fill: 'tonexty'}),
+    traceGen('25%', d => d.q1_gload_mw, {line: {color: '#999', width: 0.5}}),
+    traceGen('75%', d => d.q3_gload_mw, {line: {color: '#999', width: 0.5}, fill: 'tonexty'}),
+    traceGen('median', d => d.q2_gload_mw, {line: {color: 'steelblue', width: 1.8}}),
+  ]
   const layout = {
     showlegend: false,
     height: 360,
@@ -70,16 +32,7 @@ function renderMonthlyGloadTrendPlot(divId, data) {
         text: 'Gross load (MW)',
       },
     },
-    margin: {
-      l: 50,
-      r: 20,
-      t: 10,
-      b: 10,
-    },
+    margin: {l: 50, r: 20, t: 10, b: 10},
   }
-  Plotly.react(
-    divId,
-    [minTrace, maxTrace, q1Trace, q3Trace, q2Trace],
-    layout,
-    {displayModeBar: false});
+  Plotly.react(divId, traces, layout, {displayModeBar: false});
 }
