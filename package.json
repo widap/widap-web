@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "npm run build:map && npm run build:dashboard",
-    "build:map": "browserify --no-bundle-external js/power-plant-map.js -o bundles/power-plant-map-bundle.js",
-    "build:dashboard": "browserify --no-bundle-external js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js"
+    "build:map": "mkdir -p bundles && browserify --no-bundle-external js/power-plant-map.js -o bundles/power-plant-map-bundle.js",
+    "build:dashboard": "mkdir -p bundles && browserify --no-bundle-external js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js"
   }
 }
