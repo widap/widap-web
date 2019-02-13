@@ -1,4 +1,4 @@
-const ZOOM_THRESHOLD_DAY_MS = 1.5e10
+const ZOOM_THRESHOLD_DAY_MS = 1.4e10
 const ZOOM_THRESHOLD_WEEK_MS = 7 * ZOOM_THRESHOLD_DAY_MS
 const WEEK_FLOOR = d => d3.timeWeek.floor(d.datetime).getTime()
 const DAY_FLOOR = d => d3.timeDay.floor(d.datetime).getTime()
@@ -39,39 +39,46 @@ function mean(xs, accessor) {
   return total / xs.length
 }
 
+function filterTrace(trace, left, right) {
+  // Plotly has a d3-based filter transform for this; however, i tried it out
+  // and it was very slow (https://plot.ly/javascript/filter/).
+  if (trace.x.length == 0) {
+    return trace
+  }
+  var filtered = {}
+  Object.keys(trace).forEach(k => filtered[k] = trace[k])
+  filtered.x = [trace.x[0]], filtered.y = [trace.y[0]]
+  for (var i = 1; i < trace.x.length - 1; i++) {
+    if (left < trace.x[i] && trace.x[i] < right) {
+      filtered.x.push(trace.x[i])
+      filtered.y.push(trace.y[i])
+    }
+  }
+  filtered.x.push(trace.x[trace.x.length - 1])
+  filtered.y.push(trace.y[trace.y.length - 1])
+  return filtered
+}
+
 function filterTraces(traces, left, right) {
-  // TODO: Use Plotly's d3-based filter transforms for this!
-  // See: https://plot.ly/javascript/filter/
-  return traces.map(trace => {
-    if (trace.x.length == 0) {
-      return trace
-    }
-    var filtered = {}
-    Object.keys(trace).forEach(k => filtered[k] = trace[k])
-    filtered.x = [trace.x[0]], filtered.y = [trace.y[0]]
-    for (var i = 1; i < trace.x.length - 1; i++) {
-      if (left < trace.x[i] && trace.x[i] < right) {
-        filtered.x.push(trace.x[i])
-        filtered.y.push(trace.y[i])
-      }
-    }
-    filtered.x.push(trace.x[trace.x.length - 1])
-    filtered.y.push(trace.y[trace.y.length - 1])
-    return filtered
-  })
+  return traces.map(trace => filterTrace(trace, left, right))
+}
+
+function selectTrace(allTraces, timeDelta) {
+  if (timeDelta > ZOOM_THRESHOLD_WEEK_MS) {
+    return allTraces.weekly
+  } else if (timeDelta > ZOOM_THRESHOLD_DAY_MS) {
+    return allTraces.daily
+  } else {
+    return allTraces.hourly
+  }
 }
 
 function selectAndFilterTraces(allTraces, timeStart, timeEnd) {
   const timeDelta = timeEnd.getTime() - timeStart.getTime()
   const left = new Date(timeStart.getTime() - timeDelta)
   const right = new Date(timeEnd.getTime() + timeDelta)
-  if (timeDelta > ZOOM_THRESHOLD_WEEK_MS) {
-    return filterTraces(allTraces.weekly, left, right)
-  } else if (timeDelta > ZOOM_THRESHOLD_DAY_MS) {
-    return filterTraces(allTraces.daily, left, right)
-  } else {
-    return filterTraces(allTraces.hourly, left, right)
-  }
+  const selected = selectTrace(allTraces, timeDelta)
+  return filterTraces(selected, left, right)
 }
 
 function trendTraces(data, dateGrouper) {
