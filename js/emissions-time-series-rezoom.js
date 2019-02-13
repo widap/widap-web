@@ -81,67 +81,38 @@ function selectAndFilterTraces(allTraces, timeStart, timeEnd) {
   return filterTraces(selected, left, right)
 }
 
+function trendTraceGenerator(bins) {
+  const dt = bins.map(bin => new Date(mean(bin, d => d.datetime.getTime())))
+  return (gas) => {
+    const sortedBins = bins.map(b => b.map(d => d[gas]).sort((a, b) => a - b))
+    return (name, accessor, opts) => {
+      const trace = {
+        type: 'scatter',
+        name: `${name} ${GAS_OPTIONS[gas].name}`,
+        x: dt,
+        y: sortedBins.map(accessor),
+        yaxis: GAS_OPTIONS[gas].yaxis,
+        hoverlabel: {font: {family: STD_FONT_FAMILY}},
+      }
+      return Object.assign(trace, opts)
+    }
+  }
+}
+
 function trendTraces(data, dateGrouper) {
   const bins = groupByDate(data, dateGrouper)
   const dt = bins.map(bin => new Date(mean(bin, d => d.datetime.getTime())))
-  var traces = []
-  // TODO: Massive refactoring
-  Object.keys(GAS_OPTIONS).forEach(gas => {
-    const sortedBins = bins.map(b => b.map(d => d[gas]).sort((a, b) => a - b))
-    // min
-    traces.push({
-      type: 'scatter',
-      name: `min ${GAS_OPTIONS[gas].name}`,
-      x: dt,
-      y: sortedBins.map(bin => bin[0]),
-      yaxis: GAS_OPTIONS[gas].yaxis,
-      hoverlabel: {font: {family: STD_FONT_FAMILY}},
-      line: {color: '#CCC', width: 0.5},
+  const traceMetaGenerator = trendTraceGenerator(bins)
+  return Object.keys(GAS_OPTIONS).flatMap(gas => {
+    const traceGen = traceMetaGenerator(gas)
+    return [
+      traceGen('min', b => b[0], {line: {color: '#CCC', width: 0.5}}),
+      traceGen('max', b => b[b.length - 1], {line: {color: '#CCC', width: 0.5}, fill: 'tonexty'}),
+      traceGen('25%', b => d3.quantile(b, 0.25), {line: {color: '#999', width: 0.5}}),
+      traceGen('75%', b => d3.quantile(b, 0.75), {line: {color: '#999', width: 0.5}, fill: 'tonexty'}),
+      traceGen('median', b => d3.quantile(b, 0.50), {line: {color: GAS_OPTIONS[gas].color, width: 1.8}}),
+    ]
     })
-    // max
-    traces.push({
-      type: 'scatter',
-      name: `max ${GAS_OPTIONS[gas].name}`,
-      x: dt,
-      y: sortedBins.map(bin => bin[bin.length - 1]),
-      yaxis: GAS_OPTIONS[gas].yaxis,
-      hoverlabel: {font: {family: STD_FONT_FAMILY}},
-      line: {color: '#CCC', width: 0.5},
-      fill: 'tonexty',
-    })
-    // q1
-    traces.push({
-      type: 'scatter',
-      name: `25% ${GAS_OPTIONS[gas].name}`,
-      x: dt,
-      y: sortedBins.map(bin => d3.quantile(bin, 0.25)),
-      yaxis: GAS_OPTIONS[gas].yaxis,
-      hoverlabel: {font: {family: STD_FONT_FAMILY}},
-      line: {color: '#999', width: 0.5},
-    })
-    // q3
-    traces.push({
-      type: 'scatter',
-      name: `75% ${GAS_OPTIONS[gas].name}`,
-      x: dt,
-      y: sortedBins.map(bin => d3.quantile(bin, 0.75)),
-      yaxis: GAS_OPTIONS[gas].yaxis,
-      hoverlabel: {font: {family: STD_FONT_FAMILY}},
-      line: {color: '#999', width: 0.5},
-      fill: 'tonexty',
-    })
-    // median
-    traces.push({
-      type: 'scatter',
-      name: `median ${GAS_OPTIONS[gas].name}`,
-      x: dt,
-      y: sortedBins.map(bin => d3.quantile(bin, 0.50)),
-      yaxis: GAS_OPTIONS[gas].yaxis,
-      hoverlabel: {font: {family: STD_FONT_FAMILY}},
-      line: {color: GAS_OPTIONS[gas].color, width: 1.8},
-    })
-  })
-  return traces
 }
 
 function hourlyTraces(data) {
