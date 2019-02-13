@@ -1,12 +1,12 @@
-function newMonthlyGloadTraceGen(data) {
+function newTraceGenerator(data) {
   const dt = data.map(d => d.year_month)
   return (name, accessor, opts) => Object.assign(
       {type: 'scatter', name: name, x: dt, y: data.map(accessor)},
       opts)
 }
 
-function renderMonthlyGloadTrendPlot(divId, data) {
-  const traceGen = newMonthlyGloadTraceGen(data)
+function render(divId, data) {
+  const traceGen = newTraceGenerator(data)
   const traces = [
     traceGen('min', d => d.min_gload_mw, {line: {color: '#CCC', width: 0.5}}),
     traceGen('max', d => d.max_gload_mw, {line: {color: '#CCC', width: 0.5}, fill: 'tonexty'}),
@@ -36,3 +36,5 @@ function renderMonthlyGloadTrendPlot(divId, data) {
   }
   Plotly.react(divId, traces, layout, {displayModeBar: false});
 }
+
+module.exports = render

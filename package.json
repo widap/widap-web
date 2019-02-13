@@ -1,0 +1,14 @@
+{
+  "name": "widap-web",
+  "license": "none",
+  "dependencies": {
+    "browserify": "^16.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:widap/widap-web"
+  },
+  "scripts": {
+    "build": "browserify --no-bundle-external js/power-plant-map.js -o bundles/power-plant-map-bundle.js"
+  }
+}

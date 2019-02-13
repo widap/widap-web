@@ -1,12 +1,12 @@
-function newMonthlyEmisTraceGen(data) {
+function newTraceGenerator(data) {
   const dt = data.map(d => d.year_month)
   return (name, accessor, line, opts) => Object.assign(
       {type: 'scatter', name: name, x: dt, y: data.map(accessor), line: line},
       opts)
 }
 
-function renderMonthlyEmissionsTimeSeries(divId, data) {
-  const traceGen = newMonthlyEmisTraceGen(data)
+function render(divId, data) {
+  const traceGen = newTraceGenerator(data)
   const traces = [
     traceGen('SO2 (lbs/hr)', d => d.avg_so2_mass_lbs_hr, {color: 'green', width: 1.5}, {}),
     traceGen('NOx (lbs/hr)', d => d.avg_nox_mass_lbs_hr, {color: 'xkcd:orange', width: 1.5}, {yaxis: 'y2'}),
@@ -44,3 +44,5 @@ function renderMonthlyEmissionsTimeSeries(divId, data) {
   }
   Plotly.react(divId, traces, layout, {displayModeBar: false});
 }
+
+module.exports = render
