@@ -55,11 +55,12 @@ function loadData() {
   const unitId = $('#unit-selector').val()
   if (orisplCode && unitId) {
     clearPlots();
-    // TODO: Figure out how to fetch gzipped csv instead. A few cursory glances
-    // show savings of well over 50% in size (and thus network bandwidth); this
-    // seems well worth doing.
-    const dataUri = `${HOST}/dumps/${orisplCode}_${unitId}.csv`
-    d3.csv(dataUri, parseTimeSeriesRow)
+    // TODO: Ensure that the production server responds with the correct
+    // "Content-Encoding": "gzip" header! Major network bandwidth savings,
+    // as well as disk space; the compressed files are <30% the size.
+    // TODO: Make sure to account for '*' in the unitId!
+    const dataUri = `${HOST}/dumps/${orisplCode}_${unitId}.csv.gz`
+    d3.csv(dataUri, {acceptEncoding: "gzip, deflate"}, parseTimeSeriesRow)
       .then(data => {
         GLOBAL_DATA_VERY_BAD = data
         updatePlots(data)
