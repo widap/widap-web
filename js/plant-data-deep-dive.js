@@ -1,26 +1,26 @@
-var GLOBAL_DATA_VERY_BAD = []
-
+// TODO: Find a way to coordinate div id's between JS and HTML
 const HOST = "http://localhost:8080"
 const YMD_PARSER = d3.timeParse('%Y-%m-%d %H:%M:%S')
 const MONTHLY_GEN_BOX_PLOT = 'monthly-generation-box-plot'
 const EMISSIONS_TIME_SERIES = 'emissions-time-series'
 const EMISSIONS_INTENSITY_VS_CF = 'emissions-intensity-vs-cf'
 
-var plantsUnits = {}
 
 function htmlOption(label, value) {
   return `<option label="${label}" value="${value}"></option>`
 }
 
-function addPlant(row) {
-  plantsUnits[row.orispl_code] = {
-    name: row.name,
-    unitIds: row.unit_ids.split('/')
-  }
-  $('#plant-selector').append(htmlOption(row.name, row.orispl_code))
+function addPlants(data, plantsUnits) {
+  data.forEach(row => {
+    plantsUnits[row.orispl_code] = {
+      name: row.name,
+      unitIds: row.unit_ids.split('/')
+    }
+    $('#plant-selector').append(htmlOption(row.name, row.orispl_code))
+  })
 }
 
-function updateUnitOptions() {
+function updateUnitOptions(plantsUnits) {
   $('#unit-selector').empty()
   plantsUnits[$('#plant-selector').val()].unitIds.forEach(
     unitId => {
@@ -36,7 +36,6 @@ function clearPlots() {
 function updatePlots(data) {
   renderMonthlyGenBoxPlot(MONTHLY_GEN_BOX_PLOT, data);
   renderEmissionsTimeSeries(EMISSIONS_TIME_SERIES, data);
-  renderEmissionsIntensityVsCapFactor(EMISSIONS_INTENSITY_VS_CF, data);
 }
 
 function parseTimeSeriesRow(row) {
@@ -58,22 +57,18 @@ function loadData() {
     // TODO: Ensure that the production server responds with the correct
     // "Content-Encoding": "gzip" header! Major network bandwidth savings,
     // as well as disk space; the compressed files are <30% the size.
-    // TODO: Make sure to account for '*' in the unitId!
-    const dataUri = `${HOST}/dumps/${orisplCode}_${unitId}.csv.gz`
+    const sanitizedUnitId = unitId.replace('*', '')
+    const dataUri = `${HOST}/unitlevel/${orisplCode}_${sanitizedUnitId}.csv.gz`
     d3.csv(dataUri, {acceptEncoding: "gzip, deflate"}, parseTimeSeriesRow)
-      .then(data => {
-        GLOBAL_DATA_VERY_BAD = data
-        updatePlots(data)
-      })
+      .then(updatePlots)
   }
 }
 
 $(document).ready(function() {
   clearPlots()
-  d3.csv(`${HOST}/web/csv/plants_overview.csv`).then(d => d.forEach(addPlant))
-  $('#plant-selector').change(updateUnitOptions)
+  var plantsUnits = {}
+  d3.csv(`${HOST}/web/csv/plants_overview.csv`)
+    .then(data => addPlants(data, plantsUnits)) // .forEach(addPlant))
+  $('#plant-selector').change(e => updateUnitOptions(plantsUnits))
   $('#load-plant-unit-data-button').click(loadData)
-  $(`#${EMISSIONS_TIME_SERIES}`).on(
-    'plotly_relayout',
-    update => rezoomEmissionsTimeSeries(EMISSIONS_TIME_SERIES, update))
 })
