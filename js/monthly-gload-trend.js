@@ -1,4 +1,4 @@
-function newTraceGen(data) {
+function newMonthlyGloadTraceGen(data) {
   const dt = data.map(d => d.year_month)
   return (name, accessor, opts) => Object.assign(
       {type: 'scatter', name: name, x: dt, y: data.map(accessor)},
@@ -6,7 +6,7 @@ function newTraceGen(data) {
 }
 
 function renderMonthlyGloadTrendPlot(divId, data) {
-  const traceGen = newTraceGen(data)
+  const traceGen = newMonthlyGloadTraceGen(data)
   const traces = [
     traceGen('min', d => d.min_gload_mw, {line: {color: '#CCC', width: 0.5}}),
     traceGen('max', d => d.max_gload_mw, {line: {color: '#CCC', width: 0.5}, fill: 'tonexty'}),

@@ -1,29 +1,16 @@
-function renderMonthlyEmissionsTimeSeries(divId, data) {
+function newMonthlyEmisTraceGen(data) {
   const dt = data.map(d => d.year_month)
+  return (name, accessor, line, opts) => Object.assign(
+      {type: 'scatter', name: name, x: dt, y: data.map(accessor), line: line},
+      opts)
+}
+
+function renderMonthlyEmissionsTimeSeries(divId, data) {
+  const traceGen = newMonthlyEmisTraceGen(data)
   const traces = [
-    {
-      type: 'scatter',
-      name: 'SO2 (lbs/hr)',
-      x: dt,
-      y: data.map(d => d.avg_so2_mass_lbs_hr),
-      line: {color: 'green', width: 1.5},
-    },
-    {
-      type: 'scatter',
-      name: 'NOx (lbs/hr)',
-      x: dt,
-      y: data.map(d => d.avg_nox_mass_lbs_hr),
-      yaxis: 'y2',
-      line: {color: 'xkcd:orange', width: 1.5},
-    },
-    {
-      type: 'scatter',
-      name: 'CO2 (tons/hr)',
-      x: dt,
-      y: data.map(d => d.avg_co2_mass_tons_hr),
-      yaxis: 'y3',
-      line: {color: 'steelblue', width: 1.5},
-    }
+    traceGen('SO2 (lbs/hr)', d => d.avg_so2_mass_lbs_hr, {color: 'green', width: 1.5}, {}),
+    traceGen('NOx (lbs/hr)', d => d.avg_nox_mass_lbs_hr, {color: 'xkcd:orange', width: 1.5}, {yaxis: 'y2'}),
+    traceGen('CO2 (tons/hr)', d => d.avg_co2_mass_tons_hr, {color: 'steelblue', width: 1.5}, {yaxis: 'y3'}),
   ]
   const layout = {
     height: 360,
