@@ -2,7 +2,6 @@ var renderMonthlyGenBoxPlot = require('./monthly-gen-box-plot.js')
 var renderEmissionsTimeSeries = require('./emissions-time-series-rezoom.js')
 
 // TODO: Find a way to coordinate div id's between JS and HTML
-const HOST = "http://localhost:8080"
 const YMD_PARSER = d3.timeParse('%Y-%m-%d %H:%M:%S')
 const MONTHLY_GEN_BOX_PLOT = 'monthly-generation-box-plot'
 const EMISSIONS_TIME_SERIES = 'emissions-time-series'
@@ -60,7 +59,7 @@ function loadData() {
     // "Content-Encoding": "gzip" header! Major network bandwidth savings,
     // as well as disk space; the compressed files are <30% the size.
     const sanitizedUnitId = unitId.replace('*', '')
-    const dataUri = `${HOST}/unitlevel/${orisplCode}_${sanitizedUnitId}.csv.gz`
+    const dataUri = `unitlevel/${orisplCode}_${sanitizedUnitId}.csv.gz`
     d3.csv(dataUri, {acceptEncoding: "gzip, deflate"}, parseTimeSeriesRow)
       .then(updatePlots)
   }
@@ -69,7 +68,7 @@ function loadData() {
 $(document).ready(function() {
   clearPlots()
   var plantsUnits = {}
-  d3.csv(`${HOST}/web/csv/plants_overview.csv`)
+  d3.csv(`web/csv/plants_overview.csv`)
     .then(data => addPlants(data, plantsUnits)) // .forEach(addPlant))
   $('#plant-selector').change(e => updateUnitOptions(plantsUnits))
   $('#load-plant-unit-data-button').click(loadData)
