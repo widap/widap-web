@@ -1,8 +1,8 @@
-var renderMonthlyGenBoxPlot = require('./monthly-gen-box-plot.js')
-var renderEmissionsTimeSeries = require('./emissions-time-series-rezoom.js')
+const zlib = require('zlib')
+const renderMonthlyGenBoxPlot = require('./monthly-gen-box-plot.js')
+const renderEmissionsTimeSeries = require('./emissions-time-series-rezoom.js')
 
 // TODO: Find a way to coordinate div id's between JS and HTML
-const YMD_PARSER = d3.timeParse('%Y-%m-%d %H:%M:%S')
 const MONTHLY_GEN_BOX_PLOT = 'monthly-generation-box-plot'
 const EMISSIONS_TIME_SERIES = 'emissions-time-series'
 const EMISSIONS_INTENSITY_VS_CF = 'emissions-intensity-vs-cf'
@@ -41,7 +41,7 @@ function updatePlots(data) {
 
 function parseTimeSeriesRow(row) {
   return {
-    datetime: YMD_PARSER(row.datetime),
+    datetime: new Date(row.datetime),
     gen: +row.gen,
     co2_mass: +row.co2_mass,
     so2_mass: +row.so2_mass,
@@ -55,13 +55,14 @@ function loadData() {
   const unitId = $('#unit-selector').val()
   if (orisplCode && unitId) {
     clearPlots();
-    // TODO: Ensure that the production server responds with the correct
-    // "Content-Encoding": "gzip" header! Major network bandwidth savings,
-    // as well as disk space; the compressed files are <30% the size.
     const sanitizedUnitId = unitId.replace('*', '')
     const dataUri = `unitlevel/${orisplCode}_${sanitizedUnitId}.csv.gz`
-    d3.csv(dataUri, {acceptEncoding: "gzip, deflate"}, parseTimeSeriesRow)
-      .then(updatePlots)
+    fetch(dataUri, {acceptEncoding: "gzip, deflate"}).then(response => {
+      response.arrayBuffer().then(buf => {
+        const unzipped = zlib.gunzipSync(Buffer.from(buf))
+        updatePlots(d3.csvParse(unzipped.toString(), parseTimeSeriesRow))
+      })
+    })
   }
 }
 
