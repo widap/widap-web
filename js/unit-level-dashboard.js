@@ -68,7 +68,7 @@ function loadData() {
 $(document).ready(function() {
   clearPlots()
   var plantsUnits = {}
-  d3.csv(`web/csv/plants_overview.csv`)
+  d3.csv(`csv/plants_overview.csv`)
     .then(data => addPlants(data, plantsUnits)) // .forEach(addPlant))
   $('#plant-selector').change(e => updateUnitOptions(plantsUnits))
   $('#load-plant-unit-data-button').click(loadData)
