@@ -11,6 +11,8 @@
   "scripts": {
     "build": "npm run build:map && npm run build:dashboard",
     "build:map": "mkdir -p bundles && browserify js/power-plant-map.js -o bundles/power-plant-map-bundle.js",
-    "build:dashboard": "mkdir -p bundles && browserify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js"
+    "build:dashboard": "mkdir -p bundles && browserify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js",
+    "devel:dashboard": "watchify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js -v",
+    "serve": "python scripts/debug_server.py"
   }
 }

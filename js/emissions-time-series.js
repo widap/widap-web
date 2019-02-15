@@ -1,9 +1,8 @@
-var DEFAULTS = require('./defaults.js')
+const DEFAULTS = require('./defaults.js')
+const TS = require('./timeseries.js')
 
 const ZOOM_THRESHOLD_DAY_MS = 1.4e10
 const ZOOM_THRESHOLD_WEEK_MS = 7 * ZOOM_THRESHOLD_DAY_MS
-const WEEK_FLOOR = d => d3.timeWeek.floor(d.datetime).getTime()
-const DAY_FLOOR = d => d3.timeDay.floor(d.datetime).getTime()
 
 const GAS_OPTIONS = {
   'so2_mass': {name: 'SO2 (lbs/hr)', color: 'green', yaxis: 'y'},
@@ -21,27 +20,6 @@ const LAYOUT = {
   yaxis: {fixedrange: true, title: {text: 'SO<sub>2</sub> (lbs/hr)'}},
   yaxis2: {fixedrange: true, title: {text: 'NO<sub>x</sub> (lbs/hr)'}},
   yaxis3: {fixedrange: true, title: {text: 'CO<sub>2</sub> (tons/hr)'}},
-}
-
-// TODO: Try to save effort here; when grouping by week and by day, we should
-// have a way to use the results of grouping by day to compute the weekly groups.
-function groupByDate(coll, dateGrouper) {
-   // Assumes coll is already sorted by date
-  var bins = [], k = -1, binVal = new Date(0)
-  for (var i = 0; i < coll.length; i++) {
-    if (dateGrouper(coll[i]) != binVal) {
-      binVal = dateGrouper(coll[i])
-      k++
-      bins.push([])
-    }
-    bins[k].push(coll[i])
-  }
-  return bins
-}
-
-function mean(xs, accessor) {
-  const total = xs.map(accessor).reduce((a, b) => a + b)
-  return total / xs.length
 }
 
 function filterTrace(trace, left, right) {
@@ -86,38 +64,31 @@ function selectAndFilterTraces(allTraces, timeStart, timeEnd) {
   return filterTraces(selected, left, right)
 }
 
-function trendTraceGenerator(bins) {
-  const dt = bins.map(bin => new Date(mean(bin, d => d.datetime.getTime())))
-  return (gas) => {
-    const sortedBins = bins.map(b => b.map(d => d[gas]).sort((a, b) => a - b))
-    return (name, accessor, opts) => {
-      const trace = {
-        type: 'scatter',
-        name: `${name} ${GAS_OPTIONS[gas].name}`,
-        x: dt,
-        y: sortedBins.map(accessor),
-        yaxis: GAS_OPTIONS[gas].yaxis,
-        hoverlabel: {font: DEFAULTS.STD_FONT},
-      }
-      return Object.assign(trace, opts)
+function trendTraceGen(bins, gas) {
+  const dt = bins[gas].map(bin => bin.t)
+  return (name, accessor, opts) => {
+    const trace = {
+      type: 'scatter',
+      name: `${name} ${GAS_OPTIONS[gas].name}`,
+      x: dt,
+      y: bins[gas].map(accessor),
+      yaxis: GAS_OPTIONS[gas].yaxis,
+      hoverlabel: {font: DEFAULTS.STD_FONT},
     }
+    return Object.assign(trace, opts)
   }
 }
 
-function trendTraces(data, dateGrouper) {
-  const bins = groupByDate(data, dateGrouper)
-  const dt = bins.map(bin => new Date(mean(bin, d => d.datetime.getTime())))
-  const traceMetaGenerator = trendTraceGenerator(bins)
+function trendTraces(bins) {
   return Object.keys(GAS_OPTIONS).flatMap(gas => {
-    const traceGen = traceMetaGenerator(gas)
+    const traceGen = trendTraceGen(bins, gas)
     return [
-      traceGen('min', b => b[0], {line: {color: '#CCC', width: 0.5}}),
-      traceGen('max', b => b[b.length - 1], {line: {color: '#CCC', width: 0.5}, fill: 'tonexty'}),
-      traceGen('25%', b => d3.quantile(b, 0.25), {line: {color: '#999', width: 0.5}}),
-      traceGen('75%', b => d3.quantile(b, 0.75), {line: {color: '#999', width: 0.5}, fill: 'tonexty'}),
-      traceGen('median', b => d3.quantile(b, 0.50), {line: {color: GAS_OPTIONS[gas].color, width: 1.8}}),
-    ]
-    })
+      traceGen('min', d => d.min, {line: {color: '#CCC', width: 0.5}}),
+      traceGen('max', d => d.max, {line: {color: '#CCC', width: 0.5}, fill: 'tonexty'}),
+      traceGen('25%', d => d.q1, {line: {color: '#999', width: 0.5}}),
+      traceGen('75%', d => d.q3, {line: {color: '#999', width: 0.5}, fill: 'tonexty'}),
+      traceGen('median', d => d.q2, {line: {color: GAS_OPTIONS[gas].color, width: 1.8}}),
+    ]})
 }
 
 function hourlyTraces(data) {
@@ -141,15 +112,22 @@ function rezoom(divId, allTraces, update) {
   Plotly.react(divId, traces, plot.layout)
 }
 
-module.exports = (divId, data) => {
+function renderEmissionsTimeSeries(divId, data) {
   $(`#${divId}`).off('plotly_relayout')
   var traces = hourlyTraces(data)
+  var quantiles = {weekly: {}, daily: {}}
   if (data.length > 0) {
+    Object.keys(GAS_OPTIONS).forEach(gas => {
+      quantiles.weekly[gas] = TS.getWeeklyQuantiles(data, gas)
+      quantiles.daily[gas] = TS.getDailyQuantiles(data, gas)
+    })
     const allTraces = {
-      weekly: trendTraces(data, WEEK_FLOOR),
-      daily: trendTraces(data, DAY_FLOOR),
+      weekly: trendTraces(quantiles.weekly),
+      daily: trendTraces(quantiles.daily),
       hourly: traces,
     }
+    console.log('allTraces:')
+    console.log(allTraces)
     traces = selectAndFilterTraces(
         allTraces, data[0].datetime, data[data.length - 1].datetime)
     $(`#${divId}`).on(
@@ -157,3 +135,5 @@ module.exports = (divId, data) => {
   }
   Plotly.react(divId, traces, LAYOUT, {displaylogo: false})
 }
+
+module.exports = renderEmissionsTimeSeries

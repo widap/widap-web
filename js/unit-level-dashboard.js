@@ -1,6 +1,6 @@
 const zlib = require('zlib')
 const renderMonthlyGenBoxPlot = require('./monthly-gen-box-plot.js')
-const renderEmissionsTimeSeries = require('./emissions-time-series-rezoom.js')
+const renderEmissionsTimeSeries = require('./emissions-time-series.js')
 
 // TODO: Find a way to coordinate div id's between JS and HTML
 const MONTHLY_GEN_BOX_PLOT = 'monthly-generation-box-plot'
