@@ -1,11 +1,10 @@
 const zlib = require('zlib')
-const renderMonthlyGenBoxPlot = require('./monthly-gen-box-plot.js')
+const renderGenerationTimeSeries = require('./generation-time-series.js')
 const renderEmissionsTimeSeries = require('./emissions-time-series.js')
 
 // TODO: Find a way to coordinate div id's between JS and HTML
-const MONTHLY_GEN_BOX_PLOT = 'monthly-generation-box-plot'
+const GENERATION_TIME_SERIES = 'generation-time-series'
 const EMISSIONS_TIME_SERIES = 'emissions-time-series'
-const EMISSIONS_INTENSITY_VS_CF = 'emissions-intensity-vs-cf'
 
 function htmlOption(label, value) {
   return `<option label="${label}" value="${value}"></option>`
@@ -35,7 +34,7 @@ function clearPlots() {
 }
 
 function updatePlots(data) {
-  renderMonthlyGenBoxPlot(MONTHLY_GEN_BOX_PLOT, data);
+  renderGenerationTimeSeries(GENERATION_TIME_SERIES, data);
   renderEmissionsTimeSeries(EMISSIONS_TIME_SERIES, data);
 }
 

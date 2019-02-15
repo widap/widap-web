@@ -1,9 +1,6 @@
 const DEFAULTS = require('./defaults.js')
 const TS = require('./timeseries.js')
 
-const ZOOM_THRESHOLD_DAY_MS = 1.4e10
-const ZOOM_THRESHOLD_WEEK_MS = 7 * ZOOM_THRESHOLD_DAY_MS
-
 const GAS_OPTIONS = {
   'so2_mass': {name: 'SO2 (lbs/hr)', color: 'green', yaxis: 'y'},
   'nox_mass': {name: 'NOx (lbs/hr)', color: 'orange', yaxis: 'y2'},
@@ -20,48 +17,6 @@ const LAYOUT = {
   yaxis: {fixedrange: true, title: {text: 'SO<sub>2</sub> (lbs/hr)'}},
   yaxis2: {fixedrange: true, title: {text: 'NO<sub>x</sub> (lbs/hr)'}},
   yaxis3: {fixedrange: true, title: {text: 'CO<sub>2</sub> (tons/hr)'}},
-}
-
-function filterTrace(trace, left, right) {
-  // Plotly has a d3-based filter transform for this; however, i tried it out
-  // and it was very slow (https://plot.ly/javascript/filter/).
-  if (trace.x.length == 0) {
-    return trace
-  }
-  var filtered = {}
-  Object.keys(trace).forEach(k => filtered[k] = trace[k])
-  filtered.x = [trace.x[0]], filtered.y = [trace.y[0]]
-  for (var i = 1; i < trace.x.length - 1; i++) {
-    if (left < trace.x[i] && trace.x[i] < right) {
-      filtered.x.push(trace.x[i])
-      filtered.y.push(trace.y[i])
-    }
-  }
-  filtered.x.push(trace.x[trace.x.length - 1])
-  filtered.y.push(trace.y[trace.y.length - 1])
-  return filtered
-}
-
-function filterTraces(traces, left, right) {
-  return traces.map(trace => filterTrace(trace, left, right))
-}
-
-function selectTrace(allTraces, timeDelta) {
-  if (timeDelta > ZOOM_THRESHOLD_WEEK_MS) {
-    return allTraces.weekly
-  } else if (timeDelta > ZOOM_THRESHOLD_DAY_MS) {
-    return allTraces.daily
-  } else {
-    return allTraces.hourly
-  }
-}
-
-function selectAndFilterTraces(allTraces, timeStart, timeEnd) {
-  const timeDelta = timeEnd.getTime() - timeStart.getTime()
-  const left = new Date(timeStart.getTime() - timeDelta)
-  const right = new Date(timeEnd.getTime() + timeDelta)
-  const selected = selectTrace(allTraces, timeDelta)
-  return filterTraces(selected, left, right)
 }
 
 function trendTraceGen(bins, gas) {
@@ -103,37 +58,28 @@ function hourlyTraces(data) {
   }))
 }
 
-function rezoom(divId, allTraces, update) {
-  const plot = update.currentTarget,
-        xRange = plot.layout.xaxis.range,
-        timeStart = new Date(xRange[0]),
-        timeEnd = new Date(xRange[1])
-  const traces = selectAndFilterTraces(allTraces, timeStart, timeEnd)
-  Plotly.react(divId, traces, plot.layout)
-}
-
 function renderEmissionsTimeSeries(divId, data) {
   $(`#${divId}`).off('plotly_relayout')
   var traces = hourlyTraces(data)
-  var quantiles = {weekly: {}, daily: {}}
+  var quantiles = {monthly: {}, weekly: {}, daily: {}}
   if (data.length > 0) {
     Object.keys(GAS_OPTIONS).forEach(gas => {
+      quantiles.monthly[gas] = TS.getMonthlyQuantiles(data, gas)
       quantiles.weekly[gas] = TS.getWeeklyQuantiles(data, gas)
       quantiles.daily[gas] = TS.getDailyQuantiles(data, gas)
     })
     const allTraces = {
+      monthly: trendTraces(quantiles.monthly),
       weekly: trendTraces(quantiles.weekly),
       daily: trendTraces(quantiles.daily),
       hourly: traces,
     }
-    console.log('allTraces:')
-    console.log(allTraces)
-    traces = selectAndFilterTraces(
-        allTraces, data[0].datetime, data[data.length - 1].datetime)
-    $(`#${divId}`).on(
-        'plotly_relayout', update => rezoom(divId, allTraces, update))
+    $(`#${divId}`).on('plotly_relayout', TS.rezoom(divId, allTraces))
+    Plotly.react(divId, allTraces.monthly, LAYOUT, {displaylogo: false})
+    Plotly.relayout(divId, {})
+  } else {
+    Plotly.react(divId, traces, LAYOUT, {displaylogo: false})
   }
-  Plotly.react(divId, traces, LAYOUT, {displaylogo: false})
 }
 
 module.exports = renderEmissionsTimeSeries
