@@ -8,12 +8,13 @@ const DAY_FLOOR = d => d3.timeDay.floor(d.datetime).getTime()
 const GAS_OPTIONS = {
   'so2_mass': {name: 'SO2 (lbs/hr)', color: 'green', yaxis: 'y'},
   'nox_mass': {name: 'NOx (lbs/hr)', color: 'orange', yaxis: 'y2'},
-  'co2_mass': {name: 'CO2 (lbs/hr)', color: 'steelblue', yaxis: 'y3'}
+  'co2_mass': {name: 'CO2 (tons/hr)', color: 'steelblue', yaxis: 'y3'}
 }
 
 const LAYOUT = {
   showlegend: false,
   autosize: true,
+  title: {text: 'Emissions time series'},
   font: DEFAULTS.STD_FONT,
   grid: {yaxes: ['y', 'y2', 'y3'], rows: 3, columns: 1},
   xaxis: {type: 'date'},
@@ -22,6 +23,8 @@ const LAYOUT = {
   yaxis3: {fixedrange: true, title: {text: 'CO<sub>2</sub> (tons/hr)'}},
 }
 
+// TODO: Try to save effort here; when grouping by week and by day, we should
+// have a way to use the results of grouping by day to compute the weekly groups.
 function groupByDate(coll, dateGrouper) {
    // Assumes coll is already sorted by date
   var bins = [], k = -1, binVal = new Date(0)
