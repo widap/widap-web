@@ -51,10 +51,6 @@ function filterTrace(trace, left, right) {
   return filtered
 }
 
-function filterTraces(traces, left, right) {
-  return traces.map(trace => filterTrace(trace, left, right))
-}
-
 function selectTrace(allTraces, timeDelta) {
   if (timeDelta > ZOOM_THRESHOLD_MONTH_MS)
     return allTraces.monthly
@@ -70,7 +66,7 @@ function selectAndFilterTraces(allTraces, timeStart, timeEnd) {
   const left = new Date(timeStart.getTime() - timeDelta)
   const right = new Date(timeEnd.getTime() + timeDelta)
   const selected = selectTrace(allTraces, timeDelta)
-  return filterTraces(selected, left, right)
+  return selected.map(trace => filterTrace(trace, left, right))
 }
 
 function rezoom(divId, allTraces) {
