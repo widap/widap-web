@@ -26,3 +26,6 @@ select:required:invalid {
 option[value=""][disabled] {
   display: none;
 }
+.two-columns {
+  columns: 2;
+}
