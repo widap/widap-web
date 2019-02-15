@@ -2,8 +2,9 @@
 Given the ORISPL_CODE of a plant, prepares the monthly gload quartiles and 
 normalized emissions time series to display on the globe view page.
 """
+import config
+import mysql.connector
 import pandas as pd
-import sql_session
 import sys
 
 USAGE = "Usage: python prep_plant_overview_csv.py <ORISPL_CODE>"
@@ -23,9 +24,8 @@ def fetch_plant_data(orispl_code):
         WHERE `orispl_code` = {}
         GROUP BY `datetime`
         """.format(orispl_code)
-    df = sql_session.SqlSession().execute_query(query_text)
-    df.index = pd.DatetimeIndex(df.datetime)
-    return df.drop(columns=["datetime"], axis=1)
+    conn = mysql.connector.connect(**config.getcfg())
+    return pd.read_sql(query_text, conn, index_col='datetime')
 
 def monthly_mean(series):
     return series.fillna(0).groupby(pd.Grouper(freq='1M')).mean()

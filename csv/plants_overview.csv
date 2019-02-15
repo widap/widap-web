@@ -1,273 +1,273 @@
-orispl_code,state,county,name,latitude,longitude,operator,primary_fuel,years
-9,TX,El Paso,Copper Station,31.7569,-106.375,El Paso Electric Company,Pipeline Natural Gas,2008-2017
-87,NM,McKinley,Escalante ,35.4159,-108.082,Tri-State Generation & Transmission,Coal,2001-2017
-113,AZ,Navajo,Cholla,34.9394,-110.3033,Arizona Public Service Company,Coal,2001-2017
-116,AZ,Maricopa,Ocotillo Power Plant,33.4225,-111.9122,Arizona Public Service Company,Pipeline Natural Gas,2001-2017
-117,AZ,Maricopa,APS West Phoenix Power Plant,33.4417,-112.1583,Arizona Public Service Company,Pipeline Natural Gas,2001-2017
-118,AZ,Pinal,APS Saguaro Power Plant,32.5517,-111.3,Arizona Public Service Company,Pipeline Natural Gas,2001-2017
-120,AZ,Yuma,Yucca Power Plant,32.7214,-114.7097,Arizona Public Service Company,Pipeline Natural Gas,2001-2017
-124,AZ,Pima,De Moss Petrie Generating Station,32.2511,-110.9889,Tucson Electric Power Company,Natural Gas,2001-2017
-126,AZ,Pima,Irvington Generating Station,32.16,-110.9047,Tucson Electric Power Company,Natural Gas,2001-2017
-141,AZ,Maricopa,Agua Fria Generating Station,33.5542,-112.2161,Salt River Project,Pipeline Natural Gas,2001-2017
-147,AZ,Maricopa,Kyrene Generating Station,33.3544,-111.9364,Salt River Project,Pipeline Natural Gas,2001-2017
-160,AZ,Cochise,Apache Station,32.0619,-109.8931,Arizona Electric Power Cooperative,Pipeline Natural Gas,2001-2017
-228,CA,Contra Costa,Contra Costa Generating Station,38.0184,-121.761,"Contra Costa Power Plant, NRG Delta LLC",Pipeline Natural Gas,2001-2013
-246,CA,Humboldt,Humboldt Bay,40.7415,-124.2103,Pacific Gas and Electric Company,Pipeline Natural Gas,2001-2010
-247,CA,San Francisco,Hunters Point,37.7372,-122.378,Pacific Gas and Electric Company,Pipeline Natural Gas,2001-2006
-259,CA,San Luis Obispo,"Morro Bay Power Plant, LLC",35.3747,-120.8578,Dynegy Power Corporation,Pipeline Natural Gas,2001-2014
-260,CA,Monterey,Moss Landing,36.8042,-121.7775,"Dynegy Moss Landing,, LLC",Pipeline Natural Gas,2001-2017
-271,CA,Contra Costa,Pittsburg Generating Station (CA),38.0392,-121.894,"GenOn Delta, LLC",Pipeline Natural Gas,2001-2016
-273,CA,San Francisco,Potrero Generating Station,37.7558,-122.3869,"GenOn Potrero, LLC",Pipeline Natural Gas,2001-2011
-302,CA,San Diego,Cabrillo Power I Encina Power Station,33.1408,-117.3342,Cabrillo Power Operations Inc.,Pipeline Natural Gas,2001-2017
-310,CA,San Diego,"Dynegy South Bay, LLC",32.6131,-117.0964,Dynegy Power Corporation,Pipeline Natural Gas,2001-2010
-315,CA,Los Angeles,AES Alamitos,33.7688,-118.1009,AES Corporation,Pipeline Natural Gas,2001-2017
-329,CA,San Bernardino,Coolwater Generating Station,34.8622,-116.854,NRG California South LP.,Pipeline Natural Gas,2001-2014
-330,CA,Los Angeles,El Segundo,33.9106,-118.425,NRG El Segundo Operations Inc.,Pipeline Natural Gas,2001-2017
-331,CA,San Bernardino,Etiwanda Generating Station,34.0911,-117.5256,NRG California South LP.,Pipeline Natural Gas,2001-2017
-334,CA,San Bernardino,Riverside Canal Power Company,34.0225,-117.3325,,Pipeline Natural Gas,2001-2002
-335,CA,Orange,AES Huntington Beach,33.6436,-117.9788,AES Corporation,Pipeline Natural Gas,2001-2017
-341,CA,Los Angeles,Long Beach Generating Station,33.7641,-118.2248,"Long Beach Generation, LLC",Pipeline Natural Gas,2007-2017
-345,CA,Ventura,Mandalay Generating Station,34.2072,-119.2511,NRG California South LP.,Pipeline Natural Gas,2001-2017
-350,CA,Ventura,Ormond Beach Generating Station,34.1292,-119.1689,NRG California South LP.,Pipeline Natural Gas,2001-2017
-356,CA,Los Angeles,AES Redondo Beach,33.8504,-118.395,AES Corporation,Pipeline Natural Gas,2001-2017
-358,CA,San Bernardino,Mountainview Generating Station,34.0836,-117.2408,Southern California Edison Company,Pipeline Natural Gas,2001-2017
-375,CA,Los Angeles,Magnolia (OLD),34.1781,-118.3139,,Pipeline Natural Gas,2001-2002
-377,CA,Los Angeles,Grayson Power Plant,34.1556,-118.2782,City of Glendale,Pipeline Natural Gas,2001-2017
-389,CA,Imperial,El Centro,32.8022,-115.54,Imperial Irrigation District,Pipeline Natural Gas,2001-2017
-399,CA,Los Angeles,Harbor Generating Station,33.7691,-118.2662,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017
-400,CA,Los Angeles,Haynes Generating Station,33.7639,-118.0942,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017
-404,CA,Los Angeles,Scattergood Generating Station,33.9175,-118.4258,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017
-408,CA,Los Angeles,Valley Generating Station,34.2481,-118.3903,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017
-420,CA,Los Angeles,Broadway,34.1263,-118.1494,City of Pasadena Water and Power Department,Pipeline Natural Gas,2001-2016
-422,CA,Los Angeles,Glenarm,34.1256,-118.1474,City of Pasadena Water and Power Department,Pipeline Natural Gas,2003-2017
-465,CO,Denver,Arapahoe,39.67,-105.0028,Public Service Company of Colorado,Coal,2001-2013
-468,CO,Mesa,Cameo,39.1486,-108.3189,Public Service Company of Colorado,Coal,2001-2010
-469,CO,Adams,Cherokee,39.8078,-104.9648,Public Service Company of Colorado,Pipeline Natural Gas,2001-2017
-470,CO,Pueblo,Comanche (470),38.2081,-104.5747,Public Service Company of Colorado,Coal,2001-2017
-477,CO,Boulder,Valmont,40.0195,-105.202,Public Service Company of Colorado,Coal,2001-2017
-478,CO,Denver,Zuni,39.7369,-105.0169,Public Service Company of Colorado,Pipeline Natural Gas,2001-2017
-492,CO,El Paso,Martin Drake,38.8244,-104.8331,Colorado Springs Utilities,Coal,2001-2017
-508,CO,Prowers,Lamar,38.0921,-102.6148,Lamar Utilities Board,Coal,2009-2017
-525,CO,Routt,Hayden,40.4856,-107.185,Public Service Company of Colorado,Coal,2001-2017
-527,CO,Montrose,Nucla,38.2387,-108.5083,Tri-State Generation & Transmission,Coal,2001-2017
-607,WA,Skagit,Fredonia Generating Station,48.4553,-122.435,"Puget Sound Energy, Inc.",Natural Gas,2001-2017
-2176,MT,Dawson,Glendive Generating Station,47.0539,-104.74,Montana Dakota Utilities Company,Pipeline Natural Gas,2003-2017
-2187,MT,Yellowstone,J E Corette,45.7747,-108.4803,"P P & L Montana, LLC, Talen Montana, LLC",Coal,2001-2015
-2322,NV,Clark,Clark,36.0875,-115.0507,NV Energy,Pipeline Natural Gas,2001-2017
-2324,NV,Clark,Reid Gardner,36.6531,-114.6364,NV Energy,Coal,2001-2017
-2326,NV,Clark,Sunrise,36.1384,-115.036,NV Energy,Pipeline Natural Gas,2001-2011
-2330,NV,Lyon,Fort Churchill,39.1281,-119.1319,Sierra Pacific Power Company,Pipeline Natural Gas,2001-2017
-2336,NV,Storey,Tracy,39.5625,-119.525,Sierra Pacific Power Company,Pipeline Natural Gas,2001-2017
-2341,NV,Clark,Mohave,35.1458,-114.5917,Southern California Edison Company,Coal,2001-2010
-2442,NM,San Juan,Four Corners Steam Elec Station,36.69,-108.4814,Arizona Public Service Company,Coal,2001-2017
-2444,NM,Dona Ana,Rio Grande,31.8047,-106.5472,El Paso Electric Company,Pipeline Natural Gas,2001-2017
-2446,NM,Lea,Maddox,32.7131,-103.31,Southwestern Public Service Company,Pipeline Natural Gas,2001-2017
-2450,NM,Bernalillo,Reeves Generating Station,35.1716,-106.6019,Public Service Company of New Mexico,Pipeline Natural Gas,2001-2017
-2451,NM,San Juan,San Juan,36.8006,-108.4386,Public Service Company of New Mexico,Coal,2001-2017
-2454,NM,Lea,Cunningham,32.7131,-103.3533,Southwestern Public Service Company,Pipeline Natural Gas,2001-2017
-3456,TX,El Paso,Newman,31.9858,-106.4322,El Paso Electric Company,Pipeline Natural Gas,2001-2017
-3644,UT,Carbon,Carbon,39.7272,-110.8644,Pacificorp Energy Generation,Coal,2001-2016
-3648,UT,Salt Lake,Gadsby,40.7686,-111.9289,Pacificorp Energy Generation,Pipeline Natural Gas,2001-2017
-3845,WA,Lewis,Centralia,46.7559,-122.8578,TransAlta,Coal,2001-2017
-4158,WY,Converse,Dave Johnston,42.8378,-105.7769,Pacificorp Energy Generation,Coal,2001-2017
-4162,WY,Lincoln,Naughton,41.7572,-110.5986,Pacificorp Energy Generation,Coal,2001-2017
-4941,AZ,Coconino,Navajo Generating Station,36.9047,-111.3886,Salt River Project,Coal,2001-2017
-6013,CA,Los Angeles,Olive,34.1775,-118.3147,City of Burbank,Pipeline Natural Gas,2001-2017
-6021,CO,Moffat,Craig,40.4627,-107.5912,Tri-State Generation & Transmission,Coal,2001-2017
-6076,MT,Rosebud,Colstrip,45.8831,-106.614,"Talen Montana, LLC",Coal,2001-2017
-6089,MT,Richland,Lewis & Clark,47.6788,-104.1569,Montana Dakota Utilities Company,Coal,2001-2017
-6101,WY,Campbell,Wyodak,44.2886,-105.3847,Pacificorp Energy Generation,Coal,2001-2017
-6106,OR,Morrow,Boardman,45.6933,-119.8056,Portland General Electric Company,Coal,2001-2017
-6112,CO,Weld,Fort St. Vrain,40.2461,-104.8742,Public Service Company of Colorado,Pipeline Natural Gas,2001-2017
-6165,UT,Emery,Hunter,39.1747,-111.0289,Pacificorp Energy Generation,Coal,2001-2017
-6177,AZ,Apache,Coronado Generating Station,34.5778,-109.2717,Salt River Project,Coal,2001-2017
-6204,WY,Platte,Laramie River,42.1103,-104.8828,Basin Electric Power Cooperative,Coal,2001-2017
-6248,CO,Morgan,Pawnee,40.2217,-103.6803,Public Service Company of Colorado,Coal,2001-2017
-6481,UT,Millard,Intermountain,39.5035,-112.5811,Intermountain Power Service Corporation,Coal,2001-2017
-6761,CO,Larimer,Rawhide Energy Station,40.8611,-105.0206,Platte River Power Authority,Pipeline Natural Gas,2001-2017
-7082,NV,Clark,Harry Allen,36.425,-114.9,NV Energy,Pipeline Natural Gas,2001-2017
-7266,CA,Stanislaus,Woodland Generation Station,37.6528,-121.0172,Modesto Irrigation District,Pipeline Natural Gas,2001-2017
-7307,CA,Shasta,Redding Power Plant,40.5083,-122.4253,Redding Electric Utility,Pipeline Natural Gas,2002-2017
-7315,CA,Stanislaus,Almond Power Plant,37.5739,-120.9854,Turlock Irrigation District,Pipeline Natural Gas,2001-2017
-7350,OR,Morrow,Coyote Springs,45.8486,-119.6744,Portland General Electric Company,Pipeline Natural Gas,2001-2017
-7449,CA,San Joaquin,NCPA Combustion Turbine Project #2,38.088,-121.3871,Northern California Power Agency,Pipeline Natural Gas,2001-2017
-7456,ID,Kootenai,Rathdrum Combustion Turbine Project,47.8034,-116.869,Avista Corporation,Pipeline Natural Gas,2001-2017
-7504,WY,Campbell,Neil Simpson II,44.2853,-105.3841,"Black Hills Power, Inc",Pipeline Natural Gas,2001-2017
-7527,CA,Sacramento,Carson Cogeneration,38.4461,-121.4614,Carson Energy Group,Natural Gas,2001-2017
-7551,CA,Sacramento,SCA Cogen II,38.5306,-121.399,Carson Energy Group,Pipeline Natural Gas,2001-2017
-7552,CA,Sacramento,Sacramento Power Authority Cogen,38.511,-121.4735,"EthosEnergy Power Plant Services, LLC",Pipeline Natural Gas,2001-2017
-7605,WA,Clark,River Road,45.65,-122.7231,General Electric Contractual Services,Natural Gas,2001-2017
-7693,CA,Orange,Anaheim Combustion Turbine,33.8539,-117.8561,City of Anaheim,Pipeline Natural Gas,2001-2017
-7790,UT,Uintah,Bonanza,40.0864,-109.2844,Deseret Generation & Transmission,Coal,2001-2017
-7870,WA,Whatcom,Encogen Generating Station,48.746,-122.486,"Puget Sound Energy, Inc.",Natural Gas,2001-2017
-7945,WA,Benton,Finley Combustion Turbine,46.1572,-119.0094,Benton Public Utilities District,Natural Gas,2001-2007
-7953,ID,Elmore,Evander Andrews Power Complex,43.1794,-115.7328,Idaho Power Company,Pipeline Natural Gas,2001-2017
-7967,NM,Hidalgo,Lordsburg Generating Station,32.3494,-108.6975,Public Service Company of New Mexico,Pipeline Natural Gas,2002-2017
-7975,NM,Hidalgo,Pyramid Generating Station,32.2363,-108.5494,Tri-State Generation & Transmission,Pipeline Natural Gas,2003-2017
-7987,CA,Los Angeles,Lake,34.1775,-118.3147,City of Burbank,Pipeline Natural Gas,2002-2017
-7999,WA,Grays Harbor,Grays Harbor Energy Center,46.9688,-123.48,"Grays Harbor Energy, LLC",Natural Gas,2008-2017
-8066,WY,Sweetwater,Jim Bridger,41.7378,-108.7875,Pacificorp Energy Generation,Coal,2001-2017
-8068,AZ,Maricopa,Santan,33.3333,-111.751,Salt River Project,Pipeline Natural Gas,2005-2017
-8069,UT,Emery,Huntington,39.3792,-111.0781,Pacificorp Energy Generation,Coal,2001-2017
-8219,CO,El Paso,Ray D Nixon,38.6306,-104.7056,Colorado Springs Utilities,Pipeline Natural Gas,2001-2017
-8223,AZ,Apache,Springerville Generating Station,34.3186,-109.1636,Tucson Electric Power Company,Coal,2001-2017
-8224,NV,Humboldt,North Valmy,40.8831,-117.1542,Sierra Pacific Power Company,Coal,2001-2017
-10034,CA,Santa Clara,"Calpine Gilroy Cogen, LP",37.0001,-121.5367,Calpine Corporation,Pipeline Natural Gas,2005-2017
-10156,CA,Fresno,"Fresno Cogeneration Partners, LP",36.6183,-120.1,"Wellhead Electric Company, Inc",Pipeline Natural Gas,2005-2017
-10169,CA,Los Angeles,Carson Cogeneration Company,33.8759,-118.2491,General Electric Contractual Services,Pipeline Natural Gas,2003-2017
-10294,CA,Monterey,"Gilroy Energy Center, LLC for King City",36.225,-121.1278,"Gilroy Energy Center, LLC",Pipeline Natural Gas,2001-2017
-10349,CA,Sutter,Yuba City Energy Center,39.1365,-121.6397,Calpine Corporation,Pipeline Natural Gas,2002-2017
-10350,CA,Sutter,Greenleaf One,39.0536,-121.6942,ProEnergy Services LLC,Pipeline Natural Gas,2012-2017
-10405,CA,Fresno,Kingsburg Cogen Facility,36.547,-119.578,"PurEnergy Operating Services, LLC",Pipeline Natural Gas,2012-2017
-10682,CO,Morgan,Brush Power Projects,40.2415,-103.631,"Colorado Energy Management, LLC",Pipeline Natural Gas,2001-2017
-10761,NV,Clark,Las Vegas Generating Station,36.2317,-115.1235,Nevada Power Company dba NV Energy,Pipeline Natural Gas,2002-2017
-10812,CA,San Diego,North Island,32.705,-117.189,Applied Energy LLC,Pipeline Natural Gas,2009-2013
-50131,CA,Fresno,Coalinga Cogeneration Facility,36.1807,-120.3885,Coalinga Cogeneration Company,Pipeline Natural Gas,2007-2017
-50707,CO,Weld,J M Shafer,40.0979,-104.7745,Tri-State Generation & Transmission,Pipeline Natural Gas,2009-2017
-50864,CA,Monterey,Sargent Canyon Cogen Facility,35.9359,-120.8405,Sargent Canyon Cogeneration Company,Pipeline Natural Gas,2007-2017
-50865,CA,Monterey,Salinas River Cogeneration Facility,35.9515,-120.8679,Salinas River Cogeneration Company,Pipeline Natural Gas,2007-2017
-50951,UT,Carbon,Sunnyside Cogeneration Associates,39.5472,-110.3917,Sunnyside Cogeneration Associates,Coal,2015-2017
-54238,CA,San Joaquin,DTE Stockton,37.9416,-121.3273,DTE Energy Services,Wood,2014-2017
-54476,WA,Whatcom,Sumas Generating Station,48.9905,-122.2733,"Puget Sound Energy, Inc.",Natural Gas,2009-2017
-54537,WA,Whatcom,Ferndale Generating Station,48.8283,-122.6853,NAES Corporation,Natural Gas,2012-2017
-54694,AZ,Yuma,Yuma Cogeneration Associates,32.7286,-114.6542,Falcon Power Operating Company,Pipeline Natural Gas,2016-2017
-54749,CA,San Diego,Goal Line,33.1185,-117.0995,"PurEnergy Operating Services, LLC",Pipeline Natural Gas,2016-2017
-54761,OR,Umatilla,Hermiston,45.8042,-119.37,Perennial Power,Pipeline Natural Gas,2001-2017
-54814,NM,San Juan,Milagro Cogeneration and Gas Plant,36.7367,-107.9417,Williams Four Corners LLC,Pipeline Natural Gas,2001-2016
-54854,NV,Clark,Sun Peak Generating Station,36.1392,-115.034,Nevada Power Company dba NV Energy,Pipeline Natural Gas,2015-2017
-55039,NM,Bernalillo,Rio Bravo Generating Station,35.026,-106.644,Public Service Company of New Mexico,Pipeline Natural Gas,2001-2017
-55077,NV,Clark,Desert Star Energy Center,35.7867,-114.9928,San Diego Gas and Electric Company,Pipeline Natural Gas,2001-2017
-55103,OR,Klamath,Klamath Cogeneration Project,42.174,-121.8112,Pacific Klamath Energy,Pipeline Natural Gas,2001-2017
-55112,CA,Sutter,Calpine Sutter Energy Center,39.0531,-121.6939,Calpine Corporation,Pipeline Natural Gas,2001-2017
-55124,AZ,Mohave,Griffith Energy Project,35.0517,-114.1334,"Griffith Energy, LLC",Pipeline Natural Gas,2001-2017
-55127,CO,Morgan,Manchief Generating Station,40.2201,-103.679,"Colorado Energy Management, LLC",Pipeline Natural Gas,2001-2017
-55129,AZ,Pinal,Desert Basin Generating Station,32.9042,-111.7889,Salt River Project,Pipeline Natural Gas,2001-2017
-55151,CA,Kern,La Paloma Generating Plant,35.2956,-119.5919,"La Paloma Generating Company, LLC",Pipeline Natural Gas,2002-2017
-55177,AZ,Mohave,"South Point Energy Center, LLC",34.8678,-114.5317,Calpine Corporation,Pipeline Natural Gas,2001-2017
-55179,ID,Kootenai,"Rathdrum Power, LLC",47.7861,-116.9214,"Rathdrum Operating Services, Inc.",Pipeline Natural Gas,2001-2017
-55182,CA,Kern,Sunrise Power Company,35.2097,-119.585,"Sunrise Power Company, LLC",Pipeline Natural Gas,2001-2017
-55200,CO,Denver,Arapahoe Combustion Turbine Facility,39.6692,-105.0018,"Southwest Generation Colorado, LLC",Pipeline Natural Gas,2001-2017
-55207,CO,Boulder,Valmont Combustion Turbine Facility,40.0197,-105.202,"SWG Colorado, LLC, Southwest Generation Colorado, LLC",Pipeline Natural Gas,2001-2017
-55210,NM,Dona Ana,Afton Generating Station,32.1134,-106.848,Public Service Company of New Mexico,Pipeline Natural Gas,2002-2017
-55217,CA,Contra Costa,"Los Medanos Energy Center, LLC",38.03,-121.8708,"Los Medanos Energy Center, LLC",Pipeline Natural Gas,2001-2017
-55282,AZ,Maricopa,Arlington Valley Energy Facility,33.3417,-112.8897,"Arlington Valley, LLC",Pipeline Natural Gas,2002-2017
-55283,CO,El Paso,Front Range Power Plant,38.6281,-104.7069,Colorado Springs Utilities,Pipeline Natural Gas,2003-2017
-55295,CA,Riverside,Blythe Energy,33.6157,-114.6865,Blythe Energy Inc.,Pipeline Natural Gas,2003-2017
-55306,AZ,Maricopa,Gila River Power Station,32.9761,-112.694,"EthosEnergy Power Plant Services, LLC",Pipeline Natural Gas,2003-2017
-55322,NV,Clark,Chuck Lenzie Generating Station,36.3853,-114.9228,NV Energy,Pipeline Natural Gas,2006-2017
-55328,OR,Umatilla,Hermiston Power Plant,45.7931,-119.3117,Hermiston Power Partnership,Pipeline Natural Gas,2002-2017
-55333,CA,Contra Costa,"Delta Energy Center, LLC",38.0167,-121.8439,"Delta Energy Center, LLC",Pipeline Natural Gas,2002-2017
-55343,NM,Luna,Luna Energy Facility,32.2983,-107.78,Public Service Company of New Mexico,Pipeline Natural Gas,2006-2017
-55345,CA,San Diego,"Otay Mesa Energy Center, LLC",32.5733,-116.9153,"Otay Mesa Energy Center, LLC",Pipeline Natural Gas,2009-2017
-55372,AZ,Maricopa,"New Harquahala Generating Company, LLC",33.4759,-113.1133,North American Energy Services,Pipeline Natural Gas,2003-2017
-55393,CA,Santa Clara,Metcalf Energy Center,37.2169,-121.7439,"Metcalf Energy Center, LLC",Pipeline Natural Gas,2005-2017
-55400,CA,Kern,Elk Hills Power,35.2802,-119.4699,"Elk Hills Power, LLC",Pipeline Natural Gas,2003-2017
-55453,CO,El Paso,Fountain Valley Power Plant,38.5569,-104.6875,Southwest Generation Operating Co.,Pipeline Natural Gas,2001-2017
-55455,AZ,Maricopa,Redhawk Generating Facility,33.33,-112.84,Arizona Public Service Company,Pipeline Natural Gas,2002-2017
-55477,WY,Campbell,Neil Simpson II (CT2),44.2853,-105.3841,"Black Hills Power, Inc",Pipeline Natural Gas,2001-2017
-55479,WY,Campbell,Wygen I,44.2862,-105.3843,"Black Hills Power, Inc",Coal,2003-2017
-55481,AZ,Maricopa,Mesquite Generating Station,33.3451,-112.8638,"Mesquite Power Operations, LLC",Pipeline Natural Gas,2003-2017
-55482,WA,Klickitat,Goldendale Generating Station,45.8114,-120.833,"Puget Sound Energy, Inc.",Pipeline Natural Gas,2004-2017
-55494,NV,Storey,Tri-Center Naniwa Energy,39.5617,-119.5175,Tri-Center Naniwa Energy,Pipeline Natural Gas,2001-2016
-55499,CA,Solano,CalPeak Power - Vaca Dixon,38.3989,-121.9239,"CalPeak Power - Vaca Dixon, LLC, CalPeak Power, LLC",Pipeline Natural Gas,2001-2017
-55504,CO,Lincoln,Limon Generating Station,39.2038,-103.7005,"Tri-State G & T Association, Inc.",Pipeline Natural Gas,2002-2017
-55505,CO,Adams,Frank Knutson Station,39.9414,-104.6817,"Tri-State G & T Association, Inc.",Pipeline Natural Gas,2002-2017
-55508,CA,Fresno,CalPeak Power - Panoche,36.6531,-120.5797,"CalPeak Power - Panoche, LLC, CalPeak Power, LLC",,2001-2017
-55510,CA,San Diego,CalPeak Power - Border,32.5622,-116.9433,"CalPeak Power - Border, LLC, CalPeak Power, LLC",,2001-2017
-55512,CA,San Diego,Cuyamaca Peak Energy,32.7971,-116.972,San Diego Gas and Electric Company,,2002-2017
-55513,CA,San Diego,CalPeak Power - Enterprise,33.1221,-117.117,"CalPeak Power - Enterprise, LLC, CalPeak Power, LLC",,2001-2017
-55514,NV,Clark,Apex Generating Station,36.4178,-114.9622,"Las Vegas Power Company, LLC, Los Angeles Dept of Water and Power",Pipeline Natural Gas,2003-2017
-55518,CA,San Bernardino,High Desert Power Project,34.5953,-117.3647,"High Desert Power Project, LLC",Pipeline Natural Gas,2003-2017
-55522,AZ,Pinal,Sundance Power Plant,32.9285,-111.5899,Arizona Public Service Company,Pipeline Natural Gas,2002-2017
-55538,CA,San Diego,"Escondido Energy Center, LLC",33.1261,-117.1172,"Escondido Energy Center, LLC",Pipeline Natural Gas,2001-2017
-55540,CA,San Diego,Chula Vista Energy Center,32.5914,-117.0586,"Wellhead Electric Company, Inc",Pipeline Natural Gas,2001-2017
-55541,CA,Riverside,Indigo Generation Facility,33.9114,-116.5533,"Wildflower Energy, LP",Pipeline Natural Gas,2001-2017
-55542,CA,San Diego,Larkspur Energy Faciity,32.5672,-116.9444,"Wildflower Energy, LP",Pipeline Natural Gas,2001-2017
-55544,OR,Klamath,Klamath Generation Peakers,42.1727,-121.8144,Pacific Klamath Energy,Pipeline Natural Gas,2002-2017
-55622,UT,Salt Lake,West Valley Power Plant,40.6663,-112.031,Utah Municipal Power Agency,Pipeline Natural Gas,2001-2017
-55625,CA,Solano,Creed Energy Center,38.2419,-121.8551,"Creed Energy Center, LLC",Pipeline Natural Gas,2003-2017
-55626,CA,Solano,Lambie Energy Center,38.2216,-121.8683,"Gilroy Energy Center, LLC",Pipeline Natural Gas,2003-2017
-55627,CA,Solano,Goose Haven Energy Center,38.2271,-121.844,"Goose Haven Energy Center, LLC",Pipeline Natural Gas,2003-2017
-55645,CO,Adams,Blue Spruce Energy Center,39.7436,-104.68,Public Service Company of Colorado,Pipeline Natural Gas,2003-2017
-55656,CA,Kern,Pastoria Energy Facility,34.9556,-118.844,"Pastoria Energy Facility, LLC",Pipeline Natural Gas,2005-2017
-55662,WA,Lewis,Chehalis Generation Facility,46.6226,-122.9145,Pacificorp Energy Generation,Natural Gas,2003-2017
-55683,OR,Morrow,Boardman Power Holdings LLC,45.8464,-119.6536,"Boardman Power Holdings LLC, Morrow Power, LLC",Pipeline Natural Gas,2002-2008
-55687,NV,Clark,Walter M. Higgins III Generating Station,35.6139,-115.3561,NV Energy,Pipeline Natural Gas,2003-2017
-55698,CA,Kings,Hanford Energy Park Peaker,36.2689,-119.6469,AltaGas San Joaquin Energy Inc.,Pipeline Natural Gas,2001-2017
-55700,WA,Cowlitz,Mint Farm Generating Station,46.1403,-122.9842,"Puget Sound Energy, Inc.",Natural Gas,2008-2017
-55733,ID,Elmore,Bennett Mountain Power Project,43.147,-115.6671,Idaho Power Company,Pipeline Natural Gas,2005-2017
-55748,CA,Santa Clara,Los Esteros Critical Energy Facility,37.425,-121.9319,"Los Esteros Critical Energy Fac, LLC",Pipeline Natural Gas,2003-2017
-55749,MT,Big Horn,Hardin Generating Station,45.7578,-107.6,"Colorado Energy Management, LLC",Coal,2006-2017
-55802,NM,Valencia,Valencia Power Plant,34.6063,-106.732,"Valencia Power, LLC",Pipeline Natural Gas,2008-2017
-55807,CA,Kings,Henrietta Peaker Plant,36.2397,-119.9044,AltaGas San Joaquin Energy Inc.,Pipeline Natural Gas,2002-2017
-55810,CA,Santa Clara,"Gilroy Energy Center, LLC",36.999,-121.5363,"Gilroy Energy Center, LLC",Pipeline Natural Gas,2002-2017
-55818,WA,Pierce,Frederickson Power LP,47.0864,-122.3644,"Atlantic Power Services, LLC",Pipeline Natural Gas,2002-2017
-55835,CO,Weld,Rocky Mountain Energy Center,40.0911,-104.5947,Public Service Company of Colorado,Pipeline Natural Gas,2004-2017
-55841,NV,Clark,Silverhawk,36.4078,-114.9603,NV Energy,Pipeline Natural Gas,2004-2017
-55847,CA,Sutter,Feather River Energy Center,39.1088,-121.6133,Calpine Corporation,Pipeline Natural Gas,2003-2017
-55853,CA,Riverside,Inland Empire Energy Center,33.7393,-117.1701,"Inland Empire Energy Center, LLC",Pipeline Natural Gas,2009-2017
-55855,CA,Solano,Wolfskill Energy Center,38.2282,-122.076,"Gilroy Energy Center, LLC",Pipeline Natural Gas,2003-2017
-55858,UT,Tooele,Desert Power Plant,40.9131,-112.7342,"Desert Power, LP",Pipeline Natural Gas,2002-2007
-55875,CA,Fresno,"Wellhead Power Gates, LLC",36.1522,-120.1481,"Wellhead Electric Company, Inc",Pipeline Natural Gas,2002-2012
-55933,CA,San Joaquin,Tracy Combined Cycle Power Plant,37.7107,-121.4906,AltaGas San Joaquin Energy Inc.,Pipeline Natural Gas,2003-2017
-55951,CA,San Bernardino,Agua Mansa Power,34.0414,-117.3603,"E I Colton, LLC",Pipeline Natural Gas,2003-2017
-55963,CA,Contra Costa,Riverview Energy Center,38.0145,-121.7901,"Calpine Operating Services Company, Inc.",Pipeline Natural Gas,2003-2017
-55970,CA,Sacramento,Cosumnes Power Plant,38.3383,-121.1239,"EthosEnergy Power Plant Services, LLC",Other Gas,2006-2017
-55977,NM,San Juan,Bluffview Power Plant,36.7164,-108.2153,City of Farmington Electric Utility System,Pipeline Natural Gas,2005-2017
-55985,CA,San Diego,Palomar Energy Center,33.1192,-117.118,San Diego Gas and Electric Company,Pipeline Natural Gas,2006-2017
-56026,CA,Santa Clara,Donald Von Raesfeld,37.3767,-121.9508,City of Santa Clara,Pipeline Natural Gas,2005-2017
-56041,CA,Los Angeles,Malburg Generating Station,33.9983,-118.2219,"Colorado Energy Management, LLC",Pipeline Natural Gas,2005-2017
-56046,CA,Los Angeles,Magnolia,34.1788,-118.3153,City of Burbank,Pipeline Natural Gas,2005-2017
-56078,CA,Stanislaus,Walnut Energy Center,37.4878,-120.8956,Turlock Irrigation District,Pipeline Natural Gas,2006-2017
-56102,UT,Juab,Currant Creek Power Project,39.8223,-111.894,Pacificorp Energy Generation,Pipeline Natural Gas,2005-2017
-56135,CA,Stanislaus,Ripon Generation Station,37.7315,-121.116,Modesto Irrigation District,Pipeline Natural Gas,2006-2017
-56143,CA,Riverside,Riverside Energy Resource Center,33.9636,-117.4528,"City of Riverside, CA",Pipeline Natural Gas,2006-2017
-56177,UT,Utah,Nebo Power Station,40.0614,-111.7294,Utah Associated Municipal Power Systems,Pipeline Natural Gas,2004-2017
-56224,NV,Eureka,TS Power Plant,40.7458,-116.5297,Newmont Nevada Energy Investment LLC,Coal,2008-2017
-56227,OR,Columbia,Port Westward,46.1792,-123.1717,Portland General Electric Company,Natural Gas,2007-2017
-56232,CA,San Diego,Miramar Energy Facility,32.8769,-117.1664,San Diego Gas and Electric Company,Pipeline Natural Gas,2005-2017
-56237,UT,Utah,Lake Side Power Plant,40.3311,-111.7547,Pacificorp Energy Generation,Pipeline Natural Gas,2007-2017
-56239,CA,Fresno,Malaga Power,36.6894,-119.7399,"Malaga Power, LLC",Pipeline Natural Gas,2005-2017
-56253,UT,Washington,Millcreek Power,37.1124,-113.5155,City of St. George,Pipeline Natural Gas,2006-2017
-56298,CA,Placer,Roseville Energy Park,38.7926,-121.3823,"City of Roseville, CA",Pipeline Natural Gas,2007-2017
-56319,WY,Campbell,Wygen II,44.2911,-105.3815,"Black Hills Power, Inc",Coal,2008-2017
-56445,CO,Weld,Spindle Hill Energy Center,40.0914,-104.8819,Invenergy,Pipeline Natural Gas,2007-2017
-56458,NM,Lea,Hobbs Generating Station,32.7282,-103.3095,"CAMS, LLC",Natural Gas,2008-2017
-56467,CA,Alameda,Russell City Energy Company LLC,37.6341,-122.1326,"Russell City Energy Center, LLC",Pipeline Natural Gas,2013-2017
-56471,CA,Ventura,McGrath Generating Station,34.2054,-119.2478,Southern California Edison Company,Pipeline Natural Gas,2012-2017
-56472,CA,San Bernardino,Grapeland Generating Station,34.09,-117.534,Southern California Edison Company,Pipeline Natural Gas,2007-2017
-56473,CA,San Bernardino,Mira Loma Generating Station,34.0054,-117.5604,Southern California Edison Company,Pipeline Natural Gas,2007-2017
-56474,CA,Orange,Barre Generating Station,33.8073,-117.9833,Southern California Edison Company,Pipeline Natural Gas,2007-2017
-56475,CA,Los Angeles,Center Generating Station,33.9297,-118.1047,Southern California Edison Company,Pipeline Natural Gas,2007-2017
-56476,CA,Contra Costa,Gateway Generating Station,38.0167,-121.7592,Pacific Gas and Electric Company,Pipeline Natural Gas,2009-2017
-56482,AZ,Mohave,Black Mountain Generating Station,35.0361,-114.1594,UniSource Energy Development Company,Natural Gas,2008-2017
-56532,CA,Colusa,Colusa Generating Station,39.3648,-122.268,Pacific Gas and Electric Company,Pipeline Natural Gas,2010-2017
-56569,CA,Imperial,Niland Gas Turbine Plant,33.2432,-115.498,Imperial Irrigation District,Pipeline Natural Gas,2008-2017
-56596,WY,Campbell,Wygen III,44.2892,-105.3795,"Black Hills Power, Inc",Coal,2010-2017
-56606,MT,Roosevelt,Culbertson Station,48.2104,-104.3919,Basin Electric Power Cooperative,Pipeline Natural Gas,2010-2017
-56609,WY,Campbell,Dry Fork Station,44.3901,-105.4591,Basin Electric Power Cooperative,Coal,2011-2017
-56639,CA,Fresno,Midway Peaking,36.654,-120.5797,"Midway Peaking, LLC",Pipeline Natural Gas,2009-2017
-56803,CA,Fresno,Panoche Energy Center,36.6513,-120.5833,"Panoche Energy Center, LLC",Pipeline Natural Gas,2009-2017
-56908,MT,Deer Lodge,Mill Creek Generating Station,46.1066,-112.8755,NAES Corporation,Pipeline Natural Gas,2010-2017
-56914,CA,San Diego,Orange Grove Project,33.359,-117.111,"Orange Grove Energy, LP",Pipeline Natural Gas,2010-2017
-56948,AZ,Pinal,Coolidge Generating Station,32.9175,-111.5041,"Coolidge Power, LLC",Pipeline Natural Gas,2010-2017
-56998,CO,Pueblo,Pueblo Airport Generating Station,38.322,-104.533,"Black Hills Electric Generation, LLC",Pipeline Natural Gas,2012-2017
-57001,CA,San Diego,El Cajon Energy Center,32.7971,-116.972,"El Cajon Energy, LLC",Pipeline Natural Gas,2010-2017
-57027,CA,Orange,Canyon Power Plant,33.8581,-117.8616,City of Anaheim,Pipeline Natural Gas,2011-2017
-57028,ID,Payette,Langley Gulch Power Plant,43.9046,-116.8181,Idaho Power Company,Pipeline Natural Gas,2012-2017
-57073,CA,San Bernardino,Ivanpah 2,35.5561,-115.4686,"NRG Energy, Inc",Pipeline Natural Gas,2013-2017
-57074,CA,San Bernardino,Ivanpah 1,35.5356,-115.4515,"NRG Energy, Inc",Pipeline Natural Gas,2013-2017
-57075,CA,San Bernardino,Ivanpah 3,35.5808,-115.4825,"NRG Energy, Inc",Pipeline Natural Gas,2013-2017
-57267,CA,Contra Costa,Marsh Landing Generating Station,38.0171,-121.7651,NRG Marsh Landing LLC,Pipeline Natural Gas,2013-2017
-57480,MT,Cascade,Highwood Generating Station,47.55,-111.03,"Southern Montana Electric G & T Cooperative, Inc.",Pipeline Natural Gas,2013-2015
-57482,CA,Riverside,"Sentinel Energy Center, LLC",33.9366,-116.5722,"CPV Sentinel, LLC",Pipeline Natural Gas,2013-2017
-57483,CA,Alameda,Mariposa Energy Project,37.7965,-121.6049,"Mariposa Energy, Limited Liability Corporation",Pipeline Natural Gas,2012-2017
-57515,CA,Los Angeles,Walnut Creek Energy Park,34.0078,-117.9425,"Walnut Creek Energy, LLC",Pipeline Natural Gas,2013-2017
-57555,CA,San Diego,Pio Pico Energy Center LLC,32.5739,-116.9178,Pio Pico Energy Center LLC,Pipeline Natural Gas,2016-2017
-57564,CA,Fresno,Algonquin Power Sanger,36.72,-119.55,"Algonquin Power Sanger, LLC",Pipeline Natural Gas,2017-2017
-57703,WY,Laramie,Cheyenne Prairie Generating Station,41.1229,-104.7214,Black Hills Service Company LLC,Pipeline Natural Gas,2015-2017
-57978,CA,San Joaquin,Lodi Energy Center,38.088,-121.3867,Northern California Power Agency,Pipeline Natural Gas,2012-2017
-58122,CA,Tulare,"Delano Energy Center, LLC",35.7909,-119.2945,"Wellhead Services, Inc.",Pipeline Natural Gas,2013-2017
-58284,NM,Valencia,La Luz Energy Center,34.6178,-106.817,Public Service Company of New Mexico,Pipeline Natural Gas,2016-2017
-58503,OR,Morrow,Carty Generating Station,45.699,-119.8131,Portland General Electric Company,Pipeline Natural Gas,2016-2017
-58562,TX,El Paso,Montana Power Station,31.8239,-106.2119,El Paso Electric Company,Pipeline Natural Gas,2015-2017
+orispl_code,state,county,name,latitude,longitude,operator,primary_fuel,years,unit_ids
+9,TX,El Paso,Copper Station,31.7569,-106.375,El Paso Electric Company,Pipeline Natural Gas,2008-2017,CTG-1
+87,NM,McKinley,Escalante Generating Station,35.4159,-108.082,Tri-State Generation & Transmission,Coal,2001-2017,1
+113,AZ,Navajo,Cholla,34.9394,-110.3033,Arizona Public Service Company,Coal,2001-2017,1/2/3/4
+116,AZ,Maricopa,Ocotillo Power Plant,33.4225,-111.9122,Arizona Public Service Company,Pipeline Natural Gas,2001-2017,1/2
+117,AZ,Maricopa,APS West Phoenix Power Plant,33.4417,-112.1583,Arizona Public Service Company,Pipeline Natural Gas,2001-2017,CC4/CC5A/CC5B
+118,AZ,Pinal,APS Saguaro Power Plant,32.5517,-111.3,Arizona Public Service Company,Pipeline Natural Gas,2001-2017,1/2/CT3
+120,AZ,Yuma,Yucca Power Plant,32.7214,-114.7097,Arizona Public Service Company,Pipeline Natural Gas,2001-2017,1/CT5/CT6
+124,AZ,Pima,De Moss Petrie Generating Station,32.2511,-110.9889,Tucson Electric Power Company,Natural Gas,2001-2017,GT1
+126,AZ,Pima,Irvington Generating Station,32.16,-110.9047,Tucson Electric Power Company,Natural Gas,2001-2017,1/2/3/4
+141,AZ,Maricopa,Agua Fria Generating Station,33.5542,-112.2161,Salt River Project,Pipeline Natural Gas,2001-2017,1/2/3
+147,AZ,Maricopa,Kyrene Generating Station,33.3544,-111.9364,Salt River Project,Pipeline Natural Gas,2001-2017,K-1/K-2/K-7
+160,AZ,Cochise,Apache Station,32.0619,-109.8931,Arizona Electric Power Cooperative,Pipeline Natural Gas,2001-2017,1/2/3/4
+228,CA,Contra Costa,Contra Costa Generating Station,38.0184,-121.761,"Contra Costa Power Plant, NRG Delta LLC",Pipeline Natural Gas,2001-2013,10/9
+246,CA,Humboldt,Humboldt Bay,40.7415,-124.2103,Pacific Gas and Electric Company,Pipeline Natural Gas,2001-2010,1/2
+247,CA,San Francisco,Hunters Point,37.7372,-122.378,Pacific Gas and Electric Company,Pipeline Natural Gas,2001-2006,3/4/5/6/7
+259,CA,San Luis Obispo,"Morro Bay Power Plant, LLC",35.3747,-120.8578,Dynegy Power Corporation,Pipeline Natural Gas,2001-2014,1/2/3/4
+260,CA,Monterey,Moss Landing,36.8042,-121.7775,"Dynegy Moss Landing,, LLC",Pipeline Natural Gas,2001-2017,1A/2A/3A/4A/6-1/7-1
+271,CA,Contra Costa,Pittsburg Generating Station (CA),38.0392,-121.894,"GenOn Delta, LLC",Pipeline Natural Gas,2001-2016,1/2/3/4/5/6/7
+273,CA,San Francisco,Potrero Generating Station,37.7558,-122.3869,"GenOn Potrero, LLC",Pipeline Natural Gas,2001-2011,3-1
+302,CA,San Diego,Cabrillo Power I Encina Power Station,33.1408,-117.3342,Cabrillo Power Operations Inc.,Pipeline Natural Gas,2001-2017,1/2/3/4/5
+310,CA,San Diego,"Dynegy South Bay, LLC",32.6131,-117.0964,Dynegy Power Corporation,Pipeline Natural Gas,2001-2010,1/2/3/4
+315,CA,Los Angeles,AES Alamitos,33.7688,-118.1009,AES Corporation,Pipeline Natural Gas,2001-2017,1/2/3/4/5/6
+329,CA,San Bernardino,Coolwater Generating Station,34.8622,-116.854,NRG California South LP.,Pipeline Natural Gas,2001-2014,1/2/31/32/41/42
+330,CA,Los Angeles,El Segundo,33.9106,-118.425,NRG El Segundo Operations Inc.,Pipeline Natural Gas,2001-2017,1/2/3/4/5/7
+331,CA,San Bernardino,Etiwanda Generating Station,34.0911,-117.5256,NRG California South LP.,Pipeline Natural Gas,2001-2017,1/2/3/4
+334,CA,San Bernardino,Riverside Canal Power Company,34.0225,-117.3325,,Pipeline Natural Gas,2001-2002,1/2/3/4
+335,CA,Orange,AES Huntington Beach,33.6436,-117.9788,AES Corporation,Pipeline Natural Gas,2001-2017,1/2/3A/4A
+341,CA,Los Angeles,Long Beach Generating Station,33.7641,-118.2248,"Long Beach Generation, LLC",Pipeline Natural Gas,2007-2017,1/2/3/4
+345,CA,Ventura,Mandalay Generating Station,34.2072,-119.2511,NRG California South LP.,Pipeline Natural Gas,2001-2017,1/2
+350,CA,Ventura,Ormond Beach Generating Station,34.1292,-119.1689,NRG California South LP.,Pipeline Natural Gas,2001-2017,1/2
+356,CA,Los Angeles,AES Redondo Beach,33.8504,-118.395,AES Corporation,Pipeline Natural Gas,2001-2017,17/5/6/7/8
+358,CA,San Bernardino,Mountainview Generating Station,34.0836,-117.2408,Southern California Edison Company,Pipeline Natural Gas,2001-2017,1/2/3-1/3-2/4-1/4-2
+375,CA,Los Angeles,Magnolia (OLD),34.1781,-118.3139,,Pipeline Natural Gas,2001-2002,M4
+377,CA,Los Angeles,Grayson Power Plant,34.1556,-118.2782,City of Glendale,Pipeline Natural Gas,2001-2017,4/5/9
+389,CA,Imperial,El Centro,32.8022,-115.54,Imperial Irrigation District,Pipeline Natural Gas,2001-2017,2-2/3/3-1/3-2/4
+399,CA,Los Angeles,Harbor Generating Station,33.7691,-118.2662,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017,**10A/**10B/10/11/12/13/14
+400,CA,Los Angeles,Haynes Generating Station,33.7639,-118.0942,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017,1/10/11/12/13/14/15/16/2/3/4/5/6/9
+404,CA,Los Angeles,Scattergood Generating Station,33.9175,-118.4258,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017,1/2/3/4/6/7
+408,CA,Los Angeles,Valley Generating Station,34.2481,-118.3903,Los Angeles Dept of Water and Power,Pipeline Natural Gas,2001-2017,3/4/5/6/7
+420,CA,Los Angeles,Broadway,34.1263,-118.1494,City of Pasadena Water and Power Department,Pipeline Natural Gas,2001-2016,B1/B2/B3
+422,CA,Los Angeles,Glenarm,34.1256,-118.1474,City of Pasadena Water and Power Department,Pipeline Natural Gas,2003-2017,GT3/GT4/GT5
+465,CO,Denver,Arapahoe,39.67,-105.0028,Public Service Company of Colorado,Coal,2001-2013,1/2/3/4
+468,CO,Mesa,Cameo,39.1486,-108.3189,Public Service Company of Colorado,Coal,2001-2010,2
+469,CO,Adams,Cherokee,39.8078,-104.9648,Public Service Company of Colorado,Pipeline Natural Gas,2001-2017,1/2/3/4/5/6
+470,CO,Pueblo,Comanche (470),38.2081,-104.5747,Public Service Company of Colorado,Coal,2001-2017,1/2/3
+477,CO,Boulder,Valmont,40.0195,-105.202,Public Service Company of Colorado,Coal,2001-2017,5
+478,CO,Denver,Zuni,39.7369,-105.0169,Public Service Company of Colorado,Pipeline Natural Gas,2001-2017,1/2/3
+492,CO,El Paso,Martin Drake,38.8244,-104.8331,Colorado Springs Utilities,Coal,2001-2017,5/6/7
+508,CO,Prowers,Lamar,38.0921,-102.6148,Lamar Utilities Board,Coal,2009-2017,8
+525,CO,Routt,Hayden,40.4856,-107.185,Public Service Company of Colorado,Coal,2001-2017,H1/H2
+527,CO,Montrose,Nucla,38.2387,-108.5083,Tri-State Generation & Transmission,Coal,2001-2017,1
+607,WA,Skagit,Fredonia Generating Station,48.4553,-122.435,"Puget Sound Energy, Inc.",Natural Gas,2001-2017,CT3/CT4
+2176,MT,Dawson,Glendive Generating Station,47.0539,-104.74,Montana Dakota Utilities Company,Pipeline Natural Gas,2003-2017,GT-2
+2187,MT,Yellowstone,J E Corette,45.7747,-108.4803,"P P & L Montana, LLC, Talen Montana, LLC",Coal,2001-2015,2
+2322,NV,Clark,Clark,36.0875,-115.0507,NV Energy,Pipeline Natural Gas,2001-2017,1/11A/11B/12A/12B/13A/13B/14A/14B/15A/15B/16A/16B/17A/17B/18A/18B/19A/19B/2/20A/20B/21A/21B/22A/22B/3
+2324,NV,Clark,Reid Gardner,36.6531,-114.6364,NV Energy,Coal,2001-2017,1/2/3/4
+2326,NV,Clark,Sunrise,36.1384,-115.036,NV Energy,Pipeline Natural Gas,2001-2011,1
+2330,NV,Lyon,Fort Churchill,39.1281,-119.1319,Sierra Pacific Power Company,Pipeline Natural Gas,2001-2017,1/2
+2336,NV,Storey,Tracy,39.5625,-119.525,Sierra Pacific Power Company,Pipeline Natural Gas,2001-2017,1/2/3/4/5/6/8/9
+2341,NV,Clark,Mohave,35.1458,-114.5917,Southern California Edison Company,Coal,2001-2010,1/2
+2442,NM,San Juan,Four Corners Steam Elec Station,36.69,-108.4814,Arizona Public Service Company,Coal,2001-2017,1/2/3/4/5
+2444,NM,Dona Ana,Rio Grande,31.8047,-106.5472,El Paso Electric Company,Pipeline Natural Gas,2001-2017,6/7/8/9
+2446,NM,Lea,Maddox,32.7131,-103.31,Southwestern Public Service Company,Pipeline Natural Gas,2001-2017,051B
+2450,NM,Bernalillo,Reeves Generating Station,35.1716,-106.6019,Public Service Company of New Mexico,Pipeline Natural Gas,2001-2017,1/2/3
+2451,NM,San Juan,San Juan,36.8006,-108.4386,Public Service Company of New Mexico,Coal,2001-2017,1/2/3/4
+2454,NM,Lea,Cunningham,32.7131,-103.3533,Southwestern Public Service Company,Pipeline Natural Gas,2001-2017,121B/122B/123T/124T
+3456,TX,El Paso,Newman,31.9858,-106.4322,El Paso Electric Company,Pipeline Natural Gas,2001-2017,**4/**5/1/2/3/GT-6A/GT-6B
+3644,UT,Carbon,Carbon,39.7272,-110.8644,Pacificorp Energy Generation,Coal,2001-2016,1/2
+3648,UT,Salt Lake,Gadsby,40.7686,-111.9289,Pacificorp Energy Generation,Pipeline Natural Gas,2001-2017,1/2/3/4/5/6
+3845,WA,Lewis,Centralia,46.7559,-122.8578,TransAlta,Coal,2001-2017,30/40/50/60/BW21/BW22
+4158,WY,Converse,Dave Johnston,42.8378,-105.7769,Pacificorp Energy Generation,Coal,2001-2017,BW41/BW42/BW43/BW44
+4162,WY,Lincoln,Naughton,41.7572,-110.5986,Pacificorp Energy Generation,Coal,2001-2017,1/2/3
+4941,AZ,Coconino,Navajo Generating Station,36.9047,-111.3886,Salt River Project,Coal,2001-2017,1/2/3
+6013,CA,Los Angeles,Olive,34.1775,-118.3147,City of Burbank,Pipeline Natural Gas,2001-2017,01/02
+6021,CO,Moffat,Craig,40.4627,-107.5912,Tri-State Generation & Transmission,Coal,2001-2017,C1/C2/C3
+6076,MT,Rosebud,Colstrip,45.8831,-106.614,"Talen Montana, LLC",Coal,2001-2017,1/2/3/4
+6089,MT,Richland,Lewis & Clark,47.6788,-104.1569,Montana Dakota Utilities Company,Coal,2001-2017,B1
+6101,WY,Campbell,Wyodak,44.2886,-105.3847,Pacificorp Energy Generation,Coal,2001-2017,BW91
+6106,OR,Morrow,Boardman,45.6933,-119.8056,Portland General Electric Company,Coal,2001-2017,1SG
+6112,CO,Weld,Fort St. Vrain,40.2461,-104.8742,Public Service Company of Colorado,Pipeline Natural Gas,2001-2017,2/3/4/5/6
+6165,UT,Emery,Hunter,39.1747,-111.0289,Pacificorp Energy Generation,Coal,2001-2017,1/2/3
+6177,AZ,Apache,Coronado Generating Station,34.5778,-109.2717,Salt River Project,Coal,2001-2017,U1B/U2B
+6204,WY,Platte,Laramie River,42.1103,-104.8828,Basin Electric Power Cooperative,Coal,2001-2017,1/2/3
+6248,CO,Morgan,Pawnee,40.2217,-103.6803,Public Service Company of Colorado,Coal,2001-2017,1
+6481,UT,Millard,Intermountain,39.5035,-112.5811,Intermountain Power Service Corporation,Coal,2001-2017,1SGA/2SGA
+6761,CO,Larimer,Rawhide Energy Station,40.8611,-105.0206,Platte River Power Authority,Pipeline Natural Gas,2001-2017,101/A/B/C/D/F
+7082,NV,Clark,Harry Allen,36.425,-114.9,NV Energy,Pipeline Natural Gas,2001-2017,**3/**4/**5/**6
+7266,CA,Stanislaus,Woodland Generation Station,37.6528,-121.0172,Modesto Irrigation District,Pipeline Natural Gas,2001-2017,1/2
+7307,CA,Shasta,Redding Power Plant,40.5083,-122.4253,Redding Electric Utility,Pipeline Natural Gas,2002-2017,5/6
+7315,CA,Stanislaus,Almond Power Plant,37.5739,-120.9854,Turlock Irrigation District,Pipeline Natural Gas,2001-2017,1/2/3/4
+7350,OR,Morrow,Coyote Springs,45.8486,-119.6744,Portland General Electric Company,Pipeline Natural Gas,2001-2017,CTG1/CTG2
+7449,CA,San Joaquin,NCPA Combustion Turbine Project #2,38.088,-121.3871,Northern California Power Agency,Pipeline Natural Gas,2001-2017,NA1
+7456,ID,Kootenai,Rathdrum Combustion Turbine Project,47.8034,-116.869,Avista Corporation,Pipeline Natural Gas,2001-2017,1/2
+7504,WY,Campbell,Neil Simpson II,44.2853,-105.3841,"Black Hills Power, Inc",Pipeline Natural Gas,2001-2017,001/CT1
+7527,CA,Sacramento,Carson Cogeneration,38.4461,-121.4614,Carson Energy Group,Natural Gas,2001-2017,1/2
+7551,CA,Sacramento,SCA Cogen II,38.5306,-121.399,Carson Energy Group,Pipeline Natural Gas,2001-2017,1A/1B/1C
+7552,CA,Sacramento,Sacramento Power Authority Cogen,38.511,-121.4735,"EthosEnergy Power Plant Services, LLC",Pipeline Natural Gas,2001-2017,1
+7605,WA,Clark,River Road,45.65,-122.7231,General Electric Contractual Services,Natural Gas,2001-2017,1
+7693,CA,Orange,Anaheim Combustion Turbine,33.8539,-117.8561,City of Anaheim,Pipeline Natural Gas,2001-2017,1
+7790,UT,Uintah,Bonanza,40.0864,-109.2844,Deseret Generation & Transmission,Coal,2001-2017,1-1
+7870,WA,Whatcom,Encogen Generating Station,48.746,-122.486,"Puget Sound Energy, Inc.",Natural Gas,2001-2017,CT1/CT2/CT3
+7945,WA,Benton,Finley Combustion Turbine,46.1572,-119.0094,Benton Public Utilities District,Natural Gas,2001-2007,1
+7953,ID,Elmore,Evander Andrews Power Complex,43.1794,-115.7328,Idaho Power Company,Pipeline Natural Gas,2001-2017,CT1/CT2/CT3
+7967,NM,Hidalgo,Lordsburg Generating Station,32.3494,-108.6975,Public Service Company of New Mexico,Pipeline Natural Gas,2002-2017,1/2
+7975,NM,Hidalgo,Pyramid Generating Station,32.2363,-108.5494,Tri-State Generation & Transmission,Pipeline Natural Gas,2003-2017,1/2/3/4
+7987,CA,Los Angeles,Lake,34.1775,-118.3147,City of Burbank,Pipeline Natural Gas,2002-2017,01
+7999,WA,Grays Harbor,Grays Harbor Energy Center,46.9688,-123.48,"Grays Harbor Energy, LLC",Natural Gas,2008-2017,1/2
+8066,WY,Sweetwater,Jim Bridger,41.7378,-108.7875,Pacificorp Energy Generation,Coal,2001-2017,BW71/BW72/BW73/BW74
+8068,AZ,Maricopa,Santan,33.3333,-111.751,Salt River Project,Pipeline Natural Gas,2005-2017,5A/5B/6A
+8069,UT,Emery,Huntington,39.3792,-111.0781,Pacificorp Energy Generation,Coal,2001-2017,1/2
+8219,CO,El Paso,Ray D Nixon,38.6306,-104.7056,Colorado Springs Utilities,Pipeline Natural Gas,2001-2017,1/2/3
+8223,AZ,Apache,Springerville Generating Station,34.3186,-109.1636,Tucson Electric Power Company,Coal,2001-2017,1/2/4/TS3
+8224,NV,Humboldt,North Valmy,40.8831,-117.1542,Sierra Pacific Power Company,Coal,2001-2017,1/2
+10034,CA,Santa Clara,"Calpine Gilroy Cogen, LP",37.0001,-121.5367,Calpine Corporation,Pipeline Natural Gas,2005-2017,S-100
+10156,CA,Fresno,"Fresno Cogeneration Partners, LP",36.6183,-120.1,"Wellhead Electric Company, Inc",Pipeline Natural Gas,2005-2017,GEN1
+10169,CA,Los Angeles,Carson Cogeneration Company,33.8759,-118.2491,General Electric Contractual Services,Pipeline Natural Gas,2003-2017,D1
+10294,CA,Monterey,"Gilroy Energy Center, LLC for King City",36.225,-121.1278,"Gilroy Energy Center, LLC",Pipeline Natural Gas,2001-2017,2
+10349,CA,Sutter,Yuba City Energy Center,39.1365,-121.6397,Calpine Corporation,Pipeline Natural Gas,2002-2017,2
+10350,CA,Sutter,Greenleaf One,39.0536,-121.6942,ProEnergy Services LLC,Pipeline Natural Gas,2012-2017,1
+10405,CA,Fresno,Kingsburg Cogen Facility,36.547,-119.578,"PurEnergy Operating Services, LLC",Pipeline Natural Gas,2012-2017,1
+10682,CO,Morgan,Brush Power Projects,40.2415,-103.631,"Colorado Energy Management, LLC",Pipeline Natural Gas,2001-2017,GT2/GT4/GT5
+10761,NV,Clark,Las Vegas Generating Station,36.2317,-115.1235,Nevada Power Company dba NV Energy,Pipeline Natural Gas,2002-2017,1/2/3/4/5
+10812,CA,San Diego,North Island,32.705,-117.189,Applied Energy LLC,Pipeline Natural Gas,2009-2013,CT1
+50131,CA,Fresno,Coalinga Cogeneration Facility,36.1807,-120.3885,Coalinga Cogeneration Company,Pipeline Natural Gas,2007-2017,1
+50707,CO,Weld,J M Shafer,40.0979,-104.7745,Tri-State Generation & Transmission,Pipeline Natural Gas,2009-2017,S001/S002/S003/S004/S005
+50864,CA,Monterey,Sargent Canyon Cogen Facility,35.9359,-120.8405,Sargent Canyon Cogeneration Company,Pipeline Natural Gas,2007-2017,1
+50865,CA,Monterey,Salinas River Cogeneration Facility,35.9515,-120.8679,Salinas River Cogeneration Company,Pipeline Natural Gas,2007-2017,1
+50951,UT,Carbon,Sunnyside Cogeneration Associates,39.5472,-110.3917,Sunnyside Cogeneration Associates,Coal,2015-2017,1
+54238,CA,San Joaquin,DTE Stockton,37.9416,-121.3273,DTE Energy Services,Wood,2014-2017,BIOMS1
+54476,WA,Whatcom,Sumas Generating Station,48.9905,-122.2733,"Puget Sound Energy, Inc.",Natural Gas,2009-2017,CT-1
+54537,WA,Whatcom,Ferndale Generating Station,48.8283,-122.6853,NAES Corporation,Natural Gas,2012-2017,CT-1A/CT-1B
+54694,AZ,Yuma,Yuma Cogeneration Associates,32.7286,-114.6542,Falcon Power Operating Company,Pipeline Natural Gas,2016-2017,4101
+54749,CA,San Diego,Goal Line,33.1185,-117.0995,"PurEnergy Operating Services, LLC",Pipeline Natural Gas,2016-2017,1
+54761,OR,Umatilla,Hermiston,45.8042,-119.37,Perennial Power,Pipeline Natural Gas,2001-2017,1/2
+54814,NM,San Juan,Milagro Cogeneration and Gas Plant,36.7367,-107.9417,Williams Four Corners LLC,Pipeline Natural Gas,2001-2016,1/2
+54854,NV,Clark,Sun Peak Generating Station,36.1392,-115.034,Nevada Power Company dba NV Energy,Pipeline Natural Gas,2015-2017,3/4/5
+55039,NM,Bernalillo,Rio Bravo Generating Station,35.026,-106.644,Public Service Company of New Mexico,Pipeline Natural Gas,2001-2017,GT-1
+55077,NV,Clark,Desert Star Energy Center,35.7867,-114.9928,San Diego Gas and Electric Company,Pipeline Natural Gas,2001-2017,EDE1/EDE2
+55103,OR,Klamath,Klamath Cogeneration Project,42.174,-121.8112,Pacific Klamath Energy,Pipeline Natural Gas,2001-2017,CT1/CT2
+55112,CA,Sutter,Calpine Sutter Energy Center,39.0531,-121.6939,Calpine Corporation,Pipeline Natural Gas,2001-2017,CT01/CT02
+55124,AZ,Mohave,Griffith Energy Project,35.0517,-114.1334,"Griffith Energy, LLC",Pipeline Natural Gas,2001-2017,P1/P2
+55127,CO,Morgan,Manchief Generating Station,40.2201,-103.679,"Colorado Energy Management, LLC",Pipeline Natural Gas,2001-2017,CT1/CT2
+55129,AZ,Pinal,Desert Basin Generating Station,32.9042,-111.7889,Salt River Project,Pipeline Natural Gas,2001-2017,DBG1/DBG2
+55151,CA,Kern,La Paloma Generating Plant,35.2956,-119.5919,"La Paloma Generating Company, LLC",Pipeline Natural Gas,2002-2017,CTG-1/CTG-2/CTG-3/CTG-4
+55177,AZ,Mohave,"South Point Energy Center, LLC",34.8678,-114.5317,Calpine Corporation,Pipeline Natural Gas,2001-2017,A/B
+55179,ID,Kootenai,"Rathdrum Power, LLC",47.7861,-116.9214,"Rathdrum Operating Services, Inc.",Pipeline Natural Gas,2001-2017,CTGEN1
+55182,CA,Kern,Sunrise Power Company,35.2097,-119.585,"Sunrise Power Company, LLC",Pipeline Natural Gas,2001-2017,CTG1/CTG2
+55200,CO,Denver,Arapahoe Combustion Turbine Facility,39.6692,-105.0018,"Southwest Generation Colorado, LLC",Pipeline Natural Gas,2001-2017,CT5/CT6
+55207,CO,Boulder,Valmont Combustion Turbine Facility,40.0197,-105.202,"SWG Colorado, LLC, Southwest Generation Colorado, LLC",Pipeline Natural Gas,2001-2017,CT7/CT8
+55210,NM,Dona Ana,Afton Generating Station,32.1134,-106.848,Public Service Company of New Mexico,Pipeline Natural Gas,2002-2017,0001
+55217,CA,Contra Costa,"Los Medanos Energy Center, LLC",38.03,-121.8708,"Los Medanos Energy Center, LLC",Pipeline Natural Gas,2001-2017,X724/X725
+55282,AZ,Maricopa,Arlington Valley Energy Facility,33.3417,-112.8897,"Arlington Valley, LLC",Pipeline Natural Gas,2002-2017,CTG1/CTG2
+55283,CO,El Paso,Front Range Power Plant,38.6281,-104.7069,Colorado Springs Utilities,Pipeline Natural Gas,2003-2017,1/2
+55295,CA,Riverside,Blythe Energy,33.6157,-114.6865,Blythe Energy Inc.,Pipeline Natural Gas,2003-2017,1/2
+55306,AZ,Maricopa,Gila River Power Station,32.9761,-112.694,"EthosEnergy Power Plant Services, LLC",Pipeline Natural Gas,2003-2017,1CTGA/1CTGB/2CTGA/2CTGB/3CTGA/3CTGB/4CTGA/4CTGB
+55322,NV,Clark,Chuck Lenzie Generating Station,36.3853,-114.9228,NV Energy,Pipeline Natural Gas,2006-2017,CTG-1/CTG-2/CTG-3/CTG-4
+55328,OR,Umatilla,Hermiston Power Plant,45.7931,-119.3117,Hermiston Power Partnership,Pipeline Natural Gas,2002-2017,CTG-1/CTG-2
+55333,CA,Contra Costa,"Delta Energy Center, LLC",38.0167,-121.8439,"Delta Energy Center, LLC",Pipeline Natural Gas,2002-2017,1/2/3
+55343,NM,Luna,Luna Energy Facility,32.2983,-107.78,Public Service Company of New Mexico,Pipeline Natural Gas,2006-2017,CTG1/CTG2
+55345,CA,San Diego,"Otay Mesa Energy Center, LLC",32.5733,-116.9153,"Otay Mesa Energy Center, LLC",Pipeline Natural Gas,2009-2017,CTG-1/CTG-2
+55372,AZ,Maricopa,"New Harquahala Generating Company, LLC",33.4759,-113.1133,North American Energy Services,Pipeline Natural Gas,2003-2017,CTG1/CTG2/CTG3
+55393,CA,Santa Clara,Metcalf Energy Center,37.2169,-121.7439,"Metcalf Energy Center, LLC",Pipeline Natural Gas,2005-2017,1/2
+55400,CA,Kern,Elk Hills Power,35.2802,-119.4699,"Elk Hills Power, LLC",Pipeline Natural Gas,2003-2017,CTG-1/CTG-2
+55453,CO,El Paso,Fountain Valley Power Plant,38.5569,-104.6875,Southwest Generation Operating Co.,Pipeline Natural Gas,2001-2017,1/2/3/4/5/6
+55455,AZ,Maricopa,Redhawk Generating Facility,33.33,-112.84,Arizona Public Service Company,Pipeline Natural Gas,2002-2017,CC1A/CC1B/CC2A/CC2B
+55477,WY,Campbell,Neil Simpson II (CT2),44.2853,-105.3841,"Black Hills Power, Inc",Pipeline Natural Gas,2001-2017,CT2
+55479,WY,Campbell,Wygen I,44.2862,-105.3843,"Black Hills Power, Inc",Coal,2003-2017,001
+55481,AZ,Maricopa,Mesquite Generating Station,33.3451,-112.8638,"Mesquite Power Operations, LLC",Pipeline Natural Gas,2003-2017,1/2/5/6
+55482,WA,Klickitat,Goldendale Generating Station,45.8114,-120.833,"Puget Sound Energy, Inc.",Pipeline Natural Gas,2004-2017,CT-1
+55494,NV,Storey,Tri-Center Naniwa Energy,39.5617,-119.5175,Tri-Center Naniwa Energy,Pipeline Natural Gas,2001-2016,CT1/CT2/CT3/CT4/CT5/CT6
+55499,CA,Solano,CalPeak Power - Vaca Dixon,38.3989,-121.9239,"CalPeak Power - Vaca Dixon, LLC, CalPeak Power, LLC",Pipeline Natural Gas,2001-2017,GT-1
+55504,CO,Lincoln,Limon Generating Station,39.2038,-103.7005,"Tri-State G & T Association, Inc.",Pipeline Natural Gas,2002-2017,L1/L2
+55505,CO,Adams,Frank Knutson Station,39.9414,-104.6817,"Tri-State G & T Association, Inc.",Pipeline Natural Gas,2002-2017,BR1/BR2
+55508,CA,Fresno,CalPeak Power - Panoche,36.6531,-120.5797,"CalPeak Power - Panoche, LLC, CalPeak Power, LLC",,2001-2017,GT-1
+55510,CA,San Diego,CalPeak Power - Border,32.5622,-116.9433,"CalPeak Power - Border, LLC, CalPeak Power, LLC",,2001-2017,GT-1
+55512,CA,San Diego,Cuyamaca Peak Energy,32.7971,-116.972,San Diego Gas and Electric Company,,2002-2017,GT-1
+55513,CA,San Diego,CalPeak Power - Enterprise,33.1221,-117.117,"CalPeak Power - Enterprise, LLC, CalPeak Power, LLC",,2001-2017,GT-1
+55514,NV,Clark,Apex Generating Station,36.4178,-114.9622,"Las Vegas Power Company, LLC, Los Angeles Dept of Water and Power",Pipeline Natural Gas,2003-2017,CTG01/CTG02
+55518,CA,San Bernardino,High Desert Power Project,34.5953,-117.3647,"High Desert Power Project, LLC",Pipeline Natural Gas,2003-2017,CTG1/CTG2/CTG3
+55522,AZ,Pinal,Sundance Power Plant,32.9285,-111.5899,Arizona Public Service Company,Pipeline Natural Gas,2002-2017,CT01/CT02/CT03/CT04/CT05/CT06/CT07/CT08/CT09/CT10
+55538,CA,San Diego,"Escondido Energy Center, LLC",33.1261,-117.1172,"Escondido Energy Center, LLC",Pipeline Natural Gas,2001-2017,CT1A/CT1B/CTG1
+55540,CA,San Diego,Chula Vista Energy Center,32.5914,-117.0586,"Wellhead Electric Company, Inc",Pipeline Natural Gas,2001-2017,1A/1B
+55541,CA,Riverside,Indigo Generation Facility,33.9114,-116.5533,"Wildflower Energy, LP",Pipeline Natural Gas,2001-2017,1/2/3
+55542,CA,San Diego,Larkspur Energy Faciity,32.5672,-116.9444,"Wildflower Energy, LP",Pipeline Natural Gas,2001-2017,1/2
+55544,OR,Klamath,Klamath Generation Peakers,42.1727,-121.8144,Pacific Klamath Energy,Pipeline Natural Gas,2002-2017,GT1/GT2/GT3/GT4
+55622,UT,Salt Lake,West Valley Power Plant,40.6663,-112.031,Utah Municipal Power Agency,Pipeline Natural Gas,2001-2017,U1/U2/U3/U4/U5
+55625,CA,Solano,Creed Energy Center,38.2419,-121.8551,"Creed Energy Center, LLC",Pipeline Natural Gas,2003-2017,UNIT1
+55626,CA,Solano,Lambie Energy Center,38.2216,-121.8683,"Gilroy Energy Center, LLC",Pipeline Natural Gas,2003-2017,UNIT1
+55627,CA,Solano,Goose Haven Energy Center,38.2271,-121.844,"Goose Haven Energy Center, LLC",Pipeline Natural Gas,2003-2017,UNIT1
+55645,CO,Adams,Blue Spruce Energy Center,39.7436,-104.68,Public Service Company of Colorado,Pipeline Natural Gas,2003-2017,CT-01/CT-02
+55656,CA,Kern,Pastoria Energy Facility,34.9556,-118.844,"Pastoria Energy Facility, LLC",Pipeline Natural Gas,2005-2017,CT001/CT002/CT004
+55662,WA,Lewis,Chehalis Generation Facility,46.6226,-122.9145,Pacificorp Energy Generation,Natural Gas,2003-2017,CT1/CT2
+55683,OR,Morrow,Boardman Power Holdings LLC,45.8464,-119.6536,"Boardman Power Holdings LLC, Morrow Power, LLC",Pipeline Natural Gas,2002-2008,1
+55687,NV,Clark,Walter M. Higgins III Generating Station,35.6139,-115.3561,NV Energy,Pipeline Natural Gas,2003-2017,BHG1/BHG2
+55698,CA,Kings,Hanford Energy Park Peaker,36.2689,-119.6469,AltaGas San Joaquin Energy Inc.,Pipeline Natural Gas,2001-2017,HEP1/HEP2
+55700,WA,Cowlitz,Mint Farm Generating Station,46.1403,-122.9842,"Puget Sound Energy, Inc.",Natural Gas,2008-2017,CTG1
+55733,ID,Elmore,Bennett Mountain Power Project,43.147,-115.6671,Idaho Power Company,Pipeline Natural Gas,2005-2017,CT01
+55748,CA,Santa Clara,Los Esteros Critical Energy Facility,37.425,-121.9319,"Los Esteros Critical Energy Fac, LLC",Pipeline Natural Gas,2003-2017,CTG1/CTG2/CTG3/CTG4
+55749,MT,Big Horn,Hardin Generating Station,45.7578,-107.6,"Colorado Energy Management, LLC",Coal,2006-2017,U1
+55802,NM,Valencia,Valencia Power Plant,34.6063,-106.732,"Valencia Power, LLC",Pipeline Natural Gas,2008-2017,CTG1
+55807,CA,Kings,Henrietta Peaker Plant,36.2397,-119.9044,AltaGas San Joaquin Energy Inc.,Pipeline Natural Gas,2002-2017,HPP1/HPP2
+55810,CA,Santa Clara,"Gilroy Energy Center, LLC",36.999,-121.5363,"Gilroy Energy Center, LLC",Pipeline Natural Gas,2002-2017,S-3/S-4/S-5
+55818,WA,Pierce,Frederickson Power LP,47.0864,-122.3644,"Atlantic Power Services, LLC",Pipeline Natural Gas,2002-2017,F1CT
+55835,CO,Weld,Rocky Mountain Energy Center,40.0911,-104.5947,Public Service Company of Colorado,Pipeline Natural Gas,2004-2017,1/2
+55841,NV,Clark,Silverhawk,36.4078,-114.9603,NV Energy,Pipeline Natural Gas,2004-2017,A01/A03
+55847,CA,Sutter,Feather River Energy Center,39.1088,-121.6133,Calpine Corporation,Pipeline Natural Gas,2003-2017,UNIT1
+55853,CA,Riverside,Inland Empire Energy Center,33.7393,-117.1701,"Inland Empire Energy Center, LLC",Pipeline Natural Gas,2009-2017,1/2
+55855,CA,Solano,Wolfskill Energy Center,38.2282,-122.076,"Gilroy Energy Center, LLC",Pipeline Natural Gas,2003-2017,UNIT1
+55858,UT,Tooele,Desert Power Plant,40.9131,-112.7342,"Desert Power, LP",Pipeline Natural Gas,2002-2007,UNT1/UNT2
+55875,CA,Fresno,"Wellhead Power Gates, LLC",36.1522,-120.1481,"Wellhead Electric Company, Inc",Pipeline Natural Gas,2002-2012,GT1
+55933,CA,San Joaquin,Tracy Combined Cycle Power Plant,37.7107,-121.4906,AltaGas San Joaquin Energy Inc.,Pipeline Natural Gas,2003-2017,TPP1/TPP2
+55951,CA,San Bernardino,Agua Mansa Power,34.0414,-117.3603,"E I Colton, LLC",Pipeline Natural Gas,2003-2017,AMP-1
+55963,CA,Contra Costa,Riverview Energy Center,38.0145,-121.7901,"Calpine Operating Services Company, Inc.",Pipeline Natural Gas,2003-2017,1
+55970,CA,Sacramento,Cosumnes Power Plant,38.3383,-121.1239,"EthosEnergy Power Plant Services, LLC",Other Gas,2006-2017,2/3
+55977,NM,San Juan,Bluffview Power Plant,36.7164,-108.2153,City of Farmington Electric Utility System,Pipeline Natural Gas,2005-2017,CTG-1
+55985,CA,San Diego,Palomar Energy Center,33.1192,-117.118,San Diego Gas and Electric Company,Pipeline Natural Gas,2006-2017,CTG1/CTG2
+56026,CA,Santa Clara,Donald Von Raesfeld,37.3767,-121.9508,City of Santa Clara,Pipeline Natural Gas,2005-2017,PCT1/PCT2
+56041,CA,Los Angeles,Malburg Generating Station,33.9983,-118.2219,"Colorado Energy Management, LLC",Pipeline Natural Gas,2005-2017,M1/M2
+56046,CA,Los Angeles,Magnolia,34.1788,-118.3153,City of Burbank,Pipeline Natural Gas,2005-2017,1
+56078,CA,Stanislaus,Walnut Energy Center,37.4878,-120.8956,Turlock Irrigation District,Pipeline Natural Gas,2006-2017,1/2
+56102,UT,Juab,Currant Creek Power Project,39.8223,-111.894,Pacificorp Energy Generation,Pipeline Natural Gas,2005-2017,CTG1A/CTG1B
+56135,CA,Stanislaus,Ripon Generation Station,37.7315,-121.116,Modesto Irrigation District,Pipeline Natural Gas,2006-2017,1/2
+56143,CA,Riverside,Riverside Energy Resource Center,33.9636,-117.4528,"City of Riverside, CA",Pipeline Natural Gas,2006-2017,1/2/3/4
+56177,UT,Utah,Nebo Power Station,40.0614,-111.7294,Utah Associated Municipal Power Systems,Pipeline Natural Gas,2004-2017,U1
+56224,NV,Eureka,TS Power Plant,40.7458,-116.5297,Newmont Nevada Energy Investment LLC,Coal,2008-2017,001
+56227,OR,Columbia,Port Westward,46.1792,-123.1717,Portland General Electric Company,Natural Gas,2007-2017,PWEU1
+56232,CA,San Diego,Miramar Energy Facility,32.8769,-117.1664,San Diego Gas and Electric Company,Pipeline Natural Gas,2005-2017,1/2
+56237,UT,Utah,Lake Side Power Plant,40.3311,-111.7547,Pacificorp Energy Generation,Pipeline Natural Gas,2007-2017,CT01/CT02/CT03/CT04
+56239,CA,Fresno,Malaga Power,36.6894,-119.7399,"Malaga Power, LLC",Pipeline Natural Gas,2005-2017,GT-1/GT-2
+56253,UT,Washington,Millcreek Power,37.1124,-113.5155,City of St. George,Pipeline Natural Gas,2006-2017,MC-1/MC-2
+56298,CA,Placer,Roseville Energy Park,38.7926,-121.3823,"City of Roseville, CA",Pipeline Natural Gas,2007-2017,CT001/CT002
+56319,WY,Campbell,Wygen II,44.2911,-105.3815,"Black Hills Power, Inc",Coal,2008-2017,001
+56445,CO,Weld,Spindle Hill Energy Center,40.0914,-104.8819,Invenergy,Pipeline Natural Gas,2007-2017,CT-01/CT-02
+56458,NM,Lea,Hobbs Generating Station,32.7282,-103.3095,"CAMS, LLC",Natural Gas,2008-2017,HOBB1/HOBB2
+56467,CA,Alameda,Russell City Energy Company LLC,37.6341,-122.1326,"Russell City Energy Center, LLC",Pipeline Natural Gas,2013-2017,CT1/CT2
+56471,CA,Ventura,McGrath Generating Station,34.2054,-119.2478,Southern California Edison Company,Pipeline Natural Gas,2012-2017,CT1
+56472,CA,San Bernardino,Grapeland Generating Station,34.09,-117.534,Southern California Edison Company,Pipeline Natural Gas,2007-2017,CT1
+56473,CA,San Bernardino,Mira Loma Generating Station,34.0054,-117.5604,Southern California Edison Company,Pipeline Natural Gas,2007-2017,CT1
+56474,CA,Orange,Barre Generating Station,33.8073,-117.9833,Southern California Edison Company,Pipeline Natural Gas,2007-2017,CT1
+56475,CA,Los Angeles,Center Generating Station,33.9297,-118.1047,Southern California Edison Company,Pipeline Natural Gas,2007-2017,CT1
+56476,CA,Contra Costa,Gateway Generating Station,38.0167,-121.7592,Pacific Gas and Electric Company,Pipeline Natural Gas,2009-2017,GT1/GT2
+56482,AZ,Mohave,Black Mountain Generating Station,35.0361,-114.1594,UniSource Energy Development Company,Natural Gas,2008-2017,1/2
+56532,CA,Colusa,Colusa Generating Station,39.3648,-122.268,Pacific Gas and Electric Company,Pipeline Natural Gas,2010-2017,CT1/CT2
+56569,CA,Imperial,Niland Gas Turbine Plant,33.2432,-115.498,Imperial Irrigation District,Pipeline Natural Gas,2008-2017,1/2
+56596,WY,Campbell,Wygen III,44.2892,-105.3795,"Black Hills Power, Inc",Coal,2010-2017,001
+56606,MT,Roosevelt,Culbertson Station,48.2104,-104.3919,Basin Electric Power Cooperative,Pipeline Natural Gas,2010-2017,CT01
+56609,WY,Campbell,Dry Fork Station,44.3901,-105.4591,Basin Electric Power Cooperative,Coal,2011-2017,01
+56639,CA,Fresno,Midway Peaking,36.654,-120.5797,"Midway Peaking, LLC",Pipeline Natural Gas,2009-2017,1/2
+56803,CA,Fresno,Panoche Energy Center,36.6513,-120.5833,"Panoche Energy Center, LLC",Pipeline Natural Gas,2009-2017,1/2/3/4
+56908,MT,Deer Lodge,Mill Creek Generating Station,46.1066,-112.8755,NAES Corporation,Pipeline Natural Gas,2010-2017,1A/1B/2A/2B/3A/3B
+56914,CA,San Diego,Orange Grove Project,33.359,-117.111,"Orange Grove Energy, LP",Pipeline Natural Gas,2010-2017,CTG1/CTG2
+56948,AZ,Pinal,Coolidge Generating Station,32.9175,-111.5041,"Coolidge Power, LLC",Pipeline Natural Gas,2010-2017,CT01/CT02/CT03/CT04/CT05/CT06/CT07/CT08/CT09/CT10/CT11/CT12
+56998,CO,Pueblo,Pueblo Airport Generating Station,38.322,-104.533,"Black Hills Electric Generation, LLC",Pipeline Natural Gas,2012-2017,CT01/CT02/CT04/CT05/CT06/CT07/CT08
+57001,CA,San Diego,El Cajon Energy Center,32.7971,-116.972,"El Cajon Energy, LLC",Pipeline Natural Gas,2010-2017,1
+57027,CA,Orange,Canyon Power Plant,33.8581,-117.8616,City of Anaheim,Pipeline Natural Gas,2011-2017,1/2/3/4
+57028,ID,Payette,Langley Gulch Power Plant,43.9046,-116.8181,Idaho Power Company,Pipeline Natural Gas,2012-2017,CT1
+57073,CA,San Bernardino,Ivanpah 2,35.5561,-115.4686,"NRG Energy, Inc",Pipeline Natural Gas,2013-2017,BLR1
+57074,CA,San Bernardino,Ivanpah 1,35.5356,-115.4515,"NRG Energy, Inc",Pipeline Natural Gas,2013-2017,BLR1
+57075,CA,San Bernardino,Ivanpah 3,35.5808,-115.4825,"NRG Energy, Inc",Pipeline Natural Gas,2013-2017,BLR1
+57267,CA,Contra Costa,Marsh Landing Generating Station,38.0171,-121.7651,NRG Marsh Landing LLC,Pipeline Natural Gas,2013-2017,1/2/3/4
+57480,MT,Cascade,Highwood Generating Station,47.55,-111.03,"Southern Montana Electric G & T Cooperative, Inc.",Pipeline Natural Gas,2013-2015,HGS1
+57482,CA,Riverside,"Sentinel Energy Center, LLC",33.9366,-116.5722,"CPV Sentinel, LLC",Pipeline Natural Gas,2013-2017,1/2/3/4/5/6/7/8
+57483,CA,Alameda,Mariposa Energy Project,37.7965,-121.6049,"Mariposa Energy, Limited Liability Corporation",Pipeline Natural Gas,2012-2017,GT-1/GT-2/GT-3/GT-4
+57515,CA,Los Angeles,Walnut Creek Energy Park,34.0078,-117.9425,"Walnut Creek Energy, LLC",Pipeline Natural Gas,2013-2017,GT1/GT2/GT3/GT4/GT5
+57555,CA,San Diego,Pio Pico Energy Center LLC,32.5739,-116.9178,Pio Pico Energy Center LLC,Pipeline Natural Gas,2016-2017,CTG1/CTG2/CTG3
+57564,CA,Fresno,Algonquin Power Sanger,36.72,-119.55,"Algonquin Power Sanger, LLC",Pipeline Natural Gas,2017-2017,8
+57703,WY,Laramie,Cheyenne Prairie Generating Station,41.1229,-104.7214,Black Hills Service Company LLC,Pipeline Natural Gas,2015-2017,CT01/CT02/CT03
+57978,CA,San Joaquin,Lodi Energy Center,38.088,-121.3867,Northern California Power Agency,Pipeline Natural Gas,2012-2017,CT1
+58122,CA,Tulare,"Delano Energy Center, LLC",35.7909,-119.2945,"Wellhead Services, Inc.",Pipeline Natural Gas,2013-2017,GEN1
+58284,NM,Valencia,La Luz Energy Center,34.6178,-106.817,Public Service Company of New Mexico,Pipeline Natural Gas,2016-2017,1
+58503,OR,Morrow,Carty Generating Station,45.699,-119.8131,Portland General Electric Company,Pipeline Natural Gas,2016-2017,CTEU1
+58562,TX,El Paso,Montana Power Station,31.8239,-106.2119,El Paso Electric Company,Pipeline Natural Gas,2015-2017,GT-1/GT-2/GT-3/GT-4

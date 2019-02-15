@@ -1,3 +1,9 @@
+var powerPlantsGeoJson = require('./plants.json')
+var stateMarkersGeoJson = require('./statemarkers.json')
+var renderMonthlyGloadTrendPlot = require('./monthly-gload-trend.js')
+var renderMonthlyEmissionsTimeSeries = require('./emissions-time-series-monthly.js')
+require('./leaflet-providers.js')
+
 // Used only for marker display colors.
 const fuel_source_abbrevs = {
   "coal": "coal",
@@ -31,12 +37,12 @@ const legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function(map) {
   var div = L.DomUtil.create('div', 'map-legend');
-  var tableRows = ""
+  var rows = ""
   for (const fuel_source in colors) {
-    tableRows += "<tr><td><i style=\"background: "
-    + colors[fuel_source] + "\"></i></td><td>" + fuel_source + "</td></tr>";
+    rows += `<tr><td><i style=\"background: ${colors[fuel_source]}\"></i></td>`;
+    rows += `<td>${fuel_source}</td></tr>`;
   }
-  div.innerHTML += "<table>" + tableRows + "</table>"
+  div.innerHTML += "<table>" + rows + "</table>"
   return div;
 };
 
@@ -57,9 +63,9 @@ function powerPlantMarkerOptions(props) {
 }
 
 function renderPlots(entityId) {
-  Plotly.d3.csv(`http://localhost:8000/web/csv/monthly/${entityId}.csv`, (err, data) => {
+  Plotly.d3.csv(`csv/monthly/${entityId}.csv`, (err, data) => {
     renderMonthlyGloadTrendPlot(`gload-trend-${entityId}`, data)
-    renderEmissionsTimeSeries(`mean-hourly-emis-${entityId}`, data)
+    renderMonthlyEmissionsTimeSeries(`mean-hourly-emis-${entityId}`, data)
   });
 }
 
@@ -105,7 +111,7 @@ const map = L.map('power-plants-map', {
   layers: [wikiMapTiles],
 });
 
-const powerPlantsGeoJson = L.geoJSON(powerPlants, {
+const powerPlants = L.geoJSON(powerPlantsGeoJson, {
   pointToLayer: function(feature, latlng) {
     return L.circleMarker(latlng, powerPlantMarkerOptions(feature.properties))
     .bindTooltip(feature.properties.name)
@@ -120,7 +126,7 @@ const powerPlantsGeoJson = L.geoJSON(powerPlants, {
   }
 })
 
-const stateMarkersGeojson = L.geoJSON(stateMarkers, {
+const stateMarkers = L.geoJSON(stateMarkersGeoJson, {
   onEachFeature: function(feature, layer) {
     layer.bindTooltip(feature.properties.name);
     layer.bindPopup(stateAggregatePopup(feature.properties))
@@ -133,11 +139,11 @@ const stateMarkersGeojson = L.geoJSON(stateMarkers, {
 L.control.layers(baseMaps, [], {position: 'topright'}).addTo(map);
 L.control.zoom({position: 'topright'}).addTo(map);
 legend.addTo(map);
-powerPlantsGeoJson.addTo(map);
-stateMarkersGeojson.addTo(map);
+powerPlants.addTo(map);
+stateMarkers.addTo(map);
 
 $('#facility-vizmetric-selector').change(function(){
-  plants = powerPlantsGeoJson.getLayers()
+  plants = powerPlants.getLayers()
   for (i = 0; i < plants.length; i++) {
     props = plants[i].feature.properties
     plants[i]._path.style['transition'] = 'd 0.6s'

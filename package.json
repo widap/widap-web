@@ -1,0 +1,16 @@
+{
+  "name": "widap-web",
+  "license": "none",
+  "dependencies": {
+    "browserify": "^16.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:widap/widap-web"
+  },
+  "scripts": {
+    "build": "npm run build:map && npm run build:dashboard",
+    "build:map": "mkdir -p bundles && browserify js/power-plant-map.js -o bundles/power-plant-map-bundle.js",
+    "build:dashboard": "mkdir -p bundles && browserify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js"
+  }
+}

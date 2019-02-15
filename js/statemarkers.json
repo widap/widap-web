@@ -1,4 +1,4 @@
-var stateMarkers = [
+[
   {
     "type": "Feature",
     "properties": {
