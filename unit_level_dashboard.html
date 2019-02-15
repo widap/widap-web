@@ -3,6 +3,9 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <link rel="stylesheet" href="css/widap.css" />
 </head>
 <body>
@@ -14,21 +17,13 @@
     </select>
     <input id="load-plant-unit-data-button" type="submit" value="Load data" />
 
-    <h2>Visualization 1: Monthly Generation Boxplots</h2>
-    <p>The first visualization displays a box plot of generation for each month of the year. We feel that this plot can provide insight regarding the typical output of the plant (through the value of the median) as well as how regular or irregular the output is (through the span of the boxes and whiskers). Base load patterns would tend to have a high median value and a narrow interquartile range, whereas more variable or seasonal generation can be seen with fluctuating medians and large interquartile ranges.</p>
-
-    <p>Click and drag to zoom in on the plot to view more narrow regions of time.</p>
-
+    <h2>Gross Generation Time Series</h2>
     <div id="monthly-generation-box-plot"></div>
 
-    <h2>Visualization 2: Emissions Time Series</h2>
-    <p>This second plot displays time series of CO<sub>2</sub>, SO<sub>2</sub>, and NO<sub>x</sub> emissions. It can be used to view how the emissions of a unit changes over time. This can provide insights about upgrades, maintenance, extreme events, etc based on when the values spike or go to zero.</p>
-
-    <p>Click and drag to zoom in on smaller windows of time. When zoomed out, the plot displays quantile information for aggregate windows of time, but when zoomed in sufficiently far, it displays the actual hourly data.</p>
-
+    <h2>Emissions Time Series</h2>
     <div id="emissions-time-series"></div>
 
-    <h2>Visualization 3: Scatter plots of emissions intensity vs. capacity factor</h2>
+    <h2>Scatter plots: Emissions intensity vs. capacity factor</h2>
 
     <div class="two-columns">
         <div id="co2-intensity-vs-cf"></div>

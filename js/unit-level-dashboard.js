@@ -1,7 +1,7 @@
 const zlib = require('zlib')
-const renderMonthlyGenBoxPlot = require('./monthly-gen-box-plot.js')
 const renderEmissionsTimeSeries = require('./emissions-time-series-rezoom.js')
 const renderEmissionsIntensityVsCf = require('./emis-intensity-vs-cf.js')
+const renderGenerationTimeSeries = require('./generation-ts-zoomable.js')
 
 // TODO: Find a way to coordinate div id's between JS and HTML
 const MONTHLY_GEN_BOX_PLOT = 'monthly-generation-box-plot'
@@ -37,10 +37,10 @@ function clearPlots() {
 }
 
 function updatePlots(data) {
-  renderMonthlyGenBoxPlot(MONTHLY_GEN_BOX_PLOT, data)
-  renderEmissionsTimeSeries(EMISSIONS_TIME_SERIES, data)
-  renderEmissionsIntensityVsCf(CO2_INTENSITY_VS_CF, data, 'co2')
-  renderEmissionsIntensityVsCf(SO2_INTENSITY_VS_CF, data, 'so2')
+  renderGenerationTimeSeries(MONTHLY_GEN_BOX_PLOT, data)
+  // renderEmissionsTimeSeries(EMISSIONS_TIME_SERIES, data)
+  // renderEmissionsIntensityVsCf(CO2_INTENSITY_VS_CF, data, 'co2')
+  // renderEmissionsIntensityVsCf(SO2_INTENSITY_VS_CF, data, 'so2')
 }
 
 function parseTimeSeriesRow(row) {
