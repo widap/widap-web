@@ -1,38 +1,22 @@
-const COLORS = require('./colors.js')
 const DEFAULTS = require('./defaults.js')
+const COLORS = require('./colors.js')
+const TS = require('./timeseries.js')
 
 const ZOOM_THRESHOLD_DAY_MS = 6e9
 const ZOOM_THRESHOLD_WEEK_MS = 7 * ZOOM_THRESHOLD_DAY_MS
 const ZOOM_THRESHOLD_MONTH_MS = 30 * ZOOM_THRESHOLD_DAY_MS
 
-const MONTH_FLOOR = d => d3.timeMonth.floor(d.datetime).getTime()
-const WEEK_FLOOR = d => d3.timeWeek.floor(d.datetime).getTime()
-const DAY_FLOOR = d => d3.timeDay.floor(d.datetime).getTime()
-
-function getQuantiles(data, col, dateGrouper) {
-  var bins = {}
-  data.forEach(d => {
-    const idx = dateGrouper(d)
-    bins[idx] = bins[idx] || []
-    bins[idx].push(d[col])
-  })
-  var range = [], iqr = [], median = []
-  Object.keys(bins).forEach(
-    idx => {
-      const vals = bins[idx]
-      vals.sort((a, b) => a - b)
-      range.push([+idx, vals[0], vals[vals.length - 1]])
-      iqr.push([+idx, d3.quantile(vals, 0.25), d3.quantile(vals, 0.75)])
-      median.push([+idx, d3.quantile(vals, 0.5)])
-    })
-  return {range: range, iqr: iqr, median: median}
+const GAS_OPTIONS = {
+  'so2_mass': {name: 'SO2 (lbs/hr)', color: 'green', yaxis: 'y'},
+  'nox_mass': {name: 'NOx (lbs/hr)', color: 'orange', yaxis: 'y2'},
+  'co2_mass': {name: 'CO2 (tons/hr)', color: 'steelblue', yaxis: 'y3'}
 }
 
 function hourlySeries(hourlyData) {
   return [{
-    name: 'generation',
+    name: 'so2 mass',
     data: hourlyData,
-    color: COLORS.CARDINAL,
+    color: 'green',
     lineWidth: 1.5,
     zIndex: 1,
   }]
@@ -44,7 +28,7 @@ function trendSeries(quantiles) {
       name: 'median',
       type: 'line',
       data: quantiles.median,
-      color: COLORS.CARDINAL,
+      color: 'green',
       zIndex: 1,
       marker: {enabled: false},
     },
@@ -98,32 +82,35 @@ function onZoom(quantiles, hourlyData) {
   }
 }
 
-function renderGenerationTimeSeries(divId, data) {
-  const quantiles = {
-    monthly: getQuantiles(data, 'gen', MONTH_FLOOR),
-    weekly: getQuantiles(data, 'gen', WEEK_FLOOR),
-    daily: getQuantiles(data, 'gen', DAY_FLOOR),
-  }
-  const hourlyData = data.map(d => [d.datetime, d.gen])
+function renderEmissionsTimeSeries(divId, data) {
+  // TODO: Use all 3 gases!
+  var quantiles = {}
+  var hourlyData = {}
+  Object.keys(GAS_OPTIONS).forEach(gas => {
+    quantiles[gas] = {
+      monthly: TS.getMonthlyQuantiles(data, gas),
+      weekly: TS.getWeeklyQuantiles(data, gas),
+      daily: TS.getDailyQuantiles(data, gas),
+    }
+    hourlyData[gas] = data.map(d => [d.datetime, d[gas]]) 
+  })
   var series = {}
   if (data.length > 0) {
     const tDelta = data[data.length-1].datetime - data[0].datetime
-    series = selectSeries(quantiles, hourlyData, tDelta)
+    series = selectSeries(quantiles['so2_mass'], hourlyData, tDelta)
   }
+  console.log('Quantiles:')
+  console.log(quantiles)
   const chartOpts = {
-    chart: {
-      style: {fontFamily: DEFAULTS.STD_FONT_FAMILY},
-    },
-    title: {text: 'Gross generation time series'},
+    chart: {style: {fontFamily: DEFAULTS.STD_FONT_FAMILY}},
+    title: {text: 'Emissions time series'},
     subtitle: {text: series ? series.zoomLevel : ''},
     xAxis: {
       type: 'datetime',
-      events: {
-        afterSetExtremes: onZoom(quantiles, hourlyData),
-      },
+      events: {afterSetExtremes: onZoom(quantiles['so2_mass'], hourlyData['so2_mass'])},
     },
     yAxis: {
-      title: {text: 'Generation (MWh)'},
+      title: {text: 'SO2 mass (lbs/hr)'},
       min: 0,
     },
     rangeSelector: {
@@ -139,22 +126,14 @@ function renderGenerationTimeSeries(divId, data) {
     tooltip: {
       crosshairs: true,
       shared: true,
-      valueSuffix: 'MWh',
+      valueSuffix: 'lbs',
+      valueDecimals: 2,
     },
-    plotOptions: {series: {animation: false}},
+    // plotOptions: {series: {animation: false}},
     legend: {enabled: false},
     credits: false,
   }
-  const tsData = [{
-    name: 'gen',
-    data: data.slice(0, 5000).map(d => [d.datetime, d.gen]),
-    color: COLORS.CARDINAL,
-    tooltip: {
-      valueDecimals: 2,
-      valueSuffix: 'MWh',
-    },
-  }]
   Highcharts.stockChart(divId, Object.assign({series: series.data}, chartOpts))
 }
 
-module.exports = renderGenerationTimeSeries
+module.exports = renderEmissionsTimeSeries
