@@ -1,10 +1,31 @@
 const zlib = require('zlib')
+const spin = require('./spin.js')
 const renderGenerationTimeSeries = require('./generation-time-series.js')
 const renderEmissionsTimeSeries = require('./emissions-time-series.js')
 
 // TODO: Find a way to coordinate div id's between JS and HTML
 const GENERATION_TIME_SERIES = 'generation-time-series'
 const EMISSIONS_TIME_SERIES = 'emissions-time-series'
+const SPINNER_DIV = 'loading-spinner'
+
+const SPINNER_OPTS = {
+  lines: 11,
+  length: 5,
+  width: 3,
+  radius: 6,
+  corners: 1,
+  rotate: 0,
+  direction: 1,
+  color: '#000',
+  speed: 0.8,
+  trail: 50,
+  shadow: false,
+  hwaccel: false,
+  className: 'spinner',
+  zIndex: 2e9,
+  top: '50%',
+  left: '50%'
+};
 
 function htmlOption(label, value) {
   return `<option label="${label}" value="${value}"></option>`
@@ -53,6 +74,8 @@ function loadData() {
   const orisplCode = $('#plant-selector').val()
   const unitId = $('#unit-selector').val()
   if (orisplCode && unitId) {
+    var spinner = new spin.Spinner(SPINNER_OPTS);
+    spinner.spin(document.getElementById(SPINNER_DIV));
     clearPlots();
     const sanitizedUnitId = unitId.replace('*', '')
     const dataUri = `unitlevel/${orisplCode}_${sanitizedUnitId}.csv.gz`
@@ -60,6 +83,7 @@ function loadData() {
       response.arrayBuffer().then(buf => {
         const unzipped = zlib.gunzipSync(Buffer.from(buf))
         updatePlots(d3.csvParse(unzipped.toString(), parseTimeSeriesRow))
+        spinner.stop();
       })
     })
   }
@@ -68,8 +92,7 @@ function loadData() {
 $(document).ready(function() {
   clearPlots()
   var plantsUnits = {}
-  d3.csv(`csv/plants_overview.csv`)
-    .then(data => addPlants(data, plantsUnits)) // .forEach(addPlant))
+  d3.csv(`csv/plants_overview.csv`).then(data => addPlants(data, plantsUnits))
   $('#plant-selector').change(e => updateUnitOptions(plantsUnits))
   $('#load-plant-unit-data-button').click(loadData)
 })
