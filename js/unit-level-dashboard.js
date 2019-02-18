@@ -8,24 +8,7 @@ const GENERATION_TIME_SERIES = 'generation-time-series'
 const EMISSIONS_TIME_SERIES = 'emissions-time-series'
 const SPINNER_DIV = 'loading-spinner'
 
-const SPINNER_OPTS = {
-  lines: 11,
-  length: 5,
-  width: 3,
-  radius: 6,
-  corners: 1,
-  rotate: 0,
-  direction: 1,
-  color: '#000',
-  speed: 0.8,
-  trail: 50,
-  shadow: false,
-  hwaccel: false,
-  className: 'spinner',
-  zIndex: 2e9,
-  top: '50%',
-  left: '50%'
-};
+const SPINNER_OPTS = {lines: 9, length: 5, width: 3, radius: 5};
 
 function htmlOption(label, value) {
   return `<option label="${label}" value="${value}"></option>`
