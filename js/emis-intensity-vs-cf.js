@@ -40,7 +40,7 @@ function renderEmissionsIntensityVsCapFactor(divId, data) {
         text: filtered.map(d => DATE_HOUR_FMT(d.datetime)),
         mode: 'markers',
         hoverinfo: 'x+y+text',
-        hoverlabel: {font: DEFAULTS.STD_FONT},
+        hoverlabel: {font: DEFAULTS.FONT},
         marker: {
           'size': 3.5,
           'color': filtered.map(d => d.datetime.getFullYear()),
@@ -64,8 +64,8 @@ function renderEmissionsIntensityVsCapFactor(divId, data) {
     xaxis2: {title: 'Capacity Factor'},
     yaxis: {title: 'CO<sub>2</sub> Intensity (kg/MWh)'},
     yaxis2: {title: 'SO<sub>2</sub> Intensity (lbs/MWh)'},
-    font: DEFAULTS.STD_FONT,
-    margin: DEFAULTS.STD_MARGIN,
+    font: DEFAULTS.FONT,
+    margin: DEFAULTS.MARGIN,
   }
   Plotly.react(divId, traces, layout, {displaylogo: false})
 }

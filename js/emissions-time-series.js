@@ -11,7 +11,7 @@ const LAYOUT = {
   showlegend: false,
   autosize: true,
   title: {text: 'Emissions time series'},
-  font: DEFAULTS.STD_FONT,
+  font: DEFAULTS.FONT,
   grid: {yaxes: ['y', 'y2', 'y3'], rows: 3, columns: 1},
   xaxis: {type: 'date'},
   yaxis: {fixedrange: true, title: {text: 'SO<sub>2</sub> (lbs/hr)'}},
@@ -28,7 +28,7 @@ function trendTraceGen(bins, gas) {
       x: dt,
       y: bins[gas].map(accessor),
       yaxis: GAS_OPTIONS[gas].yaxis,
-      hoverlabel: {font: DEFAULTS.STD_FONT},
+      hoverlabel: {font: DEFAULTS.FONT},
     }
     return Object.assign(trace, opts)
   }
@@ -53,7 +53,7 @@ function hourlyTraces(data) {
     x: data.map(d => d.datetime),
     y: data.map(d => d[gas]),
     yaxis: GAS_OPTIONS[gas].yaxis,
-    hoverlabel: {font: DEFAULTS.STD_FONT},
+    hoverlabel: {font: DEFAULTS.FONT},
     line: {color: GAS_OPTIONS[gas].color, width: 1.5},
   }))
 }

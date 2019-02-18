@@ -37,7 +37,7 @@ module.exports = (divId, data) => {
     },
     margin: {l: 50, r: 10, t: 10, b: 10},
     showlegend: false,
-    font: DEFAULTS.STD_FONT,
+    font: DEFAULTS.FONT,
     grid: {
       yaxes: ['y', 'y2', 'y3'],
       rows: 3,

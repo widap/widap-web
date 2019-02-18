@@ -5,7 +5,7 @@ const LAYOUT = {
   showlegend: false,
   autosize: true,
   title: {text: 'Generation time series'},
-  font: DEFAULTS.STD_FONT,
+  font: DEFAULTS.FONT,
   xaxis: {title: 'Date', type: 'date'},
   yaxis: {fixedrange: true, title: {text: 'Generation (MWh)'}},
 }
@@ -16,7 +16,7 @@ function newTrace(bins, name, dt, accessor, opts) {
     name: `${name} gen (MWh)`,
     x: dt,
     y: bins.map(accessor),
-    hoverlabel: {font: DEFAULTS.STD_FONT},
+    hoverlabel: {font: DEFAULTS.FONT},
   }
   return Object.assign(trace, opts)
 }
@@ -38,7 +38,7 @@ function hourlyTraces(data) {
     name: 'generation (MWh)',
     x: data.map(d => d.datetime),
     y: data.map(d => d.gen),
-    hoverlabel: {font: DEFAULTS.STD_FONT},
+    hoverlabel: {font: DEFAULTS.FONT},
     line: {color: 'darkred', width: 1.5},
   }]
 }

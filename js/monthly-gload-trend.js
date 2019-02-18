@@ -21,7 +21,7 @@ module.exports = (divId, data) => {
     height: 360,
     paper_bgcolor: 'rgba(255,255,255,0.1)',
     plot_bgcolor: 'rgba(255,255,255,0.1)',
-    font: DEFAULTS.STD_FONT,
+    font: DEFAULTS.FONT,
     xaxis: {
       rangeslider: {},
       type: 'date',
