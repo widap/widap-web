@@ -1,9 +1,11 @@
 {
   "name": "widap-web",
-  "license": "none",
+  "license": "0BSD",
   "dependencies": {
-    "browserify": "^16.2.3",
-    "leaflet": "^1.4.0"
+    "leaflet": "^1.4.0",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-select": "^2.4.1"
   },
   "repository": {
     "type": "git",
@@ -11,9 +13,29 @@
   },
   "scripts": {
     "build": "npm run build:map && npm run build:dashboard",
-    "build:map": "mkdir -p bundles && browserify js/power-plant-map.js -o bundles/power-plant-map-bundle.js",
-    "build:dashboard": "mkdir -p bundles && browserify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js",
-    "watch": "watchify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js -v",
+    "build:map": "browserify js/power-plant-map.js -o bundles/power-plant-map-bundle.js",
+    "build:dashboard": "browserify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js -t babelify --presets @babel/preset-env @babel/preset-react @babel/plugin-proposal-class-properties",
+    "watch": "watchify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js -v -t",
     "serve": "python scripts/debug_server.py"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-minify": "^0.5.0",
+    "babel-watch": "^7.0.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
+    "tinyify": "^2.5.0"
   }
 }

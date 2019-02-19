@@ -1,4 +1,4 @@
-exports.PLANTS_UNITS = [
+module.exports = [
   {
     "name": "Copper Station",
     "unit_ids": [
