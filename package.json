@@ -12,11 +12,9 @@
     "url": "github:widap/widap-web"
   },
   "scripts": {
-    "build": "npm run build:map && npm run build:dashboard",
     "build:map": "browserify js/power-plant-map.js -o bundles/power-plant-map-bundle.js",
-    "build:dashboard": "browserify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js -t babelify --presets @babel/preset-env @babel/preset-react @babel/plugin-proposal-class-properties",
-    "watch": "watchify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js -v -t",
-    "serve": "python scripts/debug_server.py"
+    "build:dashboard": "browserify js/unit-level-dashboard.js -t babelify -o bundles/unit-level-dashboard-bundle.js",
+    "watch": "watchify js/unit-level-dashboard.js -t babelify -o bundles/unit-level-dashboard-bundle.js"
   },
   "babel": {
     "presets": [
