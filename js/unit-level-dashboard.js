@@ -1,4 +1,5 @@
 const spin = require('./spin.js')
+const plantsUnits = require('./plants-units.js')
 const renderGenerationTimeSeries = require('./generation-time-series.js')
 const renderEmissionsTimeSeries = require('./emissions-time-series.js')
 const GH_HOST = 'https://media.githubusercontent.com';
@@ -11,27 +12,28 @@ const SPINNER_DIV = 'loading-spinner'
 
 const SPINNER_OPTS = {lines: 9, length: 5, width: 3, radius: 5};
 
+const PLANT_UNIT_MAP = loadPlantsUnits(plantsUnits.PLANTS_UNITS);
+const PLANT_OPTIONS = plantsUnits.PLANTS_UNITS.map(
+    row => htmlOption(row.name, row.orispl_code));
+
+function loadPlantsUnits(rows) {
+  var plantsUnits = {};
+  rows.forEach(row => plantsUnits[row.orispl_code] = {
+    name: row.name,
+    unitIds: row.unit_ids,
+  });
+  return plantsUnits;
+}
+
 function htmlOption(label, value) {
   return `<option label="${label}" value="${value}"></option>`
 }
 
-function addPlants(data, plantsUnits) {
-  data.forEach(row => {
-    plantsUnits[row.orispl_code] = {
-      name: row.name,
-      unitIds: row.unit_ids.split('/')
-    }
-    $('#plant-selector').append(htmlOption(row.name, row.orispl_code))
-  })
-}
 
-function updateUnitOptions(plantsUnits) {
-  $('#unit-selector').empty()
-  plantsUnits[$('#plant-selector').val()].unitIds.forEach(
-    unitId => {
-      const cleaned = unitId.replace('*', '')
-      $('#unit-selector').append(htmlOption(cleaned, cleaned))
-    })
+function updateUnitOptions() {
+  $('#unit-selector').empty();
+  PLANT_UNIT_MAP[$('#plant-selector').val()].unitIds.forEach(
+      unitId => $('#unit-selector').append(htmlOption(unitId, unitId)));
 }
 
 function clearPlots() {
@@ -72,8 +74,7 @@ function loadData() {
 
 $(document).ready(function() {
   clearPlots()
-  var plantsUnits = {}
-  d3.csv(`csv/plants_overview.csv`).then(data => addPlants(data, plantsUnits))
-  $('#plant-selector').change(e => updateUnitOptions(plantsUnits))
+  PLANT_OPTIONS.forEach(option => $('#plant-selector').append(option));
+  $('#plant-selector').change(e => updateUnitOptions())
   $('#load-plant-unit-data-button').click(loadData)
 })
