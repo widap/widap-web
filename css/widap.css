@@ -20,11 +20,14 @@ h2.subtitle {
   font-weight: 300;
   color: #666;
 }
-select:required:invalid {
-  color: gray;
+.multicol-selector {
+  display: flex;
 }
-option[value=""][disabled] {
-  display: none;
+#plant-selector {
+  min-width: 300px;
+}
+#unit-selector {
+  min-width: 150px;
 }
 #loading-spinner {
   height: 32px;
@@ -40,7 +43,6 @@ option[value=""][disabled] {
     opacity: 1;
   }
 }
-
 @keyframes spinner-line-fade-quick {
   0%, 39%, 100% {
     opacity: 0.25; /* minimum opacity */
@@ -49,7 +51,6 @@ option[value=""][disabled] {
     opacity: 1;
   }
 }
-
 @keyframes spinner-line-fade-default {
   0%, 100% {
     opacity: 0.22; /* minimum opacity */
