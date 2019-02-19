@@ -2,7 +2,8 @@
   "name": "widap-web",
   "license": "none",
   "dependencies": {
-    "browserify": "^16.2.3"
+    "browserify": "^16.2.3",
+    "leaflet": "^1.4.0"
   },
   "repository": {
     "type": "git",
@@ -12,7 +13,7 @@
     "build": "npm run build:map && npm run build:dashboard",
     "build:map": "mkdir -p bundles && browserify js/power-plant-map.js -o bundles/power-plant-map-bundle.js",
     "build:dashboard": "mkdir -p bundles && browserify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js",
-    "devel:dashboard": "watchify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js -v",
+    "watch": "watchify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js -v",
     "serve": "python scripts/debug_server.py"
   }
 }

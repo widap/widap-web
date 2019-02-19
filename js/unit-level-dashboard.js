@@ -1,7 +1,8 @@
-const zlib = require('zlib')
 const spin = require('./spin.js')
 const renderGenerationTimeSeries = require('./generation-time-series.js')
 const renderEmissionsTimeSeries = require('./emissions-time-series.js')
+const GH_HOST = 'https://media.githubusercontent.com';
+const EMIS_DATA_REPO =  `${GH_HOST}/media/widap/emissions-data/master/csv`;
 
 // TODO: Find a way to coordinate div id's between JS and HTML
 const GENERATION_TIME_SERIES = 'generation-time-series'
@@ -61,14 +62,11 @@ function loadData() {
     spinner.spin(document.getElementById(SPINNER_DIV));
     clearPlots();
     const sanitizedUnitId = unitId.replace('*', '')
-    const dataUri = `unitlevel/${orisplCode}_${sanitizedUnitId}.csv.gz`
-    fetch(dataUri, {acceptEncoding: "gzip, deflate"}).then(response => {
-      response.arrayBuffer().then(buf => {
-        const unzipped = zlib.gunzipSync(Buffer.from(buf))
-        updatePlots(d3.csvParse(unzipped.toString(), parseTimeSeriesRow))
-        spinner.stop();
-      })
-    })
+    const dataUri = `${EMIS_DATA_REPO}/${orisplCode}_${sanitizedUnitId}.csv`
+    d3.csv(dataUri, parseTimeSeriesRow).then(data => {
+      updatePlots(data);
+      spinner.stop();
+    });
   }
 }
 
