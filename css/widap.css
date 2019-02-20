@@ -37,11 +37,15 @@ button:hover {
 }
 button:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
+  border: 1px solid rgba(0,93,255,0.8);
+  box-shadow: 0 0 0 0.1rem rgba(0,93,255,0.8);
 }
 .flex-row {
   display: flex;
   max-width: 1000px;
+}
+.flex-row > * {
+  margin: 2px;
 }
 #plant-selector {
   flex: 6;
@@ -55,7 +59,6 @@ button:focus {
 #loading-spinner {
   height: 32px;
   width: 32px;
-  margin: 2px;
   position: relative;
 }
 @keyframes spinner-line-fade-more {
