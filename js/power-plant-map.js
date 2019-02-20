@@ -1,4 +1,5 @@
 const Plotly = require('plotly.js-basic-dist');
+const $ = require('jquery');
 const L = require('leaflet');
 const powerPlantsGeoJson = require('./plants.json')
 const stateMarkersGeoJson = require('./statemarkers.json')

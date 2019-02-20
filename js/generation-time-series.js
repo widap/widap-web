@@ -1,6 +1,7 @@
 const Plotly = require('plotly.js-basic-dist');
-const DEFAULTS = require('./defaults.js')
-const TS = require('./timeseries.js')
+const $ = require('jquery');
+const DEFAULTS = require('./defaults.js');
+const TS = require('./timeseries.js');
 
 const LAYOUT = {
   showlegend: false,
