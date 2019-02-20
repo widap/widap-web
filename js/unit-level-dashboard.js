@@ -5,7 +5,7 @@ const React = require('react');
 const Select = require('react-select').default;
 const ReactDOM = require('react-dom');
 const PLANTS_UNITS = require('./plants-units.js');
-const d3 = require('d3');
+const d3 = Object.assign({}, require('d3-fetch'));
 
 const PLANT_UNIT_MAP = loadPlantsUnits(PLANTS_UNITS);
 const PLANT_OPTIONS = PLANTS_UNITS.map(

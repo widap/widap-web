@@ -2,7 +2,9 @@
   "name": "widap-web",
   "license": "0BSD",
   "dependencies": {
-    "d3": "^5.9.1",
+    "d3-array": "^2.0.3",
+    "d3-fetch": "^1.1.2",
+    "d3-time": "^1.0.11",
     "leaflet": "^1.4.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
