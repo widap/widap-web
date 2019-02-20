@@ -2,3 +2,4 @@
 bundles/*.js
 pipeline/widap.cfg
 unitlevel/
+node_modules/
