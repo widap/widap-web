@@ -107,7 +107,6 @@ class DashboardControl extends React.Component {
           options={this.state.unitOpts}
           className='selector'
           placeholder='Select a unit...'
-          noOptionsMessage={() => 'Select a plant first'}
         />
         <button id="load-data-button" onClick={this.loadData}>Load data</button>
         <div id={SPINNER_DIV}></div>
