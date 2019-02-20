@@ -1,3 +1,4 @@
+const Plotly = require('plotly.js-basic-dist');
 const DEFAULTS = require('./defaults.js')
 const TS = require('./timeseries.js')
 

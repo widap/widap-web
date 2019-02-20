@@ -1,3 +1,4 @@
+const Plotly = require('plotly.js-basic-dist');
 const d3 = Object.assign({}, require('d3-array'), require('d3-time'));
 
 const ZOOM_THRESHOLD_DAY_MS = 1.4e10

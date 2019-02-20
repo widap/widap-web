@@ -1,7 +1,9 @@
-var powerPlantsGeoJson = require('./plants.json')
-var stateMarkersGeoJson = require('./statemarkers.json')
-var renderMonthlyGloadTrendPlot = require('./monthly-gload-trend.js')
-var renderMonthlyEmissionsTimeSeries = require('./emissions-time-series-monthly.js')
+const Plotly = require('plotly.js-basic-dist');
+const L = require('leaflet');
+const powerPlantsGeoJson = require('./plants.json')
+const stateMarkersGeoJson = require('./statemarkers.json')
+const renderMonthlyGloadTrendPlot = require('./monthly-gload-trend.js')
+const renderMonthlyEmissionsTimeSeries = require('./emissions-time-series-monthly.js')
 require('./leaflet-providers.js')
 
 // Used only for marker display colors.
@@ -39,7 +41,7 @@ legend.onAdd = function(map) {
   var div = L.DomUtil.create('div', 'map-legend');
   var rows = ""
   for (const fuel_source in colors) {
-    rows += `<tr><td><i style=\"background: ${colors[fuel_source]}\"></i></td>`;
+    rows += `<tr><td><i style="background: ${colors[fuel_source]}"></i></td>`;
     rows += `<td>${fuel_source}</td></tr>`;
   }
   div.innerHTML += "<table>" + rows + "</table>"
@@ -75,17 +77,17 @@ function powerPlantPopup(props) {
     capacity = capacity + " MW";
   }
   const htmlContent = `<h3>${props.name}</h3>
-  <table class=\"plant-props-table\">
-  <tr><td class=\"info-header\">Capacity:</td><td>${capacity}</td></tr>
-  <tr><td class=\"info-header\">Primary fuel:</td><td>${props.fuel_source}</td></tr>
-  <tr><td class=\"info-header\">Operator:</td><td>${props.operator}</td></tr>
-  <tr><td class=\"info-header\">County:</td><td>${props.county}</td></tr>
-  <tr><td class=\"info-header\">ORISPL code:</td><td>${props.orispl_code}</td></tr>
+  <table class="plant-props-table">
+  <tr><td class="info-header">Capacity:</td><td>${capacity}</td></tr>
+  <tr><td class="info-header">Primary fuel:</td><td>${props.fuel_source}</td></tr>
+  <tr><td class="info-header">Operator:</td><td>${props.operator}</td></tr>
+  <tr><td class="info-header">County:</td><td>${props.county}</td></tr>
+  <tr><td class="info-header">ORISPL code:</td><td>${props.orispl_code}</td></tr>
   </table>
   <h4>Monthly gross load trend (MW)</h4>
-  <div id=\"gload-trend-${props.orispl_code}\" class=\"plot-container\"></div>
+  <div id="gload-trend-${props.orispl_code}" class="plot-container"></div>
   <h4>Mean hourly emissions</h4>
-  <div id=\"mean-hourly-emis-${props.orispl_code}\" class=\"plot-container\"></div>
+  <div id="mean-hourly-emis-${props.orispl_code}" class="plot-container"></div>
   <a class="monthly-data-download" href="csv/monthly/${props.orispl_code}.csv">Download this data (csv)</a>`;
   return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
 }
@@ -94,9 +96,9 @@ function stateAggregatePopup(props) {
   const statePostalCode = props.code.toLowerCase();
   const htmlContent = `<h3>${props.name}</h3>
   <h4>Monthly gross load trend (MW)</h4>
-  <div id=\"gload-trend-${statePostalCode}" class=\"plot-container\"></div>
+  <div id="gload-trend-${statePostalCode}" class="plot-container"></div>
   <h4>Mean hourly emissions</h4>
-  <div id=\"mean-hourly-emis-${statePostalCode}\" class=\"plot-container\"></div>
+  <div id="mean-hourly-emis-${statePostalCode}" class="plot-container"></div>
   <a class="monthly-data-download" href="csv/monthly/${statePostalCode}.csv">Download this data (csv)</a>`;
   return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
 }

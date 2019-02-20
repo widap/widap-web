@@ -1,4 +1,5 @@
-const DEFAULTS = require('./defaults.js')
+const Plotly = require('plotly.js-basic-dist');
+const DEFAULTS = require('./defaults.js');
 
 function newTraceGenerator(data) {
   const dt = data.map(d => d.year_month)

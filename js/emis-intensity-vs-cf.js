@@ -1,4 +1,6 @@
-const DEFAULTS = require('./defaults.js')
+const Plotly = require('plotly.js-basic-dist');
+const d3 = require('d3-time');
+const DEFAULTS = require('./defaults.js');
 
 const KG_PER_LB = 0.45359237
 const KG_PER_TON = 2000 * KG_PER_LB

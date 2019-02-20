@@ -6,6 +6,7 @@
     "d3-fetch": "^1.1.2",
     "d3-time": "^1.0.11",
     "leaflet": "^1.4.0",
+    "plotly.js-basic-dist": "^1.44.4",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-select": "^2.4.1"
@@ -15,11 +16,19 @@
     "url": "github:widap/widap-web"
   },
   "scripts": {
+    "build": "npm run build:map && npm run build:dashboard",
     "build:map": "browserify js/power-plant-map.js -o bundles/power-plant-map-bundle.js",
-    "build:dashboard": "browserify js/unit-level-dashboard.js -t babelify -o bundles/unit-level-dashboard-bundle.js",
-    "build-prod:map": "browserify js/power-plant-map.js -t babelify -p tinyify -o bundles/power-plant-map-bundle.js",
-    "build-prod:dashboard": "browserify js/unit-level-dashboard.js -t babelify -p tinyify -o bundles/unit-level-dashboard-bundle.js",
-    "watch": "watchify js/unit-level-dashboard.js -t babelify -o bundles/unit-level-dashboard-bundle.js"
+    "build:dashboard": "browserify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js",
+    "build-prod:map": "browserify js/power-plant-map.js -p tinyify -o bundles/power-plant-map-bundle.js",
+    "build-prod:dashboard": "browserify js/unit-level-dashboard.js -p tinyify -o bundles/unit-level-dashboard-bundle.js",
+    "watch:map": "watchify js/power-plant-map.js -o bundles/power-plant-map-bundle.js",
+    "watch:dashboard": "watchify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js",
+    "lint": "npx eslint js/*.js"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   },
   "babel": {
     "presets": [
@@ -39,6 +48,8 @@
     "babel-watch": "^7.0.0",
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
+    "eslint": "^5.14.1",
+    "eslint-plugin-react": "^7.12.4",
     "tinyify": "^2.5.0"
   }
 }
