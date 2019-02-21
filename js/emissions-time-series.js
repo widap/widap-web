@@ -1,5 +1,4 @@
 import Plotly from 'plotly.js-basic-dist';
-import $ from 'jquery';
 import { FONT } from './defaults.js';
 import { getQuantiles, rezoom } from './timeseries.js';
 
@@ -70,17 +69,17 @@ export function renderEmissionsTimeSeries(divId, data) {
       quantiles.monthly[gas] = gasQuantiles.monthly;
       quantiles.weekly[gas] = gasQuantiles.weekly;
       quantiles.daily[gas] = gasQuantiles.daily;
-    })
+    });
     const allTraces = {
       monthly: trendTraces(quantiles.monthly),
       weekly: trendTraces(quantiles.weekly),
       daily: trendTraces(quantiles.daily),
       hourly: traces,
-    }
-    $(`#${divId}`).on('plotly_relayout', rezoom(divId, allTraces))
-    Plotly.react(divId, allTraces.monthly, LAYOUT, {displaylogo: false})
-    Plotly.relayout(divId, {})
+    };
+    $(`#${divId}`).on('plotly_relayout', rezoom(divId, allTraces));
+    Plotly.react(divId, allTraces.monthly, LAYOUT, {displaylogo: false});
+    Plotly.relayout(divId, {});
   } else {
-    Plotly.react(divId, traces, LAYOUT, {displaylogo: false})
+    Plotly.react(divId, traces, LAYOUT, {displaylogo: false});
   }
 }

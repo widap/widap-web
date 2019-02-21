@@ -1,5 +1,4 @@
 import Plotly from 'plotly.js-basic-dist';
-import $ from 'jquery';
 import { FONT } from './defaults.js';
 import { getQuantiles, rezoom } from './timeseries.js';
 

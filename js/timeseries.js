@@ -6,8 +6,6 @@ const ZOOM_THRESHOLD_DAY_MS = 1.4e10
 const ZOOM_THRESHOLD_WEEK_MS = 7 * ZOOM_THRESHOLD_DAY_MS
 const ZOOM_THRESHOLD_MONTH_MS = 30 * ZOOM_THRESHOLD_DAY_MS
 
-const MONTH_FLOOR = d => timeMonth.floor(d.datetime).getTime()
-
 function quantilesFromBins(bins) {
   return Object.keys(bins).map(
     idx => {
@@ -99,12 +97,14 @@ function selectAndFilterTraces(allTraces, timeStart, timeEnd) {
 }
 
 export function rezoom(divId, allTraces) {
+  console.log("rezoom 'constructor' invoked");
   return (update) => {
+    console.log("Rezoom invoked");
     const plot = update.currentTarget,
           xRange = plot.layout.xaxis.range,
           timeStart = new Date(xRange[0]),
           timeEnd = new Date(xRange[1])
     const traces = selectAndFilterTraces(allTraces, timeStart, timeEnd)
     Plotly.react(divId, traces, plot.layout)
-  }
+  };
 }
