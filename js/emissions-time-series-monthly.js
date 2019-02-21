@@ -1,5 +1,5 @@
-const Plotly = require('plotly.js-basic-dist');
-const DEFAULTS = require('./defaults.js');
+import Plotly from 'plotly.js-basic-dist';
+import { FONT } from './defaults.js';
 
 function newTraceGenerator(data) {
   const dt = data.map(d => d.year_month)
@@ -8,7 +8,7 @@ function newTraceGenerator(data) {
       opts)
 }
 
-module.exports = (divId, data) => {
+export default function(divId, data) {
   const traceGen = newTraceGenerator(data)
   const traces = [
     traceGen('SO2 (lbs/hr)', d => d.avg_so2_mass_lbs_hr, {color: 'green', width: 1.5}, {}),
@@ -38,7 +38,7 @@ module.exports = (divId, data) => {
     },
     margin: {l: 50, r: 10, t: 10, b: 10},
     showlegend: false,
-    font: DEFAULTS.FONT,
+    font: FONT,
     grid: {
       yaxes: ['y', 'y2', 'y3'],
       rows: 3,

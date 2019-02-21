@@ -1,11 +1,11 @@
-const Plotly = require('plotly.js-basic-dist');
-const $ = require('jquery');
-const L = require('leaflet');
-const powerPlantsGeoJson = require('./plants.json')
-const stateMarkersGeoJson = require('./statemarkers.json')
-const renderMonthlyGloadTrendPlot = require('./monthly-gload-trend.js')
-const renderMonthlyEmissionsTimeSeries = require('./emissions-time-series-monthly.js')
-require('./leaflet-providers.js')
+import Plotly from 'plotly.js-basic-dist';
+import $ from 'jquery';
+import L from 'leaflet';
+import powerPlantsGeoJson from './plants.json';
+import stateMarkersGeoJson from './statemarkers.json';
+import renderMonthlyGloadTrendPlot from './monthly-gload-trend.js';
+import renderMonthlyEmissionsTimeSeries from './emissions-time-series-monthly.js';
+import './leaflet-providers.js';
 
 // Used only for marker display colors.
 const fuel_source_abbrevs = {

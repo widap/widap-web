@@ -1,7 +1,7 @@
-const Plotly = require('plotly.js-basic-dist');
-const $ = require('jquery');
-const DEFAULTS = require('./defaults.js');
-const TS = require('./timeseries.js');
+import Plotly from 'plotly.js-basic-dist';
+import $ from 'jquery';
+import { FONT } from './defaults.js';
+import { getMonthlyQuantiles, getWeeklyQuantiles, getDailyQuantiles, rezoom } from './timeseries.js';
 
 const GAS_OPTIONS = {
   'so2_mass': {name: 'SO2 (lbs/hr)', color: 'green', yaxis: 'y'},
@@ -13,7 +13,7 @@ const LAYOUT = {
   showlegend: false,
   autosize: true,
   title: {text: 'Emissions time series'},
-  font: DEFAULTS.FONT,
+  font: FONT,
   grid: {yaxes: ['y', 'y2', 'y3'], rows: 3, columns: 1},
   xaxis: {type: 'date'},
   yaxis: {fixedrange: true, title: {text: 'SO<sub>2</sub> (lbs/hr)'}},
@@ -30,7 +30,7 @@ function trendTraceGen(bins, gas) {
       x: dt,
       y: bins[gas].map(accessor),
       yaxis: GAS_OPTIONS[gas].yaxis,
-      hoverlabel: {font: DEFAULTS.FONT},
+      hoverlabel: {font: FONT},
     }
     return Object.assign(trace, opts)
   }
@@ -55,20 +55,20 @@ function hourlyTraces(data) {
     x: data.map(d => d.datetime),
     y: data.map(d => d[gas]),
     yaxis: GAS_OPTIONS[gas].yaxis,
-    hoverlabel: {font: DEFAULTS.FONT},
+    hoverlabel: {font: FONT},
     line: {color: GAS_OPTIONS[gas].color, width: 1.5},
   }))
 }
 
-function renderEmissionsTimeSeries(divId, data) {
+export function renderEmissionsTimeSeries(divId, data) {
   $(`#${divId}`).off('plotly_relayout')
   var traces = hourlyTraces(data)
   var quantiles = {monthly: {}, weekly: {}, daily: {}}
   if (data.length > 0) {
     Object.keys(GAS_OPTIONS).forEach(gas => {
-      quantiles.monthly[gas] = TS.getMonthlyQuantiles(data, gas)
-      quantiles.weekly[gas] = TS.getWeeklyQuantiles(data, gas)
-      quantiles.daily[gas] = TS.getDailyQuantiles(data, gas)
+      quantiles.monthly[gas] = getMonthlyQuantiles(data, gas)
+      quantiles.weekly[gas] = getWeeklyQuantiles(data, gas)
+      quantiles.daily[gas] = getDailyQuantiles(data, gas)
     })
     const allTraces = {
       monthly: trendTraces(quantiles.monthly),
@@ -76,12 +76,10 @@ function renderEmissionsTimeSeries(divId, data) {
       daily: trendTraces(quantiles.daily),
       hourly: traces,
     }
-    $(`#${divId}`).on('plotly_relayout', TS.rezoom(divId, allTraces))
+    $(`#${divId}`).on('plotly_relayout', rezoom(divId, allTraces))
     Plotly.react(divId, allTraces.monthly, LAYOUT, {displaylogo: false})
     Plotly.relayout(divId, {})
   } else {
     Plotly.react(divId, traces, LAYOUT, {displaylogo: false})
   }
 }
-
-module.exports = renderEmissionsTimeSeries

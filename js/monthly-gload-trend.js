@@ -1,5 +1,5 @@
-const Plotly = require('plotly.js-basic-dist');
-const DEFAULTS = require('./defaults.js');
+import Plotly from 'plotly.js-basic-dist';
+import { FONT } from './defaults.js';
 
 function newTraceGenerator(data) {
   const dt = data.map(d => d.year_month)
@@ -8,7 +8,7 @@ function newTraceGenerator(data) {
       opts)
 }
 
-module.exports = (divId, data) => {
+export default function(divId, data) {
   const traceGen = newTraceGenerator(data)
   const traces = [
     traceGen('min', d => d.min_gload_mw, {line: {color: '#CCC', width: 0.5}}),
@@ -22,7 +22,7 @@ module.exports = (divId, data) => {
     height: 360,
     paper_bgcolor: 'rgba(255,255,255,0.1)',
     plot_bgcolor: 'rgba(255,255,255,0.1)',
-    font: DEFAULTS.FONT,
+    font: FONT,
     xaxis: {
       rangeslider: {},
       type: 'date',

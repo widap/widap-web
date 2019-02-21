@@ -1,11 +1,11 @@
-const spin = require('./spin.js');
-const renderGenerationTimeSeries = require('./generation-time-series.js');
-const renderEmissionsTimeSeries = require('./emissions-time-series.js');
-const React = require('react');
-const Select = require('react-select').default;
-const ReactDOM = require('react-dom');
-const PLANTS_UNITS = require('./plants-units.js');
-const d3 = Object.assign({}, require('d3-fetch'));
+import { Spinner } from './spin.js';
+import { renderGenerationTimeSeries } from './generation-time-series.js';
+import { renderEmissionsTimeSeries } from './emissions-time-series.js';
+import React from 'react';
+import Select from 'react-select';
+import ReactDOM from 'react-dom';
+import PLANTS_UNITS from './plants-units.js';
+import { csv } from 'd3-fetch';
 
 const PLANT_UNIT_MAP = loadPlantsUnits(PLANTS_UNITS);
 const PLANT_OPTIONS = PLANTS_UNITS.map(
@@ -78,12 +78,12 @@ class DashboardControl extends React.Component {
     if (plant != null && unit != null) {
       // TODO: Don't actually reload unless the plant/unit have changed.
       // TODO: Use a React spinner.
-      var spinner = new spin.Spinner(SPINNER_OPTS);
+      var spinner = new Spinner(SPINNER_OPTS);
       spinner.spin(document.getElementById(SPINNER_DIV));
       this.clearPlots();
       const sanitizedUnitId = unit.value.replace('*', '')
       const dataUri = `${EMIS_DATA_REPO}/${plant.value}_${sanitizedUnitId}.csv`
-      d3.csv(dataUri, parseTimeSeriesRow).then(data => {
+      csv(dataUri, parseTimeSeriesRow).then(data => {
         this.updatePlots(data);
         spinner.stop();
       });

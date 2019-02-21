@@ -1,13 +1,13 @@
-const Plotly = require('plotly.js-basic-dist');
-const $ = require('jquery');
-const DEFAULTS = require('./defaults.js');
-const TS = require('./timeseries.js');
+import Plotly from 'plotly.js-basic-dist';
+import $ from 'jquery';
+import { FONT } from './defaults.js';
+import { getMonthlyQuantiles, getWeeklyQuantiles, getDailyQuantiles, rezoom } from './timeseries.js';
 
 const LAYOUT = {
   showlegend: false,
   autosize: true,
   title: {text: 'Generation time series'},
-  font: DEFAULTS.FONT,
+  font: FONT,
   xaxis: {title: 'Date', type: 'date'},
   yaxis: {fixedrange: true, title: {text: 'Generation (MWh)'}},
 }
@@ -18,7 +18,7 @@ function newTrace(bins, name, dt, accessor, opts) {
     name: `${name} gen (MWh)`,
     x: dt,
     y: bins.map(accessor),
-    hoverlabel: {font: DEFAULTS.FONT},
+    hoverlabel: {font: FONT},
   }
   return Object.assign(trace, opts)
 }
@@ -40,17 +40,17 @@ function hourlyTraces(data) {
     name: 'generation (MWh)',
     x: data.map(d => d.datetime),
     y: data.map(d => d.gen),
-    hoverlabel: {font: DEFAULTS.FONT},
+    hoverlabel: {font: FONT},
     line: {color: 'darkred', width: 1.5},
   }]
 }
 
-function renderGenerationTimeSeries(divId, data) {
+export function renderGenerationTimeSeries(divId, data) {
   $(`#${divId}`).off('plotly_relayout')
   const quantiles = {
-    monthly: TS.getMonthlyQuantiles(data, 'gen'),
-    weekly: TS.getWeeklyQuantiles(data, 'gen'),
-    daily: TS.getDailyQuantiles(data, 'gen'),
+    monthly: getMonthlyQuantiles(data, 'gen'),
+    weekly: getWeeklyQuantiles(data, 'gen'),
+    daily: getDailyQuantiles(data, 'gen'),
   }
   var traces = hourlyTraces(data)
   if (data.length > 0) {
@@ -60,12 +60,10 @@ function renderGenerationTimeSeries(divId, data) {
       daily: trendTraces(quantiles.daily),
       hourly: traces,
     }
-    $(`#${divId}`).on('plotly_relayout', TS.rezoom(divId, allTraces))
+    $(`#${divId}`).on('plotly_relayout', rezoom(divId, allTraces))
     Plotly.react(divId, allTraces.monthly, LAYOUT, {displaylogo: false})
     Plotly.relayout(divId, {})
   } else {
     Plotly.react(divId, traces, LAYOUT, {displaylogo: false})
   }
 }
-
-module.exports = renderGenerationTimeSeries

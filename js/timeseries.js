@@ -1,13 +1,14 @@
-const Plotly = require('plotly.js-basic-dist');
-const d3 = Object.assign({}, require('d3-array'), require('d3-time'));
+import Plotly from 'plotly.js-basic-dist';
+import { quantile } from 'd3-array';
+import { timeDay, timeWeek, timeMonth } from 'd3-time';
 
 const ZOOM_THRESHOLD_DAY_MS = 1.4e10
 const ZOOM_THRESHOLD_WEEK_MS = 7 * ZOOM_THRESHOLD_DAY_MS
 const ZOOM_THRESHOLD_MONTH_MS = 30 * ZOOM_THRESHOLD_DAY_MS
 
-const MONTH_FLOOR = d => d3.timeMonth.floor(d.datetime).getTime()
-const WEEK_FLOOR = d => d3.timeWeek.floor(d.datetime).getTime()
-const DAY_FLOOR = d => d3.timeDay.floor(d.datetime).getTime()
+const MONTH_FLOOR = d => timeMonth.floor(d.datetime).getTime()
+const WEEK_FLOOR = d => timeWeek.floor(d.datetime).getTime()
+const DAY_FLOOR = d => timeDay.floor(d.datetime).getTime()
 
 function getQuantiles(data, col, dateGrouper) {
   if (data.length == 0) {
@@ -26,9 +27,9 @@ function getQuantiles(data, col, dateGrouper) {
       return {
         t: +idx,
         min: vals[0],
-        q1: d3.quantile(vals, 0.25),
-        q2: d3.quantile(vals, 0.5),
-        q3: d3.quantile(vals, 0.75),
+        q1: quantile(vals, 0.25),
+        q2: quantile(vals, 0.5),
+        q3: quantile(vals, 0.75),
         max: vals[vals.length - 1],
       }
     })
@@ -72,7 +73,7 @@ function selectAndFilterTraces(allTraces, timeStart, timeEnd) {
   return selected.map(trace => filterTrace(trace, left, right))
 }
 
-function rezoom(divId, allTraces) {
+export function rezoom(divId, allTraces) {
   return (update) => {
     const plot = update.currentTarget,
           xRange = plot.layout.xaxis.range,
@@ -83,9 +84,7 @@ function rezoom(divId, allTraces) {
   }
 }
 
-module.exports = {
-  getMonthlyQuantiles: (data, col) => getQuantiles(data, col, MONTH_FLOOR),
-  getWeeklyQuantiles: (data, col) => getQuantiles(data, col, WEEK_FLOOR),
-  getDailyQuantiles: (data, col) => getQuantiles(data, col, DAY_FLOOR),
-  rezoom: rezoom,
-}
+let getMonthlyQuantiles = (data, col) => getQuantiles(data, col, MONTH_FLOOR);
+let getWeeklyQuantiles = (data, col) => getQuantiles(data, col, WEEK_FLOOR);
+let getDailyQuantiles = (data, col) => getQuantiles(data, col, DAY_FLOOR);
+export { getMonthlyQuantiles, getWeeklyQuantiles, getDailyQuantiles };

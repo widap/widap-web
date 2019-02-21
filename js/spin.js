@@ -29,7 +29,7 @@ var defaults = {
     shadow: '0 0 1px transparent',
     position: 'absolute',
 };
-var Spinner = /** @class */ (function () {
+export var Spinner = /** @class */ (function () {
     function Spinner(opts) {
         if (opts === void 0) { opts = {}; }
         this.opts = __assign({}, defaults, opts);
@@ -79,7 +79,6 @@ var Spinner = /** @class */ (function () {
     };
     return Spinner;
 }());
-module.exports = { Spinner };
 /**
  * Sets multiple style properties at once.
  */
