@@ -39,12 +39,21 @@ function parseTimeSeriesRow(row) {
   }
 }
 
+function loadData(orisplCode, unitId) {
+  const sanitizedUnitId = unitId.replace('*', '');
+  const dataUri = `${EMIS_DATA_REPO}/${orisplCode}_${sanitizedUnitId}.csv`;
+  return csv(dataUri, parseTimeSeriesRow);
+}
+
 class DashboardControl extends React.Component {
   state = {
     selectedPlant: null,
     unitOpts: [],
     selectedUnit: null,
+    loadedPlant: null,
+    loadedUnit: null,
   };
+  spinner = new Spinner(SPINNER_OPTS);
 
   clearPlots = () => {
     this.updatePlots([])
@@ -73,20 +82,18 @@ class DashboardControl extends React.Component {
     this.setState({ selectedUnit: selected });
   }
 
-  loadData = (e) => {
+  maybeLoadData = (e) => {
     const plant = this.state.selectedPlant, unit = this.state.selectedUnit;
     if (plant != null && unit != null) {
-      // TODO: Don't actually reload unless the plant/unit have changed.
-      // TODO: Use a React spinner.
-      var spinner = new Spinner(SPINNER_OPTS);
-      spinner.spin(document.getElementById(SPINNER_DIV));
-      this.clearPlots();
-      const sanitizedUnitId = unit.value.replace('*', '')
-      const dataUri = `${EMIS_DATA_REPO}/${plant.value}_${sanitizedUnitId}.csv`
-      csv(dataUri, parseTimeSeriesRow).then(data => {
-        this.updatePlots(data);
-        spinner.stop();
-      });
+      if (plant.value != this.state.loadedPlant || unit.value != this.state.loadedUnit) {
+        this.spinner.spin(document.getElementById(SPINNER_DIV));
+        this.clearPlots();
+        this.setState({loadedPlant: plant.value, loadedUnit: unit.value});
+        loadData(plant.value, unit.value).then(data => {
+          this.updatePlots(data);
+          this.spinner.stop();
+        });
+      }
     }
   }
 
@@ -109,7 +116,7 @@ class DashboardControl extends React.Component {
           className='selector'
           placeholder='Select a unit...'
         />
-        <button id="load-data-button" onClick={this.loadData}>Load data</button>
+        <button id="load-data-button" onClick={this.maybeLoadData}>Load data</button>
         <div id={SPINNER_DIV}></div>
       </div>
     );
