@@ -1,15 +1,4 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var defaults = {
+const defaults = {
     lines: 12,
     length: 7,
     width: 5,
@@ -29,17 +18,20 @@ var defaults = {
     shadow: '0 0 1px transparent',
     position: 'absolute',
 };
-export var Spinner = /** @class */ (function () {
-    function Spinner(opts) {
-        if (opts === void 0) { opts = {}; }
-        this.opts = __assign({}, defaults, opts);
+
+export class Spinner {
+    opts = {}
+
+    constructor(opts) {
+        this.opts = Object.assign({}, defaults, opts);
     }
+
     /**
      * Adds the spinner to the given target element. If this instance is already
      * spinning, it is automatically removed from its previous target by calling
      * stop() internally.
      */
-    Spinner.prototype.spin = function (target) {
+    spin = (target) => {
         this.stop();
         this.el = document.createElement('div');
         this.el.className = this.opts.className;
@@ -62,7 +54,7 @@ export var Spinner = /** @class */ (function () {
      * Stops and removes the Spinner.
      * Stopped spinners may be reused by calling spin() again.
      */
-    Spinner.prototype.stop = function () {
+    stop = () => {
         if (this.el) {
             if (typeof requestAnimationFrame !== 'undefined') {
                 cancelAnimationFrame(this.animateId);
@@ -77,8 +69,7 @@ export var Spinner = /** @class */ (function () {
         }
         return this;
     };
-    return Spinner;
-}());
+};
 /**
  * Sets multiple style properties at once.
  */
