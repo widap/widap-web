@@ -1,7 +1,7 @@
 import Plotly from 'plotly.js-basic-dist';
 import $ from 'jquery';
 import { FONT } from './defaults.js';
-import { getMonthlyQuantiles, getWeeklyQuantiles, getDailyQuantiles, rezoom } from './timeseries.js';
+import { getQuantiles, rezoom } from './timeseries.js';
 
 const GAS_OPTIONS = {
   'so2_mass': {name: 'SO2 (lbs/hr)', color: 'green', yaxis: 'y'},
@@ -66,9 +66,10 @@ export function renderEmissionsTimeSeries(divId, data) {
   var quantiles = {monthly: {}, weekly: {}, daily: {}}
   if (data.length > 0) {
     Object.keys(GAS_OPTIONS).forEach(gas => {
-      quantiles.monthly[gas] = getMonthlyQuantiles(data, gas)
-      quantiles.weekly[gas] = getWeeklyQuantiles(data, gas)
-      quantiles.daily[gas] = getDailyQuantiles(data, gas)
+      let gasQuantiles = getQuantiles(data, gas);
+      quantiles.monthly[gas] = gasQuantiles.monthly;
+      quantiles.weekly[gas] = gasQuantiles.weekly;
+      quantiles.daily[gas] = gasQuantiles.daily;
     })
     const allTraces = {
       monthly: trendTraces(quantiles.monthly),

@@ -1,7 +1,7 @@
 import Plotly from 'plotly.js-basic-dist';
 import $ from 'jquery';
 import { FONT } from './defaults.js';
-import { getMonthlyQuantiles, getWeeklyQuantiles, getDailyQuantiles, rezoom } from './timeseries.js';
+import { getQuantiles, rezoom } from './timeseries.js';
 
 const LAYOUT = {
   showlegend: false,
@@ -47,11 +47,7 @@ function hourlyTraces(data) {
 
 export function renderGenerationTimeSeries(divId, data) {
   $(`#${divId}`).off('plotly_relayout')
-  const quantiles = {
-    monthly: getMonthlyQuantiles(data, 'gen'),
-    weekly: getWeeklyQuantiles(data, 'gen'),
-    daily: getDailyQuantiles(data, 'gen'),
-  }
+  const quantiles = getQuantiles(data, 'gen');
   var traces = hourlyTraces(data)
   if (data.length > 0) {
     const allTraces = {

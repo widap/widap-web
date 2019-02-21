@@ -7,23 +7,11 @@ const ZOOM_THRESHOLD_WEEK_MS = 7 * ZOOM_THRESHOLD_DAY_MS
 const ZOOM_THRESHOLD_MONTH_MS = 30 * ZOOM_THRESHOLD_DAY_MS
 
 const MONTH_FLOOR = d => timeMonth.floor(d.datetime).getTime()
-const WEEK_FLOOR = d => timeWeek.floor(d.datetime).getTime()
-const DAY_FLOOR = d => timeDay.floor(d.datetime).getTime()
 
-function getQuantiles(data, col, dateGrouper) {
-  if (data.length == 0) {
-    return []
-  }
-  var bins = {}
-  data.forEach(d => {
-    const idx = dateGrouper(d)
-    bins[idx] = bins[idx] || []
-    bins[idx].push(d[col])
-  })
+function quantilesFromBins(bins) {
   return Object.keys(bins).map(
     idx => {
-      const vals = bins[idx]
-      vals.sort((a, b) => a - b)
+      const vals = bins[idx];
       return {
         t: +idx,
         min: vals[0],
@@ -31,8 +19,45 @@ function getQuantiles(data, col, dateGrouper) {
         q2: quantile(vals, 0.5),
         q3: quantile(vals, 0.75),
         max: vals[vals.length - 1],
-      }
-    })
+      };
+    });
+}
+
+function sortBinVals(bins) {
+  Object.keys(bins).forEach(idx => bins[idx].sort((a, b) => a - b));
+}
+
+export function getQuantiles(data, col) {
+  if (data.length == 0) {
+    return {daily: [], weekly: [], monthly: []};
+  }
+  var dailyBins = {};
+  data.forEach(d => {
+    const day = timeDay.floor(d.datetime).getTime();
+    dailyBins[day] = dailyBins[day] || [];
+    dailyBins[day].push(d[col]);
+  });
+  // Sorting daily bins prior to constructing weekly and monthly bins enables us
+  // to speed up sorting on those two because they will already be semi-sorted.
+  sortBinVals(dailyBins);
+  var weeklyBins = [], monthlyBins = [];
+  Object.keys(dailyBins).forEach(day => {
+    const week = timeWeek.floor(day).getTime();
+    const month = timeMonth.floor(day).getTime();
+    weeklyBins[week] = weeklyBins[week] || [];
+    monthlyBins[month] = monthlyBins[month] || [];
+    dailyBins[day].forEach(v => {
+      weeklyBins[week].push(v);
+      monthlyBins[month].push(v);
+    });
+  });
+  sortBinVals(weeklyBins);
+  sortBinVals(monthlyBins);
+  return {
+    daily: quantilesFromBins(dailyBins),
+    weekly: quantilesFromBins(weeklyBins),
+    monthly: quantilesFromBins(monthlyBins),
+  };
 }
 
 function filterTrace(trace, left, right) {
@@ -83,8 +108,3 @@ export function rezoom(divId, allTraces) {
     Plotly.react(divId, traces, plot.layout)
   }
 }
-
-let getMonthlyQuantiles = (data, col) => getQuantiles(data, col, MONTH_FLOOR);
-let getWeeklyQuantiles = (data, col) => getQuantiles(data, col, WEEK_FLOOR);
-let getDailyQuantiles = (data, col) => getQuantiles(data, col, DAY_FLOOR);
-export { getMonthlyQuantiles, getWeeklyQuantiles, getDailyQuantiles };
