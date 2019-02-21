@@ -97,9 +97,7 @@ function selectAndFilterTraces(allTraces, timeStart, timeEnd) {
 }
 
 export function rezoom(divId, allTraces) {
-  console.log("rezoom 'constructor' invoked");
   return (update) => {
-    console.log("Rezoom invoked");
     const plot = update.currentTarget,
           xRange = plot.layout.xaxis.range,
           timeStart = new Date(xRange[0]),
