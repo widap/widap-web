@@ -5,8 +5,10 @@
     "d3-array": "^2.0.3",
     "d3-fetch": "^1.1.2",
     "d3-time": "^1.0.11",
+    "d3-time-format": "^2.1.3",
     "leaflet": "^1.4.0",
     "plotly.js-basic-dist": "^1.44.4",
+    "plotly.js-gl2d-dist": "^1.44.4",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-select": "^2.4.1"

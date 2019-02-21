@@ -1,6 +1,7 @@
 import { Spinner } from './spin.js';
 import { renderGenerationTimeSeries } from './generation-time-series.js';
 import { renderEmissionsTimeSeries } from './emissions-time-series.js';
+import { renderEmissionsIntensityVsCF } from './emis-intensity-vs-cf.js';
 import React from 'react';
 import Select from 'react-select';
 import ReactDOM from 'react-dom';
@@ -14,9 +15,10 @@ const PLANT_OPTIONS = PLANTS_UNITS.map(
 const GH_HOST = 'https://media.githubusercontent.com';
 const EMIS_DATA_REPO =  `${GH_HOST}/media/widap/emissions-data/master/csv`;
 
-const GENERATION_TIME_SERIES = 'generation-time-series'
-const EMISSIONS_TIME_SERIES = 'emissions-time-series'
-const SPINNER_DIV = 'loading-spinner'
+const GENERATION_TIME_SERIES = 'generation-time-series';
+const EMISSIONS_TIME_SERIES = 'emissions-time-series';
+const EMISSIONS_INTENSITY_VS_CF = 'emissions-intensity-vs-cf';
+const SPINNER_DIV = 'loading-spinner';
 const SPINNER_OPTS = {lines: 9, length: 5, width: 3, radius: 5};
 
 function loadPlantsUnits(rows) {
@@ -62,6 +64,7 @@ class DashboardControl extends React.Component {
   updatePlots = (data) => {
     renderGenerationTimeSeries(GENERATION_TIME_SERIES, data);
     renderEmissionsTimeSeries(EMISSIONS_TIME_SERIES, data);
+    renderEmissionsIntensityVsCF(EMISSIONS_INTENSITY_VS_CF, data);
   }
 
   componentDidMount() {

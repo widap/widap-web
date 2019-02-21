@@ -1,10 +1,10 @@
-import Plotly from 'plotly.js-basic-dist';
-import { d3 } from 'd3-time';
+import Plotly from 'plotly.js-gl2d-dist';
+import { timeFormat } from 'd3-time-format';
 import { FONT, MARGIN } from './defaults.js';
 
-const KG_PER_LB = 0.45359237
-const KG_PER_TON = 2000 * KG_PER_LB
-const DATE_HOUR_FMT = d3.timeFormat('%Y-%m-%d %H:%M')
+const KG_PER_LB = 0.45359237;
+const KG_PER_TON = 2000 * KG_PER_LB;
+const DATE_HOUR_FMT = timeFormat('%Y-%m-%d %H:%M');
 
 // Durstenfeld shuffle. Modifies array in-place.
 function shuffle(array) {
@@ -17,21 +17,24 @@ function shuffle(array) {
 }
 
 function jitter(array, maxJitter) {
-  return array.map(x => x + (maxJitter * (Math.random() - 0.5)))
+  return array.map(x => x + maxJitter * (Math.random() - 0.5));
 }
 
-function renderEmissionsIntensityVsCapFactor(divId, data) {
-  var traces = []
+// TODO: Probably only render a single gas at a time. It's quite costly to do a
+// ScatterGL plot with 150k points, and it's a lot of information for a user to
+// ingest anyways. Removing one of the two would save ~1.75s in load time.
+export function renderEmissionsIntensityVsCF(divId, data) {
+  var traces = [];
   if (data.length > 0) {
-    var dataCopy = data.slice()
-    shuffle(dataCopy)
-    const maxGen = dataCopy.map(d => d.gen).reduce((a, b) => Math.max(a, b))
-    dataCopy.forEach(d => d.cf = d.gen / maxGen)
-    const filtered = dataCopy.filter(d => d.cf > 0.02)
+    var dataCopy = data.slice();
+    shuffle(dataCopy);
+    const maxGen = dataCopy.map(d => d.gen).reduce((a, b) => Math.max(a, b));
+    dataCopy.forEach(d => d.cf = d.gen / maxGen);
+    const filtered = dataCopy.filter(d => d.cf > 0.02);
     const traceDefs = [
       {y: filtered.map(d => KG_PER_TON * d.co2_mass / d.gen), xaxis: 'x', yaxis: 'y'},
       {y: filtered.map(d => KG_PER_LB * d.so2_mass / d.gen), xaxis: 'x2', yaxis: 'y2'},
-    ]
+    ];
     traces = traceDefs.map(
       traceDef => ({
         x: jitter(filtered.map(d => d.cf), 0.005),
@@ -49,7 +52,7 @@ function renderEmissionsIntensityVsCapFactor(divId, data) {
           'colorscale': 'Viridis',
           'showscale': true,
         }
-      }))
+      }));
   }
   const layout = {
     title: {
@@ -68,6 +71,6 @@ function renderEmissionsIntensityVsCapFactor(divId, data) {
     yaxis2: {title: 'SO<sub>2</sub> Intensity (lbs/MWh)'},
     font: FONT,
     margin: MARGIN,
-  }
-  Plotly.react(divId, traces, layout, {displaylogo: false})
+  };
+  Plotly.react(divId, traces, layout, {displaylogo: false});
 }
