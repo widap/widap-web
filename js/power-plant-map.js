@@ -114,7 +114,7 @@ const map = L.map('power-plants-map', {
   layers: [wikiMapTiles],
 });
 
-const powerPlants = L.geoJSON(powerPlantsGeoJson, {
+let powerPlants = L.geoJSON(powerPlantsGeoJson, {
   pointToLayer: function(feature, latlng) {
     return L.circleMarker(latlng, powerPlantMarkerOptions(feature.properties))
     .bindTooltip(feature.properties.name)
@@ -146,23 +146,23 @@ powerPlants.addTo(map);
 stateMarkers.addTo(map);
 
 $('#facility-vizmetric-selector').change(function(){
-  plants = powerPlants.getLayers()
-  for (i = 0; i < plants.length; i++) {
-    props = plants[i].feature.properties
-    plants[i]._path.style['transition'] = 'd 0.6s'
-    plants[i]._path.style['-webkit-transition'] = 'd 0.6s'
-    radiusBasis = $(this).val()
+  var plants = powerPlants.getLayers();
+  for (let plant of plants) {
+    let props = plant.feature.properties;
+    plant._path.style['transition'] = 'd 0.6s';
+    plant._path.style['-webkit-transition'] = 'd 0.6s';
+    let radiusBasis = $(this).val();
     if (radiusBasis == "capacity") {
-      plants[i].setRadius(getRadiusBasedOnCapacity(props.capacity))
+      plant.setRadius(getRadiusBasedOnCapacity(props.capacity));
     } else if (radiusBasis == "emissions") {
-      plants[i].setRadius(getRadiusBasedOnEmissions(props.total_co2_emissions))
+      plant.setRadius(getRadiusBasedOnEmissions(props.total_co2_emissions));
     }
 
   }
   setTimeout(() => {
-    for (i = 0; i < plants.length; i++) {
-      plants[i]._path.style['transition'] = '';
-      plants[i]._path.style['-webkit-transition'] = '';
+    for (let plant of plants) {
+      plant._path.style['transition'] = '';
+      plant._path.style['-webkit-transition'] = '';
     }
   }, 600)
 });
