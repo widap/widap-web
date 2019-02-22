@@ -1,10 +1,25 @@
 import Plotly from 'plotly.js-basic-dist';
 import { quantile } from 'd3-array';
 import { timeDay, timeWeek, timeMonth } from 'd3-time';
+import { timeParse } from 'd3-time-format';
 
 const ZOOM_THRESHOLD_DAY_MS = 1.4e10
 const ZOOM_THRESHOLD_WEEK_MS = 7 * ZOOM_THRESHOLD_DAY_MS
 const ZOOM_THRESHOLD_MONTH_MS = 30 * ZOOM_THRESHOLD_DAY_MS
+
+const YMD_PARSER = timeParse('%Y-%m-%d');
+const YMD_HMS_PARSER = timeParse('%Y-%m-%d %H:%M:%S');
+
+// Parses a time such as "2007-09-08" or "2007-09-08 08:10:26.087", returning
+// the same for both values.
+function parseDateWithDayResolution(spec) {
+  return YMD_PARSER(spec.split(' ')[0]);
+}
+
+// Parses a time such as "2007-09-08 08:10:26.087", ignoring fractional seconds
+function parseDateWithSecondResolution(spec) {
+  return YMD_HMS_PARSER(spec.split('.')[0]);
+}
 
 function quantilesFromBins(bins) {
   return Object.keys(bins).map(
@@ -78,7 +93,7 @@ function filterTrace(trace, left, right) {
   return filtered
 }
 
-function selectTrace(allTraces, timeDelta) {
+function selectTraces(allTraces, timeDelta) {
   if (timeDelta > ZOOM_THRESHOLD_MONTH_MS)
     return allTraces.monthly
   if (timeDelta > ZOOM_THRESHOLD_WEEK_MS)
@@ -88,21 +103,23 @@ function selectTrace(allTraces, timeDelta) {
   return allTraces.hourly
 }
 
-function selectAndFilterTraces(allTraces, timeStart, timeEnd) {
-  const timeDelta = timeEnd.getTime() - timeStart.getTime()
-  const left = new Date(timeStart.getTime() - timeDelta)
-  const right = new Date(timeEnd.getTime() + timeDelta)
-  const selected = selectTrace(allTraces, timeDelta)
-  return selected.map(trace => filterTrace(trace, left, right))
-}
-
 export function rezoom(divId, allTraces) {
   return (update) => {
-    const plot = update.currentTarget,
-          xRange = plot.layout.xaxis.range,
-          timeStart = new Date(xRange[0]),
-          timeEnd = new Date(xRange[1])
-    const traces = selectAndFilterTraces(allTraces, timeStart, timeEnd)
-    Plotly.react(divId, traces, plot.layout)
+    const layout = update.currentTarget.layout, xRange = layout.xaxis.range;
+    var traces;
+    if (layout.xaxis.autorange) {
+      let timeStart = parseDateWithDayResolution(xRange[0]);
+      let timeEnd = parseDateWithDayResolution(xRange[1]);
+      traces = selectTraces(allTraces, timeEnd - timeStart);
+    } else {
+      let timeStart = parseDateWithSecondResolution(xRange[0]),
+          timeEnd = parseDateWithSecondResolution(xRange[1]),
+          timeDelta = timeEnd - timeStart;
+      let left = new Date(timeStart.getTime() - timeDelta);
+      let right = new Date(timeEnd.getTime() + timeDelta);
+      let selected = selectTraces(allTraces, timeDelta);
+      traces = selected.map(trace => filterTrace(trace, left, right));
+    }
+    Plotly.react(divId, traces, layout)
   };
 }
