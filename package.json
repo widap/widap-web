@@ -24,7 +24,8 @@
     "build-prod:map": "browserify js/power-plant-map.js -p tinyify -o bundles/power-plant-map-bundle.js",
     "build-prod:dashboard": "browserify js/unit-level-dashboard.js -p tinyify -o bundles/unit-level-dashboard-bundle.js",
     "watch:map": "watchify js/power-plant-map.js -o bundles/power-plant-map-bundle.js",
-    "watch:dashboard": "watchify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js"
+    "watch:dashboard": "watchify js/unit-level-dashboard.js -o bundles/unit-level-dashboard-bundle.js",
+    "lint": "eslint js/*.js"
   },
   "browserify": {
     "transform": [
