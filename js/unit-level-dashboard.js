@@ -7,6 +7,7 @@ import Select from 'react-select';
 import ReactDOM from 'react-dom';
 import PLANTS_UNITS from './plants-units.js';
 import { csv } from 'd3-fetch';
+import { timeParse } from 'd3-time-format';
 
 const PLANT_UNIT_MAP = loadPlantsUnits(PLANTS_UNITS);
 const PLANT_OPTIONS = PLANTS_UNITS.map(
@@ -21,6 +22,9 @@ const EMISSIONS_INTENSITY_VS_CF = 'emissions-intensity-vs-cf';
 const SPINNER_DIV = 'loading-spinner';
 const SPINNER_OPTS = {lines: 9, length: 5, width: 3, radius: 5};
 
+// TODO: Reformat CSV emissions data to have Unix timestamps instead.
+const YMDH_PARSE = timeParse('%Y-%m-%d %H:00:00');
+
 function loadPlantsUnits(rows) {
   var plantsUnits = {};
   rows.forEach(row => plantsUnits[row.orispl_code] = {
@@ -32,7 +36,7 @@ function loadPlantsUnits(rows) {
 
 function parseTimeSeriesRow(row) {
   return {
-    datetime: new Date(row.datetime),
+    datetime: YMDH_PARSE(row.datetime),
     gen: +row.gen,
     co2_mass: +row.co2_mass,
     so2_mass: +row.so2_mass,
