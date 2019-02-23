@@ -46,13 +46,13 @@ function hourlyTraces(data) {
 
 export function renderGenerationTimeSeries(divId, data) {
   $(`#${divId}`).off('plotly_relayout')
-  const quantiles = getQuantiles(data, 'gen');
+  const quartiles = getQuantiles(data, 'gen');
   var traces = hourlyTraces(data)
   if (data.length > 0) {
     const allTraces = {
-      monthly: trendTraces(quantiles.monthly),
-      weekly: trendTraces(quantiles.weekly),
-      daily: trendTraces(quantiles.daily),
+      monthly: trendTraces(quartiles.monthly),
+      weekly: trendTraces(quartiles.weekly),
+      daily: trendTraces(quartiles.daily),
       hourly: traces,
     }
     $(`#${divId}`).on('plotly_relayout', rezoom(divId, allTraces))

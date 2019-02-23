@@ -62,18 +62,18 @@ function hourlyTraces(data) {
 export function renderEmissionsTimeSeries(divId, data) {
   $(`#${divId}`).off('plotly_relayout')
   var traces = hourlyTraces(data)
-  var quantiles = {monthly: {}, weekly: {}, daily: {}}
+  var quartiles = {monthly: {}, weekly: {}, daily: {}}
   if (data.length > 0) {
     Object.keys(GAS_OPTIONS).forEach(gas => {
       let gasQuantiles = getQuantiles(data, gas);
-      quantiles.monthly[gas] = gasQuantiles.monthly;
-      quantiles.weekly[gas] = gasQuantiles.weekly;
-      quantiles.daily[gas] = gasQuantiles.daily;
+      quartiles.monthly[gas] = gasQuantiles.monthly;
+      quartiles.weekly[gas] = gasQuantiles.weekly;
+      quartiles.daily[gas] = gasQuantiles.daily;
     });
     const allTraces = {
-      monthly: trendTraces(quantiles.monthly),
-      weekly: trendTraces(quantiles.weekly),
-      daily: trendTraces(quantiles.daily),
+      monthly: trendTraces(quartiles.monthly),
+      weekly: trendTraces(quartiles.weekly),
+      daily: trendTraces(quartiles.daily),
       hourly: traces,
     };
     $(`#${divId}`).on('plotly_relayout', rezoom(divId, allTraces));
