@@ -8,17 +8,25 @@ const ZOOM_THRESHOLD_WEEK_MS = 7 * ZOOM_THRESHOLD_DAY_MS
 const ZOOM_THRESHOLD_MONTH_MS = 30 * ZOOM_THRESHOLD_DAY_MS
 
 const YMD_PARSER = timeParse('%Y-%m-%d');
-const YMD_HMS_PARSER = timeParse('%Y-%m-%d %H:%M:%S');
+const HM_PARSER = timeParse('%H:%M');
+const HMS_PARSER = timeParse('%H:%M:%S');
 
-// Parses a time such as "2007-09-08" or "2007-09-08 08:10:26.087", returning
-// the same for both values.
-function parseDateWithDayResolution(spec) {
-  return YMD_PARSER(spec.split(' ')[0]);
-}
-
-// Parses a time such as "2007-09-08 08:10:26.087", ignoring fractional seconds
-function parseDateWithSecondResolution(spec) {
-  return YMD_HMS_PARSER(spec.split('.')[0]);
+// Plotly emits time range data in very inconsistent formats. Here are 4 strings
+// we might have to interpret:
+// - "2000-12-01"
+// - "2010-03-18 18:00"
+// - "2009-04-09 01:52:30"
+// - "2008-05-14 13:51:28.6957"
+// This method ignores fractional seconds but otherwise tries to return the most
+// granular Date object for the given string.
+function parseDate(spec) {
+  let parts = spec.split(' '), date = YMD_PARSER(parts[0]);
+  if (parts.size > 1) {
+    let hmsSpec = parts[1].split('.')[0]; // ignore fractional seconds
+    let hms = HMS_PARSER(hmsSpec) || HM_PARSER(hmsSpec);
+    return new Date(date + hms);
+  }
+  return date;
 }
 
 function addDays(days) {
@@ -122,14 +130,15 @@ function selectTraces(allTraces, timeDelta) {
 export function rezoom(divId, allTraces) {
   return (update) => {
     const layout = update.currentTarget.layout, xRange = layout.xaxis.range;
+    console.log(xRange);
     var traces;
     if (layout.xaxis.autorange) {
-      let timeStart = parseDateWithDayResolution(xRange[0]);
-      let timeEnd = parseDateWithDayResolution(xRange[1]);
+      let timeStart = parseDate(xRange[0]);
+      let timeEnd = parseDate(xRange[1]);
       traces = selectTraces(allTraces, timeEnd - timeStart);
     } else {
-      let timeStart = parseDateWithSecondResolution(xRange[0]),
-          timeEnd = parseDateWithSecondResolution(xRange[1]),
+      let timeStart = parseDate(xRange[0]),
+          timeEnd = parseDate(xRange[1]),
           timeDelta = timeEnd - timeStart;
       let left = new Date(timeStart.getTime() - timeDelta);
       let right = new Date(timeEnd.getTime() + timeDelta);
