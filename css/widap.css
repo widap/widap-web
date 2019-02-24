@@ -42,6 +42,7 @@ button:focus {
 }
 .flex-row {
   display: flex;
+  flex-wrap: wrap;
   max-width: 1000px;
 }
 .flex-row > * {
@@ -49,16 +50,17 @@ button:focus {
 }
 #plant-selector {
   flex: 6;
+  min-width: 300px;
 }
 #unit-selector {
-  flex: 2;
+  flex: 3;
+  min-width: 100px;
 }
 #load-data-button {
   flex: 1;
 }
 #loading-spinner {
-  height: 32px;
-  width: 32px;
+  min-width: 32px;
   position: relative;
 }
 @keyframes spinner-line-fade-more {
