@@ -1,4 +1,3 @@
-import Plotly from 'plotly.js-basic-dist';
 import L from 'leaflet';
 import powerPlantsGeoJson from './plants.json';
 import stateMarkersGeoJson from './statemarkers.json';

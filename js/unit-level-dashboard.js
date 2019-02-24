@@ -123,7 +123,7 @@ class DashboardControl extends React.Component {
           className='selector'
           placeholder='Select a unit...'
         />
-        <button id="load-data-button" onClick={this.maybeLoadData}>Load data</button>
+        <button id="load-data-button" onClick={this.maybeLoadData}>Load</button>
         <div id={SPINNER_DIV}></div>
       </div>
     );

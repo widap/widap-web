@@ -1,4 +1,3 @@
-import Plotly from 'plotly.js-basic-dist';
 import { FONT } from './defaults.js';
 
 function newTraceGenerator(data) {

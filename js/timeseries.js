@@ -1,4 +1,3 @@
-import Plotly from 'plotly.js-basic-dist';
 import { quantile } from 'd3-array';
 import { timeDay, timeWeek, timeMonth } from 'd3-time';
 import { timeParse } from 'd3-time-format';

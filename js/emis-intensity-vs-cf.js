@@ -1,4 +1,3 @@
-import Plotly from 'plotly.js-gl2d-dist';
 import { timeFormat } from 'd3-time-format';
 import { FONT, MARGIN } from './defaults.js';
 
