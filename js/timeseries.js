@@ -130,7 +130,6 @@ function selectTraces(allTraces, timeDelta) {
 export function rezoom(divId, allTraces) {
   return (update) => {
     const layout = update.currentTarget.layout, xRange = layout.xaxis.range;
-    console.log(xRange);
     var traces;
     if (layout.xaxis.autorange) {
       let timeStart = parseDate(xRange[0]);
