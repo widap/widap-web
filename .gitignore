@@ -1,5 +1,5 @@
 .DS_Store
-bundles/*.js
+static/*.js
 pipeline/widap.cfg
 unitlevel/
 node_modules/
