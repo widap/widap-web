@@ -9,9 +9,6 @@ import PLANTS from './plants.json';
 import { csv } from 'd3-fetch';
 import { timeParse } from 'd3-time-format';
 
-const PLANT_UNIT_MAP = loadPlants(PLANTS);
-const PLANT_OPTIONS = PLANTS.map(
-  row => ({label: row.properties.name, value: row.properties.orispl_code}));
 
 const GH_HOST = 'https://media.githubusercontent.com';
 const EMIS_DATA_REPO =  `${GH_HOST}/media/widap/emissions-data/master/csv`;
@@ -57,6 +54,9 @@ class UnitLevelDashboard extends React.Component {
     loadedUnit: null,
   };
   spinner = new Spinner(SPINNER_OPTS);
+  plantUnitMap = loadPlants(PLANTS);
+  plantOptions = PLANTS.map(
+    row => ({label: row.properties.name, value: row.properties.orispl_code}));
 
   clearPlots = () => {
     this.updatePlots([])
@@ -75,8 +75,8 @@ class UnitLevelDashboard extends React.Component {
   handlePlantChange = (selected) => {
     if (selected !== this.state.selectedPlant) {
       this.setState({selectedPlant: selected, selectedUnit: null});
-      if (selected != null && PLANT_UNIT_MAP[selected.value]) {
-        const unitIds = PLANT_UNIT_MAP[selected.value].unit_ids;
+      if (selected != null && this.plantUnitMap[selected.value]) {
+        const unitIds = this.plantUnitMap[selected.value].unit_ids;
         this.setState({unitOpts: unitIds.map(u => ({label: u, value: u}))});
       }
     }
@@ -109,7 +109,7 @@ class UnitLevelDashboard extends React.Component {
             id='plant-selector'
             value={this.state.selectedPlant}
             onChange={this.handlePlantChange}
-            options={PLANT_OPTIONS}
+            options={this.plantOptions}
             className='selector'
             placeholder='Select a plant...'
           />
