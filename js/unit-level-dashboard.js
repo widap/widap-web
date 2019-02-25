@@ -51,7 +51,7 @@ function loadData(orisplCode, unitId) {
   return csv(dataUri, parseTimeSeriesRow);
 }
 
-class DashboardControl extends React.Component {
+class UnitLevelDashboard extends React.Component {
   state = {
     selectedPlant: null,
     unitOpts: [],
@@ -106,29 +106,36 @@ class DashboardControl extends React.Component {
 
   render() {
     return (
-      <div className='flex-row'>
-        <Select
-          id='plant-selector'
-          value={this.state.selectedPlant}
-          onChange={this.handlePlantChange}
-          options={PLANT_OPTIONS}
-          className='selector'
-          placeholder='Select a plant...'
-        />
-        <Select
-          id='unit-selector'
-          value={this.state.selectedUnit}
-          onChange={this.handleUnitChange}
-          options={this.state.unitOpts}
-          className='selector'
-          placeholder='Select a unit...'
-        />
-        <button id="load-data-button" onClick={this.maybeLoadData}>Load</button>
-        <div id={SPINNER_DIV}></div>
+      <div>
+        <div className='flex-row'>
+          <Select
+            id='plant-selector'
+            value={this.state.selectedPlant}
+            onChange={this.handlePlantChange}
+            options={PLANT_OPTIONS}
+            className='selector'
+            placeholder='Select a plant...'
+          />
+          <Select
+            id='unit-selector'
+            value={this.state.selectedUnit}
+            onChange={this.handleUnitChange}
+            options={this.state.unitOpts}
+            className='selector'
+            placeholder='Select a unit...'
+          />
+          <button id="load-data-button" onClick={this.maybeLoadData}>Load</button>
+          <div id={SPINNER_DIV}></div>
+        </div>
+        <h2>Generation time series</h2>
+        <div id={GENERATION_TIME_SERIES}></div>
+        <h2>Emissions Time Series</h2>
+        <div id={EMISSIONS_TIME_SERIES}></div>
+        <h2>Emissions Intensity vs Capacity Factor</h2>
+        <div id={EMISSIONS_INTENSITY_VS_CF}></div>
       </div>
     );
   }
 }
 
-ReactDOM.render(
-  <DashboardControl />, document.getElementById('dashboard-control'));
+ReactDOM.render(<UnitLevelDashboard />, document.getElementById('app-root'));
