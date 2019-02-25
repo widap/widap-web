@@ -5,13 +5,13 @@ import { renderEmissionsIntensityVsCF } from './emis-intensity-vs-cf.js';
 import React from 'react';
 import Select from 'react-select';
 import ReactDOM from 'react-dom';
-import PLANTS_UNITS from './plants-units.js';
+import PLANTS from './plants.json';
 import { csv } from 'd3-fetch';
 import { timeParse } from 'd3-time-format';
 
-const PLANT_UNIT_MAP = loadPlantsUnits(PLANTS_UNITS);
-const PLANT_OPTIONS = PLANTS_UNITS.map(
-  row => ({label: row.name, value: row.orispl_code}));
+const PLANT_UNIT_MAP = loadPlants(PLANTS);
+const PLANT_OPTIONS = PLANTS.map(
+  row => ({label: row.properties.name, value: row.properties.orispl_code}));
 
 const GH_HOST = 'https://media.githubusercontent.com';
 const EMIS_DATA_REPO =  `${GH_HOST}/media/widap/emissions-data/master/csv`;
@@ -25,13 +25,10 @@ const SPINNER_OPTS = {lines: 9, length: 5, width: 3, radius: 5};
 // TODO: Reformat CSV emissions data to have Unix timestamps instead.
 const YMDH_PARSE = timeParse('%Y-%m-%d %H:00:00');
 
-function loadPlantsUnits(rows) {
-  var plantsUnits = {};
-  rows.forEach(row => plantsUnits[row.orispl_code] = {
-    name: row.name,
-    unitIds: row.unit_ids,
-  });
-  return plantsUnits;
+function loadPlants(rows) {
+  var plants = {};
+  rows.forEach(row => { plants[row.properties.orispl_code] = row.properties });
+  return plants;
 }
 
 function parseTimeSeriesRow(row) {
@@ -46,7 +43,7 @@ function parseTimeSeriesRow(row) {
 }
 
 function loadData(orisplCode, unitId) {
-  const sanitizedUnitId = unitId.replace('*', '');
+  const sanitizedUnitId = unitId.replace(/\*/g, '');
   const dataUri = `${EMIS_DATA_REPO}/${orisplCode}_${sanitizedUnitId}.csv`;
   return csv(dataUri, parseTimeSeriesRow);
 }
@@ -79,7 +76,7 @@ class UnitLevelDashboard extends React.Component {
     if (selected !== this.state.selectedPlant) {
       this.setState({selectedPlant: selected, selectedUnit: null});
       if (selected != null && PLANT_UNIT_MAP[selected.value]) {
-        const unitIds = PLANT_UNIT_MAP[selected.value].unitIds;
+        const unitIds = PLANT_UNIT_MAP[selected.value].unit_ids;
         this.setState({unitOpts: unitIds.map(u => ({label: u, value: u}))});
       }
     }

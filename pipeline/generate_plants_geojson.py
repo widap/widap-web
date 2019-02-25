@@ -23,6 +23,7 @@ def row_to_feature(row):
         "county": row.county,
         "capacity": checknan(row.max_gload, default="unknown"),
         "total_co2_emissions": checknan(row.total_co2, default="unknown"),
+        "unit_ids": row.unit_ids.split("/"),
       },
       "geometry": {
         "type": "Point",
@@ -31,20 +32,11 @@ def row_to_feature(row):
     }
 
 def join_csvs_and_dump_to_geojson(overview_csv, extra_details_csv):
-    overview = pd.read_csv(overview_csv)
-    supplemental = pd.read_csv(extra_details_csv)
-    overview.index = overview.orispl_code
-    supplemental.index = supplemental.orispl_code
-    overview.drop(["orispl_code"], axis=1, inplace=True)
-    supplemental.drop(["orispl_code"], axis=1, inplace=True)
+    overview = pd.read_csv(overview_csv, index_col="orispl_code")
+    supplemental = pd.read_csv(extra_details_csv, index_col="orispl_code")
     df = overview.join(supplemental)
     features = [row_to_feature(row) for row in df.itertuples()]
-    feature_collection = {
-        "type": "FeatureCollection",
-        "features": features,
-        "name": "WidapPowerPlants"
-    }
-    return "var powerPlants = %s" % json.dumps(feature_collection, indent=2)
+    return json.dumps(features, indent=2)
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:

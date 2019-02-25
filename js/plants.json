@@ -8,7 +8,10 @@
       "operator": "El Paso Electric Company",
       "county": "El Paso",
       "capacity": 70.0,
-      "total_co2_emissions": "unknown"
+      "total_co2_emissions": "unknown",
+      "unit_ids": [
+        "CTG-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -21,13 +24,16 @@
   {
     "type": "Feature",
     "properties": {
-      "name": "Escalante ",
+      "name": "Escalante Generating Station",
       "fuel_source": "Coal",
       "orispl_code": 87,
       "operator": "Tri-State Generation & Transmission",
       "county": "McKinley",
       "capacity": 273.0,
-      "total_co2_emissions": 29866469.0
+      "total_co2_emissions": 29866469.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -46,7 +52,13 @@
       "operator": "Arizona Public Service Company",
       "county": "Navajo",
       "capacity": 1145.0,
-      "total_co2_emissions": 131646593.0
+      "total_co2_emissions": 131646593.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -65,7 +77,11 @@
       "operator": "Arizona Public Service Company",
       "county": "Maricopa",
       "capacity": 228.0,
-      "total_co2_emissions": 1968887.0
+      "total_co2_emissions": 1968887.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -84,7 +100,12 @@
       "operator": "Arizona Public Service Company",
       "county": "Maricopa",
       "capacity": 652.0,
-      "total_co2_emissions": 11557946.0
+      "total_co2_emissions": 11557946.0,
+      "unit_ids": [
+        "CC4",
+        "CC5A",
+        "CC5B"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -103,7 +124,12 @@
       "operator": "Arizona Public Service Company",
       "county": "Pinal",
       "capacity": 287.0,
-      "total_co2_emissions": 1199637.0
+      "total_co2_emissions": 1199637.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "CT3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -122,7 +148,12 @@
       "operator": "Arizona Public Service Company",
       "county": "Yuma",
       "capacity": 170.0,
-      "total_co2_emissions": 3511900.0
+      "total_co2_emissions": 3511900.0,
+      "unit_ids": [
+        "1",
+        "CT5",
+        "CT6"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -141,7 +172,10 @@
       "operator": "Tucson Electric Power Company",
       "county": "Pima",
       "capacity": 85.0,
-      "total_co2_emissions": 223448.0
+      "total_co2_emissions": 223448.0,
+      "unit_ids": [
+        "GT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -160,7 +194,13 @@
       "operator": "Tucson Electric Power Company",
       "county": "Pima",
       "capacity": 413.0,
-      "total_co2_emissions": 14769048.0
+      "total_co2_emissions": 14769048.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -179,7 +219,12 @@
       "operator": "Salt River Project",
       "county": "Maricopa",
       "capacity": 842.0,
-      "total_co2_emissions": 2858350.0
+      "total_co2_emissions": 2858350.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -198,7 +243,12 @@
       "operator": "Salt River Project",
       "county": "Maricopa",
       "capacity": 362.0,
-      "total_co2_emissions": 5881921.0
+      "total_co2_emissions": 5881921.0,
+      "unit_ids": [
+        "K-1",
+        "K-2",
+        "K-7"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -217,7 +267,13 @@
       "operator": "Arizona Electric Power Cooperative",
       "county": "Cochise",
       "capacity": 724.0,
-      "total_co2_emissions": 48750914.0
+      "total_co2_emissions": 48750914.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -236,7 +292,11 @@
       "operator": "Contra Costa Power Plant, NRG Delta LLC",
       "county": "Contra Costa",
       "capacity": 751.0,
-      "total_co2_emissions": 4805911.0
+      "total_co2_emissions": 4805911.0,
+      "unit_ids": [
+        "10",
+        "9"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -255,7 +315,11 @@
       "operator": "Pacific Gas and Electric Company",
       "county": "Humboldt",
       "capacity": 109.0,
-      "total_co2_emissions": 3454315.0
+      "total_co2_emissions": 3454315.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -274,7 +338,14 @@
       "operator": "Pacific Gas and Electric Company",
       "county": "San Francisco",
       "capacity": 175.0,
-      "total_co2_emissions": 1649077.0
+      "total_co2_emissions": 1649077.0,
+      "unit_ids": [
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -293,7 +364,13 @@
       "operator": "Dynegy Power Corporation",
       "county": "San Luis Obispo",
       "capacity": 1027.0,
-      "total_co2_emissions": 4963077.0
+      "total_co2_emissions": 4963077.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -312,7 +389,15 @@
       "operator": "Dynegy Moss Landing,, LLC",
       "county": "Monterey",
       "capacity": 2617.0,
-      "total_co2_emissions": 40477377.0
+      "total_co2_emissions": 40477377.0,
+      "unit_ids": [
+        "1A",
+        "2A",
+        "3A",
+        "4A",
+        "6-1",
+        "7-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -331,7 +416,16 @@
       "operator": "GenOn Delta, LLC",
       "county": "Contra Costa",
       "capacity": 1991.0,
-      "total_co2_emissions": 13058599.0
+      "total_co2_emissions": 13058599.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -350,7 +444,10 @@
       "operator": "GenOn Potrero, LLC",
       "county": "San Francisco",
       "capacity": 213.0,
-      "total_co2_emissions": 4058822.0
+      "total_co2_emissions": 4058822.0,
+      "unit_ids": [
+        "3-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -369,7 +466,14 @@
       "operator": "Cabrillo Power Operations Inc.",
       "county": "San Diego",
       "capacity": 978.0,
-      "total_co2_emissions": 16626390.0
+      "total_co2_emissions": 16626390.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -388,7 +492,13 @@
       "operator": "Dynegy Power Corporation",
       "county": "San Diego",
       "capacity": 733.0,
-      "total_co2_emissions": 7473392.0
+      "total_co2_emissions": 7473392.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -407,7 +517,15 @@
       "operator": "AES Corporation",
       "county": "Los Angeles",
       "capacity": 1983.0,
-      "total_co2_emissions": 24405987.0
+      "total_co2_emissions": 24405987.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -426,7 +544,15 @@
       "operator": "NRG California South LP.",
       "county": "San Bernardino",
       "capacity": 676.0,
-      "total_co2_emissions": 6181480.0
+      "total_co2_emissions": 6181480.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "31",
+        "32",
+        "41",
+        "42"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -445,7 +571,15 @@
       "operator": "NRG El Segundo Operations Inc.",
       "county": "Los Angeles",
       "capacity": 979.0,
-      "total_co2_emissions": 10838616.0
+      "total_co2_emissions": 10838616.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "7"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -464,7 +598,13 @@
       "operator": "NRG California South LP.",
       "county": "San Bernardino",
       "capacity": 916.0,
-      "total_co2_emissions": 5885053.0
+      "total_co2_emissions": 5885053.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -483,7 +623,13 @@
       "operator": "",
       "county": "San Bernardino",
       "capacity": "unknown",
-      "total_co2_emissions": "unknown"
+      "total_co2_emissions": "unknown",
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -502,7 +648,13 @@
       "operator": "AES Corporation",
       "county": "Orange",
       "capacity": 884.0,
-      "total_co2_emissions": 12894210.0
+      "total_co2_emissions": 12894210.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3A",
+        "4A"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -521,7 +673,13 @@
       "operator": "Long Beach Generation, LLC",
       "county": "Los Angeles",
       "capacity": 264.0,
-      "total_co2_emissions": 340690.0
+      "total_co2_emissions": 340690.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -540,7 +698,11 @@
       "operator": "NRG California South LP.",
       "county": "Ventura",
       "capacity": 457.0,
-      "total_co2_emissions": 4657150.0
+      "total_co2_emissions": 4657150.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -559,7 +721,11 @@
       "operator": "NRG California South LP.",
       "county": "Ventura",
       "capacity": 1549.0,
-      "total_co2_emissions": 10695048.0
+      "total_co2_emissions": 10695048.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -578,7 +744,14 @@
       "operator": "AES Corporation",
       "county": "Los Angeles",
       "capacity": 1305.0,
-      "total_co2_emissions": 10348847.0
+      "total_co2_emissions": 10348847.0,
+      "unit_ids": [
+        "17",
+        "5",
+        "6",
+        "7",
+        "8"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -597,7 +770,15 @@
       "operator": "Southern California Edison Company",
       "county": "San Bernardino",
       "capacity": 1161.0,
-      "total_co2_emissions": 29054473.0
+      "total_co2_emissions": 29054473.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3-1",
+        "3-2",
+        "4-1",
+        "4-2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -616,7 +797,10 @@
       "operator": "",
       "county": "Los Angeles",
       "capacity": 7.0,
-      "total_co2_emissions": 243.0
+      "total_co2_emissions": 243.0,
+      "unit_ids": [
+        "M4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -635,7 +819,12 @@
       "operator": "City of Glendale",
       "county": "Los Angeles",
       "capacity": 111.0,
-      "total_co2_emissions": 2773835.0
+      "total_co2_emissions": 2773835.0,
+      "unit_ids": [
+        "4",
+        "5",
+        "9"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -654,7 +843,14 @@
       "operator": "Imperial Irrigation District",
       "county": "Imperial",
       "capacity": 290.0,
-      "total_co2_emissions": 6835984.0
+      "total_co2_emissions": 6835984.0,
+      "unit_ids": [
+        "2-2",
+        "3",
+        "3-1",
+        "3-2",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -673,7 +869,16 @@
       "operator": "Los Angeles Dept of Water and Power",
       "county": "Los Angeles",
       "capacity": 483.0,
-      "total_co2_emissions": 2619320.0
+      "total_co2_emissions": 2619320.0,
+      "unit_ids": [
+        "**10A",
+        "**10B",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -692,7 +897,23 @@
       "operator": "Los Angeles Dept of Water and Power",
       "county": "Los Angeles",
       "capacity": 1539.0,
-      "total_co2_emissions": 28956542.0
+      "total_co2_emissions": 28956542.0,
+      "unit_ids": [
+        "1",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "9"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -711,7 +932,15 @@
       "operator": "Los Angeles Dept of Water and Power",
       "county": "Los Angeles",
       "capacity": 827.0,
-      "total_co2_emissions": 15829143.0
+      "total_co2_emissions": 15829143.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "6",
+        "7"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -730,7 +959,14 @@
       "operator": "Los Angeles Dept of Water and Power",
       "county": "Los Angeles",
       "capacity": 595.0,
-      "total_co2_emissions": 12011177.0
+      "total_co2_emissions": 12011177.0,
+      "unit_ids": [
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -749,7 +985,12 @@
       "operator": "City of Pasadena Water and Power Department",
       "county": "Los Angeles",
       "capacity": 130.0,
-      "total_co2_emissions": 798224.0
+      "total_co2_emissions": 798224.0,
+      "unit_ids": [
+        "B1",
+        "B2",
+        "B3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -768,7 +1009,12 @@
       "operator": "City of Pasadena Water and Power Department",
       "county": "Los Angeles",
       "capacity": 158.0,
-      "total_co2_emissions": 499814.0
+      "total_co2_emissions": 499814.0,
+      "unit_ids": [
+        "GT3",
+        "GT4",
+        "GT5"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -787,7 +1033,13 @@
       "operator": "Public Service Company of Colorado",
       "county": "Denver",
       "capacity": 251.0,
-      "total_co2_emissions": 17106889.0
+      "total_co2_emissions": 17106889.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -806,7 +1058,10 @@
       "operator": "Public Service Company of Colorado",
       "county": "Mesa",
       "capacity": 56.0,
-      "total_co2_emissions": 3816141.0
+      "total_co2_emissions": 3816141.0,
+      "unit_ids": [
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -825,7 +1080,15 @@
       "operator": "Public Service Company of Colorado",
       "county": "Adams",
       "capacity": 980.0,
-      "total_co2_emissions": 75660848.0
+      "total_co2_emissions": 75660848.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -844,7 +1107,12 @@
       "operator": "Public Service Company of Colorado",
       "county": "Pueblo",
       "capacity": 1549.0,
-      "total_co2_emissions": 118889604.0
+      "total_co2_emissions": 118889604.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -863,7 +1131,10 @@
       "operator": "Public Service Company of Colorado",
       "county": "Boulder",
       "capacity": 200.0,
-      "total_co2_emissions": 21618729.0
+      "total_co2_emissions": 21618729.0,
+      "unit_ids": [
+        "5"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -882,7 +1153,12 @@
       "operator": "Public Service Company of Colorado",
       "county": "Denver",
       "capacity": 152.0,
-      "total_co2_emissions": 133547.0
+      "total_co2_emissions": 133547.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -901,7 +1177,12 @@
       "operator": "Colorado Springs Utilities",
       "county": "El Paso",
       "capacity": 282.0,
-      "total_co2_emissions": 33232799.0
+      "total_co2_emissions": 33232799.0,
+      "unit_ids": [
+        "5",
+        "6",
+        "7"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -920,7 +1201,10 @@
       "operator": "Lamar Utilities Board",
       "county": "Prowers",
       "capacity": 39.0,
-      "total_co2_emissions": 367553.0
+      "total_co2_emissions": 367553.0,
+      "unit_ids": [
+        "8"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -939,7 +1223,11 @@
       "operator": "Public Service Company of Colorado",
       "county": "Routt",
       "capacity": 505.0,
-      "total_co2_emissions": 64397480.0
+      "total_co2_emissions": 64397480.0,
+      "unit_ids": [
+        "H1",
+        "H2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -958,7 +1246,10 @@
       "operator": "Tri-State Generation & Transmission",
       "county": "Montrose",
       "capacity": 115.0,
-      "total_co2_emissions": 12366454.0
+      "total_co2_emissions": 12366454.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -977,7 +1268,11 @@
       "operator": "Puget Sound Energy, Inc.",
       "county": "Skagit",
       "capacity": 124.0,
-      "total_co2_emissions": 398297.0
+      "total_co2_emissions": 398297.0,
+      "unit_ids": [
+        "CT3",
+        "CT4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -996,7 +1291,10 @@
       "operator": "Montana Dakota Utilities Company",
       "county": "Dawson",
       "capacity": 48.0,
-      "total_co2_emissions": 212391.0
+      "total_co2_emissions": 212391.0,
+      "unit_ids": [
+        "GT-2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1015,7 +1313,10 @@
       "operator": "P P & L Montana, LLC, Talen Montana, LLC",
       "county": "Yellowstone",
       "capacity": 172.0,
-      "total_co2_emissions": 17340914.0
+      "total_co2_emissions": 17340914.0,
+      "unit_ids": [
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1034,7 +1335,36 @@
       "operator": "NV Energy",
       "county": "Clark",
       "capacity": 657.0,
-      "total_co2_emissions": 2466798.0
+      "total_co2_emissions": 2466798.0,
+      "unit_ids": [
+        "1",
+        "11A",
+        "11B",
+        "12A",
+        "12B",
+        "13A",
+        "13B",
+        "14A",
+        "14B",
+        "15A",
+        "15B",
+        "16A",
+        "16B",
+        "17A",
+        "17B",
+        "18A",
+        "18B",
+        "19A",
+        "19B",
+        "2",
+        "20A",
+        "20B",
+        "21A",
+        "21B",
+        "22A",
+        "22B",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1053,7 +1383,13 @@
       "operator": "NV Energy",
       "county": "Clark",
       "capacity": 667.0,
-      "total_co2_emissions": 57490252.0
+      "total_co2_emissions": 57490252.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1072,7 +1408,10 @@
       "operator": "NV Energy",
       "county": "Clark",
       "capacity": 89.0,
-      "total_co2_emissions": 670627.0
+      "total_co2_emissions": 670627.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1091,7 +1430,11 @@
       "operator": "Sierra Pacific Power Company",
       "county": "Lyon",
       "capacity": 232.0,
-      "total_co2_emissions": 6926382.0
+      "total_co2_emissions": 6926382.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1110,7 +1453,17 @@
       "operator": "Sierra Pacific Power Company",
       "county": "Storey",
       "capacity": 849.0,
-      "total_co2_emissions": 23366221.0
+      "total_co2_emissions": 23366221.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "8",
+        "9"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1129,7 +1482,11 @@
       "operator": "Southern California Edison Company",
       "county": "Clark",
       "capacity": 1590.0,
-      "total_co2_emissions": 51451033.0
+      "total_co2_emissions": 51451033.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1148,7 +1505,14 @@
       "operator": "Arizona Public Service Company",
       "county": "San Juan",
       "capacity": 2245.0,
-      "total_co2_emissions": 234799032.0
+      "total_co2_emissions": 234799032.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1167,7 +1531,13 @@
       "operator": "El Paso Electric Company",
       "county": "Dona Ana",
       "capacity": 321.0,
-      "total_co2_emissions": 8312728.0
+      "total_co2_emissions": 8312728.0,
+      "unit_ids": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1186,7 +1556,10 @@
       "operator": "Southwestern Public Service Company",
       "county": "Lea",
       "capacity": 129.0,
-      "total_co2_emissions": 4746761.0
+      "total_co2_emissions": 4746761.0,
+      "unit_ids": [
+        "051B"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1205,7 +1578,12 @@
       "operator": "Public Service Company of New Mexico",
       "county": "Bernalillo",
       "capacity": 170.0,
-      "total_co2_emissions": 1470030.0
+      "total_co2_emissions": 1470030.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1224,7 +1602,13 @@
       "operator": "Public Service Company of New Mexico",
       "county": "San Juan",
       "capacity": 1900.0,
-      "total_co2_emissions": 211440735.0
+      "total_co2_emissions": 211440735.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1243,7 +1627,13 @@
       "operator": "Southwestern Public Service Company",
       "county": "Lea",
       "capacity": 496.0,
-      "total_co2_emissions": 12706776.0
+      "total_co2_emissions": 12706776.0,
+      "unit_ids": [
+        "121B",
+        "122B",
+        "123T",
+        "124T"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1262,7 +1652,16 @@
       "operator": "El Paso Electric Company",
       "county": "El Paso",
       "capacity": 617.0,
-      "total_co2_emissions": 22882391.0
+      "total_co2_emissions": 22882391.0,
+      "unit_ids": [
+        "**4",
+        "**5",
+        "1",
+        "2",
+        "3",
+        "GT-6A",
+        "GT-6B"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1281,7 +1680,11 @@
       "operator": "Pacificorp Energy Generation",
       "county": "Carbon",
       "capacity": 191.0,
-      "total_co2_emissions": 21131186.0
+      "total_co2_emissions": 21131186.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1300,7 +1703,15 @@
       "operator": "Pacificorp Energy Generation",
       "county": "Salt Lake",
       "capacity": 351.0,
-      "total_co2_emissions": 4788940.0
+      "total_co2_emissions": 4788940.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1319,7 +1730,15 @@
       "operator": "TransAlta",
       "county": "Lewis",
       "capacity": 1713.0,
-      "total_co2_emissions": 150656454.0
+      "total_co2_emissions": 150656454.0,
+      "unit_ids": [
+        "30",
+        "40",
+        "50",
+        "60",
+        "BW21",
+        "BW22"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1338,7 +1757,13 @@
       "operator": "Pacificorp Energy Generation",
       "county": "Converse",
       "capacity": 875.0,
-      "total_co2_emissions": 110084793.0
+      "total_co2_emissions": 110084793.0,
+      "unit_ids": [
+        "BW41",
+        "BW42",
+        "BW43",
+        "BW44"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1357,7 +1782,12 @@
       "operator": "Pacificorp Energy Generation",
       "county": "Lincoln",
       "capacity": 773.0,
-      "total_co2_emissions": 96840687.0
+      "total_co2_emissions": 96840687.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1376,7 +1806,12 @@
       "operator": "Salt River Project",
       "county": "Coconino",
       "capacity": 2444.0,
-      "total_co2_emissions": 311077623.0
+      "total_co2_emissions": 311077623.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1395,7 +1830,11 @@
       "operator": "City of Burbank",
       "county": "Los Angeles",
       "capacity": 96.0,
-      "total_co2_emissions": 313716.0
+      "total_co2_emissions": 313716.0,
+      "unit_ids": [
+        "01",
+        "02"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1414,7 +1853,12 @@
       "operator": "Tri-State Generation & Transmission",
       "county": "Moffat",
       "capacity": 1410.0,
-      "total_co2_emissions": 174577977.0
+      "total_co2_emissions": 174577977.0,
+      "unit_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1433,7 +1877,13 @@
       "operator": "Talen Montana, LLC",
       "county": "Rosebud",
       "capacity": 2294.0,
-      "total_co2_emissions": 287467771.0
+      "total_co2_emissions": 287467771.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1452,7 +1902,10 @@
       "operator": "Montana Dakota Utilities Company",
       "county": "Richland",
       "capacity": 58.0,
-      "total_co2_emissions": 7490215.0
+      "total_co2_emissions": 7490215.0,
+      "unit_ids": [
+        "B1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1471,7 +1924,10 @@
       "operator": "Pacificorp Energy Generation",
       "county": "Campbell",
       "capacity": 405.0,
-      "total_co2_emissions": 55218788.0
+      "total_co2_emissions": 55218788.0,
+      "unit_ids": [
+        "BW91"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1490,7 +1946,10 @@
       "operator": "Portland General Electric Company",
       "county": "Morrow",
       "capacity": 644.0,
-      "total_co2_emissions": 60673179.0
+      "total_co2_emissions": 60673179.0,
+      "unit_ids": [
+        "1SG"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1509,7 +1968,14 @@
       "operator": "Public Service Company of Colorado",
       "county": "Weld",
       "capacity": 1050.0,
-      "total_co2_emissions": 29387467.0
+      "total_co2_emissions": 29387467.0,
+      "unit_ids": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1528,7 +1994,12 @@
       "operator": "Pacificorp Energy Generation",
       "county": "Emery",
       "capacity": 1473.0,
-      "total_co2_emissions": 168021474.0
+      "total_co2_emissions": 168021474.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1547,7 +2018,11 @@
       "operator": "Salt River Project",
       "county": "Apache",
       "capacity": 886.0,
-      "total_co2_emissions": 109986023.0
+      "total_co2_emissions": 109986023.0,
+      "unit_ids": [
+        "U1B",
+        "U2B"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1566,7 +2041,12 @@
       "operator": "Basin Electric Power Cooperative",
       "county": "Platte",
       "capacity": 1844.0,
-      "total_co2_emissions": 237417545.0
+      "total_co2_emissions": 237417545.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1585,7 +2065,10 @@
       "operator": "Public Service Company of Colorado",
       "county": "Morgan",
       "capacity": 561.0,
-      "total_co2_emissions": 65930977.0
+      "total_co2_emissions": 65930977.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1604,7 +2087,11 @@
       "operator": "Intermountain Power Service Corporation",
       "county": "Millard",
       "capacity": 1918.0,
-      "total_co2_emissions": 224010508.0
+      "total_co2_emissions": 224010508.0,
+      "unit_ids": [
+        "1SGA",
+        "2SGA"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1623,7 +2110,15 @@
       "operator": "Platte River Power Authority",
       "county": "Larimer",
       "capacity": 693.0,
-      "total_co2_emissions": 40978817.0
+      "total_co2_emissions": 40978817.0,
+      "unit_ids": [
+        "101",
+        "A",
+        "B",
+        "C",
+        "D",
+        "F"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1642,7 +2137,13 @@
       "operator": "NV Energy",
       "county": "Clark",
       "capacity": 659.0,
-      "total_co2_emissions": 9719472.0
+      "total_co2_emissions": 9719472.0,
+      "unit_ids": [
+        "**3",
+        "**4",
+        "**5",
+        "**6"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1661,7 +2162,11 @@
       "operator": "Modesto Irrigation District",
       "county": "Stanislaus",
       "capacity": 130.0,
-      "total_co2_emissions": 3107667.0
+      "total_co2_emissions": 3107667.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1680,7 +2185,11 @@
       "operator": "Redding Electric Utility",
       "county": "Shasta",
       "capacity": 120.0,
-      "total_co2_emissions": 1394431.0
+      "total_co2_emissions": 1394431.0,
+      "unit_ids": [
+        "5",
+        "6"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1699,7 +2208,13 @@
       "operator": "Turlock Irrigation District",
       "county": "Stanislaus",
       "capacity": 212.0,
-      "total_co2_emissions": 1236270.0
+      "total_co2_emissions": 1236270.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1718,7 +2233,11 @@
       "operator": "Portland General Electric Company",
       "county": "Morrow",
       "capacity": 584.0,
-      "total_co2_emissions": 18282228.0
+      "total_co2_emissions": 18282228.0,
+      "unit_ids": [
+        "CTG1",
+        "CTG2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1737,7 +2256,10 @@
       "operator": "Northern California Power Agency",
       "county": "San Joaquin",
       "capacity": 53.0,
-      "total_co2_emissions": 389874.0
+      "total_co2_emissions": 389874.0,
+      "unit_ids": [
+        "NA1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1756,7 +2278,11 @@
       "operator": "Avista Corporation",
       "county": "Kootenai",
       "capacity": 183.0,
-      "total_co2_emissions": 830606.0
+      "total_co2_emissions": 830606.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1775,7 +2301,11 @@
       "operator": "Black Hills Power, Inc",
       "county": "Campbell",
       "capacity": 140.0,
-      "total_co2_emissions": 16021426.0
+      "total_co2_emissions": 16021426.0,
+      "unit_ids": [
+        "001",
+        "CT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1794,7 +2324,11 @@
       "operator": "Carson Energy Group",
       "county": "Sacramento",
       "capacity": 361.0,
-      "total_co2_emissions": 3949149.0
+      "total_co2_emissions": 3949149.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1813,7 +2347,12 @@
       "operator": "Carson Energy Group",
       "county": "Sacramento",
       "capacity": 174.0,
-      "total_co2_emissions": 6831521.0
+      "total_co2_emissions": 6831521.0,
+      "unit_ids": [
+        "1A",
+        "1B",
+        "1C"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1832,7 +2371,10 @@
       "operator": "EthosEnergy Power Plant Services, LLC",
       "county": "Sacramento",
       "capacity": 204.0,
-      "total_co2_emissions": 7318000.0
+      "total_co2_emissions": 7318000.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1851,7 +2393,10 @@
       "operator": "General Electric Contractual Services",
       "county": "Clark",
       "capacity": 273.0,
-      "total_co2_emissions": 10699860.0
+      "total_co2_emissions": 10699860.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1870,7 +2415,10 @@
       "operator": "City of Anaheim",
       "county": "Orange",
       "capacity": 52.0,
-      "total_co2_emissions": 635336.0
+      "total_co2_emissions": 635336.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1889,7 +2437,10 @@
       "operator": "Deseret Generation & Transmission",
       "county": "Uintah",
       "capacity": 507.0,
-      "total_co2_emissions": 67557190.0
+      "total_co2_emissions": 67557190.0,
+      "unit_ids": [
+        "1-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1908,7 +2459,12 @@
       "operator": "Puget Sound Energy, Inc.",
       "county": "Whatcom",
       "capacity": 135.0,
-      "total_co2_emissions": 1244853.0
+      "total_co2_emissions": 1244853.0,
+      "unit_ids": [
+        "CT1",
+        "CT2",
+        "CT3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1927,7 +2483,10 @@
       "operator": "Benton Public Utilities District",
       "county": "Benton",
       "capacity": 31.0,
-      "total_co2_emissions": 20472.0
+      "total_co2_emissions": 20472.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1946,7 +2505,12 @@
       "operator": "Idaho Power Company",
       "county": "Elmore",
       "capacity": 299.0,
-      "total_co2_emissions": 1003763.0
+      "total_co2_emissions": 1003763.0,
+      "unit_ids": [
+        "CT1",
+        "CT2",
+        "CT3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1965,7 +2529,11 @@
       "operator": "Public Service Company of New Mexico",
       "county": "Hidalgo",
       "capacity": 85.0,
-      "total_co2_emissions": 437398.0
+      "total_co2_emissions": 437398.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -1984,7 +2552,13 @@
       "operator": "Tri-State Generation & Transmission",
       "county": "Hidalgo",
       "capacity": 164.0,
-      "total_co2_emissions": 510747.0
+      "total_co2_emissions": 510747.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2003,7 +2577,10 @@
       "operator": "City of Burbank",
       "county": "Los Angeles",
       "capacity": 49.0,
-      "total_co2_emissions": 228937.0
+      "total_co2_emissions": 228937.0,
+      "unit_ids": [
+        "01"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2022,7 +2599,11 @@
       "operator": "Grays Harbor Energy, LLC",
       "county": "Grays Harbor",
       "capacity": 658.0,
-      "total_co2_emissions": 6499184.0
+      "total_co2_emissions": 6499184.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2041,7 +2622,13 @@
       "operator": "Pacificorp Energy Generation",
       "county": "Sweetwater",
       "capacity": 2272.0,
-      "total_co2_emissions": 263472248.0
+      "total_co2_emissions": 263472248.0,
+      "unit_ids": [
+        "BW71",
+        "BW72",
+        "BW73",
+        "BW74"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2060,7 +2647,12 @@
       "operator": "Salt River Project",
       "county": "Maricopa",
       "capacity": 949.0,
-      "total_co2_emissions": 16438695.0
+      "total_co2_emissions": 16438695.0,
+      "unit_ids": [
+        "5A",
+        "5B",
+        "6A"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2079,7 +2671,11 @@
       "operator": "Pacificorp Energy Generation",
       "county": "Emery",
       "capacity": 981.0,
-      "total_co2_emissions": 107755579.0
+      "total_co2_emissions": 107755579.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2098,7 +2694,12 @@
       "operator": "Colorado Springs Utilities",
       "county": "El Paso",
       "capacity": 296.0,
-      "total_co2_emissions": 29747624.0
+      "total_co2_emissions": 29747624.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2117,7 +2718,13 @@
       "operator": "Tucson Electric Power Company",
       "county": "Apache",
       "capacity": 1749.0,
-      "total_co2_emissions": 150935732.0
+      "total_co2_emissions": 150935732.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "4",
+        "TS3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2136,7 +2743,11 @@
       "operator": "Sierra Pacific Power Company",
       "county": "Humboldt",
       "capacity": 580.0,
-      "total_co2_emissions": 50762164.0
+      "total_co2_emissions": 50762164.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2155,7 +2766,10 @@
       "operator": "Calpine Corporation",
       "county": "Santa Clara",
       "capacity": 303.0,
-      "total_co2_emissions": 925821.0
+      "total_co2_emissions": 925821.0,
+      "unit_ids": [
+        "S-100"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2174,7 +2788,10 @@
       "operator": "Wellhead Electric Company, Inc",
       "county": "Fresno",
       "capacity": 49.0,
-      "total_co2_emissions": 255407.0
+      "total_co2_emissions": 255407.0,
+      "unit_ids": [
+        "GEN1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2193,7 +2810,10 @@
       "operator": "General Electric Contractual Services",
       "county": "Los Angeles",
       "capacity": 56.0,
-      "total_co2_emissions": 1967281.0
+      "total_co2_emissions": 1967281.0,
+      "unit_ids": [
+        "D1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2212,7 +2832,10 @@
       "operator": "Gilroy Energy Center, LLC",
       "county": "Monterey",
       "capacity": 49.0,
-      "total_co2_emissions": 111916.0
+      "total_co2_emissions": 111916.0,
+      "unit_ids": [
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2231,7 +2854,10 @@
       "operator": "Calpine Corporation",
       "county": "Sutter",
       "capacity": 63.0,
-      "total_co2_emissions": 272222.0
+      "total_co2_emissions": 272222.0,
+      "unit_ids": [
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2250,7 +2876,10 @@
       "operator": "ProEnergy Services LLC",
       "county": "Sutter",
       "capacity": 58.0,
-      "total_co2_emissions": 94653.0
+      "total_co2_emissions": 94653.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2269,7 +2898,10 @@
       "operator": "PurEnergy Operating Services, LLC",
       "county": "Fresno",
       "capacity": 25.0,
-      "total_co2_emissions": 147155.0
+      "total_co2_emissions": 147155.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2288,7 +2920,12 @@
       "operator": "Colorado Energy Management, LLC",
       "county": "Morgan",
       "capacity": 184.0,
-      "total_co2_emissions": 598003.0
+      "total_co2_emissions": 598003.0,
+      "unit_ids": [
+        "GT2",
+        "GT4",
+        "GT5"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2307,7 +2944,14 @@
       "operator": "Nevada Power Company dba NV Energy",
       "county": "Clark",
       "capacity": 228.0,
-      "total_co2_emissions": 4229605.0
+      "total_co2_emissions": 4229605.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2326,7 +2970,10 @@
       "operator": "Applied Energy LLC",
       "county": "San Diego",
       "capacity": "unknown",
-      "total_co2_emissions": "unknown"
+      "total_co2_emissions": "unknown",
+      "unit_ids": [
+        "CT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2345,7 +2992,10 @@
       "operator": "Coalinga Cogeneration Company",
       "county": "Fresno",
       "capacity": 43.0,
-      "total_co2_emissions": 2142089.0
+      "total_co2_emissions": 2142089.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2364,7 +3014,14 @@
       "operator": "Tri-State Generation & Transmission",
       "county": "Weld",
       "capacity": 185.0,
-      "total_co2_emissions": 3066370.0
+      "total_co2_emissions": 3066370.0,
+      "unit_ids": [
+        "S001",
+        "S002",
+        "S003",
+        "S004",
+        "S005"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2383,7 +3040,10 @@
       "operator": "Sargent Canyon Cogeneration Company",
       "county": "Monterey",
       "capacity": 42.0,
-      "total_co2_emissions": 2158197.0
+      "total_co2_emissions": 2158197.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2402,7 +3062,10 @@
       "operator": "Salinas River Cogeneration Company",
       "county": "Monterey",
       "capacity": 53.0,
-      "total_co2_emissions": 2238903.0
+      "total_co2_emissions": 2238903.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2421,7 +3084,10 @@
       "operator": "Sunnyside Cogeneration Associates",
       "county": "Carbon",
       "capacity": 61.0,
-      "total_co2_emissions": "unknown"
+      "total_co2_emissions": "unknown",
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2440,7 +3106,10 @@
       "operator": "DTE Energy Services",
       "county": "San Joaquin",
       "capacity": 54.0,
-      "total_co2_emissions": 1821817.0
+      "total_co2_emissions": 1821817.0,
+      "unit_ids": [
+        "BIOMS1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2459,7 +3128,10 @@
       "operator": "Puget Sound Energy, Inc.",
       "county": "Whatcom",
       "capacity": 100.0,
-      "total_co2_emissions": 1798638.0
+      "total_co2_emissions": 1798638.0,
+      "unit_ids": [
+        "CT-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2478,7 +3150,11 @@
       "operator": "NAES Corporation",
       "county": "Whatcom",
       "capacity": 195.0,
-      "total_co2_emissions": 1929375.0
+      "total_co2_emissions": 1929375.0,
+      "unit_ids": [
+        "CT-1A",
+        "CT-1B"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2497,7 +3173,10 @@
       "operator": "Falcon Power Operating Company",
       "county": "Yuma",
       "capacity": 59.0,
-      "total_co2_emissions": 9946.0
+      "total_co2_emissions": 9946.0,
+      "unit_ids": [
+        "4101"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2516,7 +3195,10 @@
       "operator": "PurEnergy Operating Services, LLC",
       "county": "San Diego",
       "capacity": 52.0,
-      "total_co2_emissions": 18221.0
+      "total_co2_emissions": 18221.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2535,7 +3217,11 @@
       "operator": "Perennial Power",
       "county": "Umatilla",
       "capacity": 494.0,
-      "total_co2_emissions": 21556500.0
+      "total_co2_emissions": 21556500.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2554,7 +3240,11 @@
       "operator": "Williams Four Corners LLC",
       "county": "San Juan",
       "capacity": 138.0,
-      "total_co2_emissions": 5924111.0
+      "total_co2_emissions": 5924111.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2573,7 +3263,12 @@
       "operator": "Nevada Power Company dba NV Energy",
       "county": "Clark",
       "capacity": 222.0,
-      "total_co2_emissions": 37233.0
+      "total_co2_emissions": 37233.0,
+      "unit_ids": [
+        "3",
+        "4",
+        "5"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2592,7 +3287,10 @@
       "operator": "Public Service Company of New Mexico",
       "county": "Bernalillo",
       "capacity": 159.0,
-      "total_co2_emissions": 642632.0
+      "total_co2_emissions": 642632.0,
+      "unit_ids": [
+        "GT-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2611,7 +3309,11 @@
       "operator": "San Diego Gas and Electric Company",
       "county": "Clark",
       "capacity": 507.0,
-      "total_co2_emissions": 19534525.0
+      "total_co2_emissions": 19534525.0,
+      "unit_ids": [
+        "EDE1",
+        "EDE2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2630,7 +3332,11 @@
       "operator": "Pacific Klamath Energy",
       "county": "Klamath",
       "capacity": 555.0,
-      "total_co2_emissions": 16596035.0
+      "total_co2_emissions": 16596035.0,
+      "unit_ids": [
+        "CT1",
+        "CT2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2649,7 +3355,11 @@
       "operator": "Calpine Corporation",
       "county": "Sutter",
       "capacity": 1085.0,
-      "total_co2_emissions": 13320002.0
+      "total_co2_emissions": 13320002.0,
+      "unit_ids": [
+        "CT01",
+        "CT02"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2668,7 +3378,11 @@
       "operator": "Griffith Energy, LLC",
       "county": "Mohave",
       "capacity": 598.0,
-      "total_co2_emissions": 11217870.0
+      "total_co2_emissions": 11217870.0,
+      "unit_ids": [
+        "P1",
+        "P2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2687,7 +3401,11 @@
       "operator": "Colorado Energy Management, LLC",
       "county": "Morgan",
       "capacity": 317.0,
-      "total_co2_emissions": 3298211.0
+      "total_co2_emissions": 3298211.0,
+      "unit_ids": [
+        "CT1",
+        "CT2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2706,7 +3424,11 @@
       "operator": "Salt River Project",
       "county": "Pinal",
       "capacity": 633.0,
-      "total_co2_emissions": 12622401.0
+      "total_co2_emissions": 12622401.0,
+      "unit_ids": [
+        "DBG1",
+        "DBG2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2725,7 +3447,13 @@
       "operator": "La Paloma Generating Company, LLC",
       "county": "Kern",
       "capacity": 1092.0,
-      "total_co2_emissions": 33365672.0
+      "total_co2_emissions": 33365672.0,
+      "unit_ids": [
+        "CTG-1",
+        "CTG-2",
+        "CTG-3",
+        "CTG-4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2744,7 +3472,11 @@
       "operator": "Calpine Corporation",
       "county": "Mohave",
       "capacity": 561.0,
-      "total_co2_emissions": 12961047.0
+      "total_co2_emissions": 12961047.0,
+      "unit_ids": [
+        "A",
+        "B"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2763,7 +3495,10 @@
       "operator": "Rathdrum Operating Services, Inc.",
       "county": "Kootenai",
       "capacity": 293.0,
-      "total_co2_emissions": 8570691.0
+      "total_co2_emissions": 8570691.0,
+      "unit_ids": [
+        "CTGEN1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2782,7 +3517,11 @@
       "operator": "Sunrise Power Company, LLC",
       "county": "Kern",
       "capacity": 608.0,
-      "total_co2_emissions": 18058228.0
+      "total_co2_emissions": 18058228.0,
+      "unit_ids": [
+        "CTG1",
+        "CTG2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2801,7 +3540,11 @@
       "operator": "Southwest Generation Colorado, LLC",
       "county": "Denver",
       "capacity": 137.0,
-      "total_co2_emissions": 1527863.0
+      "total_co2_emissions": 1527863.0,
+      "unit_ids": [
+        "CT5",
+        "CT6"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2820,7 +3563,11 @@
       "operator": "SWG Colorado, LLC, Southwest Generation Colorado, LLC",
       "county": "Boulder",
       "capacity": 93.0,
-      "total_co2_emissions": 132164.0
+      "total_co2_emissions": 132164.0,
+      "unit_ids": [
+        "CT7",
+        "CT8"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2839,7 +3586,10 @@
       "operator": "Public Service Company of New Mexico",
       "county": "Dona Ana",
       "capacity": 249.0,
-      "total_co2_emissions": 2627523.0
+      "total_co2_emissions": 2627523.0,
+      "unit_ids": [
+        "0001"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2858,7 +3608,11 @@
       "operator": "Los Medanos Energy Center, LLC",
       "county": "Contra Costa",
       "capacity": 628.0,
-      "total_co2_emissions": 23350161.0
+      "total_co2_emissions": 23350161.0,
+      "unit_ids": [
+        "X724",
+        "X725"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2877,7 +3631,11 @@
       "operator": "Arlington Valley, LLC",
       "county": "Maricopa",
       "capacity": 603.0,
-      "total_co2_emissions": 9357734.0
+      "total_co2_emissions": 9357734.0,
+      "unit_ids": [
+        "CTG1",
+        "CTG2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2896,7 +3654,11 @@
       "operator": "Colorado Springs Utilities",
       "county": "El Paso",
       "capacity": 533.0,
-      "total_co2_emissions": 13224617.0
+      "total_co2_emissions": 13224617.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2915,7 +3677,11 @@
       "operator": "Blythe Energy Inc.",
       "county": "Riverside",
       "capacity": 389.0,
-      "total_co2_emissions": 8257175.0
+      "total_co2_emissions": 8257175.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2934,7 +3700,17 @@
       "operator": "EthosEnergy Power Plant Services, LLC",
       "county": "Maricopa",
       "capacity": 2222.0,
-      "total_co2_emissions": 37475133.0
+      "total_co2_emissions": 37475133.0,
+      "unit_ids": [
+        "1CTGA",
+        "1CTGB",
+        "2CTGA",
+        "2CTGB",
+        "3CTGA",
+        "3CTGB",
+        "4CTGA",
+        "4CTGB"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2953,7 +3729,13 @@
       "operator": "NV Energy",
       "county": "Clark",
       "capacity": 1156.0,
-      "total_co2_emissions": 33216304.0
+      "total_co2_emissions": 33216304.0,
+      "unit_ids": [
+        "CTG-1",
+        "CTG-2",
+        "CTG-3",
+        "CTG-4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2972,7 +3754,11 @@
       "operator": "Hermiston Power Partnership",
       "county": "Umatilla",
       "capacity": 672.0,
-      "total_co2_emissions": 20646214.0
+      "total_co2_emissions": 20646214.0,
+      "unit_ids": [
+        "CTG-1",
+        "CTG-2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -2991,7 +3777,12 @@
       "operator": "Delta Energy Center, LLC",
       "county": "Contra Costa",
       "capacity": 919.0,
-      "total_co2_emissions": 30835523.0
+      "total_co2_emissions": 30835523.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3010,7 +3801,11 @@
       "operator": "Public Service Company of New Mexico",
       "county": "Luna",
       "capacity": 593.0,
-      "total_co2_emissions": 10984082.0
+      "total_co2_emissions": 10984082.0,
+      "unit_ids": [
+        "CTG1",
+        "CTG2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3029,7 +3824,11 @@
       "operator": "Otay Mesa Energy Center, LLC",
       "county": "San Diego",
       "capacity": 622.0,
-      "total_co2_emissions": 10387384.0
+      "total_co2_emissions": 10387384.0,
+      "unit_ids": [
+        "CTG-1",
+        "CTG-2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3048,7 +3847,12 @@
       "operator": "North American Energy Services",
       "county": "Maricopa",
       "capacity": 670.0,
-      "total_co2_emissions": 10073576.0
+      "total_co2_emissions": 10073576.0,
+      "unit_ids": [
+        "CTG1",
+        "CTG2",
+        "CTG3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3067,7 +3871,11 @@
       "operator": "Metcalf Energy Center, LLC",
       "county": "Santa Clara",
       "capacity": 609.0,
-      "total_co2_emissions": 14409876.0
+      "total_co2_emissions": 14409876.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3086,7 +3894,11 @@
       "operator": "Elk Hills Power, LLC",
       "county": "Kern",
       "capacity": 576.0,
-      "total_co2_emissions": 21387174.0
+      "total_co2_emissions": 21387174.0,
+      "unit_ids": [
+        "CTG-1",
+        "CTG-2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3105,7 +3917,15 @@
       "operator": "Southwest Generation Operating Co.",
       "county": "El Paso",
       "capacity": 270.0,
-      "total_co2_emissions": 3292335.0
+      "total_co2_emissions": 3292335.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3124,7 +3944,13 @@
       "operator": "Arizona Public Service Company",
       "county": "Maricopa",
       "capacity": 1101.0,
-      "total_co2_emissions": 27025915.0
+      "total_co2_emissions": 27025915.0,
+      "unit_ids": [
+        "CC1A",
+        "CC1B",
+        "CC2A",
+        "CC2B"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3143,7 +3969,10 @@
       "operator": "Black Hills Power, Inc",
       "county": "Campbell",
       "capacity": 40.0,
-      "total_co2_emissions": 269806.0
+      "total_co2_emissions": 269806.0,
+      "unit_ids": [
+        "CT2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3162,7 +3991,10 @@
       "operator": "Black Hills Power, Inc",
       "county": "Campbell",
       "capacity": 99.0,
-      "total_co2_emissions": 13633447.0
+      "total_co2_emissions": 13633447.0,
+      "unit_ids": [
+        "001"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3181,7 +4013,13 @@
       "operator": "Mesquite Power Operations, LLC",
       "county": "Maricopa",
       "capacity": 1299.0,
-      "total_co2_emissions": 38537629.0
+      "total_co2_emissions": 38537629.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "5",
+        "6"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3200,7 +4038,10 @@
       "operator": "Puget Sound Energy, Inc.",
       "county": "Klickitat",
       "capacity": 320.0,
-      "total_co2_emissions": 5978535.0
+      "total_co2_emissions": 5978535.0,
+      "unit_ids": [
+        "CT-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3219,7 +4060,15 @@
       "operator": "Tri-Center Naniwa Energy",
       "county": "Storey",
       "capacity": 300.0,
-      "total_co2_emissions": 193788.0
+      "total_co2_emissions": 193788.0,
+      "unit_ids": [
+        "CT1",
+        "CT2",
+        "CT3",
+        "CT4",
+        "CT5",
+        "CT6"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3233,12 +4082,15 @@
     "type": "Feature",
     "properties": {
       "name": "CalPeak Power - Vaca Dixon",
-      "fuel_source": "",
+      "fuel_source": "Pipeline Natural Gas",
       "orispl_code": 55499,
       "operator": "CalPeak Power - Vaca Dixon, LLC, CalPeak Power, LLC",
       "county": "Solano",
       "capacity": 55.0,
-      "total_co2_emissions": 102743.0
+      "total_co2_emissions": 102743.0,
+      "unit_ids": [
+        "GT-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3257,7 +4109,11 @@
       "operator": "Tri-State G & T Association, Inc.",
       "county": "Lincoln",
       "capacity": 164.0,
-      "total_co2_emissions": 516604.0
+      "total_co2_emissions": 516604.0,
+      "unit_ids": [
+        "L1",
+        "L2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3276,7 +4132,11 @@
       "operator": "Tri-State G & T Association, Inc.",
       "county": "Adams",
       "capacity": 159.0,
-      "total_co2_emissions": 573834.0
+      "total_co2_emissions": 573834.0,
+      "unit_ids": [
+        "BR1",
+        "BR2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3295,7 +4155,10 @@
       "operator": "CalPeak Power - Panoche, LLC, CalPeak Power, LLC",
       "county": "Fresno",
       "capacity": 60.0,
-      "total_co2_emissions": 122498.0
+      "total_co2_emissions": 122498.0,
+      "unit_ids": [
+        "GT-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3314,7 +4177,10 @@
       "operator": "CalPeak Power - Border, LLC, CalPeak Power, LLC",
       "county": "San Diego",
       "capacity": 53.0,
-      "total_co2_emissions": 161812.0
+      "total_co2_emissions": 161812.0,
+      "unit_ids": [
+        "GT-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3333,7 +4199,10 @@
       "operator": "San Diego Gas and Electric Company",
       "county": "San Diego",
       "capacity": 53.0,
-      "total_co2_emissions": 187418.0
+      "total_co2_emissions": 187418.0,
+      "unit_ids": [
+        "GT-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3352,7 +4221,10 @@
       "operator": "CalPeak Power - Enterprise, LLC, CalPeak Power, LLC",
       "county": "San Diego",
       "capacity": 51.0,
-      "total_co2_emissions": 167769.0
+      "total_co2_emissions": 167769.0,
+      "unit_ids": [
+        "GT-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3371,7 +4243,11 @@
       "operator": "Las Vegas Power Company, LLC, Los Angeles Dept of Water and Power",
       "county": "Clark",
       "capacity": 547.0,
-      "total_co2_emissions": 12377965.0
+      "total_co2_emissions": 12377965.0,
+      "unit_ids": [
+        "CTG01",
+        "CTG02"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3390,7 +4266,12 @@
       "operator": "High Desert Power Project, LLC",
       "county": "San Bernardino",
       "capacity": 530.0,
-      "total_co2_emissions": 23426165.0
+      "total_co2_emissions": 23426165.0,
+      "unit_ids": [
+        "CTG1",
+        "CTG2",
+        "CTG3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3409,7 +4290,19 @@
       "operator": "Arizona Public Service Company",
       "county": "Pinal",
       "capacity": 425.0,
-      "total_co2_emissions": 1435670.0
+      "total_co2_emissions": 1435670.0,
+      "unit_ids": [
+        "CT01",
+        "CT02",
+        "CT03",
+        "CT04",
+        "CT05",
+        "CT06",
+        "CT07",
+        "CT08",
+        "CT09",
+        "CT10"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3428,7 +4321,12 @@
       "operator": "Escondido Energy Center, LLC",
       "county": "San Diego",
       "capacity": 50.0,
-      "total_co2_emissions": 109195.0
+      "total_co2_emissions": 109195.0,
+      "unit_ids": [
+        "CT1A",
+        "CT1B",
+        "CTG1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3447,7 +4345,11 @@
       "operator": "Wellhead Electric Company, Inc",
       "county": "San Diego",
       "capacity": 56.0,
-      "total_co2_emissions": 51916.0
+      "total_co2_emissions": 51916.0,
+      "unit_ids": [
+        "1A",
+        "1B"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3466,7 +4368,12 @@
       "operator": "Wildflower Energy, LP",
       "county": "Riverside",
       "capacity": 150.0,
-      "total_co2_emissions": 696141.0
+      "total_co2_emissions": 696141.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3485,7 +4392,11 @@
       "operator": "Wildflower Energy, LP",
       "county": "San Diego",
       "capacity": 100.0,
-      "total_co2_emissions": 510805.0
+      "total_co2_emissions": 510805.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3504,7 +4415,13 @@
       "operator": "Pacific Klamath Energy",
       "county": "Klamath",
       "capacity": 120.0,
-      "total_co2_emissions": 369700.0
+      "total_co2_emissions": 369700.0,
+      "unit_ids": [
+        "GT1",
+        "GT2",
+        "GT3",
+        "GT4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3523,7 +4440,14 @@
       "operator": "Utah Municipal Power Agency",
       "county": "Salt Lake",
       "capacity": 223.0,
-      "total_co2_emissions": 3609929.0
+      "total_co2_emissions": 3609929.0,
+      "unit_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3542,7 +4466,10 @@
       "operator": "Creed Energy Center, LLC",
       "county": "Solano",
       "capacity": 50.0,
-      "total_co2_emissions": 101891.0
+      "total_co2_emissions": 101891.0,
+      "unit_ids": [
+        "UNIT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3561,7 +4488,10 @@
       "operator": "Gilroy Energy Center, LLC",
       "county": "Solano",
       "capacity": 50.0,
-      "total_co2_emissions": 111966.0
+      "total_co2_emissions": 111966.0,
+      "unit_ids": [
+        "UNIT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3580,7 +4510,10 @@
       "operator": "Goose Haven Energy Center, LLC",
       "county": "Solano",
       "capacity": 50.0,
-      "total_co2_emissions": 102876.0
+      "total_co2_emissions": 102876.0,
+      "unit_ids": [
+        "UNIT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3599,7 +4532,11 @@
       "operator": "Public Service Company of Colorado",
       "county": "Adams",
       "capacity": 321.0,
-      "total_co2_emissions": 3238104.0
+      "total_co2_emissions": 3238104.0,
+      "unit_ids": [
+        "CT-01",
+        "CT-02"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3618,7 +4555,12 @@
       "operator": "Pastoria Energy Facility, LLC",
       "county": "Kern",
       "capacity": 814.0,
-      "total_co2_emissions": 23528768.0
+      "total_co2_emissions": 23528768.0,
+      "unit_ids": [
+        "CT001",
+        "CT002",
+        "CT004"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3637,7 +4579,11 @@
       "operator": "Pacificorp Energy Generation",
       "county": "Lewis",
       "capacity": 534.0,
-      "total_co2_emissions": 10491902.0
+      "total_co2_emissions": 10491902.0,
+      "unit_ids": [
+        "CT1",
+        "CT2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3656,7 +4602,10 @@
       "operator": "Boardman Power Holdings LLC, Morrow Power, LLC",
       "county": "Morrow",
       "capacity": 25.0,
-      "total_co2_emissions": 939.0
+      "total_co2_emissions": 939.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3675,7 +4624,11 @@
       "operator": "NV Energy",
       "county": "Clark",
       "capacity": 619.0,
-      "total_co2_emissions": 13858032.0
+      "total_co2_emissions": 13858032.0,
+      "unit_ids": [
+        "BHG1",
+        "BHG2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3694,7 +4647,11 @@
       "operator": "AltaGas San Joaquin Energy Inc.",
       "county": "Kings",
       "capacity": 102.0,
-      "total_co2_emissions": 520742.0
+      "total_co2_emissions": 520742.0,
+      "unit_ids": [
+        "HEP1",
+        "HEP2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3713,7 +4670,10 @@
       "operator": "Puget Sound Energy, Inc.",
       "county": "Cowlitz",
       "capacity": 328.0,
-      "total_co2_emissions": 4970328.0
+      "total_co2_emissions": 4970328.0,
+      "unit_ids": [
+        "CTG1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3732,7 +4692,10 @@
       "operator": "Idaho Power Company",
       "county": "Elmore",
       "capacity": 201.0,
-      "total_co2_emissions": 656450.0
+      "total_co2_emissions": 656450.0,
+      "unit_ids": [
+        "CT01"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3751,7 +4714,13 @@
       "operator": "Los Esteros Critical Energy Fac, LLC",
       "county": "Santa Clara",
       "capacity": 322.0,
-      "total_co2_emissions": 1292378.0
+      "total_co2_emissions": 1292378.0,
+      "unit_ids": [
+        "CTG1",
+        "CTG2",
+        "CTG3",
+        "CTG4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3770,7 +4739,10 @@
       "operator": "Colorado Energy Management, LLC",
       "county": "Big Horn",
       "capacity": 120.0,
-      "total_co2_emissions": 8965518.0
+      "total_co2_emissions": 8965518.0,
+      "unit_ids": [
+        "U1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3789,7 +4761,10 @@
       "operator": "Valencia Power, LLC",
       "county": "Valencia",
       "capacity": 168.0,
-      "total_co2_emissions": 445140.0
+      "total_co2_emissions": 445140.0,
+      "unit_ids": [
+        "CTG1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3808,7 +4783,11 @@
       "operator": "AltaGas San Joaquin Energy Inc.",
       "county": "Kings",
       "capacity": 104.0,
-      "total_co2_emissions": 385523.0
+      "total_co2_emissions": 385523.0,
+      "unit_ids": [
+        "HPP1",
+        "HPP2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3827,7 +4806,12 @@
       "operator": "Gilroy Energy Center, LLC",
       "county": "Santa Clara",
       "capacity": 149.0,
-      "total_co2_emissions": 504691.0
+      "total_co2_emissions": 504691.0,
+      "unit_ids": [
+        "S-3",
+        "S-4",
+        "S-5"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3846,7 +4830,10 @@
       "operator": "Atlantic Power Services, LLC",
       "county": "Pierce",
       "capacity": 283.0,
-      "total_co2_emissions": 5147996.0
+      "total_co2_emissions": 5147996.0,
+      "unit_ids": [
+        "F1CT"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3865,7 +4852,11 @@
       "operator": "Public Service Company of Colorado",
       "county": "Weld",
       "capacity": 644.0,
-      "total_co2_emissions": 16460770.0
+      "total_co2_emissions": 16460770.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3884,7 +4875,11 @@
       "operator": "NV Energy",
       "county": "Clark",
       "capacity": 580.0,
-      "total_co2_emissions": 14582185.0
+      "total_co2_emissions": 14582185.0,
+      "unit_ids": [
+        "A01",
+        "A03"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3903,7 +4898,10 @@
       "operator": "Calpine Corporation",
       "county": "Sutter",
       "capacity": 60.0,
-      "total_co2_emissions": 210277.0
+      "total_co2_emissions": 210277.0,
+      "unit_ids": [
+        "UNIT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3922,7 +4920,11 @@
       "operator": "Inland Empire Energy Center, LLC",
       "county": "Riverside",
       "capacity": 769.0,
-      "total_co2_emissions": 7253654.0
+      "total_co2_emissions": 7253654.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3941,7 +4943,10 @@
       "operator": "Gilroy Energy Center, LLC",
       "county": "Solano",
       "capacity": 50.0,
-      "total_co2_emissions": 166833.0
+      "total_co2_emissions": 166833.0,
+      "unit_ids": [
+        "UNIT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3960,7 +4965,11 @@
       "operator": "Desert Power, LP",
       "county": "Tooele",
       "capacity": 72.0,
-      "total_co2_emissions": 116163.0
+      "total_co2_emissions": 116163.0,
+      "unit_ids": [
+        "UNT1",
+        "UNT2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3979,7 +4988,10 @@
       "operator": "Wellhead Electric Company, Inc",
       "county": "Fresno",
       "capacity": 51.0,
-      "total_co2_emissions": 43305.0
+      "total_co2_emissions": 43305.0,
+      "unit_ids": [
+        "GT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -3998,7 +5010,11 @@
       "operator": "AltaGas San Joaquin Energy Inc.",
       "county": "San Joaquin",
       "capacity": 352.0,
-      "total_co2_emissions": 1723427.0
+      "total_co2_emissions": 1723427.0,
+      "unit_ids": [
+        "TPP1",
+        "TPP2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4017,7 +5033,10 @@
       "operator": "E I Colton, LLC",
       "county": "San Bernardino",
       "capacity": 49.0,
-      "total_co2_emissions": 250001.0
+      "total_co2_emissions": 250001.0,
+      "unit_ids": [
+        "AMP-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4036,7 +5055,10 @@
       "operator": "Calpine Operating Services Company, Inc.",
       "county": "Contra Costa",
       "capacity": 50.0,
-      "total_co2_emissions": 165622.0
+      "total_co2_emissions": 165622.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4055,7 +5077,11 @@
       "operator": "EthosEnergy Power Plant Services, LLC",
       "county": "Sacramento",
       "capacity": 546.0,
-      "total_co2_emissions": 17632320.0
+      "total_co2_emissions": 17632320.0,
+      "unit_ids": [
+        "2",
+        "3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4074,7 +5100,10 @@
       "operator": "City of Farmington Electric Utility System",
       "county": "San Juan",
       "capacity": 60.0,
-      "total_co2_emissions": 2328370.0
+      "total_co2_emissions": 2328370.0,
+      "unit_ids": [
+        "CTG-1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4093,7 +5122,11 @@
       "operator": "San Diego Gas and Electric Company",
       "county": "San Diego",
       "capacity": 577.0,
-      "total_co2_emissions": 14560368.0
+      "total_co2_emissions": 14560368.0,
+      "unit_ids": [
+        "CTG1",
+        "CTG2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4112,7 +5145,11 @@
       "operator": "City of Santa Clara",
       "county": "Santa Clara",
       "capacity": 152.0,
-      "total_co2_emissions": 3624044.0
+      "total_co2_emissions": 3624044.0,
+      "unit_ids": [
+        "PCT1",
+        "PCT2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4131,7 +5168,11 @@
       "operator": "Colorado Energy Management, LLC",
       "county": "Los Angeles",
       "capacity": 154.0,
-      "total_co2_emissions": 4234616.0
+      "total_co2_emissions": 4234616.0,
+      "unit_ids": [
+        "M1",
+        "M2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4150,7 +5191,10 @@
       "operator": "City of Burbank",
       "county": "Los Angeles",
       "capacity": 316.0,
-      "total_co2_emissions": 7049949.0
+      "total_co2_emissions": 7049949.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4169,7 +5213,11 @@
       "operator": "Turlock Irrigation District",
       "county": "Stanislaus",
       "capacity": 268.0,
-      "total_co2_emissions": 7833304.0
+      "total_co2_emissions": 7833304.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4188,7 +5236,11 @@
       "operator": "Pacificorp Energy Generation",
       "county": "Juab",
       "capacity": 590.0,
-      "total_co2_emissions": 11662186.0
+      "total_co2_emissions": 11662186.0,
+      "unit_ids": [
+        "CTG1A",
+        "CTG1B"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4207,7 +5259,11 @@
       "operator": "Modesto Irrigation District",
       "county": "Stanislaus",
       "capacity": 106.0,
-      "total_co2_emissions": 285031.0
+      "total_co2_emissions": 285031.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4226,7 +5282,13 @@
       "operator": "City of Riverside, CA",
       "county": "Riverside",
       "capacity": 203.0,
-      "total_co2_emissions": 386099.0
+      "total_co2_emissions": 386099.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4245,7 +5307,10 @@
       "operator": "Utah Associated Municipal Power Systems",
       "county": "Utah",
       "capacity": 153.0,
-      "total_co2_emissions": 2579367.0
+      "total_co2_emissions": 2579367.0,
+      "unit_ids": [
+        "U1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4264,7 +5329,10 @@
       "operator": "Newmont Nevada Energy Investment LLC",
       "county": "Eureka",
       "capacity": 242.0,
-      "total_co2_emissions": 12707686.0
+      "total_co2_emissions": 12707686.0,
+      "unit_ids": [
+        "001"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4283,7 +5351,10 @@
       "operator": "Portland General Electric Company",
       "county": "Columbia",
       "capacity": 445.0,
-      "total_co2_emissions": 9854281.0
+      "total_co2_emissions": 9854281.0,
+      "unit_ids": [
+        "PWEU1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4302,7 +5373,11 @@
       "operator": "San Diego Gas and Electric Company",
       "county": "San Diego",
       "capacity": 100.0,
-      "total_co2_emissions": 613072.0
+      "total_co2_emissions": 613072.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4321,7 +5396,13 @@
       "operator": "Pacificorp Energy Generation",
       "county": "Utah",
       "capacity": 1168.0,
-      "total_co2_emissions": 14024401.0
+      "total_co2_emissions": 14024401.0,
+      "unit_ids": [
+        "CT01",
+        "CT02",
+        "CT03",
+        "CT04"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4340,7 +5421,11 @@
       "operator": "Malaga Power, LLC",
       "county": "Fresno",
       "capacity": 159.0,
-      "total_co2_emissions": 793612.0
+      "total_co2_emissions": 793612.0,
+      "unit_ids": [
+        "GT-1",
+        "GT-2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4359,7 +5444,11 @@
       "operator": "City of St. George",
       "county": "Washington",
       "capacity": 394.0,
-      "total_co2_emissions": 497093.0
+      "total_co2_emissions": 497093.0,
+      "unit_ids": [
+        "MC-1",
+        "MC-2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4378,7 +5467,11 @@
       "operator": "City of Roseville, CA",
       "county": "Placer",
       "capacity": 171.0,
-      "total_co2_emissions": 2280684.0
+      "total_co2_emissions": 2280684.0,
+      "unit_ids": [
+        "CT001",
+        "CT002"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4397,7 +5490,10 @@
       "operator": "Black Hills Power, Inc",
       "county": "Campbell",
       "capacity": 106.0,
-      "total_co2_emissions": 8767475.0
+      "total_co2_emissions": 8767475.0,
+      "unit_ids": [
+        "001"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4416,7 +5512,11 @@
       "operator": "Invenergy",
       "county": "Weld",
       "capacity": 330.0,
-      "total_co2_emissions": 2584369.0
+      "total_co2_emissions": 2584369.0,
+      "unit_ids": [
+        "CT-01",
+        "CT-02"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4435,7 +5535,11 @@
       "operator": "CAMS, LLC",
       "county": "Lea",
       "capacity": 705.0,
-      "total_co2_emissions": 12877568.0
+      "total_co2_emissions": 12877568.0,
+      "unit_ids": [
+        "HOBB1",
+        "HOBB2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4454,7 +5558,11 @@
       "operator": "Russell City Energy Center, LLC",
       "county": "Alameda",
       "capacity": 643.0,
-      "total_co2_emissions": 3346360.0
+      "total_co2_emissions": 3346360.0,
+      "unit_ids": [
+        "CT1",
+        "CT2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4473,7 +5581,10 @@
       "operator": "Southern California Edison Company",
       "county": "Ventura",
       "capacity": 51.0,
-      "total_co2_emissions": 96748.0
+      "total_co2_emissions": 96748.0,
+      "unit_ids": [
+        "CT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4492,7 +5603,10 @@
       "operator": "Southern California Edison Company",
       "county": "San Bernardino",
       "capacity": 51.0,
-      "total_co2_emissions": 97355.0
+      "total_co2_emissions": 97355.0,
+      "unit_ids": [
+        "CT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4511,7 +5625,10 @@
       "operator": "Southern California Edison Company",
       "county": "San Bernardino",
       "capacity": 51.0,
-      "total_co2_emissions": 106267.0
+      "total_co2_emissions": 106267.0,
+      "unit_ids": [
+        "CT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4530,7 +5647,10 @@
       "operator": "Southern California Edison Company",
       "county": "Orange",
       "capacity": 51.0,
-      "total_co2_emissions": 119819.0
+      "total_co2_emissions": 119819.0,
+      "unit_ids": [
+        "CT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4549,7 +5669,10 @@
       "operator": "Southern California Edison Company",
       "county": "Los Angeles",
       "capacity": 51.0,
-      "total_co2_emissions": 105362.0
+      "total_co2_emissions": 105362.0,
+      "unit_ids": [
+        "CT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4568,7 +5691,11 @@
       "operator": "Pacific Gas and Electric Company",
       "county": "Contra Costa",
       "capacity": 598.0,
-      "total_co2_emissions": 11324997.0
+      "total_co2_emissions": 11324997.0,
+      "unit_ids": [
+        "GT1",
+        "GT2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4587,7 +5714,11 @@
       "operator": "UniSource Energy Development Company",
       "county": "Mohave",
       "capacity": 96.0,
-      "total_co2_emissions": 363416.0
+      "total_co2_emissions": 363416.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4606,7 +5737,11 @@
       "operator": "Pacific Gas and Electric Company",
       "county": "Colusa",
       "capacity": 697.0,
-      "total_co2_emissions": 7858145.0
+      "total_co2_emissions": 7858145.0,
+      "unit_ids": [
+        "CT1",
+        "CT2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4625,7 +5760,11 @@
       "operator": "Imperial Irrigation District",
       "county": "Imperial",
       "capacity": 97.0,
-      "total_co2_emissions": 323082.0
+      "total_co2_emissions": 323082.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4644,7 +5783,10 @@
       "operator": "Black Hills Power, Inc",
       "county": "Campbell",
       "capacity": 118.0,
-      "total_co2_emissions": 7270306.0
+      "total_co2_emissions": 7270306.0,
+      "unit_ids": [
+        "001"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4663,7 +5805,10 @@
       "operator": "Basin Electric Power Cooperative",
       "county": "Roosevelt",
       "capacity": 102.0,
-      "total_co2_emissions": 293359.0
+      "total_co2_emissions": 293359.0,
+      "unit_ids": [
+        "CT01"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4682,7 +5827,10 @@
       "operator": "Basin Electric Power Cooperative",
       "county": "Campbell",
       "capacity": 453.0,
-      "total_co2_emissions": 21745284.0
+      "total_co2_emissions": 21745284.0,
+      "unit_ids": [
+        "01"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4701,7 +5849,11 @@
       "operator": "Midway Peaking, LLC",
       "county": "Fresno",
       "capacity": 121.0,
-      "total_co2_emissions": 285007.0
+      "total_co2_emissions": 285007.0,
+      "unit_ids": [
+        "1",
+        "2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4720,7 +5872,13 @@
       "operator": "Panoche Energy Center, LLC",
       "county": "Fresno",
       "capacity": 426.0,
-      "total_co2_emissions": 2124449.0
+      "total_co2_emissions": 2124449.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4739,7 +5897,15 @@
       "operator": "NAES Corporation",
       "county": "Deer Lodge",
       "capacity": 149.0,
-      "total_co2_emissions": 1847146.0
+      "total_co2_emissions": 1847146.0,
+      "unit_ids": [
+        "1A",
+        "1B",
+        "2A",
+        "2B",
+        "3A",
+        "3B"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4758,7 +5924,11 @@
       "operator": "Orange Grove Energy, LP",
       "county": "San Diego",
       "capacity": 102.0,
-      "total_co2_emissions": 246100.0
+      "total_co2_emissions": 246100.0,
+      "unit_ids": [
+        "CTG1",
+        "CTG2"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4777,7 +5947,21 @@
       "operator": "Coolidge Power, LLC",
       "county": "Pinal",
       "capacity": 585.0,
-      "total_co2_emissions": 852005.0
+      "total_co2_emissions": 852005.0,
+      "unit_ids": [
+        "CT01",
+        "CT02",
+        "CT03",
+        "CT04",
+        "CT05",
+        "CT06",
+        "CT07",
+        "CT08",
+        "CT09",
+        "CT10",
+        "CT11",
+        "CT12"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4796,7 +5980,16 @@
       "operator": "Black Hills Electric Generation, LLC",
       "county": "Pueblo",
       "capacity": 381.0,
-      "total_co2_emissions": 3354328.0
+      "total_co2_emissions": 3354328.0,
+      "unit_ids": [
+        "CT01",
+        "CT02",
+        "CT04",
+        "CT05",
+        "CT06",
+        "CT07",
+        "CT08"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4815,7 +6008,10 @@
       "operator": "El Cajon Energy, LLC",
       "county": "San Diego",
       "capacity": 50.0,
-      "total_co2_emissions": 96553.0
+      "total_co2_emissions": 96553.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4834,7 +6030,13 @@
       "operator": "City of Anaheim",
       "county": "Orange",
       "capacity": 202.0,
-      "total_co2_emissions": 422748.0
+      "total_co2_emissions": 422748.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4853,7 +6055,10 @@
       "operator": "Idaho Power Company",
       "county": "Payette",
       "capacity": 331.0,
-      "total_co2_emissions": 2790751.0
+      "total_co2_emissions": 2790751.0,
+      "unit_ids": [
+        "CT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4872,7 +6077,10 @@
       "operator": "NRG Energy, Inc",
       "county": "San Bernardino",
       "capacity": "unknown",
-      "total_co2_emissions": "unknown"
+      "total_co2_emissions": "unknown",
+      "unit_ids": [
+        "BLR1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4891,7 +6099,10 @@
       "operator": "NRG Energy, Inc",
       "county": "San Bernardino",
       "capacity": "unknown",
-      "total_co2_emissions": "unknown"
+      "total_co2_emissions": "unknown",
+      "unit_ids": [
+        "BLR1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4910,7 +6121,10 @@
       "operator": "NRG Energy, Inc",
       "county": "San Bernardino",
       "capacity": "unknown",
-      "total_co2_emissions": "unknown"
+      "total_co2_emissions": "unknown",
+      "unit_ids": [
+        "BLR1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4929,7 +6143,13 @@
       "operator": "NRG Marsh Landing LLC",
       "county": "Contra Costa",
       "capacity": 817.0,
-      "total_co2_emissions": 312296.0
+      "total_co2_emissions": 312296.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4948,7 +6168,10 @@
       "operator": "Southern Montana Electric G & T Cooperative, Inc.",
       "county": "Cascade",
       "capacity": 46.0,
-      "total_co2_emissions": 764.0
+      "total_co2_emissions": 764.0,
+      "unit_ids": [
+        "HGS1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4967,7 +6190,17 @@
       "operator": "CPV Sentinel, LLC",
       "county": "Riverside",
       "capacity": 765.0,
-      "total_co2_emissions": 1399724.0
+      "total_co2_emissions": 1399724.0,
+      "unit_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -4986,7 +6219,13 @@
       "operator": "Mariposa Energy, Limited Liability Corporation",
       "county": "Alameda",
       "capacity": 205.0,
-      "total_co2_emissions": 295175.0
+      "total_co2_emissions": 295175.0,
+      "unit_ids": [
+        "GT-1",
+        "GT-2",
+        "GT-3",
+        "GT-4"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -5005,7 +6244,14 @@
       "operator": "Walnut Creek Energy, LLC",
       "county": "Los Angeles",
       "capacity": 535.0,
-      "total_co2_emissions": 1079631.0
+      "total_co2_emissions": 1079631.0,
+      "unit_ids": [
+        "GT1",
+        "GT2",
+        "GT3",
+        "GT4",
+        "GT5"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -5024,7 +6270,12 @@
       "operator": "Pio Pico Energy Center LLC",
       "county": "San Diego",
       "capacity": 340.0,
-      "total_co2_emissions": 110938.0
+      "total_co2_emissions": 110938.0,
+      "unit_ids": [
+        "CTG1",
+        "CTG2",
+        "CTG3"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -5043,7 +6294,10 @@
       "operator": "Algonquin Power Sanger, LLC",
       "county": "Fresno",
       "capacity": 40.0,
-      "total_co2_emissions": 19980.0
+      "total_co2_emissions": 19980.0,
+      "unit_ids": [
+        "8"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -5062,7 +6316,12 @@
       "operator": "Black Hills Service Company LLC",
       "county": "Laramie",
       "capacity": 116.0,
-      "total_co2_emissions": 170346.0
+      "total_co2_emissions": 170346.0,
+      "unit_ids": [
+        "CT01",
+        "CT02",
+        "CT03"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -5081,7 +6340,10 @@
       "operator": "Northern California Power Agency",
       "county": "San Joaquin",
       "capacity": 210.0,
-      "total_co2_emissions": 2323329.0
+      "total_co2_emissions": 2323329.0,
+      "unit_ids": [
+        "CT1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -5100,7 +6362,10 @@
       "operator": "Wellhead Services, Inc.",
       "county": "Tulare",
       "capacity": 51.0,
-      "total_co2_emissions": 63598.0
+      "total_co2_emissions": 63598.0,
+      "unit_ids": [
+        "GEN1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -5119,7 +6384,10 @@
       "operator": "Public Service Company of New Mexico",
       "county": "Valencia",
       "capacity": 42.0,
-      "total_co2_emissions": 18615.0
+      "total_co2_emissions": 18615.0,
+      "unit_ids": [
+        "1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -5138,7 +6406,10 @@
       "operator": "Portland General Electric Company",
       "county": "Morrow",
       "capacity": 492.0,
-      "total_co2_emissions": 1243026.0
+      "total_co2_emissions": 1243026.0,
+      "unit_ids": [
+        "CTEU1"
+      ]
     },
     "geometry": {
       "type": "Point",
@@ -5157,7 +6428,13 @@
       "operator": "El Paso Electric Company",
       "county": "El Paso",
       "capacity": 376.0,
-      "total_co2_emissions": 1047738.0
+      "total_co2_emissions": 1047738.0,
+      "unit_ids": [
+        "GT-1",
+        "GT-2",
+        "GT-3",
+        "GT-4"
+      ]
     },
     "geometry": {
       "type": "Point",
