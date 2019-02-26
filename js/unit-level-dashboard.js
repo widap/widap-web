@@ -107,7 +107,7 @@ class UnitLevelDashboard extends React.Component {
     return (
       <div>
         <h1 class='page-title'>WIDAP Unit-Level Dashboard</h1>
-        <div className='flex-row'>
+        <div id='dashboard-control'>
           <Select
             id='plant-selector'
             value={this.state.selectedPlant}

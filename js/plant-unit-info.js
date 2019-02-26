@@ -11,12 +11,12 @@ export class PlantUnitInfo extends React.Component {
       <div class="info-card">
         <table>
           <tr>
-            <th>ORISPL Code</th>
+            <th>ORISPL</th>
             <th>Plant Name</th>
             <th>Unit</th>
             <th>State</th>
             <th>County</th>
-            <th>Fuel Source</th>
+            <th>Fuel</th>
             <th>Operator</th>
           </tr>
           <tr>
