@@ -1,4 +1,5 @@
 import { Spinner } from './spin.js';
+import { PlantUnitInfo } from './plant-unit-info.js';
 import { renderGenerationTimeSeries } from './generation-time-series.js';
 import { renderEmissionsTimeSeries } from './emissions-time-series.js';
 import { renderEmissionsIntensityVsCF } from './emis-intensity-vs-cf.js';
@@ -8,7 +9,6 @@ import ReactDOM from 'react-dom';
 import PLANTS from './plants.json';
 import { csv } from 'd3-fetch';
 import { timeParse } from 'd3-time-format';
-
 
 const GH_HOST = 'https://media.githubusercontent.com';
 const EMIS_DATA_REPO =  `${GH_HOST}/media/widap/emissions-data/master/csv`;
@@ -101,9 +101,12 @@ class UnitLevelDashboard extends React.Component {
     }
   }
 
+  getPlantInfo = (plant) => this.plantUnitMap[plant];
+
   render() {
     return (
       <div>
+        <h1 class='page-title'>WIDAP Unit-Level Dashboard</h1>
         <div className='flex-row'>
           <Select
             id='plant-selector'
@@ -124,6 +127,11 @@ class UnitLevelDashboard extends React.Component {
           <button id="load-data-button" onClick={this.maybeLoadData}>Load</button>
           <div id={SPINNER_DIV}></div>
         </div>
+        <PlantUnitInfo
+          plant={this.state.loadedPlant}
+          unit={this.state.loadedUnit}
+          getInfo={this.getPlantInfo}
+        />
         <h2>Generation time series</h2>
         <div id={GENERATION_TIME_SERIES}></div>
         <h2>Emissions Time Series</h2>
