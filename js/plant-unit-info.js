@@ -14,6 +14,7 @@ export class PlantUnitInfo extends React.Component {
             <th>ORISPL Code</th>
             <th>Name</th>
             <th>Unit ID</th>
+            <th>State</th>
             <th>County</th>
             <th>Fuel Source</th>
             <th>Operator</th>
@@ -22,6 +23,7 @@ export class PlantUnitInfo extends React.Component {
             <td>{this.props.plant}</td>
             <td>{plantInfo.name}</td>
             <td>{this.props.unit}</td>
+            <td>{plantInfo.state}</td>
             <td>{plantInfo.county}</td>
             <td>{plantInfo.fuel_source}</td>
             <td>{plantInfo.operator}</td>

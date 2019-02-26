@@ -20,6 +20,7 @@ def row_to_feature(row):
         "fuel_source": checknan(row.primary_fuel),
         "orispl_code": row.Index,
         "operator": checknan(row.operator),
+        "state": row.state,
         "county": row.county,
         "capacity": checknan(row.max_gload, default="unknown"),
         "total_co2_emissions": checknan(row.total_co2, default="unknown"),
