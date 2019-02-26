@@ -132,9 +132,9 @@ class UnitLevelDashboard extends React.Component {
           unit={this.state.loadedUnit}
           getInfo={this.getPlantInfo}
         />
-        <div id={GENERATION_TIME_SERIES}></div>
-        <div id={EMISSIONS_TIME_SERIES}></div>
-        <div id={EMISSIONS_INTENSITY_VS_CF}></div>
+        <div class='plot-container' id={GENERATION_TIME_SERIES}></div>
+        <div class='plot-container' id={EMISSIONS_TIME_SERIES}></div>
+        <div class='plot-container' id={EMISSIONS_INTENSITY_VS_CF}></div>
       </div>
     );
   }

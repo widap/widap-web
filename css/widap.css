@@ -60,6 +60,7 @@ button:focus {
   display: flex;
   flex-wrap: wrap;
   max-width: 1000px;
+  margin: 8px 4px;
 }
 #dashboard-control > * {
   margin: 2px;
@@ -85,7 +86,8 @@ button:focus {
   top: 0px;
   padding: 2px 4px;
   background-color: rgba(255, 255, 255, 0.92);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px -2px 3px 2px rgb(255, 255, 255),
+    0px 1px 1px rgba(0, 0, 0, 0.25);
   z-index: 2000;
 }
 .info-card table {
@@ -100,6 +102,9 @@ button:focus {
 .info-card table td, th {
   padding: 2px 4px;
   border: 0.5px solid #ddd;
+}
+.plot-container {
+  margin-top: 4px;
 }
 @keyframes spinner-line-fade-more {
   0%, 100% {
