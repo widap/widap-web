@@ -12,8 +12,8 @@ export class PlantUnitInfo extends React.Component {
         <table>
           <tr>
             <th>ORISPL Code</th>
-            <th>Name</th>
-            <th>Unit ID</th>
+            <th>Plant Name</th>
+            <th>Unit</th>
             <th>State</th>
             <th>County</th>
             <th>Fuel Source</th>
