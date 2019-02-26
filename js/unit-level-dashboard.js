@@ -132,11 +132,8 @@ class UnitLevelDashboard extends React.Component {
           unit={this.state.loadedUnit}
           getInfo={this.getPlantInfo}
         />
-        <h2>Generation time series</h2>
         <div id={GENERATION_TIME_SERIES}></div>
-        <h2>Emissions Time Series</h2>
         <div id={EMISSIONS_TIME_SERIES}></div>
-        <h2>Emissions Intensity vs Capacity Factor</h2>
         <div id={EMISSIONS_INTENSITY_VS_CF}></div>
       </div>
     );
