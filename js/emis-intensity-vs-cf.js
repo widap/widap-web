@@ -5,31 +5,32 @@ const KG_PER_LB = 0.45359237;
 const KG_PER_TON = 2000 * KG_PER_LB;
 const DATE_HOUR_FMT = timeFormat('%Y-%m-%d %H:%M');
 
-// Durstenfeld shuffle. Modifies array in-place.
-function shuffle(array) {
-  for (var i = array.length - 1; i > 0; i--) {
+// Samples using Durstenfeld (Fisher-Yates) shuffle.
+function sample(array, sampleSize) {
+  const n = Math.min(sampleSize, array.length);
+  var sampled = [];
+  var arrayCopy = array.slice();
+  var i = arrayCopy.length - 1;
+  while (sampled.length < n) {
     var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
+    sampled.push(arrayCopy[j]);
+    arrayCopy[j] = arrayCopy[i];
+    arrayCopy[i] = sampled[sampled.length-1];
+    i--;
   }
+  return sampled;
 }
 
 function jitter(array, maxJitter) {
   return array.map(x => x + maxJitter * (Math.random() - 0.5));
 }
 
-// TODO: Probably only render a single gas at a time. It's quite costly to do a
-// ScatterGL plot with 150k points, and it's a lot of information for a user to
-// ingest anyways. Removing one of the two would save ~1.75s in load time.
 export function renderEmissionsIntensityVsCF(divId, data) {
   var traces = [];
   if (data.length > 0) {
-    var dataCopy = data.slice();
-    shuffle(dataCopy);
-    const maxGen = dataCopy.map(d => d.gen).reduce((a, b) => Math.max(a, b));
-    dataCopy.forEach(d => d.cf = d.gen / maxGen);
-    const filtered = dataCopy.filter(d => d.cf > 0.02);
+    const maxGen = data.map(d => d.gen).reduce((a, b) => Math.max(a, b));
+    data.forEach(d => d.cf = d.gen / maxGen);
+    const filtered = data.filter(d => d.cf > 0.02);
     const contourTraceDefs = [
       {y: filtered.map(d => KG_PER_TON * d.co2_mass / d.gen), xaxis: 'x', yaxis: 'y'},
       {y: filtered.map(d => KG_PER_LB * d.so2_mass / d.gen), xaxis: 'x2', yaxis: 'y2'},
@@ -47,17 +48,17 @@ export function renderEmissionsIntensityVsCF(divId, data) {
         showlegend: false,
         showscale: false,
       }));
-    const sample = filtered.slice(0, 1000);
+    const sampled = sample(filtered, 1000);
     const scatterTraceDefs = [
-      {y: sample.map(d => KG_PER_TON * d.co2_mass / d.gen), xaxis: 'x', yaxis: 'y'},
-      {y: sample.map(d => KG_PER_LB * d.so2_mass / d.gen), xaxis: 'x2', yaxis: 'y2'},
+      {y: sampled.map(d => KG_PER_TON * d.co2_mass / d.gen), xaxis: 'x', yaxis: 'y'},
+      {y: sampled.map(d => KG_PER_LB * d.so2_mass / d.gen), xaxis: 'x2', yaxis: 'y2'},
     ];
     const scatters = scatterTraceDefs.map(
       traceDef => ({
-        x: jitter(sample.map(d => d.cf), 0.005),
+        x: jitter(sampled.map(d => d.cf), 0.005),
         y: traceDef.y,
         type: 'scatter',
-        text: sample.map(d => DATE_HOUR_FMT(d.datetime)),
+        text: sampled.map(d => DATE_HOUR_FMT(d.datetime)),
         xaxis: traceDef.xaxis,
         yaxis: traceDef.yaxis,
         mode: 'markers',
@@ -65,7 +66,7 @@ export function renderEmissionsIntensityVsCF(divId, data) {
         hoverlabel: {font: FONT},
         marker: {
           'size': 3.5,
-          'color': sample.map(d => d.datetime.getFullYear()),
+          'color': sampled.map(d => d.datetime.getFullYear()),
           'colorscale': 'Viridis',
           'showscale': true,
         },
