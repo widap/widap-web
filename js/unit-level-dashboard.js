@@ -3,6 +3,11 @@ import { PlantUnitInfo } from './plant-unit-info.js';
 import { renderGenerationTimeSeries } from './generation-time-series.js';
 import { renderEmissionsTimeSeries } from './emissions-time-series.js';
 import { renderEmissionsIntensityVsCF } from './emis-intensity-vs-cf.js';
+import {
+  renderEfficiencyHistogram,
+  renderCapacityFactorHistogram,
+  renderEmissionsIntensityHistogram
+} from './histograms.js';
 import React from 'react';
 import Select from 'react-select';
 import ReactDOM from 'react-dom';
@@ -16,6 +21,10 @@ const EMIS_DATA_REPO =  `${GH_HOST}/media/widap/emissions-data/master/csv`;
 const GENERATION_TIME_SERIES = 'generation-time-series';
 const EMISSIONS_TIME_SERIES = 'emissions-time-series';
 const EMISSIONS_INTENSITY_VS_CF = 'emissions-intensity-vs-cf';
+const EFFICIENCY_HISTOGRAM = 'efficiency-histogram';
+const CAPACITY_FACTOR_HISTOGRAM = 'capacity-factor-histogram';
+const EMISSIONS_INTENSITY_HISTOGRAM = 'emissions-intensity-histogram';
+
 const SPINNER_DIV = 'loading-spinner';
 const SPINNER_OPTS = {lines: 9, length: 5, width: 3, radius: 5};
 
@@ -66,6 +75,9 @@ class UnitLevelDashboard extends React.Component {
     renderGenerationTimeSeries(GENERATION_TIME_SERIES, data);
     renderEmissionsTimeSeries(EMISSIONS_TIME_SERIES, data);
     renderEmissionsIntensityVsCF(EMISSIONS_INTENSITY_VS_CF, data);
+    renderEfficiencyHistogram(EFFICIENCY_HISTOGRAM, data);
+    renderCapacityFactorHistogram(CAPACITY_FACTOR_HISTOGRAM, data);
+    renderEmissionsIntensityHistogram(EMISSIONS_INTENSITY_HISTOGRAM, data);
   }
 
   componentDidMount() {
@@ -132,9 +144,12 @@ class UnitLevelDashboard extends React.Component {
           unit={this.state.loadedUnit}
           getInfo={this.getPlantInfo}
         />
-        <div class='plot-container' id={GENERATION_TIME_SERIES}></div>
-        <div class='plot-container' id={EMISSIONS_TIME_SERIES}></div>
-        <div class='plot-container' id={EMISSIONS_INTENSITY_VS_CF}></div>
+        <div class='plot-container' id={GENERATION_TIME_SERIES} />
+        <div class='plot-container' id={EMISSIONS_TIME_SERIES} />
+        <div class='plot-container' id={EMISSIONS_INTENSITY_VS_CF} />
+        <div class='plot-container' id={EFFICIENCY_HISTOGRAM} />
+        <div class='plot-container' id={CAPACITY_FACTOR_HISTOGRAM} />
+        <div class='plot-container' id={EMISSIONS_INTENSITY_HISTOGRAM} />
       </div>
     );
   }

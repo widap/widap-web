@@ -29,7 +29,7 @@ export function renderEmissionsIntensityVsCF(divId, data) {
     shuffle(dataCopy);
     const maxGen = dataCopy.map(d => d.gen).reduce((a, b) => Math.max(a, b));
     dataCopy.forEach(d => d.cf = d.gen / maxGen);
-    const filtered = dataCopy.filter(d => d.cf > 0.02);
+    const filtered = dataCopy.filter(d => d.cf > 0.02).slice(0, 2000);
     const traceDefs = [
       {y: filtered.map(d => KG_PER_TON * d.co2_mass / d.gen), xaxis: 'x', yaxis: 'y'},
       {y: filtered.map(d => KG_PER_LB * d.so2_mass / d.gen), xaxis: 'x2', yaxis: 'y2'},
@@ -40,7 +40,7 @@ export function renderEmissionsIntensityVsCF(divId, data) {
         y: traceDef.y,
         xaxis: traceDef.xaxis,
         yaxis: traceDef.yaxis,
-        type: 'scattergl',
+        type: 'scatter',
         text: filtered.map(d => DATE_HOUR_FMT(d.datetime)),
         mode: 'markers',
         hoverinfo: 'x+y+text',

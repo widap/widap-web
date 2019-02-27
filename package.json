@@ -22,7 +22,8 @@
     "watch:dashboard": "npm run build:dashboard -- --watch",
     "watch:map": "npm run build:map -- --watch",
     "build-prod:dashboard": "npm run build:dashboard -- --configProduction",
-    "build-prod:map": "npm run build:map -- --configProduction"
+    "build-prod:map": "npm run build:map -- --configProduction",
+    "lint": "eslint js/*.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
