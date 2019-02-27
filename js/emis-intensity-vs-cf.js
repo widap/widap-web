@@ -29,29 +29,48 @@ export function renderEmissionsIntensityVsCF(divId, data) {
     shuffle(dataCopy);
     const maxGen = dataCopy.map(d => d.gen).reduce((a, b) => Math.max(a, b));
     dataCopy.forEach(d => d.cf = d.gen / maxGen);
-    const filtered = dataCopy.filter(d => d.cf > 0.02).slice(0, 2000);
-    const traceDefs = [
+    const filtered = dataCopy.filter(d => d.cf > 0.02);
+    const contourTraceDefs = [
       {y: filtered.map(d => KG_PER_TON * d.co2_mass / d.gen), xaxis: 'x', yaxis: 'y'},
       {y: filtered.map(d => KG_PER_LB * d.so2_mass / d.gen), xaxis: 'x2', yaxis: 'y2'},
     ];
-    traces = traceDefs.map(
+    const contours = contourTraceDefs.map(
       traceDef => ({
-        x: jitter(filtered.map(d => d.cf), 0.005),
+        x: filtered.map(d => d.cf),
         y: traceDef.y,
         xaxis: traceDef.xaxis,
         yaxis: traceDef.yaxis,
+        colorscale: 'Hot',
+        reversescale: true,
+        type: 'histogram2dcontour',
+        hoverinfo: 'none',
+        showlegend: false,
+        showscale: false,
+      }));
+    const sample = filtered.slice(0, 1000);
+    const scatterTraceDefs = [
+      {y: sample.map(d => KG_PER_TON * d.co2_mass / d.gen), xaxis: 'x', yaxis: 'y'},
+      {y: sample.map(d => KG_PER_LB * d.so2_mass / d.gen), xaxis: 'x2', yaxis: 'y2'},
+    ];
+    const scatters = scatterTraceDefs.map(
+      traceDef => ({
+        x: jitter(sample.map(d => d.cf), 0.005),
+        y: traceDef.y,
         type: 'scatter',
-        text: filtered.map(d => DATE_HOUR_FMT(d.datetime)),
+        text: sample.map(d => DATE_HOUR_FMT(d.datetime)),
+        xaxis: traceDef.xaxis,
+        yaxis: traceDef.yaxis,
         mode: 'markers',
         hoverinfo: 'x+y+text',
         hoverlabel: {font: FONT},
         marker: {
           'size': 3.5,
-          'color': filtered.map(d => d.datetime.getFullYear()),
+          'color': sample.map(d => d.datetime.getFullYear()),
           'colorscale': 'Viridis',
           'showscale': true,
-        }
+        },
       }));
+    traces = scatters.concat(contours);
   }
   const layout = {
     title: {
