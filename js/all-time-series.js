@@ -1,3 +1,4 @@
+import { FONT } from './defaults.js';
 import { quantile } from 'd3-array';
 import { timeDay, timeWeek, timeMonth } from 'd3-time';
 import { timeParse } from 'd3-time-format';
@@ -9,6 +10,28 @@ const ZOOM_THRESHOLD_MONTH_MS = 30 * ZOOM_THRESHOLD_DAY_MS
 const YMD_PARSER = timeParse('%Y-%m-%d');
 const HM_PARSER = timeParse('%H:%M');
 const HMS_PARSER = timeParse('%H:%M:%S');
+
+const SERIES_OPTIONS = {
+  'gen': {name: 'gen (MWh/hr)', color: '#8c1515', yaxis: 'y'},
+  'so2_mass': {name: 'SO2 (lbs/hr)', color: 'green', yaxis: 'y2'},
+  'nox_mass': {name: 'NOx (lbs/hr)', color: 'orange', yaxis: 'y3'},
+  'co2_mass': {name: 'CO2 (tons/hr)', color: 'steelblue', yaxis: 'y4'},
+  'heat_input': {name: 'heat (MMBTU/hr)', color: '#83286f', yaxis: 'y5'},
+}
+
+const LAYOUT = {
+  showlegend: false,
+  autosize: true,
+  title: {text: 'All time series'},
+  font: FONT,
+  grid: {yaxes: ['y', 'y2', 'y3', 'y4', 'y5'], rows: 5, columns: 1},
+  xaxis: {type: 'date'},
+  yaxis: {fixedrange: true, title: {text: 'Generation (MWh/hr)'}},
+  yaxis2: {fixedrange: true, title: {text: 'SO<sub>2</sub> (lbs/hr)'}},
+  yaxis3: {fixedrange: true, title: {text: 'NO<sub>x</sub> (lbs/hr)'}},
+  yaxis4: {fixedrange: true, title: {text: 'CO<sub>2</sub> (tons/hr)'}},
+  yaxis5: {fixedrange: true, title: {text: 'Heat input (MMBTU/hr)'}},
+}
 
 // Plotly emits time range data in very inconsistent formats. Here are 4 strings
 // we might have to interpret:
@@ -69,7 +92,7 @@ function quartilesFromDailyBins(dailyBins, d3Interval, increment) {
   return quartilesFromBins(bins);
 }
 
-export function getQuantiles(data, col) {
+function getQuartiles(data, col) {
   if (data.length == 0) {
     return {daily: [], weekly: [], monthly: []};
   }
@@ -126,7 +149,7 @@ function selectTraces(allTraces, timeDelta) {
   return allTraces.hourly
 }
 
-export function rezoom(divId, allTraces) {
+function rezoom(divId, allTraces) {
   return (update) => {
     const layout = update.currentTarget.layout, xRange = layout.xaxis.range;
     var traces;
@@ -145,4 +168,69 @@ export function rezoom(divId, allTraces) {
     }
     Plotly.react(divId, traces, layout)
   };
+}
+
+
+function trendSeriesGenerator(bins, col) {
+  const dt = bins[col].map(bin => bin.t);
+  return (name, accessor, opts) => {
+    const trace = {
+      type: 'scatter',
+      name: `${name} ${SERIES_OPTIONS[col].name}`,
+      x: dt,
+      y: bins[col].map(accessor),
+      yaxis: SERIES_OPTIONS[col].yaxis,
+      hoverlabel: {font: FONT},
+    }
+    return Object.assign(trace, opts);
+  };
+}
+
+function trendSeries(bins) {
+  return Object.keys(SERIES_OPTIONS).flatMap(col => {
+    const traceGen = trendSeriesGenerator(bins, col);
+    return [
+      traceGen('min', d => d.min, {line: {color: '#CCC', width: 0.5}}),
+      traceGen('max', d => d.max, {line: {color: '#CCC', width: 0.5}, fill: 'tonexty'}),
+      traceGen('25%', d => d.q1, {line: {color: '#999', width: 0.5}}),
+      traceGen('75%', d => d.q3, {line: {color: '#999', width: 0.5}, fill: 'tonexty'}),
+      traceGen('median', d => d.q2, {line: {color: SERIES_OPTIONS[col].color, width: 1.8}}),
+    ]});
+}
+
+function hourlyTraces(data) {
+  return Object.keys(SERIES_OPTIONS).map(col => ({
+    type: 'scatter',
+    name: SERIES_OPTIONS[col].name,
+    x: data.map(d => d.datetime),
+    y: data.map(d => d[col]),
+    yaxis: SERIES_OPTIONS[col].yaxis,
+    hoverlabel: {font: FONT},
+    line: {color: SERIES_OPTIONS[col].color, width: 1.5},
+  }));
+}
+
+export function renderAllTimeSeries(divId, data) {
+  $(`#${divId}`).off('plotly_relayout');
+  var traces = hourlyTraces(data);
+  var quartiles = {monthly: {}, weekly: {}, daily: {}};
+  if (data.length > 0) {
+    Object.keys(SERIES_OPTIONS).forEach(col => {
+      let seriesQuartiles = getQuartiles(data, col);
+      quartiles.monthly[col] = seriesQuartiles.monthly;
+      quartiles.weekly[col] = seriesQuartiles.weekly;
+      quartiles.daily[col] = seriesQuartiles.daily;
+    });
+    const allTraces = {
+      monthly: trendSeries(quartiles.monthly),
+      weekly: trendSeries(quartiles.weekly),
+      daily: trendSeries(quartiles.daily),
+      hourly: traces,
+    };
+    $(`#${divId}`).on('plotly_relayout', rezoom(divId, allTraces));
+    Plotly.react(divId, allTraces.monthly, LAYOUT, {displaylogo: false});
+    Plotly.relayout(divId, {});
+  } else {
+    Plotly.react(divId, traces, LAYOUT, {displaylogo: false});
+  }
 }

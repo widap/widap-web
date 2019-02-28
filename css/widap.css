@@ -106,6 +106,9 @@ button:focus {
 .plot-container {
   margin-top: 4px;
 }
+.extra-tall {
+  height: 800px;
+}
 @keyframes spinner-line-fade-more {
   0%, 100% {
     opacity: 0; /* minimum opacity */
