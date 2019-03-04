@@ -1,5 +1,5 @@
 import { timeFormat } from 'd3-time-format';
-import { FONT, MARGIN } from './defaults.js';
+import { FONT, MARGIN, PLOT_CONFIG } from './defaults.js';
 
 const KG_PER_LB = 0.45359237;
 const KG_PER_TON = 2000 * KG_PER_LB;
@@ -91,5 +91,5 @@ export function renderEmissionsIntensityVsCF(divId, data) {
     font: FONT,
     margin: MARGIN,
   };
-  Plotly.react(divId, traces, layout, {displaylogo: false});
+  Plotly.react(divId, traces, layout, PLOT_CONFIG);
 }

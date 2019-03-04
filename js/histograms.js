@@ -1,4 +1,4 @@
-import { FONT, MARGIN } from './defaults.js';
+import { FONT, MARGIN, PLOT_CONFIG } from './defaults.js';
 
 const KG_PER_LB = 0.45359237;
 const KG_PER_TON = 2000 * KG_PER_LB;
@@ -19,6 +19,7 @@ export function renderEfficiencyHistogram(divId, data) {
     xbins: {
       start: 0.0,
       end: 1.0,
+      nbins: 200,
     },
     hoverlabel: {font: FONT},
   }];
@@ -33,7 +34,7 @@ export function renderEfficiencyHistogram(divId, data) {
     font: FONT,
     margin: MARGIN,
   };
-  Plotly.react(divId, traces, layout, {displaylogo: false});
+  Plotly.react(divId, traces, layout, PLOT_CONFIG);
 }
 
 export function renderCapacityFactorHistogram(divId, data) {
@@ -67,7 +68,7 @@ export function renderCapacityFactorHistogram(divId, data) {
     font: FONT,
     margin: MARGIN,
   };
-  Plotly.react(divId, traces, layout, {displaylogo: false});
+  Plotly.react(divId, traces, layout, PLOT_CONFIG);
 }
 
 export function renderEmissionsIntensityHistogram(divId, data) {
@@ -105,5 +106,5 @@ export function renderEmissionsIntensityHistogram(divId, data) {
     font: FONT,
     margin: MARGIN,
   };
-  Plotly.react(divId, traces, layout, {displaylogo: false});
+  Plotly.react(divId, traces, layout, PLOT_CONFIG);
 }

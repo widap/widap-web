@@ -1,4 +1,4 @@
-import { FONT } from './defaults.js';
+import { FONT, PLOT_CONFIG } from './defaults.js';
 import { quantile } from 'd3-array';
 import { timeDay, timeWeek, timeMonth } from 'd3-time';
 import { timeParse } from 'd3-time-format';
@@ -229,9 +229,9 @@ export function renderAllTimeSeries(divId, data) {
       hourly: traces,
     };
     $(divId).on('plotly_relayout', rezoom(divId, allTraces));
-    Plotly.react(divId, allTraces.monthly, LAYOUT, {displaylogo: false});
+    Plotly.react(divId, allTraces.monthly, LAYOUT, PLOT_CONFIG);
     Plotly.relayout(divId, {});
   } else {
-    Plotly.react(divId, hourlyTraces([]), LAYOUT, {displaylogo: false});
+    Plotly.react(divId, hourlyTraces([]), LAYOUT, PLOT_CONFIG);
   }
 }
