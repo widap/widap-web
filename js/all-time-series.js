@@ -2,8 +2,9 @@ import { FONT } from './defaults.js';
 import { quantile } from 'd3-array';
 import { timeDay, timeWeek, timeMonth } from 'd3-time';
 import { timeParse } from 'd3-time-format';
+import $ from './jq.js';
 
-const ZOOM_THRESHOLD_DAY_MS = 1.4e10
+const ZOOM_THRESHOLD_DAY_MS = 1.2e10
 const ZOOM_THRESHOLD_WEEK_MS = 7 * ZOOM_THRESHOLD_DAY_MS
 const ZOOM_THRESHOLD_MONTH_MS = 30 * ZOOM_THRESHOLD_DAY_MS
 
@@ -151,7 +152,7 @@ function selectTraces(allTraces, timeDelta) {
 
 function rezoom(divId, allTraces) {
   return (update) => {
-    const layout = update.currentTarget.layout, xRange = layout.xaxis.range;
+    const layout = $(divId).layout, xRange = layout.xaxis.range;
     var traces;
     if (layout.xaxis.autorange) {
       let timeStart = parseDate(xRange[0]);
@@ -211,10 +212,10 @@ function hourlyTraces(data) {
 }
 
 export function renderAllTimeSeries(divId, data) {
-  $(`#${divId}`).off('plotly_relayout');
-  var traces = hourlyTraces(data);
-  var quartiles = {monthly: {}, weekly: {}, daily: {}};
   if (data.length > 0) {
+    $(divId).on('plotly_relayout', () => {});
+    var traces = hourlyTraces(data);
+    var quartiles = {monthly: {}, weekly: {}, daily: {}};
     Object.keys(SERIES_OPTIONS).forEach(col => {
       let seriesQuartiles = getQuartiles(data, col);
       quartiles.monthly[col] = seriesQuartiles.monthly;
@@ -227,10 +228,10 @@ export function renderAllTimeSeries(divId, data) {
       daily: trendSeries(quartiles.daily),
       hourly: traces,
     };
-    $(`#${divId}`).on('plotly_relayout', rezoom(divId, allTraces));
+    $(divId).on('plotly_relayout', rezoom(divId, allTraces));
     Plotly.react(divId, allTraces.monthly, LAYOUT, {displaylogo: false});
     Plotly.relayout(divId, {});
   } else {
-    Plotly.react(divId, traces, LAYOUT, {displaylogo: false});
+    Plotly.react(divId, hourlyTraces([]), LAYOUT, {displaylogo: false});
   }
 }
