@@ -23,6 +23,7 @@ export function renderEfficiencyHistogram(divId, data) {
     hoverlabel: {font: FONT},
   }];
   const layout = {
+    autosize: true,
     title: {text: 'Histogram of observed efficiency values'},
     xaxis: {title: 'Efficiency (generation / heat input)'},
     yaxis: {
@@ -57,6 +58,7 @@ export function renderCapacityFactorHistogram(divId, data) {
   const layout = {
     title: {text: 'Capacity factor histogram'},
     showlegend: false,
+    autosize: true,
     grid: {rows: 1, 'columns': 2, 'pattern': 'independent'},
     xaxis: {title: 'Capacity factor from heat input'},
     xaxis2: {title: 'Capacity factor from generation'},
@@ -94,6 +96,7 @@ export function renderEmissionsIntensityHistogram(divId, data) {
   const layout = {
     title: {'text': 'Emissions intensity histogram'},
     showlegend: false,
+    autosize: true,
     grid: {'rows': 1, 'columns': 2, 'pattern': 'independent'},
     xaxis: {'title': 'CO<sub>2</sub> intensity from heat input (kg/MWh)'},
     xaxis2: {'title': 'CO<sub>2</sub> intensity from generation (kg/MWh)'},
