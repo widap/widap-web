@@ -102,10 +102,9 @@ class UnitLevelDashboard extends React.Component {
         this.spinner.spin(document.getElementById(SPINNER_DIV));
         this.clearPlots();
         this.setState({loadedPlant: plant.value, loadedUnit: unit.value});
-        loadData(plant.value, unit.value).then(data => {
-          this.updatePlots(data);
-          this.spinner.stop();
-        });
+        loadData(plant.value, unit.value)
+            .then(data => this.updatePlots(data))
+            .finally(() => this.spinner.stop());
       }
     }
   }

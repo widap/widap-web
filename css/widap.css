@@ -91,7 +91,7 @@ button:focus {
   z-index: 2000;
 }
 .info-card table {
-  width: 100%;
+  width: 100vw;
   text-align: left;
   border-collapse: collapse;
   border-style: hidden;
@@ -107,7 +107,7 @@ button:focus {
   margin-top: 4px;
 }
 .extra-tall {
-  height: 800px;
+  height: 720px;
 }
 @keyframes spinner-line-fade-more {
   0%, 100% {
