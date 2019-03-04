@@ -1,4 +1,5 @@
 import L from 'leaflet';
+import $ from './jq.js';
 import powerPlantsGeoJson from './plants.json';
 import stateMarkersGeoJson from './statemarkers.json';
 import renderMonthlyGloadTrendPlot from './monthly-gload-trend.js';
@@ -143,13 +144,13 @@ legend.addTo(map);
 powerPlants.addTo(map);
 stateMarkers.addTo(map);
 
-$('#facility-vizmetric-selector').change(function(){
+$('facility-vizmetric-selector').onchange = (e) => {
   var plants = powerPlants.getLayers();
   for (let plant of plants) {
     let props = plant.feature.properties;
     plant._path.style['transition'] = 'd 0.6s';
     plant._path.style['-webkit-transition'] = 'd 0.6s';
-    let radiusBasis = $(this).val();
+    let radiusBasis = e.target.value;
     if (radiusBasis == "capacity") {
       plant.setRadius(getRadiusBasedOnCapacity(props.capacity));
     } else if (radiusBasis == "emissions") {
@@ -163,4 +164,4 @@ $('#facility-vizmetric-selector').change(function(){
       plant._path.style['-webkit-transition'] = '';
     }
   }, 600)
-});
+};
