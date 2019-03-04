@@ -38,16 +38,22 @@ export function renderEfficiencyHistogram(divId, data) {
 export function renderCapacityFactorHistogram(divId, data) {
   const maxHeat = getMaxValue(data.map(d => d.heat_input));
   const maxGen = getMaxValue(data.map(d => d.gen));
+  const heat = data.map(d => d.heat_input / maxHeat).filter(d => d > 0.01);
+  var pctOffNote = '';
+  if (data.length > 0) {
+    let pctOff = 100 - Math.round(100 * heat.length / data.length);
+    pctOffNote = ` (ignoring ${pctOff}% of samples where unit was off)`;
+  }
   const traces = [
     {
-      x: data.map(d => d.heat_input / maxHeat),
+      x: heat,
       xbins: CF_BINS,
       type: 'histogram',
       hoverinfo: 'x+y+text',
       hoverlabel: {'font': FONT},
     },
     {
-      x: data.map(d => d.gen / maxGen),
+      x: data.map(d => d.gen / maxGen).filter(d => d > 0.01),
       xbins: CF_BINS,
       type: 'histogram',
       xaxis: 'x2',
@@ -57,7 +63,7 @@ export function renderCapacityFactorHistogram(divId, data) {
     },
   ];
   const layout = {
-    title: {text: 'Capacity factor histogram'},
+    title: {text: 'Capacity factor histogram' + pctOffNote},
     showlegend: false,
     autosize: true,
     grid: {rows: 1, 'columns': 2, 'pattern': 'independent'},
