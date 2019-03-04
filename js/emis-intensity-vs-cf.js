@@ -4,6 +4,7 @@ import { FONT, MARGIN, PLOT_CONFIG } from './defaults.js';
 const KG_PER_LB = 0.45359237;
 const KG_PER_TON = 2000 * KG_PER_LB;
 const DATE_HOUR_FMT = timeFormat('%Y-%m-%d %H:%M');
+const NUM_SCATTER_POINTS = 1500;
 
 // Samples using Durstenfeld (Fisher-Yates) shuffle.
 function sample(array, sampleSize) {
@@ -48,7 +49,7 @@ export function renderEmissionsIntensityVsCF(divId, data) {
         showlegend: false,
         showscale: false,
       }));
-    const sampled = sample(filtered, 1000);
+    const sampled = sample(filtered, NUM_SCATTER_POINTS);
     const scatterTraceDefs = [
       {y: sampled.map(d => KG_PER_TON * d.co2_mass / d.gen), xaxis: 'x', yaxis: 'y'},
       {y: sampled.map(d => KG_PER_LB * d.so2_mass / d.gen), xaxis: 'x2', yaxis: 'y2'},
@@ -84,8 +85,8 @@ export function renderEmissionsIntensityVsCF(divId, data) {
       columns: 2,
       pattern: 'independent',
     },
-    xaxis: {title: 'Capacity Factor'},
-    xaxis2: {title: 'Capacity Factor'},
+    xaxis: {title: 'Capacity Factor', range: [0, 1]},
+    xaxis2: {title: 'Capacity Factor', range: [0, 1]},
     yaxis: {title: 'CO<sub>2</sub> Intensity (kg/MWh)'},
     yaxis2: {title: 'SO<sub>2</sub> Intensity (lbs/MWh)'},
     font: FONT,
