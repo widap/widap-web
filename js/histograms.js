@@ -1,4 +1,10 @@
-import { FONT, MARGIN, PLOT_CONFIG } from './defaults.js';
+import {
+  FONT,
+  MARGIN,
+  PLOT_CONFIG,
+  MAX_CO2I_FROM_HEAT,
+  MAX_CO2I_FROM_GEN
+} from './defaults.js';
 
 const KG_PER_LB = 0.45359237;
 const KG_PER_TON = 2000 * KG_PER_LB;
@@ -80,10 +86,12 @@ export function renderCapacityFactorHistogram(divId, data) {
 export function renderEmissionsIntensityHistogram(divId, data) {
   const co2FromHeat = data
     .filter(d => d.heat_input > 1.1)
-    .map(d => KG_PER_TON * d.co2_mass / (d.heat_input * WH_PER_BTU));
+    .map(d => KG_PER_TON * d.co2_mass / (d.heat_input * WH_PER_BTU))
+    .filter(h => h < MAX_CO2I_FROM_HEAT);
   const co2FromGen = data
     .filter(d => d.gen > 1.1)
-    .map(d => KG_PER_TON * d.co2_mass / d.gen);
+    .map(d => KG_PER_TON * d.co2_mass / d.gen)
+    .filter(h => h < MAX_CO2I_FROM_GEN);
   const maxCo2FromHeat = getMaxValue(co2FromHeat);
   const maxCo2FromGen = getMaxValue(co2FromGen);
   const traces = [

@@ -1,5 +1,11 @@
 import { timeFormat } from 'd3-time-format';
-import { FONT, MARGIN, PLOT_CONFIG } from './defaults.js';
+import {
+  FONT,
+  MARGIN,
+  PLOT_CONFIG,
+  MAX_CO2I_FROM_GEN,
+  MAX_SO2I_FROM_GEN
+} from './defaults.js';
 
 const KG_PER_LB = 0.45359237;
 const KG_PER_TON = 2000 * KG_PER_LB;
@@ -30,11 +36,17 @@ export function renderEmissionsIntensityVsCF(divId, data) {
   var traces = [];
   if (data.length > 0) {
     const maxGen = data.map(d => d.gen).reduce((a, b) => Math.max(a, b));
-    data.forEach(d => d.cf = d.gen / maxGen);
-    const filtered = data.filter(d => d.cf > 0.02);
+    data.forEach(d => {
+      d.cf = d.gen / maxGen;
+      d.co2_ei = KG_PER_TON * d.co2_mass / d.gen;
+      d.so2_ei = KG_PER_LB * d.so2_mass / d.gen;
+    });
+    const filtered = data.filter(d => {
+      return d.cf > 0.02 && d.co2_ei < MAX_CO2I_FROM_GEN && d.so2_ei < MAX_SO2I_FROM_GEN;
+    });
     const contourTraceDefs = [
-      {y: filtered.map(d => KG_PER_TON * d.co2_mass / d.gen), xaxis: 'x', yaxis: 'y'},
-      {y: filtered.map(d => KG_PER_LB * d.so2_mass / d.gen), xaxis: 'x2', yaxis: 'y2'},
+      {y: filtered.map(d => d.co2_ei), xaxis: 'x', yaxis: 'y'},
+      {y: filtered.map(d => d.so2_ei), xaxis: 'x2', yaxis: 'y2'},
     ];
     const contours = contourTraceDefs.map(
       traceDef => ({
@@ -51,8 +63,8 @@ export function renderEmissionsIntensityVsCF(divId, data) {
       }));
     const sampled = sample(filtered, NUM_SCATTER_POINTS);
     const scatterTraceDefs = [
-      {y: sampled.map(d => KG_PER_TON * d.co2_mass / d.gen), xaxis: 'x', yaxis: 'y'},
-      {y: sampled.map(d => KG_PER_LB * d.so2_mass / d.gen), xaxis: 'x2', yaxis: 'y2'},
+      {y: sampled.map(d => d.co2_ei), xaxis: 'x', yaxis: 'y'},
+      {y: sampled.map(d => d.so2_ei), xaxis: 'x2', yaxis: 'y2'},
     ];
     const scatters = scatterTraceDefs.map(
       traceDef => ({

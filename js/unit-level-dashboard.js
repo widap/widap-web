@@ -10,6 +10,7 @@ import {
 import React from 'react';
 import Select from 'react-select';
 import ReactDOM from 'react-dom';
+import ReactMarkdown from 'react-markdown';
 import PLANTS from './plants.json';
 import { csv } from 'd3-fetch';
 import { timeParse } from 'd3-time-format';
@@ -22,6 +23,37 @@ const EMISSIONS_INTENSITY_VS_CF = 'emissions-intensity-vs-cf';
 const EFFICIENCY_HISTOGRAM = 'efficiency-histogram';
 const CAPACITY_FACTOR_HISTOGRAM = 'capacity-factor-histogram';
 const EMISSIONS_INTENSITY_HISTOGRAM = 'emissions-intensity-histogram';
+
+const TIME_SERIES_MD = `
+## Visualization 1: Time series with quartile aggregation
+
+The first visualization displays time series data of generation and emissions
+over the period of data collection. When zoomed out, the plot displays quartiles
+at an appropriate aggregation level (daily, weekly, or monthly); when zoomed in
+sufficiently, the plot displays the actual hourly data.
+`;
+
+const EI_MD = `
+## Visualization 2: Emissions Intensity vs Capacity Factor
+
+The second visualization displays a mixed contour plot and scatter plot of hourly
+emissions intensity of CO2 and SO2 versus capacity factor. The contours show
+what regime the unit spends most of its operation in, with more intense colors
+indicating a higher proportion of observations. The scatter points are a small
+random sample of the entire dataset, and their color indicates what year they
+were drawn from, suggesting how the operation pattern has shifted over time.
+`;
+
+const HISTOGRAM_MD = `
+## Visualization 3: Histograms
+
+The remaining plots are a series of histograms of various plant metrics, showing
+the counts of observations of these metrics. Efficiency is calculated as
+generation divided by heat input, where both values were converted to the same
+units, so that the output is unitless. The other plots are calculated with both
+heat input and generation data. It is worth noting when these are similar or
+different. The corresponding efficiency plot may help to explain discrepancies.
+`;
 
 const SPINNER_DIV = 'loading-spinner';
 const SPINNER_OPTS = {lines: 9, length: 5, width: 3, radius: 5};
@@ -140,8 +172,11 @@ class UnitLevelDashboard extends React.Component {
           unit={this.state.loadedUnit}
           getInfo={this.getPlantInfo}
         />
+        <div class='text-container'><ReactMarkdown source={TIME_SERIES_MD} /></div>
         <div className='plot-container extra-tall' id={ALL_TIME_SERIES} />
+        <div class='text-container'><ReactMarkdown source={EI_MD} /></div>
         <div className='plot-container' id={EMISSIONS_INTENSITY_VS_CF} />
+        <div class='text-container'><ReactMarkdown source={HISTOGRAM_MD} /></div>
         <div className='plot-container' id={EFFICIENCY_HISTOGRAM} />
         <div className='plot-container' id={CAPACITY_FACTOR_HISTOGRAM} />
         <div className='plot-container' id={EMISSIONS_INTENSITY_HISTOGRAM} />

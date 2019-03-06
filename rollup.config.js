@@ -1,5 +1,7 @@
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
+import builtins from 'rollup-plugin-node-builtins';
+import globals from 'rollup-plugin-node-globals';
 import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import json from 'rollup-plugin-json';
@@ -14,28 +16,28 @@ const CFG = {
     replace({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
-    json({
-      include: 'js/*.json',
-    }),
+    json(),
     commonjs({
       include: 'node_modules/**',
-        namedExports: {
-          './node_modules/react/index.js': [
-            'cloneElement',
-            'createElement',
-            'PropTypes',
-            'Children',
-            'Component',
-            'PureComponent',
-          ],
-          './node_modules/react-dom/index.js': [
-            'createPortal',
-            'findDOMNode',
-          ],
-       }
+      namedExports: {
+        './node_modules/react/index.js': [
+          'cloneElement',
+          'createElement',
+          'PropTypes',
+          'Children',
+          'Component',
+          'PureComponent',
+        ],
+        './node_modules/react-dom/index.js': [
+          'createPortal',
+          'findDOMNode',
+        ],
+     }
     }),
     babel({include: 'js/**'}),
     resolve(),
+    builtins(),
+    globals(),
   ],
   watch: {
     include: 'js/**',
