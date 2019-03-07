@@ -19,21 +19,6 @@ const SERIES_OPTIONS = {
   'co2_mass': {name: 'CO2 (tons/hr)', color: 'steelblue', yaxis: 'y4'},
 }
 
-const LAYOUT = {
-  showlegend: false,
-  autosize: true,
-  title: {
-    text: 'Time series (Generation, SO<sub>2</sub>, NO<sub>x</sub>, CO<sub>2</sub>)',
-  },
-  font: FONT,
-  grid: {yaxes: ['y', 'y2', 'y3', 'y4'], rows: 4, columns: 1},
-  xaxis: {type: 'date', title: 'Date'},
-  yaxis: {fixedrange: true, title: {text: 'Generation (MWh/hr)'}},
-  yaxis2: {fixedrange: true, title: {text: 'SO<sub>2</sub> (lbs/hr)'}},
-  yaxis3: {fixedrange: true, title: {text: 'NO<sub>x</sub> (lbs/hr)'}},
-  yaxis4: {fixedrange: true, title: {text: 'CO<sub>2</sub> (tons/hr)'}},
-}
-
 // Plotly emits time range data in very inconsistent formats. Here are 4 strings
 // we might have to interpret:
 // - "2000-12-01"
@@ -212,6 +197,20 @@ function hourlyTraces(data) {
 }
 
 export function renderAllTimeSeries(divId, data) {
+  const layout = {
+    showlegend: false,
+    autosize: true,
+    title: {
+      text: 'Time series (Generation, SO<sub>2</sub>, NO<sub>x</sub>, CO<sub>2</sub>)',
+    },
+    font: FONT,
+    grid: {yaxes: ['y', 'y2', 'y3', 'y4'], rows: 4, columns: 1},
+    xaxis: {type: 'date', title: 'Date'},
+    yaxis: {fixedrange: true, title: {text: 'Generation (MWh/hr)'}},
+    yaxis2: {fixedrange: true, title: {text: 'SO<sub>2</sub> (lbs/hr)'}},
+    yaxis3: {fixedrange: true, title: {text: 'NO<sub>x</sub> (lbs/hr)'}},
+    yaxis4: {fixedrange: true, title: {text: 'CO<sub>2</sub> (tons/hr)'}},
+  }
   if (data.length > 0) {
     $(divId).on('plotly_relayout', () => {});
     var traces = hourlyTraces(data);
@@ -229,9 +228,9 @@ export function renderAllTimeSeries(divId, data) {
       hourly: traces,
     };
     $(divId).on('plotly_relayout', rezoom(divId, allTraces));
-    Plotly.react(divId, allTraces.monthly, LAYOUT, PLOT_CONFIG);
+    Plotly.react(divId, allTraces.monthly, layout, PLOT_CONFIG);
     Plotly.relayout(divId, {});
   } else {
-    Plotly.react(divId, hourlyTraces([]), LAYOUT, PLOT_CONFIG);
+    Plotly.react(divId, hourlyTraces([]), layout, PLOT_CONFIG);
   }
 }
