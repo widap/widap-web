@@ -41,7 +41,7 @@ button {
   font-size: 1rem;
   border-radius: 0.25rem;
   font-weight: 400;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 button:hover {
   color: #fff;

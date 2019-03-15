@@ -19,8 +19,10 @@
     "build": "npm run build:dashboard && npm run build:map",
     "build:dashboard": "rollup -c -i js/unit-level-dashboard.js -d static/",
     "build:map": "rollup -c -i js/power-plant-map.js -d static/",
+    "build:animations": "rollup -c -i js/animations.js -d static/",
     "watch:dashboard": "npm run build:dashboard -- --watch",
     "watch:map": "npm run build:map -- --watch",
+    "watch:animations": "npm run build:animations -- --watch",
     "build-prod:dashboard": "npm run build:dashboard -- --configProduction",
     "build-prod:map": "npm run build:map -- --configProduction",
     "lint": "eslint js/*.js"

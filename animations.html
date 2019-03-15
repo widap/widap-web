@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en" class="">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
+<style>
+#app-root {
+  width: 100% - 8px;
+  margin: 4px;
+}
+#map-container {
+  height: 600px;
+  width: 800px;
+}
+.power-plant-marker {
+  opacity: 0.8;
+  fill-opacity: 0.8;
+  stroke: #CCC;
+  stroke-width: 0.5;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.power-plant-marker:hover {
+  background-color: #660;
+  fill-opacity: 0.85;
+  opacity: 0.85;
+}
+</style>
+<link rel="stylesheet" href="css/widap.css" />
+</head>
+<body>
+    <div id="app-root">
+      <div id="map-container"></div>
+    </div>
+    <script type='text/javascript' src="static/animations.js"></script>
+</body>
+</html>
