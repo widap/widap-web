@@ -6,6 +6,8 @@ import renderMonthlyGloadTrendPlot from './monthly-gload-trend.js';
 import renderMonthlyEmissionsTimeSeries from './emissions-time-series-monthly.js';
 import './leaflet-providers.js';
 
+const WIDAP_SITE = "http://web.stanford.edu/group/widap";
+
 // Used only for marker display colors.
 const fuel_source_abbrevs = {
   "coal": "coal",
@@ -88,7 +90,8 @@ function powerPlantPopup(props) {
   <div id="gload-trend-${props.orispl_code}" class="plot-container"></div>
   <h4>Mean hourly emissions</h4>
   <div id="mean-hourly-emis-${props.orispl_code}" class="plot-container"></div>
-  <a class="monthly-data-download" href="csv/monthly/${props.orispl_code}.csv">Download this data (csv)</a>`;
+  <div><a href="${WIDAP_SITE}/unit_level_dashboard.html?orispl_code=${props.orispl_code}" target="_blank">Explore this plant in more detail &raquo;</a></div>
+  <div><a class="monthly-data-download" href="${WIDAP_SITE}/csv/monthly/${props.orispl_code}.csv">Download this data (csv)</a></div>`;
   return L.popup({maxHeight: 500, minWidth: 500}).setContent(htmlContent);
 }
 
