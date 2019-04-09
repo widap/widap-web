@@ -67,6 +67,10 @@ function loadPlants(rows) {
   return plants;
 }
 
+function makeSelectOption(props) {
+  return {label: props.name, value: props.orispl_code};
+}
+
 function parseTimeSeriesRow(row) {
   return {
     datetime: YMDH_PARSE(row.datetime),
@@ -94,8 +98,7 @@ class UnitLevelDashboard extends React.Component {
   };
   spinner = new Spinner(SPINNER_OPTS);
   plantUnitMap = loadPlants(PLANTS);
-  plantOptions = PLANTS.map(
-    row => ({label: row.properties.name, value: row.properties.orispl_code}));
+  plantOptions = PLANTS.map(row => makeSelectOption(row.properties));
 
   clearPlots = () => {
     this.updatePlots([])
@@ -111,6 +114,16 @@ class UnitLevelDashboard extends React.Component {
 
   componentDidMount() {
     this.clearPlots();
+    // If the user passed in an initial ORISPL code, prefill the dropdown
+    // appropriately.
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialOrisplCode = urlParams.get("orispl_code");
+    if (initialOrisplCode !== null) {
+      if (this.plantUnitMap.hasOwnProperty(initialOrisplCode)) {
+        const plantOption = makeSelectOption(this.plantUnitMap[initialOrisplCode]);
+        this.handlePlantChange(plantOption);
+      }
+    }
   }
 
   handlePlantChange = (selected) => {
