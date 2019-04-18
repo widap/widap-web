@@ -2,6 +2,7 @@ import { Spinner } from './spin.js';
 import { PlantUnitInfo } from './plant-unit-info.js';
 import { renderAllTimeSeries } from './all-time-series.js';
 import { renderEmissionsIntensityVsCF } from './emis-intensity-vs-cf.js';
+import { renderHourOfDayAvg } from './hour-of-day-avg.js';
 import {
   renderEfficiencyHistogram,
   renderCapacityFactorHistogram,
@@ -20,6 +21,7 @@ const EMIS_DATA_REPO =  `${GH_HOST}/media/widap/emissions-data/master/csv`;
 
 const ALL_TIME_SERIES = 'all-time-series';
 const EMISSIONS_INTENSITY_VS_CF = 'emissions-intensity-vs-cf';
+const HOUR_OF_DAY_AVG = 'hour-of-day-avg';
 const EFFICIENCY_HISTOGRAM = 'efficiency-histogram';
 const CAPACITY_FACTOR_HISTOGRAM = 'capacity-factor-histogram';
 const EMISSIONS_INTENSITY_HISTOGRAM = 'emissions-intensity-histogram';
@@ -44,8 +46,16 @@ random sample of the entire dataset, and their color indicates what year they
 were drawn from, suggesting how the operation pattern has shifted over time.
 `;
 
+const HOUR_OF_DAY_AVG_MD = `
+## Visualization 3: Hour-of-day averages
+
+This plot illustrates how a unit's daily dispatch pattern has shifted over the
+years. Each line represents a given year's average generation at each hour of
+the day.
+`;
+
 const HISTOGRAM_MD = `
-## Visualization 3: Histograms
+## Visualization 4: Histograms
 
 The remaining plots are a series of histograms of various plant metrics, showing
 the counts of observations of these metrics. Efficiency is calculated as
@@ -107,6 +117,7 @@ class UnitLevelDashboard extends React.Component {
   updatePlots = (data) => {
     renderAllTimeSeries(ALL_TIME_SERIES, data);
     renderEmissionsIntensityVsCF(EMISSIONS_INTENSITY_VS_CF, data);
+    renderHourOfDayAvg(HOUR_OF_DAY_AVG, data);
     renderEfficiencyHistogram(EFFICIENCY_HISTOGRAM, data);
     renderCapacityFactorHistogram(CAPACITY_FACTOR_HISTOGRAM, data);
     renderEmissionsIntensityHistogram(EMISSIONS_INTENSITY_HISTOGRAM, data);
@@ -189,6 +200,8 @@ class UnitLevelDashboard extends React.Component {
         <div className='plot-container extra-tall' id={ALL_TIME_SERIES} />
         <div class='text-container'><ReactMarkdown source={EI_MD} /></div>
         <div className='plot-container' id={EMISSIONS_INTENSITY_VS_CF} />
+        <div class='text-container'><ReactMarkdown source={HOUR_OF_DAY_AVG_MD} /></div>
+        <div className='plot-container' id={HOUR_OF_DAY_AVG} />
         <div class='text-container'><ReactMarkdown source={HISTOGRAM_MD} /></div>
         <div className='plot-container' id={EFFICIENCY_HISTOGRAM} />
         <div className='plot-container' id={CAPACITY_FACTOR_HISTOGRAM} />
