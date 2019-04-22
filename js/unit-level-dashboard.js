@@ -52,6 +52,11 @@ const HOUR_OF_DAY_AVG_MD = `
 This plot illustrates how a unit's daily dispatch pattern has shifted over the
 years. Each line represents a given year's average generation at each hour of
 the day.
+
+Click on a single year in the legend to toggle its display in the plot;
+double-click on a single year in the legend to isolate the profile for that year.
+
+*Note: Averages for 2017 are computed only from Jan 1 to Jun 30.*
 `;
 
 const HISTOGRAM_MD = `

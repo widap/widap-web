@@ -1,5 +1,5 @@
 import { FONT, PLOT_CONFIG, MARGIN } from './defaults.js';
-import { interpolateViridis } from 'd3-scale-chromatic';
+import { interpolatePlasma } from 'd3-scale-chromatic';
 
 function newHourlyTotals() {
   var coll = [];
@@ -15,6 +15,10 @@ function computeHourOfDayAverages(data) {
     var currentYear = data[0].datetime.getFullYear();
     var hourlyTotals = newHourlyTotals();
     for (var i = 0; i < data.length; i++) {
+      if (data[i].datetime > new Date("2017-07-01T00:00:00Z")) {
+        // Our date gets really wacky and wrong on July 1, 2017!
+        break;
+      }
       var year = data[i].datetime.getFullYear();
       if (year > currentYear) {
         avgs[currentYear] = hourlyTotals.map(x => x.total / x.count);
@@ -25,11 +29,8 @@ function computeHourOfDayAverages(data) {
       hourlyTotals[hour].count += 1;
       hourlyTotals[hour].total += data[i].gen;
     }
-    // Need to add the last year of data, unless it's 2018, in which case
-    // we have inconsistent data, only every two hours instead of every 1.
-    if (currentYear < 2018) {
-      avgs[currentYear] = hourlyTotals.map(x => x.total / x.count);
-    }
+    // Add final year
+    avgs[currentYear] = hourlyTotals.map(x => x.total / x.count);
   }
   return avgs;
 }
@@ -37,7 +38,7 @@ function computeHourOfDayAverages(data) {
 function viridisColorFn(yearStrings) {
   const years = yearStrings.map(x => parseInt(x));
   const a = years[0], b = years[years.length - 1];
-  return z => interpolateViridis((parseInt(z) - a) / (b - a));
+  return z => interpolatePlasma((parseInt(z) - a) / (b - a));
 }
 
 export function renderHourOfDayAvg(divId, data) {
@@ -50,7 +51,6 @@ export function renderHourOfDayAvg(divId, data) {
       name: entry[0],
       x: entry[1].keys(),
       y: entry[1],
-      hoverinfo: 'none',
       line: {
         color: colorFn(entry[0]),
       },
