@@ -45,23 +45,40 @@ h1 {
   height: 18px;
   float: left;
 }
-.power-plant-marker {
-  opacity: 0.8;
+.map-marker {
   fill-opacity: 0.8;
   stroke: #CCC;
   stroke-width: 0.5;
 }
+.map-marker:hover {
+  stroke: #FED;
+  stroke-width: 0.9;
+}
+.map-marker.selected {
+  fill: #CF6;
+  stroke: #FFF;
+  stroke-opacity: 1.0;
+  stroke-width: 1.2;
+}
+.power-plant-marker {
+  opacity: 0.8;
+}
 .power-plant-marker:hover {
   fill-opacity: 0.85;
   opacity: 0.85;
-  stroke: #FED;
-  stroke-width: 0.9;
 }
 .power-plant-marker.selected {
   fill-opacity: 0.9;
   opacity: 0.9;
-  fill: #FC0;
-  stroke: #FFF;
-  stroke-opacity: 1.0;
-  stroke-width: 1.2;
+}
+.aggregate-map-marker {
+  opacity: 0.9;
+}
+.aggregate-map-marker:hover {
+  fill-opacity: 0.92;
+  opacity: 0.92;
+}
+.aggregate-map-marker.selected {
+  fill-opacity: 0.95;
+  opacity: 0.95;
 }

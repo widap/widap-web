@@ -47,8 +47,8 @@ const WI_GEOJSON = {
   "geometry": {
     "type": "Point",
     "coordinates": [
-      -113.186097,
-      41.551528,
+      -113.586097,
+      41.951528,
     ],
   },
 };
@@ -60,6 +60,8 @@ legend.onAdd = function(map) {
     rows += `<tr><td><i style="background: ${colors[fuel_source]}"></i></td>`;
     rows += `<td>${fuel_source}</td></tr>`;
   }
+  rows += `<tr><td><i style="background: rgb(230, 200, 0)"></i></td><td>state totals</td></tr>`;
+  rows += `<tr><td><i style="background: rgb(180, 0, 100)"></i></td><td>WI totals</td></tr>`;
   div.innerHTML += "<table>" + rows + "</table>"
   return div;
 };
@@ -74,7 +76,7 @@ function getRadiusBasedOnEmissions(emissions) {
 
 function powerPlantMarkerOptions(props) {
   return {
-    className: "power-plant-marker",
+    className: "map-marker power-plant-marker",
     fillColor: colors[fuel_source_abbrevs[props.fuel_source.toLowerCase()]],
     radius: getRadiusBasedOnCapacity(props.capacity),
   };
@@ -133,34 +135,56 @@ const map = L.map('power-plants-map', {
 let powerPlants = L.geoJSON(powerPlantsGeoJson, {
   pointToLayer: function(feature, latlng) {
     return L.circleMarker(latlng, powerPlantMarkerOptions(feature.properties))
-    .bindTooltip(feature.properties.name)
-    .bindPopup(powerPlantPopup(feature.properties))
-    .on('popupopen', function(e) {
-      L.DomUtil.addClass(e.target._path, 'selected');
-      renderPlots(feature.properties.orispl_code)
-    })
-    .on('popupclose', function(e) {
-      L.DomUtil.removeClass(e.target._path, 'selected');
-    });
+      .bindTooltip(feature.properties.name)
+      .bindPopup(powerPlantPopup(feature.properties))
+      .on('popupopen', function(e) {
+        L.DomUtil.addClass(e.target._path, 'selected');
+        renderPlots(feature.properties.orispl_code)
+      })
+      .on('popupclose', function(e) {
+        L.DomUtil.removeClass(e.target._path, 'selected');
+      });
   }
 })
 
+const stateMarkerOpts = {
+  className: 'map-marker aggregate-map-marker',
+  fillColor: 'rgba(240, 200, 0)',
+  radius: 12,
+}
 const stateMarkers = L.geoJSON(stateMarkersGeoJson, {
-  onEachFeature: function(feature, layer) {
-    layer.bindTooltip(feature.properties.name);
-    layer.bindPopup(stateAggregatePopup(feature.properties))
-    .on('popupopen', function(e) {
-      renderPlots(feature.properties.code.toLowerCase());
-    });
-  }
-})
+  pointToLayer: function(feature, latlng) {
+    return L.circleMarker(latlng, stateMarkerOpts)
+      .bindTooltip(feature.properties.name)
+      .bindPopup(stateAggregatePopup(feature.properties))
+      .on('popupopen', function(e) {
+        L.DomUtil.addClass(e.target._path, 'selected');
+        renderPlots(feature.properties.code.toLowerCase());
+      })
+      .on('popupclose', function(e) {
+        L.DomUtil.removeClass(e.target._path, 'selected');
+      });
+  },
+});
 
+const wiMarkerOpts = {
+  className: 'map-marker aggregate-map-marker',
+  fillColor: 'rgba(180, 0, 100)',
+  radius: 12,
+}
 const wiMarker = L.geoJSON(WI_GEOJSON, {
-  onEachFeature: function(feature, layer) {
-    layer.bindTooltip(feature.properties.name);
-    layer.bindPopup(stateAggregatePopup(feature.properties))
-      .on('popupopen', e => renderPlots(feature.properties.code));
-  }
+  pointToLayer: function(feature, latlng) {
+    return L.circleMarker(latlng, wiMarkerOpts)
+      .bindTooltip(feature.properties.name)
+      .bindPopup(stateAggregatePopup(feature.properties))
+      .on('popupopen', function(e) {
+        L.DomUtil.addClass(e.target._path, 'selected');
+        renderPlots(feature.properties.code.toLowerCase());
+      })
+      .on('popupclose', function(e) {
+        L.DomUtil.removeClass(e.target._path, 'selected');
+      });
+  },
 });
 
 L.control.layers(baseMaps, [], {position: 'topright'}).addTo(map);
