@@ -15,7 +15,7 @@ def month_range(index):
 def fetch_plant_data(orispl_code):
     query_text = """
         SELECT adddate(`op_date`, interval `op_hour` hour) as `datetime`,
-            SUM(`gload`) as `gload`,
+            SUM(`gload` * `op_time`) as `gload`,
             SUM(`so2_mass`) as `so2_mass`,
             SUM(`nox_mass`) as `nox_mass`,
             SUM(`co2_mass`) as `co2_mass`,
