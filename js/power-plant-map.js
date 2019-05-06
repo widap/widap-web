@@ -28,11 +28,15 @@ const colors = {
   "other": "#AAA",
 }
 
-const wikiMapTiles = L.tileLayer.provider('Wikimedia');
+const mapboxTiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: '© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    id: 'mapbox/light-v10',
+    accessToken: 'NEED A LEGIT KEY HERE',
+});
 const earthAtNightTiles = L.tileLayer.provider('NASAGIBS.ViirsEarthAtNight2012');
 const satelliteTiles = L.tileLayer.provider('Esri.WorldImagery');
 const baseMaps = {
-  "map": wikiMapTiles,
+  "map": mapboxTiles,
   "night": earthAtNightTiles,
   "satellite": satelliteTiles,
 };
@@ -129,7 +133,7 @@ const map = L.map('power-plants-map', {
   zoomDelta: 0.5,
   zoomSnap: 0.5,
   zoomControl: false,
-  layers: [wikiMapTiles],
+  layers: [mapboxTiles],
 });
 
 let powerPlants = L.geoJSON(powerPlantsGeoJson, {
