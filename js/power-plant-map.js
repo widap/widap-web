@@ -38,6 +38,20 @@ const baseMaps = {
 };
 const legend = L.control({position: 'bottomright'});
 
+const WI_GEOJSON = {
+  "type": "Feature",
+  "properties": {
+    "name": "Western Interconnection",
+    "code": "interconnect",
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -113.186097,
+      41.551528,
+    ],
+  },
+};
 
 legend.onAdd = function(map) {
   var div = L.DomUtil.create('div', 'map-legend');
@@ -141,11 +155,20 @@ const stateMarkers = L.geoJSON(stateMarkersGeoJson, {
   }
 })
 
+const wiMarker = L.geoJSON(WI_GEOJSON, {
+  onEachFeature: function(feature, layer) {
+    layer.bindTooltip(feature.properties.name);
+    layer.bindPopup(stateAggregatePopup(feature.properties))
+      .on('popupopen', e => renderPlots(feature.properties.code));
+  }
+});
+
 L.control.layers(baseMaps, [], {position: 'topright'}).addTo(map);
 L.control.zoom({position: 'topright'}).addTo(map);
 legend.addTo(map);
 powerPlants.addTo(map);
 stateMarkers.addTo(map);
+wiMarker.addTo(map);
 
 $('facility-vizmetric-selector').onchange = (e) => {
   var plants = powerPlants.getLayers();
