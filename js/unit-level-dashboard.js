@@ -16,8 +16,7 @@ import PLANTS from './plants.json';
 import { csv } from 'd3-fetch';
 import { timeParse } from 'd3-time-format';
 
-const GH_HOST = 'https://media.githubusercontent.com';
-const EMIS_DATA_REPO =  `${GH_HOST}/media/widap/emissions-data/master/csv`;
+const EMIS_DATA_REPO = 'https://storage.googleapis.com/widap-emissions-data';
 
 const ALL_TIME_SERIES = 'all-time-series';
 const EMISSIONS_INTENSITY_VS_CF = 'emissions-intensity-vs-cf';
